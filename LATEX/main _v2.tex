@@ -128,8 +128,10 @@
     {\large Autor: Marcos García Jamal\par}
     \vspace{0.5cm}
     {\large Directora: Teresa Escobet Canal\par}
- %   \vspace{0.5cm}
-%    \href{https://escriny.epsem.upc.edu/svn/tfg-marcosgarcia}
+   \vspace{0.5cm}
+
+\href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
+
     \vfill
 
     {\large Curs acadèmic 2025--2026\par}
@@ -349,7 +351,7 @@ Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha utilit
 
 Tot el desenvolupament del projecte s'ha dut a terme sobre entorn Windows. Per a la redacció de la memòria s'ha utilitzat \LaTeX{}, motiu pel qual va ser necessària la instal·lació de la distribució MiKTeX \cite{Latex}, que proporciona les eines necessàries per a la compilació i gestió de documents en aquest sistema operatiu.
 
-Addicionalment, per tal de portar un control de versions i mantenir una còpia segura i organitzada dels avenços realitzats durant el desenvolupament del treball, es va utilitzar Apache Subversion (SVN). Aquest sistema va permetre sincronitzar els fitxers del projecte amb el servidor \textit{escriny.epsem.upc.edu} de la universitat \cite{Apache}.
+Addicionalment, per tal de portar un control de versions i mantenir una còpia segura i organitzada dels avenços realitzats durant el desenvolupament del treball, es va utilitzar Apache Subversion (SVN). Aquest sistema va permetre sincronitzar els fitxers del projecte amb el servidor \textit{escriny.epsem.upc.edu} de la universitat \cite{Apache}. Després es va pujar tot el treball a \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia} {un repositori públic de GitHub} perquè fos accessible a totes les persones interessades en el projecte.
 
 Com a software complementari, es va utilitzar el mòdul Graphviz de Python3 per a la generació automàtica dels diagrames GRAFCET presents al llarg del document. Aquesta eina va permetre simplificar la creació i modificació dels esquemes de funcionament del sistema reutilitzant codis que s'havien fet servir durant diferents etapes del grau.
 
@@ -2485,7 +2487,7 @@ El GRAFCET general no controla directament actuadors, sinó que coordina l'activ
 
 El sistema disposa de tres GRAFCETs de classificació independents (G20, G40 i G60), responsables de gestionar l'emmagatzematge automàtic de les peces de tipus A, B i C respectivament.
 
-Cada programa controla el posicionament vertical i horitzontal del transelevador amb l'objectiu de dipositar les peces en la posició corresponent de l'estanteria.  La selecció de la posició d'emmagatzematge es realitza mitjançant comptadors interns que permeten distribuir les peces de manera ordenada dins de cada prestatgeria. 
+Cada programa controla el posicionament vertical i horitzontal del transelevador amb l'objectiu de dipositar les peces en la posició corresponent de l'estanteria.  La selecció de la posició d'emmagatzematge es realitza mitjançant comptadors interns que permeten distribuir les peces de manera ordenada dins de cada prestatgeria. Cada vegada que entra una peça d'un tipus determinat, el comptador associat a aquest tipus s'incrementa una sola vegada al ser una \textbf{acció impulsional}, i el sistema calcula la posició d'emmagatzematge corresponent en funció del valor del comptador.
 
 En concret, el sistema utilitza una operació de tipus mòdul per determinar la ubicació final de cada peça dins del cicle de classificació, de manera que les peces es van assignant seqüencialment a les diferents posicions disponibles sense repeticions consecutives excessivesñ
 
@@ -2547,7 +2549,7 @@ En mode automàtic, el sistema executa el procés complet de forma autònoma, me
 Abans de permetre qualsevol transició entre modes, el sistema verifica que els actuadors es troben en una posició segura i que es compleixen les condicions inicials de funcionament. És a dir, que tant per sortir d'un mode com per entrar a l'altre, és necessari polsar el botó de \textit{Start} o el botó de \textit{Stop} respectivament, i que el sistema es trobi en condicions segures per realitzar el canvi de mode. La representació completa del GRAFCET G500 es pot consultar a l'Annex \ref{sec:grafcets_g500}.
 
 \subsubsection{GRAFCET d'emergència}
-
+\label{sec:grafc_emerg}
 El GRAFCET d'emergència (G600) garanteix una aturada segura de la planta davant situacions d'emergència o fallades del sistema. L'activació es pot produir mitjançant:
 \begin{itemize}
 \item El botó d'emergència
@@ -2589,11 +2591,11 @@ Aquest comportament permet simular i validar la resposta del sistema davant cond
 \subsection{Implementació del control en Unity}
 Per a la simulació del sistema industrial s'ha desenvolupat un script principal anomenat \textit{PlantController}, el qual actua com a nucli de control de tota la planta dins de Unity.
 
-Aquest script conté totes les variables públiques associades als elements del sistema, incloent sensors, actuadors, comptadors i sistemes auxiliars, permetent així una integració completa del model digital amb la lògica de control basada en GRAFCET.
+Aquest script conté totes les variables públiques associades als elements del sistema, incloent sensors, actuadors, comptadors i sistemes auxiliars.
 
 \subsubsection{Estructura general del controlador}
 
-El controlador es basa en una arquitectura centralitzada on tots els GRAFCETs s'executen de manera seqüencial dins del mètode \texttt{Update()}, el qual s'executa a cada frame del motor de Unity. A nivell d'estrucrura, cada GRAFCET està implementat com una funció independent i tots els GRAFCETs són cridats seqüencialment a cada iteració del cicle
+El controlador es basa en una arquitectura centralitzada on tots els GRAFCETs s'executen de manera seqüencial dins del mètode \texttt{Update()}. A nivell estructural, cada GRAFCET està implementat com una funció independent i tots els GRAFCETs són cridats seqüencialment a cada iteració del cicle. 
 
 
 \begin{lstlisting}[style=simple]
@@ -2630,7 +2632,7 @@ public int ETAPA_500 = 500; // SELECTOR
 public int ETAPA_600 = 600; // EMERGENCIA
 \end{lstlisting}
 
-Cada valor representa una etapa concreta del GRAFCET, i els canvis d'estat es realitzen mitjançant estructures \texttt{switch-case}. Exemple d'implementació: 
+Cada valor representa una etapa concreta del GRAFCET, i els canvis d'estat es realitzen mitjançant estructures \texttt{switch-case}. Un exemple d'implementació: 
 
 \begin{lstlisting}[style=simple]
   void GRAFCET_M1() {
@@ -2689,7 +2691,7 @@ void Start() {
 }
 \end{lstlisting}
 
-Especialment, el temporitzador \texttt{TDT0} s'utilitza per detectar errors en la classificació: 
+Especialment, el temporitzador \texttt{TDT0} s'utilitza per detectar errors en la classificació, activant el GRAFCET d'emergència si una peça no és identificada en el temps explicat en l'anterior secció: 
 
 
 \begin{lstlisting}[style=simple]
@@ -2703,28 +2705,21 @@ case 11:
   break;
 \end{lstlisting}
 
-Si la peça no es detecta en menys de 10 segons, es genera un estat d'error.
 \subsubsection{Control global del sistema}
 
-En la versió actual del sistema s'ha eliminat el GRAFCET específic de \textbf{marxa}, integrant la seva funcionalitat dins del \textbf{selector de mode}. D'aquesta manera, el control global es basa en dos GRAFCETs principals: el \textbf{selector de mode} (G500) i el \textbf{GRAFCET d'emergència} (G600), executats en cada iteració del mètode \texttt{Update()}.
+El control global es basa en dos GRAFCETs principals: el \textbf{selector de mode} (G500) i el \textbf{GRAFCET d'emergència} (G600), executats en cada iteració del mètode \texttt{Update()}.
 
 \subsubsection*{GRAFCET de selector de mode (ETAPA\_500)}
 
-Aquest GRAFCET centralitza tant la selecció del mode de funcionament com l'activació general del sistema. Els elements de control associats són \texttt{B\_Start}, \texttt{B\_Stop} (normalment tancat) i el\texttt{Selector}de mode (\texttt{0} automàtic, \texttt{1} manual, \texttt{-1} neutre). Per passar d'un estat a un altre és la mateixa explicació que s'ha explicat en la secció \ref{sec:section_selector}
+Aquest GRAFCET centralitza tant la selecció del mode de funcionament com l'activació general del sistema. Els elements de control associats són \texttt{B\_Start}, \texttt{B\_Stop}  i el\texttt{Selector}de mode (\texttt{0} automàtic, \texttt{1} manual, \texttt{-1} neutre). Per passar d'un estat a un altre és la mateixa explicació que s'ha explicat en la secció \ref{sec:section_selector}
 
 \subsubsection*{GRAFCET d'emergència (G600)}
 
-El GRAFCET d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució.
-
-\paragraph{Activació de l'emergència}
-
-L'emergència es pot activar en dues situacions:
+El GRAFCET d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar en dues situacions:
 \begin{itemize}
-\item Quan es prem el botó \texttt{B\_Emergency} (botó normalment tancat)
+\item Quan es prem el botó \texttt{B\_Emergency}
 \item Quan es detecta una avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21})
 \end{itemize}
-
-\paragraph{Comportament en emergència (ETAPA 601)}
 
 Quan s'activa l'emergència:
 \begin{itemize}
@@ -2734,23 +2729,8 @@ Quan s'activa l'emergència:
 \item Es força el sistema a mode manual (\texttt{ETAPA\_500 = 503})
 \end{itemize}
 
-Aquest comportament assegura una aturada immediata i segura davant qualsevol situació anòmala.
+La recuperació del sistema requereix una acció conscient per part de l'operador, tal com s'ha explicat en la secció \ref{sec:grafc_emerg}, i implica que el botó d'emergència torni a la seva posició normal i que es premi el botó de reset per restablir les condicions de funcionament. En concret, el sistema només permet sortir de l'estat d'emergència quan el selector de mode també ha tornat a una situació vàlida (ETAPA\_500 = 500)
 
-\paragraph{Sortida de l'emergència}
-
-La recuperació del sistema requereix una acció conscient per part de l'operador. Per sortir de l'estat d'emergència és necessari:
-
-\begin{itemize}
-\item Que el botó d'emergència torni a la seva posició normal
-\item Prémer el botó de \texttt{reset} (\texttt{B\_Reset})
-\end{itemize}
-
-Això provoca la transició a l'estat \textbf{ETAPA 602} (reset d'emergència).
-
-Finalment, el sistema només retorna a l'estat inicial (ETAPA 600) quan:
-\begin{itemize}
-\item El selector de mode també ha tornat a una situació vàlida (ETAPA\_500 = 500)
-\end{itemize}
 
 \subsubsection*{Control manual dels actuadors}
 
@@ -3557,7 +3537,7 @@ Per tant, el sistema actual està pensat per funcionar íntegrament en entorn lo
 Aqui trobareu una descripció detallada de les principals classes i scripts desenvolupats en Unity per a la implementació del sistema de planta industrial. Aquesta taula està organitzada per categories segons la funcionalitat de cada script, facilitant així la comprensió de l'estructura del projecte i les seves diferents components. Tots aquest codis els podreu trobar en el següent repositori públic: 
 
 \begin{center}
-\url{youtube.com}
+\href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
 \end{center}
 
 \begin{table}[H]
