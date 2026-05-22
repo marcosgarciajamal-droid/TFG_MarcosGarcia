@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <View>
+    <ViewID>1</ViewID>
+    <Path>Unity_Plant\</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum xsi:nil="true" />
+  </View>
+  <View>
+    <ViewID>2</ViewID>
+    <Path>Unity_Plant\Vista_Planta.tbl</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>General Table</Title>
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum>1</ObjNum>
+  </View>
+  <View>
+    <ViewID>7</ViewID>
+    <Path>Unity_Plant\VisualitzacioSensors.sch</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>State_IndustrialPlant</Title>
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum>3</ObjNum>
+  </View>
+  <View>
+    <ViewID>8</ViewID>
+    <Path>Unity_Plant\ModeManual.mim</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>Mode Manual</Title>
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum>2</ObjNum>
+  </View>
+  <View>
+    <ViewID>9</ViewID>
+    <Path>Unity_Plant\MainScreen.mim</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>Main Screen</Title>
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum>1</ObjNum>
+  </View>
+  <View>
+    <ViewID>10</ViewID>
+    <Path>Unity_Plant\Visualitzacio Grafics.sch</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>Grafics</Title>
+    <Ord xsi:nil="true" />
+    <Hidden>false</Hidden>
+    <ObjNum>4</ObjNum>
+  </View>
+</ArrayOfView>

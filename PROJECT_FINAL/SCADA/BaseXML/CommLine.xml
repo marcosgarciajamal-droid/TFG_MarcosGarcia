@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCommLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CommLine>
+    <CommLineNum>1</CommLineNum>
+    <Name>MQTT_Line</Name>
+    <Descr />
+  </CommLine>
+  <CommLine>
+    <CommLineNum>2</CommLineNum>
+    <Name>sss</Name>
+    <Descr />
+  </CommLine>
+  <CommLine>
+    <CommLineNum>3</CommLineNum>
+    <Name>OPC UA</Name>
+    <Descr />
+  </CommLine>
+</ArrayOfCommLine>

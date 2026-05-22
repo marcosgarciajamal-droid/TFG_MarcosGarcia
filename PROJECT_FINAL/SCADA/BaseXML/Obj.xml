@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfObj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Obj>
+    <ObjNum>1</ObjNum>
+    <Name>Mode</Name>
+    <Code>Ent</Code>
+    <ParentObjNum xsi:nil="true" />
+  </Obj>
+  <Obj>
+    <ObjNum>2</ObjNum>
+    <Name>Manual</Name>
+    <ParentObjNum xsi:nil="true" />
+  </Obj>
+  <Obj>
+    <ObjNum>3</ObjNum>
+    <Name>Visualization</Name>
+    <ParentObjNum xsi:nil="true" />
+  </Obj>
+  <Obj>
+    <ObjNum>4</ObjNum>
+    <Name>Grafics</Name>
+    <ParentObjNum xsi:nil="true" />
+  </Obj>
+</ArrayOfObj>

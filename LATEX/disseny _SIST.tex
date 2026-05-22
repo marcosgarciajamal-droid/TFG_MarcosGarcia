@@ -1,0 +1,416 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- Paquets bàsics ---
+\usepackage[catalan]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+
+\begin{document}
+
+\chapter{Disseny del procés industrial i arquitectura de comunicació}
+
+\section{Concepció general del sistema}
+
+El sistema desenvolupat consisteix en la integració d'un sistema SCADA, concretament Rapid SCADA, amb un entorn tridimensional interactiu desenvolupat amb Unity, amb l'objectiu de supervisar i controlar un procés industrial simulat en temps real.
+
+La planta industrial dissenyada representa un sistema automatitzat de classificació i emmagatzematge de peces. La lògica del procés s'executa íntegrament en Unity, mentre que Rapid SCADA actua com a sistema de supervisió, monitoratge i enviament de comandes d'operació.
+
+Aquesta separació és intencionada i respon a criteris d'arquitectura industrial moderna:
+
+\begin{itemize}
+\item Unity = sistema físic simulat + lògica de control.
+\item Rapid SCADA = capa de supervisió i operació.
+\item MQTT = canal de comunicació desacoblat.
+\end{itemize}
+
+Aquest enfocament permet reproduir una arquitectura equivalent a la d'un sistema industrial real on el PLC executaria la lògica i el SCADA supervisaria el procés.
+
+\section{Disseny detallat del procés industrial}
+El sistema industrial virtual que finalmente s'ha decidit realitzar en l'entorn virtual ha anat evolucionant cap a una arquitectura més complexa basada en sistemes d'emmagatzematge automatitzat similars als utilitzats en magatzems industrials tipus AS/RS (Automated Storage and Retrieval System).
+
+El procés consta de tres subsistemes principals:
+
+\begin{itemize}
+\item Sistema d'entrada i classificació inicial.
+\item Sistema d'emmagatzematge amb transelevador.
+\item Sistema d'evacuació amb transelevador de sortida.
+\end{itemize}
+
+Aquesta arquitectura permet simular un sistema logístic automatitzat complet amb transport, classificació, emmagatzematge i evacuació de producte.
+
+\subsubsection{Tipologia de peces}
+
+La classificació del sistema es basa en tres tipus de peces (capses) diferenciades per la seva geometria dins l'entorn Unity:
+
+\begin{itemize}
+\item \textbf{Peça A:} Cub.
+\item \textbf{Peça B:} Cilindre vertical.
+\item \textbf{Peça C:} Triangle.
+\end{itemize}
+
+
+Aquesta identificació visual permet determinar la seva destinació dintre del sistema d'emmagatzematge i les regles de moviment associades, simulant un sistema de classificació segons la forma del producte. 
+
+
+\paragraph{Descripció funcional global}
+
+El sistema simula una línia automatitzada de classificació, emmagatzematge i evacuació de peces, diferenciades en tres tipus (A, B i C). El procés es desenvolupa de manera seqüencial seguint les etapes següents:
+
+\subsection*{1. Generació i transport inicial}
+
+Les peces són generades sobre la cinta principal (motor M1), que les transporta cap a la zona de control. El sensor S1 detecta la presència de peça i inicia el procés.
+
+\subsection*{2. Identificació de tipus}
+
+A la zona d'identificació, el sensor S2 determina el tipus de peça segons la seva geometria:
+
+\begin{itemize}
+\item Peça A (cub) = 1
+\item Peça B (cilindre vertical) = 2
+\item Peça C (triangle) = 3
+\end{itemize}
+
+Aquesta informació s'utilitza per definir la seva destinació dins del sistema.
+
+
+\textit{Recordatori: La classificació no la fa el SCADA, sinó la lògica interna implementada en Unity.}
+
+\subsection*{3. Transferència i elevació}
+
+La peça és transferida al primer transelevador, que la posiciona segons el tipus detectat. Consta d'un sensor de presència (\textbf{S3}) per detectar si la peça ha arribat correctament a la plataforma d'elevació. Aquest sistema combina:
+\begin{itemize}
+\item Moviment vertical (4 possibles nivells d'estanteria) 
+\item Moviment horitzontal (4 possibles posicions dins l'estanteria) 
+\end{itemize}
+
+Els sensors de posició permeten conèixer en tot moment la ubicació del transelevador i garantir un posicionament correcte, tant verticalment com horitzontalment.
+
+\subsection*{4. Dipòsit en estanteria}
+
+Un cop el transelevado es troba a la posició corresponent, la peça es diposita a l'estanteria mitjançant rodets (M4). 
+
+Cada estanteria està associada a un tipus de peça i disposa de diverses posicions. Les peces s'organitzen de manera progressiva, desplaçant-se cap a l'interior per deixar espai a noves entrades.
+
+El nombre de peces emmagatzemades es controla mitjançant comptadors. Segons el valor d'aquests comptadors i segons un sensors de prescència en cada nivell per estar segurs, cada estantería consta de rodets que s'aniran activant i desactivant segons per deixar espai per noves o caixes o per evacuar totes les caixes. Aquest disseny està pensat perque cada estanteria tingui una capacitat màxima de 9 peces; al arribar a aquest valor en el comptador, comença el procès d'evacuació.
+
+\subsection*{5. Evacuació per estanteria plena}
+
+
+Quan una estanteria arriba a la seva capacitat màxima, s'activa el procés d'evacuació. Les peces són transportades cap a un segon transelevador, encarregat de recollir-les.
+
+El segon transelevador és responsable de trobar-se en el nivell adequat que s'ha d'evacuar ja que és l'encarregat de transportar les peces cap a la cinta d'evacuació final. Aquest sistema disposa d'una plataforma amb rodets que ajuda a recol·locar les peces dintre d'aquesta. 
+
+Aquest transelevador disposa, a diferència del primer transelevador, quatre posicions verticals (referenciades al nivell de la cinta d'evacuació i als tres diferents nivell de la estantería), i dos posicions horitzontals (referenciades a la cinta d'evacuació i a la zona d'estanteries). Cada posició està associada a un sensor que detecta en quina posició es troba el transelevador en cada moment.
+
+\subsection*{6. Evacuació final}
+Quan el segon transelevador està completament carregat amb nou caixes, es desplaça fins a la posició final on es troba la cinta d'evacuació. Se sap si el transelevador està completament carregat gràcies a tindre dos sensors de prescència, al final i al principi de la plataforma. Quan els dos es troben actius, s'assumeix que està carregada adequadament.
+
+En aquest punt, totes les peces de la plataformes són expulsades simultàniament gràcies als rodets de la plataformes cap a la cinta d'evacuació, qui serà l'encarregat d'enviar les peces fora de la planta industrial.
+
+Cada grup de peces evacuades incrementa el comptador d'evacuacions respectivament a un tipus de peça en concret.
+
+\section{Taula de sensors i actuadors del sistema}
+
+A continuació es mostra la llista completa de sensors i actuadors utilitzats en la planta industrial virtual.
+
+\subsection{Sensors del sistema}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Sensor} & \textbf{Ubicació} & \textbf{Funció} \\ \hline
+
+S1 & Cinta principal & Detecta la presència de peça a l'entrada del sistema \\ \hline
+S2 & Estació d'identificació & Determina el tipus de peça (A, B o C) \\ \hline
+S3 & Plataforma transelevador 1 & Detecta presència de caixa a la plataforma \\ \hline
+S4 & Transelevador 1 & Posició horitzontal a cinta principal \\ \hline
+S5 & Transelevador 1 & Posició horitzontal 1 davant estanteries \\ \hline
+S6 & Transelevador 1 & Posició horitzontal 2 davant estanteries \\ \hline
+S7 & Transelevador 1 & Posició horitzontal 3 davant estanteries \\ \hline
+S8 & Transelevador 1 & Posició vertical nivell cinta \\ \hline
+S9 & Transelevador 1 & Posició vertical nivell estanteria A \\ \hline
+S10 & Transelevador 1 & Posició vertical nivell estanteria B \\ \hline
+S11 & Transelevador 1 & Posició vertical nivell estanteria C \\ \hline
+S12 & Cinta evacuació final & Detecta presència de caixa evacuada \\ \hline
+S13 & Plataforma transelevador 1 & Detecta presència de caixa al principi de la plataforma \\ \hline
+S14 & Plataforma transelevador 1 & Detecta presència de caixa  al final de la plataforma \\ \hline
+
+SA\_1$\rightarrow$SA\_3 & Estanteria A & Sensor presència caixa posició 1 $\rightarrow$posició 3  \\ \hline
+SB\_1$\rightarrow$SB\_3 & Estanteria B & Sensor presència caixa posició 1$\rightarrow$posició 3  \\ \hline
+SC\_1$\rightarrow$SC\_3 & Estanteria C & Sensor presència caixa posició 1$\rightarrow$posició 3\\ \hline
+
+
+SH\_1 & Transelevador 2 & Posició horitzontal 1 \\ \hline
+SH\_2 & Transelevador 2 & Posició horitzontal 2 \\ \hline
+
+
+SV\_1 & Transelevador 2 & Posició vertical nivell 1 (cinta evacuació)\\ \hline
+SV\_2 & Transelevador 2 & Posició vertical nivell 2 (estanteria A)\\ \hline
+SV\_3 & Transelevador 2 & Posició vertical nivell 3 (estanteria B)\\ \hline
+SV\_4 & Transelevador 2 & Posició vertical nivell 4 (estanteria C)\\ \hline
+
+
+\end{tabular}
+\end{table}
+\subsection{Motors del sistema}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Motor} & \textbf{Ubicació} & \textbf{Funció} \\ \hline
+
+M1 & Cinta principal & Transport de peces a l'entrada del sistema \\ \hline
+M2 & Transelevador 1 & Moviment horitzontal del transelevador \\ \hline
+M3 & Transelevador 1 & Moviment vertical del transelevador \\ \hline
+M4 & Plataforma transelevador 1 & Rodets per introduir o extreure caixes \\ \hline
+M5 & Transelevador 2 & Moviment horitzontal \\ \hline
+M6 & Transelevador 2 & Moviment vertical \\ \hline
+M7 & Plataforma transelevador 2 & Rodets moviment de caixes \\ \hline
+M8 & Cinta evacuació final & Transport de caixes fora del sistema \\ \hline
+M9\_A & Estanteria A & Motor dels rodets \\ \hline
+M9\_B & Estanteria B & Motor dels rodets \\ \hline
+M9\_C & Estanteria C & Motor dels rodets \\ \hline
+
+
+\end{tabular}
+\end{table}
+\subsection{Comptadors del sistema}
+
+El sistema disposa de comptadors per registrar l'activitat de producció:
+
+\begin{itemize}
+\item \textbf{C\_A}: nombre de peces emmagatzemades de tipus A en la seva estanteria
+\item \textbf{C\_B}: nombre de peces emmagatzemades de tipus B en la seva estanteria
+\item \textbf{C\_C}: nombre de peces emmagatzemades de tipus C en la seva estanteria
+\end{itemize}
+
+El comptador d'evacuació global s'incrementa cada vegada que una caixa surt del sistema:
+
+\begin{itemize}
+\item \textbf{Count\_EvacA}: total de vegades que les peces A evacuades
+\item \textbf{Count\_EvacB}: total de vegades que les peces B evacuades
+\item \textbf{Count\_EvacC}: total de vegades que les peces C evacuades
+\end{itemize}
+
+\section{Modelització segons filosofia GEMMA}
+
+Per garantir un comportament industrial coherent, el sistema s'ha estructurat segons la guia GEMMA.
+
+
+\section{Modelització segons filosofia GEMMA}
+
+Per garantir un comportament industrial coherent, el sistema s'ha estructurat segons la guia GEMMA.
+
+\subsection{Estats implementats}
+
+\begin{itemize}
+\item A1 - Estat inicial segur: Tots els actuadors desactivats. Elevador en posició segura. Comptadors estabilitzats.
+
+\item F1 - Producció automàtica: Execució contínua del cicle complet de classificació sense intervenció de l'operador.
+
+\item F5 - Funcionament manual: L'operador pot activar individualment motors i pistons.
+
+\item A2 - Aturada a final de cicle: El sistema es pararà després d'haver acabat el cicle que es troba fent.
+\item A3 - Pausa: El procès es pararà en l'estat en el que es trobi.
+\item D1 - Aturada d'emergència: Tall immediat de tots els actuadors. Prioritat absoluta de seguretat.
+
+\item D2 - Tractament d'avaria: Permet diagnòstic i rearmament controlat.
+\end{itemize}
+
+%\subsection{Taula de transicions implementades}
+%
+%\begin{table}[H]
+%\centering
+%\small
+%\begin{tabular}{|p{3.2cm}|p{3cm}|p{3cm}|p{4cm}|}
+%\hline
+%\textbf{Estat actual} & \textbf{Esdeveniment} & \textbf{Nou estat} & \textbf{Descripció} \\ \hline
+%A1 & START (auto) & F1 & Inici producció automàtica \\ \hline
+%A1 & Mode manual & F5 & Control directe actuadors \\ \hline
+%F1 & STOP & A2 & Finalitza cicle actual \\ \hline
+%F1 & PAUSA & A3 & Congela execució \\ \hline
+%F1 & Emergència & D1 & Tall immediat actuadors \\ \hline
+%F1 & Error detectat & D2 & Diagnòstic \\ \hline
+%F5 & STOP & A1 & Retorn a repòs \\ \hline
+%D1 & Rearme & D2 & Permet recuperació \\ \hline
+%D2 & Reset complet & A1 & Retorn segur \\ \hline
+%\end{tabular}
+%\end{table}
+
+\section{Especificació dels topics MQTT}
+
+La comunicació entre Unity i RapidSCADA es basa en una arquitectura Publish/Subscribe mitjançant MQTT \cite{Team2015MQTT}. Cada topic representa una variable concreta del sistema. Totes les dades transmeses són de tipus enter (\textit{int}). La interpretació del valor és acordada prèviament entre ambdós sistemes i forma part del disseny del protocol intern. No s'utilitzen dades en format text per garantir compatibilitat amb entorns industrials reals i facilitar una possible integració amb PLCs.
+\subsection{Estructura general dels topics}
+
+Els topics segueixen la següent estructura:
+
+\begin{itemize}
+\item \textbf{plant/sensors/*} → Estat de sensors
+\item \textbf{plant/actuators/*} → Estat d'actuadors
+\item \textbf{plant/counters/*} → Comptadors
+\item \textbf{plant/status/*} → Estat global
+\item \textbf{plant/alarms/*} → Alarmes
+\item \textbf{plant/cmd/*} → Ordres de control
+\end{itemize}
+
+\subsection{Topics de lectura (Unity $\rightarrow$ SCADA)}
+
+Representen l'estat del sistema.
+
+\subsubsection{Sensors}
+
+\textbf{Convenció:} 0 = no actiu, 1 = actiu
+
+\paragraph{Presència i identificació}
+\begin{itemize}
+\item \textbf{plant/sensors/S1} → Presència entrada
+\item \textbf{plant/sensors/S2} → Tipus peça (0-3)
+\item \textbf{plant/sensors/S3} → Peça en transelevador 1
+\item \textbf{plant/sensors/S12} → Peça evacuada
+\item \textbf{plant/sensors/S13, S14} → Plataforma transelevador 2 plena
+\end{itemize}
+
+\paragraph{Posició transelevador 1}
+\begin{itemize}
+\item Horitzontal: S4–S7
+\item Vertical: S8–S11
+\end{itemize}
+
+\paragraph{Estanteries}
+\begin{itemize}
+\item SA\_1–SA\_3 → Estanteria A
+\item SB\_1–SB\_3 → Estanteria B
+\item SC\_1–SC\_3 → Estanteria C
+\end{itemize}
+
+\paragraph{Transelevador 2}
+\begin{itemize}
+\item Horitzontal: SH\_1, SH\_2
+\item Vertical: SV\_1–SV\_4
+\end{itemize}
+
+\subsubsection{Actuadors (feedback)}
+
+\textbf{Convenció:}
+\begin{itemize}
+\item 0 = aturat
+\item 1 = en moviment
+\item -1 = moviment invers (només rodets)
+\end{itemize}
+
+\begin{itemize}
+\item M1 → Cinta entrada
+\item M2–M3 → Transelevador 1
+\item M4 → Rodets T1
+\item M5–M6 → Transelevador 2
+\item M7 → Rodets T2
+\item M8 → Cinta sortida
+\item M9\_A/B/C → Rodets estanteries
+\end{itemize}
+
+\subsubsection{Comptadors}
+
+\begin{itemize}
+\item C1, C2, C3 → Peces per estanteria
+\item count\_evacA/B/C → Evacuacions
+\end{itemize}
+
+\subsubsection{Estat del sistema}
+
+\begin{itemize}
+\item \textbf{plant/status/actuation\_mode}
+\begin{itemize}
+\item 0 = Aturat
+\item 1 = Automàtic
+\item 2 = Manual
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Alarmes}
+
+\begin{itemize}
+\item \textbf{plant/alarms/emergency}
+\begin{itemize}
+\item 0 = Normal
+\item 1 = Emergència
+\end{itemize}
+\end{itemize}
+
+\subsection{Topics de control (SCADA $\rightarrow$ Unity)}
+
+Defineixen les ordres enviades al sistema.
+
+\subsubsection{Control general}
+
+\begin{itemize}
+\item \textbf{start, stop, reset, pause, emergency}
+\end{itemize}
+
+\textbf{Convenció:} 0 = inactiu, 1 = activat
+
+\subsubsection{Mode d'operació}
+
+\begin{itemize}
+\item \textbf{plant/cmd/selector}
+\begin{itemize}
+\item -1 = STOP
+\item 0 = AUTO
+\item 1 = MANUAL
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Control manual}
+
+Només actiu en mode manual.
+
+\textbf{Convenció:}
+\begin{itemize}
+\item 0 = aturat
+\item 1 = endavant
+\item -1 = enrere
+\end{itemize}
+
+\paragraph{Transelevadors (posicionament)}
+
+A diferència de la resta d'actuadors, els transelevadors no es controlen per moviment directe, sinó per posicionament discret. El valor enviat indica la posició objectiu.
+
+\textbf{Transelevador 1}
+\begin{itemize}
+\item \textbf{M2 (horitzontal)}: valors de 1 a 4
+\item \textbf{M3 (vertical)}: valors de 1 a 4
+\end{itemize}
+
+\textbf{Transelevador 2}
+\begin{itemize}
+\item \textbf{M5 (horitzontal)}: valors de 1 a 2
+\item \textbf{M6 (vertical)}: valors de 1 a 4
+\end{itemize}
+
+El sistema interpreta aquests valors com a consignes de posició i gestiona automàticament el moviment fins a assolir la posició desitjada mitjançant la lògica interna.
+
+\paragraph{Altres actuadors}
+
+\begin{itemize}
+\item M1 → Cinta entrada
+\item M2-M4 → Transelevador 1
+\item M5-M7 → Transelevador 2
+\item M8 → Cinta sortida
+\item M9\_A/B/C → Estanteries
+\end{itemize}
+
+Aquestes variables són interpretades per la lògica de control (GRAFCETs), la qual decideix si l'acció és vàlida segons l'estat actual del sistema, garantint així un comportament coherent amb la filosofia industrial i evitant situacions inconsistents o perilloses.
+
+\end{document}

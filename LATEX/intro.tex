@@ -1,0 +1,170 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- Paquets bàsics ---
+\usepackage[catalan]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\geometry{left=3cm,right=2.5cm,top=3cm,bottom=3cm}
+\onehalfspacing
+
+% Configuració de la bibliografia (utilitzant BibLaTeX)
+\usepackage[backend=biber,style=nature]{biblatex}
+\addbibresource{referencies.bib}
+
+% -------------------------------------------------
+% PORTADA
+% -------------------------------------------------
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\Large Universitat Politècnica de Catalunya\par}
+    \vspace{1cm}
+    {\large Escola Politècnica Superior d'Enginyeria de Manresa  \par}
+    \vspace{2.5cm}
+    {\huge\bfseries Integració d'un sistema SCADA amb un entorn de visualització 3D en temps real mitjançant Unity\par}
+    \vspace{2cm}
+    {\Large Treball de Fi de Grau\par}
+    \vspace{1.5cm}
+    {\large Titulació: Grau en Enginyeria de Sistemes TIC\par}
+    \vspace{1cm}
+    {\large Autor: Marcos\par}
+    \vspace{0.5cm}
+    {\large Directora: Teresa Escobet Canal\par}
+    \vfill
+    {\large Curs acadèmic 2025--2026\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------
+% CAPÍTOL 1. INTRODUCCIÓ
+% -------------------------------------------------
+\chapter{Introducció}
+
+\section{Context general del treball}
+
+La transformació digital del sector industrial ha esdevingut un element clau en el desenvolupament de sistemes productius més eficients, flexibles i connectats. Aquest procés, emmarcat dins del concepte d'Indústria~4.0, promou la integració de sistemes de control, comunicacions industrials i eines avançades de visualització, amb l'objectiu de millorar la supervisió, el control i la comprensió dels processos industrials.
+
+Dins d'aquest context, els sistemes SCADA (\textit{Supervisory Control and Data Acquisition}) continuen sent una tecnologia fonamental per a la monitorització i el control de processos. Aquests sistemes permeten adquirir dades de dispositius de camp, gestionar alarmes, registrar històrics i oferir interfícies de supervisió a l'operador. Tot i això, la majoria de solucions tradicionals es basen en interfícies bidimensionals que, si bé són funcionals, presenten limitacions pel que fa a la representació espacial i a la intuïció visual del procés.
+
+Paral·lelament, l'evolució dels motors gràfics 3D en temps real, com Unity, ha permès la seva aplicació més enllà de l'àmbit dels videojocs, obrint noves possibilitats en camps com la simulació, la formació tècnica i la visualització industrial. La combinació d'aquestes tecnologies amb sistemes SCADA ofereix un nou paradigma de supervisió, més immersiu i comprensible, especialment adequat per a entorns educatius i de recerca.
+
+\section{Motivació i enfocament del projecte}
+
+Al llarg del grau d'Enginyeria de Sistemes TIC, un dels aspectes que més interès m'ha despertat ha estat la programació aplicada a sistemes reals. Més enllà del desenvolupament de solucions purament abstractes o teòriques, la meva motivació principal ha estat sempre observar com el codi desenvolupat té un impacte directe sobre dispositius i processos físics reals, com ara microcontroladors (Arduino, ESP32), PLCs o sistemes d'automatització industrial.
+
+
+Aquesta inclinació s'ha vist reforçada especialment durant la realització de l'assignatura \textit{Sistemes automàtics i robotitzats}, cursada en el darrer quadrimestre del grau, en la qual s'ha aprofundit de manera rigorosa en els principis de l'automatització industrial, el control de processos i la seva supervisió. En aquest context, i davant la manca d'una idea inicial clarament definida per al Treball Final de Grau, es va sol·licitar orientació a la tutora d'aquesta assignatura, la professora Teresa Escobet.
+
+
+Fruit d'aquestes converses va sorgir la proposta de treballar amb el programari de codi obert RapidSCADA \cite{RapidScada}, una plataforma orientada a la supervisió i control de processos industrials. Tot i l'interès tècnic del sistema, aviat es va detectar una limitació important: el projecte podia quedar excessivament abstracte, ja que no es disposava d'una planta industrial real sobre la qual validar de manera directa el correcte funcionament del sistema SCADA desenvolupat.
+
+
+Per tal de superar aquesta limitació, es va plantejar la necessitat de disposar d'un entorn que permetés simular un procés industrial realista. En aquest punt va sorgir la idea de dissenyar una planta industrial virtual mitjançant el motor gràfic Unity \cite{Unity}, que actuaria com a substitut funcional d'una instal·lació física real. D'aquesta manera, seria possible verificar de forma visual i funcional el comportament del sistema RapidSCADA, comprovant com les ordres de control i les variables de procés afecten directament als elements simulats.
+
+
+A partir d'aquesta combinació de tecnologies —RapidSCADA com a sistema de supervisió i control, i Unity com a entorn de simulació del procés físic— es defineix l'enfocament principal d'aquest projecte, que té com a objectiu crear un sistema integrat, funcional i verificable, apropant al màxim possible l'experiència a la d'una planta industrial real.
+
+\section{Treball de recerca i anàlisi prèvia}
+\label{sec:rapidscada_research}
+
+Una part central del desenvolupament d'aquest Treball de Fi de Grau ha estat la realització d'un treball exhaustiu de recerca, anàlisi i experimentació al voltant de la plataforma RapidSCADA. Aquest procés no s'ha limitat a una revisió superficial de la documentació, sinó que ha implicat una exploració detallada del funcionament intern del sistema, dels seus components principals i de les possibilitats reals que ofereix en entorns d'automatització i supervisió.
+
+La recerca s'ha basat principalment en la documentació oficial de RapidSCADA, complementada amb recursos audiovisuals formatius (tutorials i guies pas a pas) i amb proves pràctiques realitzades sobre el propi sistema. Aquest enfocament ha permès validar de manera empírica els conceptes estudiats i entendre el comportament real del programari més enllà de la teoria.
+
+\subsection{Aprenentatge de RapidSCADA}
+
+Durant les primeres fases del projecte es va realitzar un procés d'aprenentatge i experimentació amb RapidSCADA, amb l'objectiu de comprendre el seu funcionament general i les seves possibilitats dins d'entorns d'automatització industrial \cite{RapidScada,rapidscada_intro}.
+
+Aquest procés va incloure l'estudi de la seva arquitectura modular, la configuració de canals i dispositius, la gestió de comunicacions i la creació de vistes de supervisió.
+
+Una part important d'aquest aprenentatge es va basar en el material formatiu oficial i en la reproducció de diversos exemples pràctics proposats als vídeos de RapidSCADA \cite{RapidScadaVideos}. Aquestes proves van permetre familiaritzar-se amb la configuració de dispositius, la creació de canals, la gestió d'alarmes i la representació gràfica de processos mitjançant esquemes de supervisió.
+
+
+També es van realitzar proves tant en entorns Windows com Linux \cite{rapidscada_windows_install,rapidscada_linux_install}, concloent finalment que Windows oferia un entorn més adequat per al desenvolupament del projecte gràcies a la disponibilitat d'eines gràfiques de configuració ja que disposa de l'eina gràfica 	\textit{ScadaAdmin}, que permet gestionar el sistema de manera més intuïtiva i estructurada. En canvi, en entorns Linux la configuració es basa principalment en la modificació manual d'arxius de configuració i en la gestió directa dels serveis. Tot i que aquesta opció pot resultar adequada per a entorns productius avançats, en el context d'aquest projecte s'ha considerat que l'entorn \textbf{Windows} ofereix una millor experiència per al desenvolupament i l'aprenentatge.
+
+
+\section{Unity com a entorn de simulació}
+\label{sec:unity_research}
+
+Paral·lelament a l'estudi del sistema SCADA, es va iniciar un procés d'aprenentatge de Unity com a eina de desenvolupament d'entorns tridimensionals interactius \cite{Unity,UnityOfficial}.
+
+L'objectiu principal era disposar d'un entorn capaç de representar visualment una planta industrial simulada, permetent observar en temps real el comportament del sistema supervisat.
+
+Unity es va escollir per la seva flexibilitat, les seves capacitats gràfiques i la facilitat d'integració amb aplicacions externes mitjançant scripts en C\# \cite{UnityProgrammingGuide}.
+
+Dins del projecte, Unity actua com una representació virtual de la planta industrial, simulant el comportament físic dels diferents actuadors, sensors i elements mecànics. Aquesta simulació permet validar visualment el correcte funcionament del sistema SCADA sense necessitat de disposar d'una instal·lació industrial real.
+
+Durant les primeres proves es van integrar models 3D senzills, com cintes transportadores industrials, juntament amb scripts capaços de modificar el comportament dels objectes en funció de senyals externes. Aquestes proves inicials van servir com a base per al desenvolupament posterior de la planta industrial virtual completa.
+
+\section{Protocols de comunicació treballats}
+
+Un altre pilar fonamental del treball ha estat l'estudi i la posada en pràctica de diferents protocols de comunicació industrial, necessaris per garantir la interacció entre el sistema SCADA i els dispositius o entorns simulats.
+
+\subsection{Protocol Modbus}
+
+El protocol Modbus és un dels protocols de comunicació industrial més utilitzats gràcies a la seva simplicitat i compatibilitat amb dispositius industrials. En aquest projecte s'ha treballat principalment amb la variant \textbf{Modbus TCP/IP}, basada en comunicació Ethernet.
+
+Mitjançant RapidSCADA s'han configurat dispositius i plantilles Modbus per realitzar lectures i escriptures de dades, treballant especialment amb \textit{Holding Registers} i \textit{Coils}. Aquestes proves han permès comprendre conceptes com l'adreçament de registres, els tipus de dades i la configuració de comunicacions industrials.
+
+A més, es van realitzar les primeres proves d'integració entre RapidSCADA i Unity, utilitzant comunicació Modbus per controlar diferents elements simulats dins de l'entorn 3D. Aquestes proves van permetre validar la viabilitat de la comunicació entre el sistema SCADA i la planta virtual.
+
+\subsection{Protocol MQTT}
+
+De manera complementària, també s'ha estudiat el protocol MQTT \cite{Team2015MQTT,mqtt_unity_guide}, un protocol lleuger basat en el model \textit{publish/subscribe}, àmpliament utilitzat en entorns IoT i sistemes distribuïts.
+
+Durant les proves inicials es van utilitzar brokers MQTT públics i clients externs per verificar l'intercanvi de dades entre aplicacions. Aquest enfocament permet una comunicació asíncrona i flexible mitjançant \textit{topics}, facilitant la integració entre RapidSCADA i Unity.
+
+Després de les diferents proves realitzades, es va decidir utilitzar MQTT com a principal mecanisme de comunicació del projecte, degut a la seva flexibilitat, escalabilitat i facilitat d'integració amb entorns moderns.
+
+
+\section{Programari utilitzat}
+
+Per a la realització d'aquest treball s'han utilitzat diferents eines software orientades al desenvolupament, la configuració i la documentació del projecte.
+
+Com a base principal del projecte s'han emprat les plataformes Unity i Rapid SCADA tal i com s'ha explicat en les seccions  \ref{sec:unity_research} i \ref{sec:rapidscada_research}.
+
+Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha utilitzat el protocol MQTT mitjançant un broker local Mosquitto, instal·lat sobre el sistema operatiu Windows \cite{mosquitto_download}. Aquest broker actua com a intermediari en l'intercanvi de dades entre el SCADA i l'entorn virtual desenvolupat amb Unity.
+
+Tot el desenvolupament del projecte s'ha dut a terme sobre entorn Windows. Per a la redacció de la memòria s'ha utilitzat \LaTeX{}, motiu pel qual va ser necessària la instal·lació de la distribució MiKTeX \cite{Latex}, que proporciona les eines necessàries per a la compilació i gestió de documents en aquest sistema operatiu.
+
+Addicionalment, per tal de portar un control de versions i mantenir una còpia segura i organitzada dels avenços realitzats durant el desenvolupament del treball, es va utilitzar Apache Subversion (SVN). Aquest sistema va permetre sincronitzar els fitxers del projecte amb el servidor \textit{escriny.epsem.upc.edu} de la universitat \cite{Apache}.
+
+Com a software complementari, es va utilitzar el mòdul Graphviz de Python3 per a la generació automàtica dels diagrames GRAFCET presents al llarg del document. Aquesta eina va permetre simplificar la creació i modificació dels esquemes de funcionament del sistema reutilitzant codis que s'havien fet servir durant diferents etapes del grau.
+
+Finalment, es va utilitzar Blender per realitzar modificacions sobre alguns models 3D descarregats d'Internet i integrats posteriorment a Unity. Gràcies a aquesta eina va ser possible adaptar determinats elements gràfics a les necessitats específiques del projecte \cite{blender_download}.
+
+
+
+\section{Objectius del treball}
+
+L'objectiu principal d'aquest Treball de Fi de Grau és dissenyar i implementar un sistema capaç d'integrar una plataforma SCADA open source amb un entorn de visualització 3D en temps real aplicat a una planta industrial simulada.
+
+De manera més específica, es plantegen els objectius següents:
+
+\begin{itemize}
+    \item Analitzar el funcionament i les possibilitats d'un sistema SCADA basat en programari lliure.
+    
+    \item Desenvolupar una planta industrial virtual mitjançant Unity.
+    
+    \item Implementar la comunicació entre el sistema SCADA i l'entorn tridimensional.
+    
+    \item Simular i supervisar diferents processos industrials dins de l'entorn virtual.
+    
+    \item Avaluar les possibilitats educatives i tècniques de la integració proposada.
+\end{itemize}
+
+\nocite{*}
+\printbibliography
+\end{document}

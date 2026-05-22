@@ -1,0 +1,74 @@
+ void ShelfB()
+    {
+        switch (ETAPA_40)
+        {
+            case 40:
+                if (ETAPA_0 == 15 && S3.isActivated) ETAPA_40 = 41;
+                break;
+            case 41:
+                M2.MoveToLevel(2); 
+                if (S10.isActivated) ETAPA_40 = 42;
+                break;
+            case 42:
+                if (C_B.pieceCount % 3 == 0) ETAPA_40 = 43;
+                else if (C_B.pieceCount % 3 == 1) ETAPA_40 = 44;
+                else ETAPA_40 = 45;
+                break;
+            case 43:
+                M3.MoveToPos2(); // Suponiendo que S5 es nivel 1
+                if (S5.isActivated) ETAPA_40 = 46;
+                break;
+            case 44:
+                M3.MoveToPos3(); 
+                if (S6.isActivated) ETAPA_40 = 46;
+                break;
+                            case 23:
+                M3.MoveToPos4(1); 
+                if (S7.isActivated) ETAPA_40 = 46;
+                break;
+            case 46:
+                M4.Active_and_not_forward(); // Empujar hacia la estantería
+                if (!S3.isActivated) ETAPA_40 = 47;
+                break;
+            case 47:
+                M4.Stop();
+                if (C_B.pieceCount % 3 != 0) ETAPA_40 = 48;
+                else if (C_B.pieceCount < 9) ETAPA_40 = 49;
+                else ETAPA_40 = 33; // Estantería llena
+                break;
+            case 48: 
+                M2.MoveToLevel();
+                M3.MoveToPos1();
+                if (S4.isActivated && S8.isActivated) ETAPA_40 = 40;
+                break;
+            case 49:
+                M4.Active_and_forward();
+                if (SA_2.isActivated) ETAPA_40 = 50;
+                break;
+            case 50:
+                M2.MoveToLevel();
+                M3.MoveToPos1();
+                M9_B.Stop();
+                if (S4.isActivated && S8.isActivated) ETAPA_40 = 40;
+            case 51:
+                M9_B.Active_and_forward();
+                if (SA_3.isActivated) ETAPA_40 = 50;
+                break;
+            case 52:
+                M2.MoveToLevel();
+                M3.MoveToPos1();
+                M9_B.Stop();
+                if (S4.isActivated && S8.isActivated) ETAPA_40 = 40;
+                break;
+            case 53: // Espera a Transelevador 2
+                M9_b.Active_and_forward();
+                if (ETAPA_80 == 85) ETAPA_40 = 54;
+                break;
+            case 54:
+                M2.MoveToLevel();
+                M3.MoveToPos1();
+                M9_B.Stop();
+                if (S4.isActivated && S8.isActivated) ETAPA_40 = 40;
+                break;
+        }
+    }

@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- Paquets bàsics ---
+\usepackage[catalan]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinelanguage{CSharp}{
+  language=[Sharp]C
+}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  breakatwhitespace=false,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  captionpos=b,
+  frame=single,
+  framerule=0.5pt,
+  rulecolor=\color{gray!60},
+  aboveskip=6pt,
+  belowskip=6pt,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{teal},
+  showstringspaces=false,
+  tabsize=2
+}
+\begin{document}
+
+\chapter{Condicions per a la seva execució}
+
+Per tal de poder executar correctament el sistema desenvolupat en aquest treball, és necessari disposar prèviament de determinats components instal·lats i configurats en el mateix equip. Al repositori públic del projecte es proporcionen tots els fitxers necessaris tant per a l'execució del sistema com per a la seva modificació i estudi.
+
+En tots els casos, és imprescindible tenir instal·lat Rapid SCADA \cite{rapidscada_windows_install}. Un cop instal·lat, cal descarregar el projecte disponible dins de la carpeta \texttt{PROJECTE\_FINAL/SCADA} del repositori i carregar-lo des de l'aplicació \textit{Administrator} de Rapid SCADA. Després d'importar el projecte, aquest s'haurà de publicar a la Webstation per tal de poder visualitzar correctament la interfície SCADA i el funcionament del sistema.
+
+Pel que fa a Unity, es proporcionen dues opcions diferents d'utilització:
+
+\begin{itemize}
+    \item \textbf{Projecte complet de Unity:} es proporciona el projecte complet desenvolupat amb Unity. Si es descarrega de \texttt{PROJECTE\_FINAL/UNITY} i s'obre mitjançant Unity Hub, és possible accedir a tots els fitxers, scripts, escenes i configuracions del projecte, permetent així estudiar-ne el funcionament i modificar qualsevol element segons les necessitats de l'usuari.
+
+    \item \textbf{Aplicació executable (.exe):} també es proporciona una versió compilada dins de la carpeta \texttt{PROJECTE\_FINAL/UNITY/BuildApp}. Aquesta carpeta conté l'arxiu executable principal i les dependències necessàries, com ara \texttt{UnityPlayer.dll}. Aquesta opció permet executar directament l'aplicació i interactuar amb el sistema de manera similar a un videojoc o simulador industrial. No obstant això, aquesta versió no permet modificar el sistema intern ni accedir als scripts o configuracions del projecte.
+\end{itemize}
+
+És important destacar que tant l'executable com el projecte de Unity només funcionaran correctament si Rapid SCADA i el broker Mosquitto es troben instal·lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre Unity i Rapid SCADA es realitza mitjançant MQTT sobre una configuració local.
+
+Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi. Aquesta millora permetria allotjar Rapid SCADA en un servidor remot i utilitzar un broker MQTT públic, possibilitant l'accés al sistema des de qualsevol dispositiu connectat a Internet. En aquest escenari, únicament seria necessari disposar de l'executable de Unity per interactuar amb el sistema, facilitant considerablement la seva distribució i accessibilitat.
+
+
+\chapter{Possibles millores i línies futures}
+
+Tot i que el sistema desenvolupat compleix els objectius plantejats, existeixen diverses línies de millora que permetrien augmentar el seu realisme, escalabilitat i aproximació a entorns industrials reals.
+
+En primer lloc, una millora significativa seria la substitució del protocol MQTT per una arquitectura basada en \textbf{OPC UA}, on Unity actuaria com a servidor i Rapid SCADA com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
+
+En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent visualitzar la Webstation de Rapid SCADA des de fora de la màquina local. Aquesta millora facilitaria l'accés remot, la demostració del sistema i la seva escalabilitat en entorns distribuïts.
+
+A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant la incorporació de nous \textbf{modes de funcionament} i una gestió més avançada de situacions d'\textbf{emergència i avaria}. Això inclouria la simulació de fallades addicionals i la implementació de mecanismes de protecció dins de Unity, millorant el realisme del model.
+
+També es planteja com a possible millora l'augment del realisme visual i funcional de l'entorn desenvolupat en Unity. Això inclouria la incorporació de \textbf{sons ambientals industrials}, efectes d'àudio associats al funcionament de cintes transportadores, motors o alarmes, així com millores gràfiques relacionades amb il·luminació, materials i animacions. De la mateixa manera, seria interessant implementar un \textbf{operari virtual} o personatge interactiu capaç de desplaçar-se per la planta industrial i interactuar amb determinats elements del sistema. Aquesta funcionalitat permetria augmentar la immersió de l'usuari i apropar encara més el projecte a una simulació industrial realista.
+
+Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de \textbf{plugins i mòduls de Rapid SCADA}, així com integrar \textbf{bases de dades externes} (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de Rapid SCADA es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. La qüestió important dels plugins que l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \textit{Trial Key} cada dia.
+
+Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporació de tecnologies de \textbf{realitat virtual (VR)} dins de Unity, permetent una visualització immersiva de la planta industrial i millorant tant la interacció com el realisme del sistema.
+
+\end{document}

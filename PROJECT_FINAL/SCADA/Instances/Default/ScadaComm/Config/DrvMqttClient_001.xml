@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MqttClientDeviceConfig>
+  <DeviceOptions>
+    <RootTopic>plant/</RootTopic>
+  </DeviceOptions>
+  <Subscriptions>
+    <Subscription topic="sensors/S1" displayName="S1_Prescencia" qosLevel="0" retain="false" tagCode="s1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S2" displayName="S2_Tipus" qosLevel="0" retain="false" tagCode="s2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S3" displayName="S3_PlatformT1" qosLevel="0" retain="false" tagCode="s3" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S4" displayName="S4_Pos1_T1" qosLevel="0" retain="false" tagCode="s4" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S5" displayName="S5_Pos2_T1" qosLevel="0" retain="false" tagCode="s5" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S6" displayName="S6_Pos3_T1" qosLevel="0" retain="false" tagCode="s6" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S7" displayName="S7_Pos4_T1" qosLevel="0" retain="false" tagCode="s7" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S8" displayName="S8_level1_T1" qosLevel="0" retain="false" tagCode="s8" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S9" displayName="S9_level2_T1" qosLevel="0" retain="false" tagCode="s9" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S10" displayName="S10_level3_T1" qosLevel="0" retain="false" tagCode="s10" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S11" displayName="S11_level4_T1" qosLevel="0" retain="false" tagCode="s11" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S12" displayName="S12_PresEvac" qosLevel="0" retain="false" tagCode="s12" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S13" displayName="S13_PlatformT2" qosLevel="0" retain="false" tagCode="s13" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/S14" displayName="S14_PlatformT2_2" qosLevel="0" retain="false" tagCode="s14" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SA_1" displayName="SA_1" qosLevel="0" retain="false" tagCode="sa_1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SA_2" displayName="SA_2" qosLevel="0" retain="false" tagCode="sa_2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SA_3" displayName="SA_3" qosLevel="0" retain="false" tagCode="SA_3" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SB_1" displayName="SB_1" qosLevel="0" retain="false" tagCode="sb_1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SB_2" displayName="SB_2" qosLevel="0" retain="false" tagCode="SB_2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SB_3" displayName="SB_3" qosLevel="0" retain="false" tagCode="sb_3" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SC_1" displayName="SC_1" qosLevel="0" retain="false" tagCode="sc_1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SC_2" displayName="SC_2" qosLevel="0" retain="false" tagCode="sc_2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SC_3" displayName="SC_3" qosLevel="0" retain="false" tagCode="sc_3" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SV1" displayName="SV1" qosLevel="0" retain="false" tagCode="sv1" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SV2" displayName="SV2" qosLevel="0" retain="false" tagCode="sv2" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SV3" displayName="SV3" qosLevel="0" retain="false" tagCode="sv3" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SV4" displayName="SV4" qosLevel="0" retain="false" tagCode="sv4" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SH1" displayName="SH1" qosLevel="0" retain="false" tagCode="sh1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="sensors/SH2" displayName="SH2" qosLevel="0" retain="false" tagCode="sh2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M1" displayName="M1_MainCinta" qosLevel="0" retain="false" tagCode="m1" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M2" displayName="M2_T1_Vertical" qosLevel="0" retain="false" tagCode="M2" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M3" displayName="M3_T1_Horizontal" qosLevel="0" retain="false" tagCode="M3" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M4" displayName="M4_T1_Platform" qosLevel="0" retain="false" tagCode="M4" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M5" displayName="M5_T2_Horizontal" qosLevel="0" retain="false" tagCode="M5" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M6" displayName="M6_T2_Vertical" qosLevel="0" retain="false" tagCode="M6" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M7" displayName="M7_T2_Platform" qosLevel="0" retain="false" tagCode="M7" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M8" displayName="M8_CintaEvac" qosLevel="0" retain="false" tagCode="m8" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M9_A" displayName="M9_A_ShelfA" qosLevel="0" retain="false" tagCode="m9a" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M9_B" displayName="M9_B_ShelfB" qosLevel="0" retain="false" tagCode="m9b" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="actuators/M9_C" displayName="M9_C_ShelfC" qosLevel="0" retain="false" tagCode="m9c" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C1" displayName="Count_A" qosLevel="0" retain="false" tagCode="C1" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C2" displayName="Count_B" qosLevel="0" retain="false" tagCode="C2" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C3" displayName="Count_C" qosLevel="0" retain="false" tagCode="C3" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C_EvacA" displayName="Evac_A" qosLevel="0" retain="false" tagCode="C_EvacA" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C_EvacB" displayName="Evac_B" qosLevel="0" retain="false" tagCode="C_EvacB" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="counters/C_EvacC" displayName="Evac_C" qosLevel="0" retain="false" tagCode="C_EvacC" readOnly="true" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/selector" displayName="Selector" qosLevel="0" retain="false" tagCode="selector" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="status/actuation_mode" displayName="System_Actuation" qosLevel="0" retain="false" tagCode="SystemActuation" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="alarms/emergency_active" displayName="Alarm_Emergency" qosLevel="0" retain="false" tagCode="emergency_active" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/start" displayName="Start" qosLevel="0" retain="false" tagCode="1" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/stop" displayName="Stop" qosLevel="0" retain="false" tagCode="2" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/pause" displayName="Pausa" qosLevel="0" retain="false" tagCode="5" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/emergency" displayName="Emergencia" qosLevel="0" retain="false" tagCode="4" readOnly="false" jsEnabled="false" jsFileName="" />
+    <Subscription topic="cmd/reset" displayName="Reset" qosLevel="0" retain="false" tagCode="reset" readOnly="false" jsEnabled="false" jsFileName="" />
+  </Subscriptions>
+  <Commands>
+    <Command topic="cmd/start" displayName="Start" qosLevel="0" retain="false" cmdCode="1" />
+    <Command topic="cmd/stop" displayName="Stop" qosLevel="0" retain="false" cmdCode="2" />
+    <Command topic="cmd/reset" displayName="Reset" qosLevel="0" retain="false" cmdCode="3" />
+    <Command topic="cmd/emergency" displayName="Emergency" qosLevel="0" retain="false" cmdCode="4" />
+    <Command topic="cmd/pause" displayName="Pausa" qosLevel="0" retain="false" cmdCode="5" />
+    <Command topic="cmd/next" displayName="Next" qosLevel="0" retain="false" cmdCode="7" />
+    <Command topic="cmd/manual/M1" displayName="Manual Cinta1" qosLevel="0" retain="false" cmdCode="8" />
+    <Command topic="cmd/manual/M2" displayName="Manual T1 Vertical" qosLevel="0" retain="false" cmdCode="9" />
+    <Command topic="cmd/manual/M3" displayName="Manual T1 Horitzontal" qosLevel="0" retain="false" cmdCode="10" />
+    <Command topic="cmd/manual/M4" displayName="Manual T1 Platform" qosLevel="0" retain="false" cmdCode="11" />
+    <Command topic="cmd/manual/M5" displayName="Manual T2 Horitzontal" qosLevel="0" retain="false" cmdCode="12" />
+    <Command topic="cmd/manual/M6" displayName="Manual T2 Vertical" qosLevel="0" retain="false" cmdCode="13" />
+    <Command topic="cmd/manual/M7" displayName="Manual T2 Platform" qosLevel="0" retain="false" cmdCode="14" />
+    <Command topic="cmd/manual/M8" displayName="Manual CintaEvac" qosLevel="0" retain="false" cmdCode="15" />
+    <Command topic="cmd/manual/M9_A" displayName="Manual M9_A" qosLevel="0" retain="false" cmdCode="16" />
+    <Command topic="cmd/manual/M9_B" displayName="Manual M9_B" qosLevel="0" retain="false" cmdCode="17" />
+    <Command topic="cmd/manual/M9_C" displayName="Manual M9_C" qosLevel="0" retain="false" cmdCode="18" />
+  </Commands>
+</MqttClientDeviceConfig>
