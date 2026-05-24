@@ -135,7 +135,7 @@
     {\large Directora: Teresa Escobet Canal\par}
    \vspace{0.5cm}
 
-\href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
+    \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
 
     \vfill
 
@@ -221,7 +221,6 @@ Per assolir aquest objectiu, s'ha utilitzat Rapid SCADA com a sistema de supervi
 
 El sistema desenvolupat incorpora diferents components habituals en entorns industrials automatitzats, com cintes transportadores, sensors virtuals, transelevadors automàtics (ASRS), sistemes d'il·luminació d'estat i mecanismes de detecció i classificació de peces. També s'han implementat funcionalitats de simulació de fallades, temporitzadors industrials i una lògica de control basada en GRAFCET.
 
-
 \bigskip
 
 \textbf{Paraules clau:} Rapid SCADA, Unity, MQTT, automatització industrial, simulació 3D, planta virtual, supervisió industrial, GRAFCET, ASRS, sensors virtuals.
@@ -249,8 +248,7 @@ This Final Degree Project presents the design and implementation of an integrate
 
 To achieve this objective, Rapid SCADA has been used as the industrial supervision and control system, while Unity has been employed for the development of the plant's three-dimensional simulation. Communication between both platforms has been implemented through the MQTT protocol, enabling flexible, modular, and scalable real-time data exchange.
 
-The developed system incorporates several common components found in automated industrial environments, such as conveyor belts, virtual sensors, automated storage and retrieval 
-systems (ASRS), status lighting systems, and piece detection and classification mechanisms. Additionally, fault simulation functionalities, industrial timers, and a GRAFCET-based control logic have been implemented.
+The developed system incorporates several common components found in automated industrial environments, such as conveyor belts, virtual sensors, automated storage and retrieval systems (ASRS), status lighting systems, and piece detection and classification mechanisms. Additionally, fault simulation functionalities, industrial timers, and a GRAFCET-based control logic have been implemented.
 
 \bigskip
 \textbf{Keywords:} Rapid SCADA, Unity, MQTT, industrial automation, 3D simulation, virtual plant, industrial supervision, GRAFCET, ASRS, virtual sensors.
@@ -264,16 +262,13 @@ systems (ASRS), status lighting systems, and piece detection and classification 
 \cleardoublepage
 \newpage
 
-% -------------------------------------------------
-% CAPÍTOL 1. INTRODUCCIÓ
-% -------------------------------------------------
 \section{Introducció}
 
 \subsection{Context general del treball}
 
 La transformació digital del sector industrial ha esdevingut un element clau en el desenvolupament de sistemes productius més eficients, flexibles i connectats. Aquest procés, emmarcat dins del concepte d'Indústria~4.0, promou la integració de sistemes de control, comunicacions industrials i eines avançades de visualització, amb l'objectiu de millorar la supervisió, el control i la comprensió dels processos industrials.
 
-Dins d'aquest context, els sistemes SCADA (\textit{Supervisory Control and Data Acquisition}) continuen sent una tecnologia fonamental per al monitorit i el control de processos. Aquests sistemes permeten adquirir dades de dispositius de camp, gestionar alarmes, registrar històrics i oferir interfícies de supervisió a l'operador. Tot i això, la majoria de solucions tradicionals es basen en interfícies bidimensionals que, si bé són funcionals, presenten limitacions pel que fa a la representació espacial i a la intuïció visual del procés.
+Dins d'aquest context, els sistemes SCADA (\textit{Supervisory Control And Data Acquisition}) continuen sent una tecnologia fonamental per al monitorit i el control de processos. Aquests sistemes permeten adquirir dades de dispositius de camp, gestionar alarmes, registrar històrics i oferir interfícies de supervisió a l'operador. Tot i això, la majoria de solucions tradicionals es basen en interfícies bidimensionals que, si bé són funcionals, presenten limitacions pel que fa a la representació espacial i a la intuïció visual del procés.
 
 Paral·lelament, l'evolució dels motors gràfics 3D en temps real, com Unity, ha permès la seva aplicació més enllà de l'àmbit dels videojocs, obrint noves possibilitats en camps com la simulació, la formació tècnica i la visualització industrial. La combinació d'aquestes tecnologies amb sistemes SCADA ofereix un nou paradigma de supervisió, més immersiu i comprensible, especialment adequat per a entorns educatius i de recerca.
 
@@ -281,15 +276,11 @@ Paral·lelament, l'evolució dels motors gràfics 3D en temps real, com Unity, h
 
 Al llarg del grau d'Enginyeria de Sistemes TIC, un dels aspectes que més interès m'ha despertat ha estat la programació aplicada a sistemes reals. Més enllà del desenvolupament de solucions purament abstractes o teòriques, la meva motivació principal ha estat sempre observar com el codi desenvolupat té un impacte directe sobre dispositius i processos físics reals, com ara microcontroladors (Arduino, ESP32), PLCs o sistemes d'automatització industrial.
 
-
 Aquesta inclinació s'ha vist reforçada especialment durant la realització de l'assignatura \textit{Sistemes automàtics i robotitzats}, cursada en el darrer quadrimestre del grau, en la qual s'ha aprofundit de manera rigorosa en els principis de l'automatització industrial, el control de processos i la seva supervisió. En aquest context, i davant la manca d'una idea inicial clarament definida per al Treball Final de Grau, es va sol·licitar orientació a la tutora d'aquesta assignatura, la professora Teresa Escobet.
-
 
 Fruit d'aquestes converses va sorgir la proposta de treballar amb el programari de codi obert RapidSCADA \cite{RapidScada}, una plataforma orientada a la supervisió i control de processos industrials. Tot i l'interès tècnic del sistema, aviat es va detectar una limitació important: el projecte podia quedar excessivament abstracte, ja que no es disposava d'una planta industrial real sobre la qual validar de manera directa el correcte funcionament del sistema SCADA desenvolupat.
 
-
 Per tal de superar aquesta limitació, es va plantejar la necessitat de disposar d'un entorn que permetés simular un procés industrial realista. En aquest punt va sorgir la idea de dissenyar una planta industrial virtual mitjançant el motor gràfic Unity \cite{Unity}, que actuaria com a substitut funcional d'una instal·lació física real. D'aquesta manera, seria possible verificar de forma visual i funcional el comportament del sistema RapidSCADA, comprovant com les ordres de control i les variables de procés afecten directament als elements simulats.
-
 
 A partir d'aquesta combinació de tecnologies -RapidSCADA com a sistema de supervisió i control, i Unity com a entorn de simulació del procés físic- es defineix l'enfocament principal d'aquest projecte, que té com a objectiu crear un sistema integrat, funcional i verificable, apropant al màxim possible l'experiència a la d'una planta industrial real.
 
@@ -309,8 +300,7 @@ Aquest procés va incloure l'estudi de la seva arquitectura modular, la configur
 Una part important d'aquest aprenentatge es va basar en el material formatiu oficial i en la reproducció de diversos exemples pràctics proposats als vídeos de RapidSCADA \cite{RapidScadaVideos}. Aquestes proves van permetre familiaritzar-se amb la configuració de dispositius, la creació de canals, la gestió d'alarmes i la representació gràfica de processos mitjançant esquemes de supervisió.
 
 
-També es van realitzar proves tant en entorns Windows com Linux \cite{rapidscada_windows_install,rapidscada_linux_install}, concloent finalment que Windows oferia un entorn més adequat per al desenvolupament del projecte gràcies a la disponibilitat d'eines gràfiques de configuració ja que disposa de l'eina gràfica 	\textit{ScadaAdmin}, que permet gestionar el sistema de manera més intuïtiva i estructurada. En canvi, en entorns Linux la configuració es basa principalment en la modificació manual d'arxius de configuració i en la gestió directa dels serveis. Tot i que aquesta opció pot resultar adequada per a entorns productius avançats, en el context d'aquest projecte s'ha considerat que l'entorn \textbf{Windows} ofereix una millor experiència per al desenvolupament i l'aprenentatge.
-
+També es van realitzar proves tant en entorns Windows com Linux \cite{rapidscada_windows_install,rapidscada_linux_install}, concloent finalment que Windows oferia un entorn més adequat per al desenvolupament del projecte gràcies a la disponibilitat d'eines gràfiques de configuració ja que disposa de l'eina gràfica \textit{ScadaAdmin}, que permet gestionar el sistema de manera més intuïtiva i estructurada. En canvi, en entorns Linux la configuració es basa principalment en la modificació manual d'arxius de configuració i en la gestió directa dels serveis. Tot i que aquesta opció pot resultar adequada per a entorns productius avançats, en el context d'aquest projecte s'ha considerat que l'entorn \textbf{Windows} ofereix una millor experiència per al desenvolupament i l'aprenentatge.
 
 \subsection{Unity com a entorn de simulació}
 \label{sec:unity_research}
@@ -321,7 +311,7 @@ L'objectiu principal era disposar d'un entorn capaç de representar visualment u
 
 Unity es va escollir per la seva flexibilitat, les seves capacitats gràfiques i la facilitat d'integració amb aplicacions externes mitjançant scripts en C\# \cite{UnityProgrammingGuide}.
 
-Dins del projecte, Unity actua com una representació virtual de la planta industrial, simulant el comportament físic dels diferents actuadors, sensors i elements mecànics. Aquesta simulació permet validar visualment el correcte funcionament del sistema SCADA sense necessitat de disposar d'una instal·lació industrial real.
+Dins del projecte, Unity actua com una representació virtual de la planta industrial, simulant el comportament físic dels diferents actuadors, sensors i elements mecànics. Aquesta simulació dona l'opció de validar visualment el correcte funcionament del sistema SCADA sense necessitat de disposar d'una instal·lació industrial real.
 
 Durant les primeres proves es van integrar models 3D senzills, com cintes transportadores industrials, juntament amb scripts capaços de modificar el comportament dels objectes en funció de senyals externes. Aquestes proves inicials van servir com a base per al desenvolupament posterior de la planta industrial virtual completa.
 
@@ -432,34 +422,23 @@ Els principals components del sistema són \textit{Webstation}, \textit{Server},
 
 \subsubsection{Estructura de carpetes del sistema}
 
-
 Després de la instal·lació de Rapid SCADA, es genera una estructura de directoris organitzada que separa clarament les diferents funcionalitats del sistema, com ara la gestió de dades, la comunicació, la configuració i la visualització. Les carpetes principals són:
-
 
 \begin{itemize}
     \item \textbf{Archive}: conté les dades històriques i registres d'esdeveniments del sistema.     
     \item \textbf{Config i BaseDAT}: inclouen la configuració global del sistema i la base de dades interna utilitzada per Rapid SCADA.
-
     \item \textbf{ScadaAdmin}: eina d'administració i configuració del sistema on consta de plantillas de projecte i fitxers d'idioma entre altres arxius.
-
     \item \textbf{ScadaServer}: gestiona l'emmagatzematge i processament de dades.
-
     \item \textbf{ScadaComm}: s'encarrega de la comunicació amb dispositius industrials mitjançant diferents protocols.
-
-
     \item \textbf{ScadaWeb}: correspon a la interfície web del sistema, incloent recursos visuals i plugins.
-
     \item \textbf{Altres carpetes}: com \textit{ScadaAgent}, \textit{Views} o \textit{ProjectSamples}, que complementen funcionalitats específiques com la gestió remota o exemples de projecte.
-
 \end{itemize}
 
-Aquesta estructura modular facilita l'organització del sistema, separant bé les responsabilitats de cada apartat, i permet ampliar funcionalitats sense afectar la resta de components.
-
+Aquesta estructura modular facilita l'organització del sistema, separant bé les responsabilitats de cada apartat, i ajuda a ampliar funcionalitats sense afectar la resta de components.
 
 \subsection{Arquitectura del sistema}
 
-
-Rapid SCADA està format per un conjunt d'aplicacions que treballen conjuntament per garantir la supervisió, control i gestió de dades en temps real. Aquestes aplicacions es comuniquen entre elles mitjançant protocols de xarxa (TCP), constituint una arquitectura distribuïda i escalable \cite{rapidscada_architecture}.
+Rapid SCADA està format per un conjunt d'aplicacions que treballen conjuntament per garantir la supervisió, control i gestió de dades en temps real, les quals es comuniquen entre elles mitjançant protocols de xarxa (TCP), constituint una arquitectura distribuïda i escalable \cite{rapidscada_architecture}.
 
 Com s'indica a la figure \ref{fig:scada_architecture}, els principals serveis del sistema són: \textbf{Server}, \textbf{Communicator}, \textbf{Webstation} i \textbf{Agent}, juntament amb l'eina \textbf{Administrator} per a la configuració \cite{rapidscada_apps}.
 
@@ -475,7 +454,6 @@ Els components principals de Rapid SCADA funcionen com a serveis del sistema ope
 \subsection{Descripció dels components}
 
 \subsubsection*{Webstation}
-
 
 És l'aplicació web encarregada de la visualització de dades i la interacció amb l'usuari. Permet accedir al sistema SCADA mitjançant un navegador web sense necessitat d'instal·lar programari addicional
 
@@ -507,7 +485,6 @@ Per últim, \textit{Administrator} és l'eina principal de desenvolupament i con
 
 Facilita la transferència de configuracions i l'accés als registres del sistema, permetent treballar tant en local com de forma remota mitjançant connexió TCP \cite{rapidscada_apps}. També incorpora eines que faciliten el desenvolupament com poden ser assistents (\textit{wizards}) per crear dispositius i canals, importar i exportar configuracions de sistemes SCADA, la clonació de canal i diferents funcions de cerca, filtratge i ordenació dintre de les diferents taules del sistema. 
 
-
 \subsection{Configuració amb ScadaAdmin}
 
 La configuració del sistema SCADA s'ha realitzat mitjançant l'eina \textit{ScadaAdmin}, que actua com a entorn principal de desenvolupament \cite{rapidscada_config_basics}. Aquesta permet crear i desplegar projectes que defineixen completament el sistema mitjançant fitxers, principalment en format XML. Un projecte de Rapid SCADA es divideix en diferents blocs principals:
@@ -521,7 +498,6 @@ La configuració del sistema SCADA s'ha realitzat mitjançant l'eina \textit{Sca
 \subsubsection{Mòdul Database}
 
 La base de dades de configuració és el nucli del sistema. Durant el desenvolupament es treballa en XML, però en el desplegament es transforma a format binari \texttt{.dat} optimitzat \cite{rapidscada_database}.
-
 
 \subsubsection*{Primary Tables}
 
@@ -541,6 +517,7 @@ Aquestes taules estan interrelacionades. Per exemple, un dispositiu està associ
 
 \subsubsection*{Secondary Tables}
 
+%% POSIBLE RESUMEN
 Les \textbf{taules secundàries} complementen la configuració del sistema amb informació auxiliar.
 
 \begin{itemize}
@@ -570,11 +547,9 @@ Aquest procés s'ha seguit en el desenvolupament del present TFG, adaptant-lo a 
 \subsection{Visualització i interfícies}
 La visualització es basa en el concepte de \textbf{Views} \cite{rapidscada_views}, que permeten representar i interactuar amb les dades del sistema a través de la Webstation.
 
-
 \subsubsection*{Tipus de vistes (\textit{Views})}
 
 Rapid SCADA inclou per defecte diversos tipus de vistes, tot i que el sistema és extensible mitjançant plugins. Cada vista es correspon amb un fitxer dins del directori \textit{Views} del projecte. Els tipus principals de vistes són:
-
 
 \begin{itemize}
     \item \textbf{Table View} → fitxers de visualització tabular
@@ -585,7 +560,6 @@ Rapid SCADA inclou per defecte diversos tipus de vistes, tot i que el sistema é
     \item \textbf{Text File} → suport per definicions manuals
 \end{itemize}
 
-
 Les vistes es mostren a través de la \textbf{Webstation}, on observerm que el procés per visualitzar-les correctames es basa en configura adequadament l'arxiu de la vista dintre de la interfície de \textit{ScadaAdmin}, registrar el nom de la vista a la taula de \textbf{Primary Tables} de \textit{Views}, carregar la nova configuració del projecte i accedir a la vista des del navegador web segon els permisos que hi hagi configurats.
 
 Les vistes poden incloure paràmetres com objecte associat, ordre o configuració específica (Figura \ref{fig:rapidscada_views}).
@@ -593,8 +567,6 @@ Les vistes poden incloure paràmetres com objecte associat, ordre o configuraci�
 En el cas de les \textbf{Table Views} (\texttt{.tbl}), aquestes permeten visualitzar dades històriques i en temps real. A més a més, es poden generar gràfiques clicant sobre els valors, permeten enviar comandes als dispositius i  utilitzen arxius històrics (Min, Hour, etc.) com a font de dades
 
 La funcionalitat de les vistes es pot ampliar mitjançant plugins, que permeten crear interfícies més avançades i adaptades a les necessitats del sistema, com es detallarà en apartats posteriors.
-
-
 
 \begin{figure}[H]
     \centering
@@ -621,9 +593,7 @@ La comunicació amb dispositius es gestiona mitjançant el mòdul \textbf{Commun
 Les línies de comunicació defineixen el mètode de connexió i permeten gestionar diverses connexions simultàniament.
 Entre els principals tipus de línies suportades es troben: \textit{Port sèrie}, \textit{TCP Client}, \textit{TCP Server}, \textit{UDP} i \textit{MQTT Client}.
 
-
 \subsubsection*{Devices i polling}
-
 
 Els \textbf{dispositius} representen els dispositius físics o fonts de dades del sistema (PLC, sensors, actuadors o simuladors) \cite{rapidscada_device_polling}. Cada dispositiu s'assigna a una \textit{Communication Line}, que defineix el canal de comunicació general, però la configuració específica del protocol es realitza principalment en el dispositiu mitjançant el \textbf{driver} seleccionat.
 
@@ -651,8 +621,6 @@ Els canals són les unitats bàsiques de dades dins del SCADA (equivalents a var
     \item \textbf{Limits}: definició d'alarmes
     \item \textbf{Archives}: on es guarden les dades (Min, Hour, etc.)
 \end{itemize}
-
-
 
 \subsection{Gestió de perfils de seguretat}
 \label{sec:scada_users}
@@ -694,7 +662,6 @@ Només els rols personalitzats poden tenir permisos configurables, ja que els ro
 
 A més a més, Rapid SCADA permet definir \textbf{herència de rols}, de manera que un rol pot heretar els permisos d'altres rols. Això permet reutilitzar configuracions i reduir la complexitat. A part, com que els objectes poden estar organitzats jeràrquicament, els permisos assignats a un objecte superior es propaguen als seus subobjectes, facilitant la gestió en sistemes grans.
 
-
 \subsection{Gestió de dades i emmagatzematge}
 
 Rapid SCADA incorpora diferents mecanismes per gestionar i emmagatzemar la informació generada pel sistema. Les dades provinents dels dispositius i canals són processades pel mòdul \textit{Server}, que s'encarrega tant de la gestió en temps real com de l'emmagatzematge històric \cite{rapidscada_apps}.
@@ -712,7 +679,6 @@ A més de l'emmagatzematge intern, Rapid SCADA permet integrar bases de dades ex
 \end{itemize}
 
 En aquests casos, les dades generades pel sistema SCADA es transfereixen des del sistema intern cap a la base de dades externa, permetent l'execució de consultes SQL o l'anàlisi de sèries temporals segons la tecnologia utilitzada.
-
 
 \subsection{Plugins de Rapid SCADA}
 
@@ -744,7 +710,6 @@ El procés d'instal·lació consisteix en:
     \item Carregar el projecte al sistema
 \end{itemize}
 
-
 \subsubsection{Plugins utilitzats en el projecte}
 
 \subsubsection*{Chart Pro Plugin}
@@ -756,7 +721,6 @@ Aquest plugin \cite{rapidscada_chart_pro} amplia les capacitats de visualitzaci�
     \item Exportació a formats com PNG o PDF
     \item Configuració mitjançant perfils
 \end{itemize}
-
 
 \begin{figure}[H]
     \centering
@@ -894,11 +858,9 @@ L'editor de \textit{Unity} \cite{UnityEditorInterface} està format per diferent
     \label{fig:MenuEditor}
 \end{figure}
 
-
 \subsubsection{Vistes i jerarquia}
 
-A les finestres centrals es situen les dues vistes la d'escena i la de joc, juntament amb els objectes que permeten muntar una escena. 
-
+A les finestres centrals del menu del editor es poden observar les vistes principals: l'escena i la de joc, juntament amb els objectes que permeten muntar una escena. 
 
 \begin{wrapfigure}[18]{r}{0.35\textwidth}
     \centering
@@ -911,16 +873,7 @@ A la vista \textit{Scene} \cite{UnityScenes} s'observa l'espai on es construeix 
 
 A la vista \textit{Game} es mostra la representació final del joc tal com la veuria l'usuari. Aquesta vista depèn de les càmeres de l'escena i permet executar el projecte en temps real mitjançant el botó de \textit{Play}.
 
-
-
 En l'\textit{Inspector} \cite{UnityInspector} es pot visualitzar i modificar totes les propietats dels objectes seleccionats. Quan es selecciona un objecte, l'Inspector mostra tots els seus components (transformacions, materials, scripts, etc.) i permet editar-los (figura \ref{fig:menu_editor_inspector}).
-
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.3\linewidth]{images/menu_editor_insp.png}
-%    \caption{Finestra Inspector de Unity amb característiques d'un objecte seleccionat}
-%    \label{fig:menu_editor_inspector}
-%\end{figure}
 
 A la finestra \textit{Hierarchy} \cite{UnityHierarchy} es mostra tots els objectes (\textit{GameObjects}) presents en l'escena actual, organitzats en forma d'arbre jeràrquic (establiment de relacions pare-fill).
 
@@ -944,21 +897,15 @@ Unity té la capacitat d'assignar \textit{Tags} i \textit{Layers} als objectes p
     \item \textbf{Layers}: s'utilitzen principalment per controlar col·lisions i càmeres.
 \end{itemize}
 
-
 \subsubsection*{Gestió de paquets (Package Manager)}
 
 El \textit{Package Manager} \cite{UnityPackageManager} és una eina integrada en Unity que afegeix i gestiona funcionalitats addicionals mitjançant paquets, els quals inclouen recursos, scripts i eines que amplien les capacitats del motor. Aquesta eina facilita la instal·lació i actualització de components dins del projecte des d'una única interfície (figura \ref{fig:package_manager}). En aquest projecte s'han utilitzat alguns paquets rellevants \cite{UnityPackagesDocs}:
 
 \begin{itemize}
-
-\item \textbf{Cinemachine}: Gestió avançada del sistema decàmeres de forma avançada. Tot i que inicialment es va considerar per al control de càmera, finalment es va rebutjar l'ús d'aquest paquet, encara que s'han reutilitzat alguns recursos visuals \cite{UnityCinemachine}.
-
-\item \textbf{FBX Exporter}: Utilitzat per exportar models en format \textit{.fbx} i editar-los en eines externes (\textit{Blender}).
-
-\item \textbf{Input System}: Sistema d'entrada de dades més flexible que permet gestionar diferents dispositius.
-
-\item \textbf{ProBuilder}: Eina de modelatge integrada utilitzada per crear geometria directament dins de Unity.
-
+    \item \textbf{Cinemachine}: Gestió avançada del sistema decàmeres de forma avançada. Tot i que inicialment es va considerar per al control de càmera, finalment es va rebutjar l'ús d'aquest paquet, encara que s'han reutilitzat alguns recursos visuals \cite{UnityCinemachine}.
+    \item \textbf{FBX Exporter}: Utilitzat per exportar models en format \textit{.fbx} i editar-los en eines externes (\textit{Blender}).
+    \item \textbf{Input System}: Sistema d'entrada de dades més flexible que permet gestionar diferents dispositius.
+    \item \textbf{ProBuilder}: Eina de modelatge integrada utilitzada per crear geometria directament dins de Unity.
 \end{itemize}
 
 \begin{figure}[h]
@@ -967,8 +914,6 @@ El \textit{Package Manager} \cite{UnityPackageManager} és una eina integrada en
     \caption{Interfície del Package Manager de Unity}
     \label{fig:package_manager}
 \end{figure}
-
-
 
 \subsubsection{Eines i gestió de projectes}
 
@@ -984,69 +929,34 @@ A més a més, observem que la barra superior de Unity conté els principals men
 \end{figure}
 
 \begin{itemize}
-\item \textbf{File}: permet crear, obrir i guardar projectes i escenes.
-\item \textbf{Edit}: inclou opcions de configuració, preferències i eines d'edició generals.
-\item \textbf{Assets}: gestiona els recursos del projecte, permetent importar, exportar i organitzar fitxers.
-\item \textbf{GameObject}: permet crear nous objectes dins de l'escena, com càmeres, llums o objectes buits.
-\item \textbf{Component}: s'utilitza per afegir components als objectes seleccionats, definint el seu comportament.
-\item \textbf{Services}: dona accés a serveis externs de Unity com analítica, multiplayer o monetització.
-\item \textbf{Jobs}: relacionat amb el sistema de processament paral·lel de Unity per optimitzar el rendiment.
-\item \textbf{Tools}: inclou eines addicionals, tant pròpies com instal·lades mitjançant paquets.
-\item \textbf{Window}: permet obrir i gestionar les diferents finestres de l'editor, incloent el \textit{Package Manager}.
-\item \textbf{Help}: proporciona accés a la documentació oficial, tutorials i suport.
-
+    \item \textbf{File}: permet crear, obrir i guardar projectes i escenes.
+    \item \textbf{Edit}: inclou opcions de configuració, preferències i eines d'edició generals.
+    \item \textbf{Assets}: gestiona els recursos del projecte, permetent importar, exportar i organitzar fitxers.
+    \item \textbf{GameObject}: permet crear nous objectes dins de l'escena, com càmeres, llums o objectes buits.
+    \item \textbf{Component}: s'utilitza per afegir components als objectes seleccionats, definint el seu comportament.
+    \item \textbf{Services}: dona accés a serveis externs de Unity com analítica, multiplayer o monetització.
+    \item \textbf{Jobs}: relacionat amb el sistema de processament paral·lel de Unity per optimitzar el rendiment.
+    \item \textbf{Tools}: inclou eines addicionals, tant pròpies com instal·lades mitjançant paquets.
+    \item \textbf{Window}: permet obrir i gestionar les diferents finestres de l'editor, incloent el \textit{Package Manager}.
+    \item \textbf{Help}: proporciona accés a la documentació oficial, tutorials i suport.
 \end{itemize}
 
-\subsection{Gestió de materials i textures}
+\subsection{Gestió de materials i textures} 
 
-%%\subsubsection{Idees bàsiques respecte als materials}
+En Unity, els \textit{materials} defineixen l'aspecte visual dels objectes de l'escena, incloent propietats com el color, la brillantor o la interacció amb la llum \cite{UnityMaterialsIntro}. Cada material està associat a un \textbf{Shader}, responsable de determinar com es representa visualment la superfície \cite{UnityShaders}. 
 
-En Unity, un \textit{material} defineix l'aspecte visual d'un objecte dins de l'escena, incloent propietats com el color, la brillantor o la resposta a la llum \cite{UnityMaterialsIntro}.  Els materials es creen des del panell de \textit{Project} i es configuren a l'\textit{Inspector}. Cada material està associat a un \textbf{Shader}, que determina com es representa visualment l'objecte \cite{UnityShaders}.
+Els materials s'assignen als objectes mitjançant el component \textit{Mesh Renderer}, i poden ser compartits entre diversos elements de l'escena \cite{UnityMaterialsReference}. 
 
-Pel que fa a l'assignació d'aquests, els materials s'assignen als objectes mitjançant el component \textit{Mesh Renderer}, encarregat de la seva representació visual. Aquesta assignació es pot fer directament des de l'\textit{Inspector} o arrossegant el material sobre l'objecte. Un mateix material pot ser compartit entre diversos objectes \cite{UnityMaterialsReference}. 
+En aquest projecte s'han utilitzat principalment textures PBR (\textit{Physically Based Rendering}) importades des de repositoris externs per aconseguir una representació més realista dels diferents components industrials. Les textures s'importen directament a la carpeta \textit{Assets} i posteriorment s'assignen als canals corresponents del material \cite{UnityImportTextures} al crear un de noy. Entre els mapes utilitzats per crear un nou material destaquen: 
+\begin{itemize} 
+    \item \textbf{Albedo}: defineix el color base del material. 
+    \item \textbf{Normal Map}: simula relleu i detall superficial. 
+    \item \textbf{Metallic Map}: controla el comportament metàl·lic davant la llum. 
+    \item \textbf{Height Map}: aporta sensació de profunditat. 
+    \item \textbf{Ambient Occlusion}: genera ombrejats suaus en zones menys il·luminades. 
+\end{itemize} 
 
-
-\subsubsection{Importació de textures externes} %%RESUMIR O QUITAR ESTE SUBAPARTADO
-
-Les textures són imatges que aporten detall visual als materials, com el color o el relleu \cite{UnityMaterialsIntro}. En aquest projecte s'han utilitzat textures PBR (\textit{Physically Based Rendering}) provinents de repositoris externs, que permeten aconseguir resultats més realistes. El procés bàsic d'ús és:
-
-\begin{enumerate}
-
-\item \textbf{Importació de les textures}: Les textures s'afegeixen al projecte arrossegant-les a la carpeta \textit{Assets}. \cite{UnityImportTextures}
-\item \textbf{Creació del material}: Es crea un material que actuarà com a contenidor de les textures.
-\item \textbf{Assignació de mapes PBR}: Les textures s'assignen als canals corresponents del material, com el color base o el relleu (normal map), per definir el seu comportament visual.
-
-\begin{itemize}
-
-\item \textbf{Albedo (Base Map)}: color base del material.
-\item \textbf{Normal Map}: detall superficial (relleu).  
-\item \textbf{Metallic Map}:parts metàl·liques del material (actuació davant la llums)
-\item \textbf{Height Map}: profunditat o desplaçament en la superfície del material.
-\item \textbf{Ambient Occlusion (AO)}: ombres suaus on la llum arriba més difícilment
-
-\end{itemize}
-
-
-\item \textbf{Configuració del tipus de textura}: Algunes textures requereixen ajustos específics a l'\textit{Inspector}, com el cas dels \textit{Normal Maps}. \cite{UnityImportTextures}
-
-
-\item \textbf{Ajust de propietats del material}: Després una vegada tens tots els elements seleccionats, sempre existeix la opció de modificar aquestes textures segons sembli més correcte a cadascú.
-
-\end{enumerate}
-
-\subsubsection{Propietats dels materials }
-
-Els materials disposen de diverses propietats bàsiques:
-
-\begin{itemize}
-
-\item \textbf{Shader}: defineix com el material interactua amb la llum. \cite{UnityShaders}
-\item \textbf{Color}: estableix el color base del material.
-\item \textbf{Offset}: permet desplaçar la textura dins de l'objecte. \cite{UnityTextureProperties}
-
-\end{itemize}
-
-Aquestes propietats ajuden a ajustar i reutilitzar materials de forma eficient dins de l'escena. Addicionalment, Unity utilitza tècniques com el \textit{Physically Based Rendering (PBR)} per aconseguir resultats realistes sota diferents condicions d'il·luminació \cite{UnityMaterialsIntro}. 
+Com a factor addicional, existeix la possibilitat  permet modificar propietats addicionals dels materials, com el color, l'\textit{offset} o diferents paràmetres d'il·luminació, facilitant així la reutilització i personalització visual dels objectes dins de la simulació \cite{UnityTextureProperties}. Finalment, l'ús del model PBR permet mantenir una aparença coherent sota diferents condicions d'il·luminació de l'escena \cite{UnityMaterialsIntro}. 
 
 \subsection{Sistema de components en Unity}
 
@@ -1055,7 +965,6 @@ Aquestes propietats ajuden a ajustar i reutilitzar materials de forma eficient d
 En Unity, qualsevol element present dins d'una escena es representa mitjançant un \textit{GameObject}, que constitueix la unitat bàsica de treball del motor gràfic \cite{UnityGameObjects}. Aquest component pot representar objectes visibles (peces, cintes, càmeres, ...), però també elements lògics (controladors, punts de referència...). 
 
 Unity utilitza un model modular basat en composició, on cada funcionalitat s'implementa mitjançant components independents. Per exemple, un objecte pot incorporar components de representació gràfica, física, detecció de col·lisions o scripts programats en C\#.
-
 
 \subsubsection{Arquitectura basada en components}
 
@@ -1083,22 +992,14 @@ El \textit{Rigidbody} \cite{UnityRigidbody} permet aplicar física als objectes,
 \item \textbf{Angular Drag}: resistència a la rotació.
 \end{itemize}
 
-
 \textbf{Diferència entre \textit{isKinematic} i \textit{useGravity}}: Dins del component \textit{Rigidbody}, dues propietats especialment rellevants són \textit{isKinematic} i \textit{useGravity}, ja que determinen com l'objecte interactua amb el sistema de física de Unity.
 
 \begin{itemize}
-
-\item \textbf{useGravity}:  
-Quan aquesta propietat està activada, l'objecte es veu afectat per la gravetat global definida al motor físic. Això implica que l'objecte caurà si no hi ha cap suport que el mantingui en posició.
-
-\item \textbf{isKinematic}:  
-Quan està activada, el \textit{Rigidbody} deixa de ser controlat pel motor físic. Això significa que no respon a forces ni a col·lisions físiques i que el moviment s'ha de controlar manualment mitjançant scripts \cite{UnityRigidbody,UnityColliders}.
-
+    \item \textbf{useGravity}:  Quan aquesta propietat està activada, l'objecte es veu afectat per la gravetat global definida al motor físic. Això implica que l'objecte caurà si no hi ha cap suport que el mantingui en posició.
+    \item \textbf{isKinematic}:  Quan està activada, el \textit{Rigidbody} deixa de ser controlat pel motor físic. Això significa que no respon a forces ni a col·lisions físiques i que el moviment s'ha de controlar manualment mitjançant scripts \cite{UnityRigidbody,UnityColliders}.
 \end{itemize}
 
-
-En el context d'aquest projecte, aquesta diferenciació és especialment important. Per exemple, els objectes poden tenir la gravetat activada per comportar-se de manera realista sobre les cintes transportadores, mentre que altres elements com actuadors o parts del sistema es controlen manualment mitjançant scripts, utilitzant \textit{isKinematic}.
-
+En el context d'aquest projecte, aquesta separació és especialment important ja que, per exemple, els objectes poden tenir la gravetat activada per comportar-se de manera realista sobre les cintes transportadores, mentre que altres elements com actuadors o parts del sistema es controlen manualment mitjançant scripts, utilitzant \textit{isKinematic}.
 
 \subsubsection*{Configuració de la física}
 
@@ -1125,11 +1026,9 @@ Poden funcionar en mode \textit{Trigger}, permetent detectar objectes sense col�
 
 Quan dos objectes amb colliders interactuen, Unity pot generar esdeveniments de col·lisió com \texttt{OnCollisionEnter()}, \texttt{OnCollisionExit()} o \texttt{OnCollisionStay()}. Aquest sistema permet detectar impactes físics reals dins del motor.
 
-
 \subsubsection{Component Renderer}
 
 El component \textit{Renderer} \cite{UnityRenderer} és responsable de la representació visual dels objectes dins de l'escena. Aquest component permet mostrar un objecte utilitzant un model 3D i un material associat i, en el cas de un objecte no tingués un \textit{Renderer} assignat, l'objecte no seria visible dins de la escena. Aquest component utilitza materials que es troben dintre del prjecte per definir l'aparença visual de l'objecte, els quals inclouen shaders i textures que determinen com interactua amb la llum i quins tipus de relleu tenen.
-
 
 \subsubsection{Component Light}
 \label{sec:lights}
@@ -1137,14 +1036,10 @@ El component \textit{Renderer} \cite{UnityRenderer} és responsable de la repres
 El component \textit{Light} \cite{UnityLighting} és l'encarregat de simular les fonts de llum dins de l'escena de Unity i determina com els objectes són il·luminats i com es perceben materials, textures i volums. Les llums influeixen directament en el procés de renderització, afectant el color, la intensitat i les ombres dels objectes dins de l'entorn virtual. Unity ofereix diferents tipus de llums segons el seu comportament:
 
 \begin{itemize}
-\item \textbf{Directional Light}: Il·lumina tots els objectes en una mateixa direcció sense importar la seva posició (sol).
-
-\item \textbf{Point Light}: Llum en totes les direccions des d'un punt concret, similar a una bombeta. La seva intensitat disminueix amb la distància.
-
-\item \textbf{Spot Light}: Llum focalitzada en forma de con
-
-\item \textbf{Area Light}:  
-Utilitzada principalment en renderització avançada, simula una superfície emissora de llum.
+    \item \textbf{Directional Light}: Il·lumina tots els objectes en una mateixa direcció sense importar la seva posició (sol).
+    \item \textbf{Point Light}: Llum en totes les direccions des d'un punt concret, similar a una bombeta. La seva intensitat disminueix amb la distància.
+    \item \textbf{Spot Light}: Llum focalitzada en forma de con
+    \item \textbf{Area Light}: Utilitzada principalment en renderització avançada, simula una superfície emissora de llum.
 \end{itemize}
 
 \subsubsection*{Propietats principals}
@@ -1152,7 +1047,6 @@ Utilitzada principalment en renderització avançada, simula una superfície emi
 El component \textit{Light} disposa de diverses propietats configurables des de l'\textit{Inspector}, com poden ser \textbf{Color} (color de la llum), \textbf{Intensity} (intensitat lumínica), \textbf{Range} (abast de la llum) i \textbf{Shadows} (ombre actives o no).
 
 En el context d'aquest projecte, la il·luminació no només té una funció estètica, sinó també funcional. Per exemple, es poden utilitzar llums per indicar l'estat del sistema, com senyals lluminoses (verd, groc, vermell) similars a les utilitzades en entorns industrials reals. A més, la possibilitat d'activar o desactivar llums mitjançant scripts permet simular comportaments com alarmes o indicadors d'estat dins de la simulació.
-
 
 \subsection{Fonaments bàsics de programació}
 
@@ -1165,28 +1059,19 @@ El llenguatge principal utilitzat en Unity és \textbf{C\#} \cite{UnityProgrammi
 Els scripts en Unity hereten habitualment de la classe \textit{MonoBehaviour}, que proporciona accés a les funcionalitats del motor com el sistema de física, el temps o la gestió d'objectes. Tanmateix, s'utilitzen llibreries com:
 
 \begin{itemize}
-\item \texttt{UnityEngine}: proporciona accés a tots els components del motor (Transform, Rigidbody, etc.)
-\item \texttt{System.Collections} \cite{dotnet_collections}: permet gestionar col·leccions de dades
+    \item \texttt{UnityEngine}: proporciona accés a tots els components del motor (Transform, Rigidbody, etc.)
+    \item \texttt{System.Collections} \cite{dotnet_collections}: permet gestionar col·leccions de dades
 \end{itemize}
-
 
 \subsubsection{Estructura d'un script en Unity}
 
 Els scripts en Unity segueixen un cicle de vida determinat, en el qual existeixen una sèrie de funcions que s'executen automàticament en funció de l'estat de l'objecte. Alguns mètodes principals que ja venen predefinits dintre de la llibrería de Unity són:
 
 \begin{itemize}
-
-\item \textbf{Awake}: Primer mètode que es crida i serveix per inicialitzar variables internes.
-
-\item \textbf{Start}:  
-S'executa abans del primer frame, després de \texttt{Awake} \cite{UnityExecutionOrder}.
-
-\item \textbf{Update}:  
-S'executa una vegada per cada frame. És el mètode principal per a la lògica del joc i la gestió d'entrada.
-
-\item \textbf{FixedUpdate}:  
-S'executa a intervals de temps fixos i s'utilitza principalment per a càlculs físics. Normalment, s'ha d'utilitzar per treballar amb \textit{Rigidbody}, mentre que \texttt{Update} s'utilitza per la lògica general \cite{UnityUpdate}.
-
+    \item \textbf{Awake}: Primer mètode que es crida i serveix per inicialitzar variables internes.
+    \item \textbf{Start}:  S'executa abans del primer frame, després de \texttt{Awake} \cite{UnityExecutionOrder}.
+    \item \textbf{Update}:  S'executa una vegada per cada frame. És el mètode principal per a la lògica del joc i la gestió d'entrada.
+    \item \textbf{FixedUpdate}:  S'executa a intervals de temps fixos i s'utilitza principalment per a càlculs físics. Normalment, s'ha d'utilitzar per treballar amb \textit{Rigidbody}, mentre que \texttt{Update} s'utilitza per la lògica general \cite{UnityUpdate}.
 \end{itemize}
 
 \subsubsection{Gestió del temps}
@@ -1196,7 +1081,6 @@ Unity proporciona un sistema de control temporal \cite{UnityTime} per garantir q
 \begin{enumerate}
     \item \texttt{Time.deltaTime}: Representa el temps transcorregut entre dos frames consecutius. S'utilitza per garantir que el moviment sigui constant independentment del rendiment del sistema.
     \item \texttt{Time.fixedDeltaTime}: Representa l'interval de temps fix utilitzat en \texttt{FixedUpdate}. \texttt{Update} s'executa una vegada per frame, mentre que \texttt{FixedUpdate} pot executar-se múltiples vegades per mantenir la coherència del sistema físic. \cite{UnityUpdate}
-
 \end{enumerate}
 
 \subsubsection{Accés a components (GetComponent)}
@@ -1211,7 +1095,6 @@ El tipus \texttt{Vector3} representa vectors en un espai tridimensional mitjanç
 
 La funció \texttt{Vector3.MoveTowards()} és un exemple de canvi de posició, on s'encarrega de desplaçar un objecte de forma progressiva cap a una posició objectiu sense sobrepassar-la. Aquest mètode calcula internament una interpolació lineal controlada, garantint un moviment suau i estable. Dintre de Unity, sol ser molt utilitzat a l'hora de generar elevadors o de objectes que han d'arribar a una posició específica.
 
-%%REVISAR SUBSECTION
 \subsection{Fonaments avançats de programació}
 
 \subsubsection{Creació d'objectes en temps d'execució}
@@ -1219,6 +1102,7 @@ La funció \texttt{Vector3.MoveTowards()} és un exemple de canvi de posició, o
 Unity dona la opció de generar objectes en temps d'execució mitjançant la funció \texttt{Instantiate()} \cite{UnityInstantiate}.  Aquesta funció crea una còpia d'un objecte \textit{prefab} dins de l'escena \cite{UnityInstantiate}, mecanisme que és bastant utilitzat en diferents per generar peces de manera automàtica mitjançant el sistema de \textit{spawner}, tal i com succeeix en el el sistema dissenyat en aquest projecte.
 
 \subsubsection{Transformacions i sistemes de coordenades}
+
 Trobem dos sistemes de coordenades principals en Unity \cite{UnityTransformLocalPosition}:
 \begin{itemize}
     \item \textbf{position}: Defineix la posició global (coordenades globals) d'un objecte dins de l'escena.
@@ -1239,8 +1123,6 @@ Quan es treballa amb angles d'Euler (rotacions en X, Y, Z), es pot produir un pr
 Per aquest motiu, Unity utilitza internament quaternions, ja que no pateixen el problema de \textit{Gimbal Lock}, permeten interpolacions suaus i són més estables numèricament.
 
 Unity emmagatzema totes les rotacions com a quaternions precisament per evitar aquests problemes. Tot i això, per facilitar la comprensió i manipulació, Unity permet treballar amb angles d'Euler \cite{UnityQuaternionEuler2019} a través de propietats com \texttt{transform.eulerAngles}, que converteixen internament els quaternions a angles legibles. 
-
-
 
 \subsubsection{Control de moviment mitjançant Rigidbody}
 
@@ -1283,21 +1165,13 @@ Per tal de que tot funcioni correctament, tots els elements d'interfície han de
 
 \subsubsection{Modes de renderització del Canvas}
 
-Unity permet diferents formes de mostrar la interfície segons el tipus d'aplicació:
+Dintre de Unity, es troben diferents formes de mostrar la interfície segons el tipus d'aplicació:
 
 \begin{itemize}
-
-\item \textbf{Screen Space - Overlay}:  
-La interfície es dibuixa directament sobre la pantalla, independentment de la càmera. És el mode més utilitzat per HUDs o interfícies fixes.
-
-\item \textbf{Screen Space - Camera}:  
-La UI es renderitza en funció d'una càmera concreta, permetent integrar-la millor amb l'escena.
-
-\item \textbf{World Space}:  
-El Canvas es comporta com un objecte 3D dins de l'escena, permetent crear interfícies integrades en el món (pantalles, panells industrials, etc.).
-
+    \item \textbf{Screen Space - Overlay}: La interfície es dibuixa directament sobre la pantalla, independentment de la càmera. És el mode més utilitzat per HUDs o interfícies fixes.
+    \item \textbf{Screen Space - Camera}: La UI es renderitza en funció d'una càmera concreta, permetent integrar-la millor amb l'escena.
+    \item \textbf{World Space}: El Canvas es comporta com un objecte 3D dins de l'escena, permetent crear interfícies integrades en el món (pantalles, panells industrials, etc.).
 \end{itemize}
-
 
 \subsubsection{Elements bàsics de la UI}
 
@@ -1329,8 +1203,8 @@ Els transelevadors (figura \ref{fig:transelevador1}) poden treballar de forma co
     \label{fig:transelevador1}
 \end{figure}
 
-
 \subsection{Contextos d'aplicació dels sistemes AS/RS}
+
 Els sistemes AS/RS (\textit{Automated Storage and Retrieval Systems}) són sistemes d'emmagatzematge automatitzat controlats per ordinador, utilitzats en entorns industrials i logístics per gestionar el flux de materials de manera eficient. Aquests sistemes s'apliquen principalment en dos grans àmbits \cite{asrs_daifuku}:
 
 \begin{itemize}
@@ -1352,8 +1226,6 @@ Els sistemes AS/RS (\textit{Automated Storage and Retrieval Systems}) són siste
 
 Els AS/RS server a fer un ús eficient de l'espai vertical del magatzem, incrementant la densitat d'emmagatzematge i millorant la gestió de l'inventari. A més, contribueixen a la reducció de costos laborals, a la millora de la seguretat i a una major precisió en les operacions logístiques.
 
-
-
 \subsection{Funcionament del transelevador}
 
 El funcionament d'un transelevador \cite{transelevador_info} basa en un sistema automatitzat capaç de realitzar moviments coordinats per accedir a qualsevol posició dins del magatzem, el qual té la capacitat de treballar principalment mitjançant tres tipus de moviments:
@@ -1366,33 +1238,22 @@ El funcionament d'un transelevador \cite{transelevador_info} basa en un sistema 
 
 En sistemes més avançats, els transelevadors es coordinen amb altres equips com cintes transportadores o sistemes de llançadora, integrant-se en un sistema logístic completament automatitzat. Aquests sistemes poden operar amb diferents tipus de càrrega, per tal d'adaptar el sistema a les diferents necessitats industrials, ja sigui amb \textbf{Càrrega unitària} (palets o elements pesants) o \textbf{Minicàrrega} (caixes, contenidors o productes lleugers).
 
-
 \subsection{Parts principals d'un transelevador}
 
 Un transelevador està format per diferents subsistemes mecànics i electrònics que treballen conjuntament per permetre el moviment eficient de càrregues en passadissos estrets i a gran altura dintre del magatzem. (Figura \ref{fig:parts_transelevador}).  Entre els principals elements \cite{transelevador_info} que el componen destaquen:
 
 \begin{itemize}
     \item \textbf{Sistema de presa de càrrega}: habitualment una pinça o plataforma elevadora que permet la manipulació de la unitat de càrrega dins de les estanteries.
-
     \item \textbf{Sistema de sensors}: conjunt de dispositius encarregats de detectar la posició, presència de càrrega i estat del sistema, essencials per al control automàtic.
-
     \item \textbf{Sistemes d'accionament}: motors elèctrics que realitzen els moviments principals del transelevador (vertical, horitzonatl i transversal):
-
     \item \textbf{Sistema de manipulació extensible}: mecanismes que serveixen per introduir i extreure la càrrega de les estanteries.
-
     \item \textbf{Estructura mecànica}: formada per màstil o columna, xassís superior i inferior, i sistemes de guia sobre rails.
-
     \item \textbf{Unitat d'elevació}: inclou la cuna o plataforma elevadora, motor d'elevació i sistemes de seguretat associats.
-
     \item \textbf{Unitat de traslació}: permet el moviment longitudinal mitjançant rodes sobre rails, amb sistemes anti-descarrilament.
-
     \item \textbf{Sistema elèctric}: armari elèctric, sistemes d'alimentació i protecció.
-
     \item \textbf{Sistema de control}: pot ser manual (cabina d'operador) o automàtic mitjançant sistemes basats en microprocessadors.
-
     \item \textbf{Punt de comandament}: pot ser embarcat, remot o d'emergència.
 \end{itemize}
-
 
 \begin{figure}[H] 
     \centering
@@ -1403,23 +1264,20 @@ Un transelevador està format per diferents subsistemes mecànics i electrònics
 
 \subsection{Normativa i estanteries en sistemes AS/RS}
 
-Els transelevadors són equips industrials automatitzats que han de complir diferents normatives de seguretat i disseny, tant a nivell europeu com estatal.
+Els transelevadors són equips industrials automatitzats que han de complir diferents normatives de seguretat i disseny, tant a nivell europeu com estatal. Les principals normatives aplicables \cite{manual_logistica} són:
 
-Les principals normatives aplicables \cite{manual_logistica} són:
-
-%% REVISAR NORMATIVA, ALGO MAS ESPECIFICO?
 \begin{itemize}
-    \item \textbf{Directiva 2006/42/CE}: regula els requisits de seguretat en el disseny de màquines.
-    \item \textbf{Reial Decret 1215/1997}: estableix les condicions de seguretat en l'ús d'equips de treball.
-    \item \textbf{UNE-EN 528}: norma específica per a transelevadors.
-    \item \textbf{UNE-EN 1090-1}: relacionada amb estructures metàl·liques.
+    \item \textbf{Directiva 2006/42/CE}: estableix els requisits essencials de seguretat i protecció aplicables al disseny i fabricació de màquines industrials.
+    \item \textbf{Reial Decret 1215/1997}: defineix les condicions mínimes de seguretat i salut per a la utilització d'equips de treball per part dels operaris.
+    \item \textbf{UNE-EN 528}: norma específica per a transelevadors i equips de magatzematge automatitzat, centrada en requisits de seguretat, moviment i protecció dels operadors.
+    \item \textbf{UNE-EN 1090-1}: regula els requisits relacionats amb el disseny i fabricació d'estructures metàl·liques utilitzades en entorns industrials.
 \end{itemize}
 
 A més, aquests sistemes requereixen documentació tècnica obligatòria, com el manual d'instruccions, certificat CE, resultats d'assajos i registres d'inspecció.
 
 \subsubsection{Norma UNE-EN 15620 i classificació d'estanteries}
 
-El disseny del sistema també depèn de les estanteries utilitzades \cite{rack_estanterias_norma}. La norma \textbf{UNE-EN 15620} defineix toleràncies i precisió en sistemes d'emmagatzematge. Segons aquesta norma, les estanteries es classifiquen en:
+El disseny del sistema també depèn de les estanteries utilitzades \cite{rack_estanterias_norma}. La norma \textbf{UNE-EN 15620} defineix toleràncies i precisió en sistemes d'emmagatzematge. Segons aquesta norma, les estanteries es poden classifacar segons diferents tipus de classes que serveixen per determinal el nivell d'automatització i precisió del sistema:
 
 \begin{itemize}
     \item \textbf{Classe 100}: transelevadors automàtics en instal·lacions estàndard (altura inferior a 18m).
@@ -1429,16 +1287,14 @@ El disseny del sistema també depèn de les estanteries utilitzades \cite{rack_e
     \item \textbf{Classe 400}: sistemes manuals amb carretons convencionals.
 \end{itemize}
 
-Aquesta classificació és clau per determinar el nivell d'automatització i precisió del sistema.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{images/shelving-rack.jpg}
     \caption{Exemple d'estanteries per a sistemes automatitzats tipus miniload \cite{asrs_daifuku}}
 \end{figure}
 
-
 \subsection{Seguretat en els transelevadors}
+
 Els transelevadors operen en entorns automatitzats amb moviments d'alta velocitat i manipulació de càrregues, fet que implica riscos que han de ser controlats adequadament.
 
 Els principals riscos associats inclouen:
@@ -1455,7 +1311,6 @@ Per minimitzar aquests riscos \cite{manual_logistica}, els sistemes incorporen d
 A nivell de disseny, també s'integren dispositius com sistemes antidescarrilament, frenada automàtica en cas de fallada d'energia i limitadors de recorregut i velocitat.
 
 Finalment, el sistema de control evita canvis de mode no autoritzats i garanteix la coherència entre accessos i comandaments, assegurant un funcionament segur en tot moment.
-
 
 \subsection{Condicions d'ús i manteniment}
 
@@ -1502,7 +1357,6 @@ Tot i això, cal destacar que es tracta d'un model simplificat respecte a instal
 
 \begin{figure}[H]
 \centering
-
 \begin{minipage}{0.42\textwidth}
     \centering
     \includegraphics[width=\linewidth]{images/stage-miniload.jpg}
@@ -1514,7 +1368,6 @@ Tot i això, cal destacar que es tracta d'un model simplificat respecte a instal
     \includegraphics[width=0.5\linewidth]{images/unity_transelevador.png}
     \caption*{Model desenvolupat en Unity del sistema implementat}
 \end{minipage}
-
 \caption{Comparació entre AS/RS real i el model desenvolupat en aquest projecte}
 \label{fig:comparacion_asrs}
 \end{figure}
@@ -1535,6 +1388,7 @@ La planta industrial dissenyada com a simulació d'una planta industrial dintre 
 Aquest enfocament permet reproduir una arquitectura equivalent a la d'un sistema industrial real on el PLC executaria la lògica i el SCADA supervisaria el procés.
 
 \subsection{Disseny detallat del procés industrial}
+
 El sistema industrial virtual que finalment s'ha decidit realitzar en l'entorn virtual ha anat evolucionant cap a una arquitectura més complexa basada en sistemes d'emmagatzematge automatitzat similars als utilitzats en magatzems industrials tipus AS/RS. El procés consta de tres subsistemes principals:
 
 \begin{itemize}
@@ -1542,7 +1396,6 @@ El sistema industrial virtual que finalment s'ha decidit realitzar en l'entorn v
 \item Sistema d'emmagatzematge amb transelevador.
 \item Sistema d'evacuació amb transelevador de sortida.
 \end{itemize}
-
 
 %%\subsubsection{Descripció funcional global}
 
@@ -1566,7 +1419,7 @@ Aquesta informació s'utilitza per definir la seva destinació dins del sistema.
 
 \subsubsection*{3. Transferència i elevació}
 
-La peça és transferida al primer transelevador, que la posiciona segons el tipus detectat al lloc predeterminat. Consta d'un sensor de presència (\textbf{S3}) per detectar si la peça ha arribat correctament a la plataforma d'elevació. Aquest transelevadors consta de 4 nivell verticals i 4 nivells horitzontals, on en cada posició trobem un sensor que ens ajuda a conèixer en tot moment la ubicació del transelevador, en els dos eixos.
+La peça és transferida al primer transelevador, que la posiciona segons el tipus detectat al lloc predeterminat. Consta d'un sensor de presència (\textbf{S3}) per detectar si la peça ha arribat correctament a la plataforma d'elevació. Aquest transelevador consta de 4 nivell verticals i 4 nivells horitzontals, on en cada posició trobem un sensor que ens ajuda a conèixer en tot moment la ubicació del transelevador, en els dos eixos.
 
 \subsubsection*{4. Dipòsit en estanteria}
 
@@ -1574,13 +1427,11 @@ Un cop el transelevador es troba a la posició corresponent, la peça es diposit
 
 Cada estanteria està associada a un tipus de peça i disposa de diverses posicions. Les peces s'organitzen de manera progressiva, desplaçant-se cap a l'interior per deixar espai a noves entrades.
 
-
 Per garantir el control correcte de l'estat de cada zona d'emmagatzematge, s'han distribuït sensors de presència en cadascun dels nivells, permetent detectar l'ocupació de les diferents posicions. Addicionalment, cada nivell incorpora sistemes de rodets motoritzats que faciliten tant la inserció de noves peces com el procés posterior d'evacuació.
 
 Quan una estanteria arriba a la seva capacitat màxima (nou peces en aquest cas), el sistema inicia automàticament el procés d'evacuació de les peces emmagatzemades cap a la zona de sortida de la planta.
 
 \subsubsection*{5. Evacuació per estanteria plena}
-
 
 Quan una estanteria arriba a la seva capacitat màxima, s'activa el procés d'evacuació. Les peces són transportades cap a un segon transelevador, encarregat de recollir-les.
 
@@ -1685,12 +1536,8 @@ SV\_1 & Transelevador 2 & Posició vertical nivell 1 (cinta evacuació)\\ \hline
 SV\_2 & Transelevador 2 & Posició vertical nivell 2 (estanteria A)\\ \hline
 SV\_3 & Transelevador 2 & Posició vertical nivell 3 (estanteria B)\\ \hline
 SV\_4 & Transelevador 2 & Posició vertical nivell 4 (estanteria C)\\ \hline
-
 \end{tabular}
-
-
 \end{table}
-
 
 \subsection{Modelització segons filosofia GEMMA}
 
@@ -1698,17 +1545,13 @@ La filosofia GEMMA (\textit{Guide d'Étude des Modes de Marches et d'Arrêts}) �
 
 En aquest projecte, la filosofia GEMMA s'ha utilitzat com a base per definir els principals estats de funcionament de la planta industrial virtual desenvolupada a Unity i supervisada mitjançant Rapid SCADA. Els modes implementats dins del sistema són els següents:
 \begin{itemize}
-\item A1 - Estat inicial segur: Tots els actuadors desactivats. Elevadors en posició segura. Sensors desactivats.
-
-\item F1 - Producció automàtica: Execució contínua del cicle complet de classificació sense intervenció de l'operador.
-
-\item F5 - Funcionament manual: L'operador pot activar individualment motors i pistons.
-
-\item A2 - Aturada a final de cicle: El sistema es pararà després d'haver acabat el cicle que es troba fent.
-\item A3 - Pausa: El procès es pararà en l'estat en el que es trobi.
-\item D1 - Aturada d'emergència: Tall immediat de tots els actuadors. Prioritat absoluta de seguretat.
-
-\item D2 - Tractament d'avaria: Permet diagnòstic i rearmament controlat.
+    \item A1 - Estat inicial segur: Tots els actuadors desactivats. Elevadors en posició segura. Sensors desactivats.
+    \item F1 - Producció automàtica: Execució contínua del cicle complet de classificació sense intervenció de l'operador.
+    \item F5 - Funcionament manual: L'operador pot activar individualment motors i pistons.
+    \item A2 - Aturada a final de cicle: El sistema es pararà després d'haver acabat el cicle que es troba fent.
+    \item A3 - Pausa: El procès es pararà en l'estat en el que es trobi.
+    \item D1 - Aturada d'emergència: Tall immediat de tots els actuadors. Prioritat absoluta de seguretat.
+    \item D2 - Tractament d'avaria: Permet diagnòstic i rearmament controlat.
 \end{itemize}
 
 \subsection{Especificació dels topics MQTT}
@@ -1719,23 +1562,19 @@ La comunicació entre Unity i RapidSCADA es basa en una arquitectura Publish/Sub
 Els topics segueixen la següent estructura:
 
 \begin{itemize}
-\item \textbf{plant/sensors/*} → Estat de sensors
-\item \textbf{plant/actuators/*} → Estat d'actuadors
-\item \textbf{plant/counters/*} → Comptadors
-\item \textbf{plant/status/*} → Estat global
-\item \textbf{plant/alarms/*} → Alarmes
-\item \textbf{plant/cmd/*} → Ordres de control
+    \item \textbf{plant/sensors/*} → Estat de sensors
+    \item \textbf{plant/actuators/*} → Estat d'actuadors
+    \item \textbf{plant/counters/*} → Comptadors
+    \item \textbf{plant/status/*} → Estat global
+    \item \textbf{plant/alarms/*} → Alarmes
+    \item \textbf{plant/cmd/*} → Ordres de control
 \end{itemize}
 
 \subsubsection{Topics de lectura i escriptura}
 
-
 Aquests topics representen les variables de procés que Unity publica i Rapid SCADA llegeix per supervisar l'estat de la planta virtual.
 
-\paragraph{Sensors}
-
-Els sensors segueixen la nomenclatura: \textbf{plant/sensors/Si},  on \textit{i} correspon al número del sensor definit a la Taula \ref{tab:tab_sensors}.
-
+\textbf{Sensors} $\rightarrow$ \textbf{plant/sensors/Si},  on \textit{i} correspon al número del sensor definit a la Taula \ref{tab:tab_sensors}.
 
 \textbf{Convenció utilitzada:}
 
@@ -1746,18 +1585,16 @@ Els sensors segueixen la nomenclatura: \textbf{plant/sensors/Si},  on \textit{i}
 
 En el cas dels sensors d'identificació de peça, el valor representa el tipus de peça detectada:
 
-
 \begin{itemize}
 \item 0 = cap peça
 \item 1 = peça tipus A
 \item 2 = peça tipus B
 \item 3 = peça tipus C
 \end{itemize}
-\paragraph{Actuadors}
-Els actuadors segueixen la nomenclatura: \textbf{plant/actuators/Mi}, on \textit{i} correspon al número del motor o actuador definit a la Taula \ref{tab:tab_actuadors}.
 
+\textbf{Actuadors} $\rightarrow$ \textbf{plant/actuators/Mi}, on \textit{i} correspon al número del motor o actuador definit a la Taula \ref{tab:tab_actuadors}.
 
-\textbf{Convenció utilitzada:}
+\textbf{Convenció utilitzada}:
 
 \begin{itemize}
 \item 0 = actuador aturat
@@ -1765,13 +1602,9 @@ Els actuadors segueixen la nomenclatura: \textbf{plant/actuators/Mi}, on \textit
 \item -1 = moviment invers (només aplicable als rodets bidireccionals)
 \end{itemize}
 
+\textbf{Comptadors} $\rightarrow$ \textbf{plant/counters/*}. La descripció detallada dels comptadors implementats es mostra a la Taula \ref{tab:tab_comptadors}.
 
-\paragraph{Comptadors}
-Els comptadors segueixen la nomenclatura: \textbf{plant/counters/*}. La descripció detallada dels comptadors implementats es mostra a la Taula \ref{tab:tab_comptadors}.
-
-\paragraph{Estat del sistema}
-
-Les variables globals d'estat informen del mode actual de funcionament del sistema. El topic \textbf{plant/status/actuation mode} indica el mode de control actual, seguint la convenció definida a continuació:
+\textbf{Estat del sistema} $\rightarrow$ Les variables globals d'estat informen del mode actual de funcionament del sistema. El topic \textbf{plant/status/actuation mode} indica el mode de control actual, seguint la convenció definida a continuació:
 
 \textbf{Convenció utilitzada:}
 
@@ -1782,9 +1615,7 @@ Les variables globals d'estat informen del mode actual de funcionament del siste
 \end{itemize}
 
 
-\paragraph{Alarmes}
-
-Les alarmes senyalen si es necessari indicar situacions de seguretat o alguna fallada del sistema.
+\textbf{Alarmes} $\rightarrow$ Les alarmes senyalen si es necessari indicar situacions de seguretat o alguna fallada del sistema.
 
 \textbf{Convenció utilitzada:}
 
@@ -1848,9 +1679,7 @@ plant/cmd/selector &
 
 \end{table}
 
-\paragraph{Control manual d'actuadors}
-
-Els actuadors controlats manualment segueixen la nomenclatura \textbf{plant/cmd/Mi} on \textit{i} correspon al motor o actuador associat.
+\textbf{Control manual d'actuadors} $\rightarrow$ Els actuadors controlats manualment segueixen la nomenclatura \textbf{plant/cmd/Mi} on \textit{i} correspon al motor o actuador associat.
 
 
 \textbf{Convenció utilitzada:}
@@ -1861,9 +1690,7 @@ Els actuadors controlats manualment segueixen la nomenclatura \textbf{plant/cmd/
 \item -1 = moviment invers (en el cas dels rodets bidireccionals)
 \end{itemize}
 
-\paragraph{Control de posicionament dels transelevadors}
-
-A diferència de la resta d'actuadors, els transelevadors funcionen mitjançant control per posició discreta. El valor enviat no representa directament el moviment, sinó la posició objectiu que ha d'assolir el sistema.
+\textbf{Control de posicionament dels transelevadors} $\rightarrow$ A diferència de la resta d'actuadors, els transelevadors funcionen mitjançant control per posició discreta. El valor enviat no representa directament el moviment, sinó la posició objectiu que ha d'assolir el sistema.
 
 \begin{table}[H]
 \centering
@@ -1888,9 +1715,7 @@ Transelevador 2 vertical & plant/cmd/M6 & Posicions 1 a 4 \\ \hline
 
 El sistema interpreta aquests valors com a consignes de posició i la lògica interna s'encarrega de gestionar automàticament el moviment fins arribar al destí indicat.
 
-\paragraph{Control manual de comptadors}
-
-A diferència de la resta d'actuadors, els comptadors de producció i evacuació es poden modificar manualment. Aquesta funcionalitat és útil en tasques de manteniment, proves o correcció manual de valors.
+\textbf{Control manual de comptadors} $\rightarrow$ A diferència de la resta d'actuadors, els comptadors de producció i evacuació es poden modificar manualment. Aquesta funcionalitat és útil en tasques de manteniment, proves o correcció manual de valors.
 
 
 \begin{table}[H]
@@ -2065,7 +1890,7 @@ A més dels elements anteriors, s'han implementat també sensors virtuals que pe
 
 \subsection{Sistema de control de càmera}
 
-Per facilitar la navegació i inspecció de la planta virtual durant la simulació, s'ha implementat un sistema de control de càmera inspirat en el comportament de la vista d'escena de l'editor de Unity \cite{UnitySceneNavigation}. Aquest sistema permet a l'usuari moure's lliurement per l'entorn industrial, facilitant tant la supervisió del procés com les tasques de depuració i desenvolupament \cite{GameDeveloperCamera}.El comportament de la càmera es gestiona mitjançant l'script \textit{FreeCamera} (secció \ref{sec:scripts_unity}). Aquest script permet implementar tres funcionalitats principals:
+Per facilitar la navegació i inspecció de la planta virtual durant la simulació, s'ha implementat un sistema de control de càmera inspirat en el comportament de la vista d'escena de l'editor de Unity \cite{UnitySceneNavigation}. Aquest sistema permet a l'usuari moure's lliurement per l'entorn industrial, facilitant tant la supervisió del procés com les tasques de depuració i desenvolupament \cite{GameDeveloperCamera}. El comportament de la càmera es gestiona mitjançant l'script \textit{FreeCamera} (secció \ref{sec:scripts_unity}). Aquest script permet implementar tres funcionalitats principals:
 
 \begin{itemize}
     \item \textbf{Rotació de càmera:} Quan es manté premut el botó dret del ratolí (\texttt{GetMouseButton(1)}), el sistema llegeix el moviment del ratolí mitjançant els eixos \texttt{Mouse X} i \texttt{Mouse Y} \cite{UnityInput}. A partir d'aquestes dades, es modifica la propietat \texttt{transform.eulerAngles}, permetent rotar la càmera al voltant dels eixos horitzontal i vertical. 
@@ -2545,7 +2370,6 @@ public bool B_Pause = false;
 public bool B_Reset = false; 
 \end{lstlisting}
 
-
 \subsubsection*{Gestió temporal i Detecció d'avaries}
 
 Els temporitzadors permeten controlar retards i detectar errors:
@@ -2560,7 +2384,6 @@ void Start() {
 \end{lstlisting}
 
 Especialment, el temporitzador \texttt{TDT0} s'utilitza per detectar errors en la classificació, activant el GRAFCET d'emergència si una peça no és identificada en el temps explicat en l'anterior secció: 
-
 
 \begin{lstlisting}[style=simple]
 case 11:
@@ -2614,7 +2437,6 @@ Pel que fa als transelevadors, tal i com hem explicat previàment. , quan el tra
 
 D'altra banda, en els estats de confirmació, la condició de sortida inclou explícitament que la comanda sigui diferent de la que ha originat el moviment, assegurant així que només una nova ordre provoca un canvi d'estat. A més a més, no es permet el moviment en un eix concret quan el sistema es troba en l'estat de confirmació de l'altre eix, evitant així moviments simultanis que podrien generar conflictes.
 
-
 \subsubsection{Gestió avançada de senyals i control intern}
 
 Per tal de garantir un comportament robust i fiable del sistema, s'han implementat diversos mecanismes interns de control que complementen la lògica GRAFCET. Aquests inclouen la detecció de flancs, la gestió de comptadors, els resets controlats i la integració amb el sistema d'avaries.
@@ -2647,14 +2469,11 @@ El procés és el següent:
 \item Es retorna \texttt{true} només si la senyal ha passat de 0 a 1
 \end{enumerate}
 
-%Això permet detectar de forma precisa el moment exacte en què una condició s'activa.
-
 \textbf{Ús dins dels GRAFCETs}: Cada flanc de pujada es defineix amb una clau única associada a una etapa concreta. Per exemple:
 
 \begin{lstlisting}[style=simple]
 if (RisingEdge("ETAPA_0_10", ETAPA_0 == 10)) Spawner.SpawnPiece();
 \end{lstlisting}
-
 
 Com podreu observar, aquestta funció implementada per mi de \texttt{Rising\_Edge} s'ha aplicat tant per introduir una peça en l'etapa que toca com modificar el valors dels 6 comptadors que hi ha dintre del sistema en les etapes corresponent. Com únicament és necessari fer-ho quan s'activa l'etapa, aquesta funció és perfecta per aquestes situacions.
 
@@ -2739,11 +2558,7 @@ using System.Collections.Generic;
 Dictionary<string, int> lastValues;
 \end{lstlisting}
 
-Un diccionari permet emmagatzemar parelles \textit{clau-valor}, on:
-\begin{itemize}
-    \item La clau és el \textit{topic MQTT}
-    \item El valor és l'últim valor enviat
-\end{itemize}
+Un diccionari permet emmagatzemar parelles \textit{clau-valor}, on la clau és el \textit{topic MQTT} i el valor és l'últim valor enviat.
 
 Cal destacar que per poder utilitzar aquesta estructura dins de Unity ha estat necessari importar explícitament el \textbf{namespace} \texttt{System.Collections.Generic} \cite{dotnet_collections}. Tot i que forma part de la llibreria estàndard de C\#, en alguns entorns de Unity no està disponible per defecte en l'script si no s'inclou manualment. Això permet comparar el valor actual amb l'últim valor publicat i decidir si és necessari enviar un nou missatge.
 
@@ -2768,8 +2583,7 @@ El funcionament és el següent:
     \item Si el valor és el mateix, no s'envia cap missatge
 \end{itemize}
 
-Per tal d'enviar dades mitjançant MQTT, és necessari convertir els valors a un format compatible amb el protocol. En aquest cas, la llibreria MQTT utilitza dades en format binari (\textit{byte array}). Per aquest motiu, s'utilitza el \textit{namespace} \texttt{System.Text}, que proporciona funcionalitats per a la codificació de text. Concretament, s'utilitza la classe \texttt{Encoding.UTF8} per convertir un valor numèric a una cadena de text (amb \texttt{ToString()}) i posteriorment a un array de bytes. 
-
+Per tal d'enviar dades mitjançant MQTT, és necessari convertir els valors a un format compatible amb el protocol, ja que la llibreria MQTT utilitza dades en format binari (\textit{byte array}). Per aquest motiu, s'utilitza el \textit{namespace} \texttt{System.Text}, que proporciona funcionalitats per a la codificació de text. Concretament, s'utilitza la classe \texttt{Encoding.UTF8} per convertir un valor numèric a una cadena de text (amb \texttt{ToString()}) i posteriorment a un array de bytes. 
 
 \subsubsection*{Organització de la informació}
 
@@ -2789,7 +2603,6 @@ PublishIfChanged("plant/sensors/S1", ...);
 PublishIfChanged("plant/actuators/M1", ...);
 PublishIfChanged("plant/counters/C1", ...);
 \end{lstlisting}
-
 
 \subsubsection{Conversió de dades}
 
@@ -2836,8 +2649,6 @@ void OnMessageReceived(object sender, MqttMsgPublishEventArgs e)
 }
 \end{lstlisting}
 
-
-
 En el cas específic dels comptadors, la modificació només és possible quan el sistema es troba en mode manual (\texttt{COND\_MANUAL = true}). En aquesta situació, Unity interpreta els valors rebuts pels topics MQTT i actualitza directament el comptador corresponent.
 
 \begin{lstlisting}[style=simple]
@@ -2850,7 +2661,6 @@ if (plant.COND_MANUAL)
 
 Aquesta mateixa lògica s'aplica a la resta de comptadors de producció i evacuació, permetent incrementar-ne el valor o reinicialitzar-los manualment des de Rapid SCADA. 
 
-
 \subsection{Implementació de MQTT a RapidSCADA}
 
 De manera paral·lela a Unity, el sistema RapidSCADA també s'ha configurat per utilitzar el protocol MQTT com a mecanisme de comunicació \cite{RapidScadaVideos}. En aquest cas, RapidSCADA actua com a client MQTT, subscrivint-se als \textit{topics} publicats per Unity i publicant les seves pròpies ordres de control. Bàsicament el sistema SCAD s'encarrega de supervisar i enviar ordes al sistema de control. 
@@ -2861,22 +2671,18 @@ Així doncs, es defineix una arquitectura complementària a la descrita anterior
     \item RapidSCADA publica als \textit{topics} de comandes (\texttt{plant/cmd})
 \end{itemize}
 
-
 \subsubsection*{Configuració de la comunicació MQTT}
 
 Un dels avantatges de RapidSCADA és que ja incorpora suport natiu per MQTT, per la qual cosa no és necessari instal·lar cap plugin extern addicional. La configuració es realitza des del mòdul \textit{Communicator} \cite{rapidscada_device_polling}, seguint els passos següents:
 
 \begin{enumerate}
     \item Crear una nova línia de comunicació dins de l'apartat \textit{Communication Lines}.
-    
     \item Seleccionar el protocol MQTT, concretament el tipus \textbf{MQTT Client}.
-    
     \item Configurar els paràmetres de connexió. En aquest projecte s'han mantingut els valors per defecte:
     \begin{itemize}
         \item \textbf{Servidor}: \textit{localhost}
         \item \textbf{Port}: 1883
     \end{itemize}
-    
 \end{enumerate}
 
 Aquesta configuració permet establir la connexió amb el mateix broker local utilitzat per Unity.
@@ -2938,23 +2744,20 @@ Finalment, tots els canals creats es poden visualitzar i configurar des de la ba
 
 Cal destacar que, en alguns casos, hauria estat útil treballar amb variables de tipus \textit{string}. No obstant això, no s'ha aconseguit visualitzar correctament aquest tipus de dades dins de RapidSCADA en el context del projecte.
 
-
 \newpage
 \section{Pantalles HMI amb Rapid SCADA}
 \label{sec:hmi}
-Continuant amb els conceptes de comunicació mitjançant MQTT i la integració amb Rapid SCADA descrits en l'apartat anterior, en aquesta secció es detalla com es dissenyen les pantalles HMI que tenen la funció visualitzar i interactuar amb les variables del sistema.
+Continuant amb els conceptes de comunicació mitjançant MQTT i la integració amb Rapid SCADA descrits en l'apartat anterior, en aquesta secció es detalla com es dissenyen les pantalles HMI (\textit{Human-Machine Interface}) que tenen la funció visualitzar i interactuar amb les variables del sistema.
 
 L'objectiu principal d'aquestes pantalles és oferir una interfície clara i intuïtiva que permeti \textbf{visualitzar} l'estat del sistema en temps real, \textbf{interpretar} el comportament dels sensors i actuadors i \textbf{interactuar} amb el procés industrial simulat
-
 
 \subsection{Estructura de les vistes en Rapid SCADA}
 
 Per a la creació de pantalles, Rapid SCADA utilitza el mòdul \textit{Views} \cite{rapidscada_views}, des del qual es poden generar diferents tipus d'arxius visuals accessibles per l'usuari.
 
-Inicialment, es va crear una vista de tipus \texttt{.tbl} anomenada \textit{System Overview}, amb l'objectiu de visualitzar totes les variables del sistema a través dels canals configurats. Aquesta vista permetia observar en temps real els valors dels tòpics MQTT, però presentava una limitació important: la manca d'una representació visual intuïtiva. Per aquest motiu, es van desenvolupar \textbf{tres pantalles HMI} orientades a millorar la visualització i el control del sistema.
+Inicialment, es va crear una vista de tipus \texttt{.tbl} anomenada \textit{System Overview}, amb l'objectiu de visualitzar totes les variables del sistema a través dels canals configurats. Aquesta vista permetia observar en temps real els valors dels tòpics MQTT, però presentava una limitació important: la manca d'una representació visual intuïtiva. Per aquest motiu, es van desenvolupar \textbf{tres pantalles HMI} orientades a millorar la visualització de cada variable i el control del sistema.
 
-Pel que fa a la navegació entre pantalles, aquesta es realitza exclusivament mitjançant el menú predefinit de Rapid SCADA (figura \ref{fig:menu_hmi}). L'eina no permet implementar una estructura de navegació interna personalitzada dins de les pròpies vistes, fet que limita la flexibilitat en el disseny de la interfície d'usuari.
-
+Pel que fa a la navegació entre pantalles, aquesta es realitza exclusivament mitjançant el menú predefinit de Rapid SCADA (figura \ref{fig:menu_hmi}), ja que l'eina no permet implementar una estructura de navegació interna personalitzada dins de les pròpies vistes, limitant així la interfícide de l'usuari.
 
 \begin{figure}[H]
     \centering
@@ -2963,11 +2766,9 @@ Pel que fa a la navegació entre pantalles, aquesta es realitza exclusivament mi
     \label{fig:menu_hmi}
 \end{figure}
 
-
-
 \subsection{Pantalla de visualització de sensors}
 
-Aquesta pantalla (figura \ref{fig:pantalla_sensors}) està orientada exclusivament al monitoratge del sistema, sense capacitat d'interacció directa.Per al seu desenvolupament s'ha utilitzat el format \texttt{.sch} (\textit{ScadaSchemeEditor}), que permet incloure elements gràfics com textos, imatges i indicadors dinàmics.
+Aquesta pantalla (figura \ref{fig:pantalla_sensors}) està orientada exclusivament al monitoratge del sistema, sense capacitat d'interacció per part de l'usuari. Per al seu desenvolupament s'ha utilitzat el format \texttt{.sch} (\textit{ScadaSchemeEditor}), que permet incloure elements gràfics com textos, imatges i indicadors dinàmics.
 
 \begin{figure}[H]
     \centering
@@ -2978,9 +2779,9 @@ Aquesta pantalla (figura \ref{fig:pantalla_sensors}) està orientada exclusivame
 
 %%\subsubsection{Funcionament general}
 
-Les dades generades a Unity (com sensors de presència, posició o comptadors) són publicades mitjançant MQTT i rebudes a Rapid SCADA a través dels canals d'entrada. Aquesta pantalla permet visualitzar en temps real l'estat d'aquestes variables, facilitant la comprensió del comportament del sistema.
+Les dades generades a Unity (com sensors de presència, posició o comptadors) són publicades mitjançant MQTT i rebudes a Rapid SCADA a través dels canals d'entrada. Aleshores, aquesta pantalla visualitza en temps real l'estat d'aquestes variables, facilitant la comprensió del comportament del sistema.
 
-\subsubsection{Elements utilitzats}
+Aquí trobem els elements utilitzats en les diferents pantalles: 
 
 \begin{itemize}
     \item \textbf{Static Text}: utilitzat per títols i etiquetes fixes.
@@ -2988,7 +2789,7 @@ Les dades generades a Unity (com sensors de presència, posició o comptadors) s
     \item \textbf{Dynamic Image}: element clau per representar visualment l'estat de sensors i actuadors.
 \end{itemize}
 
-Els \textit{Dynamic Text} s'associen a un canal d'entrada (\textit{input channel}), mostrant en tot moment el valor actual publicat al tòpic MQTT corresponent. Aquest element és útil per representar els comptadors dintre de les nostres pantalles, sabent el seu valor en temps real \cite{RapidScadaVideos}.  El component més rellevant és el \textit{Dynamic Image} , que permet canviar la imatge en funció del valor rebut:
+Els \textit{Dynamic Text} s'associen a un canal d'entrada (\textit{input channel}), mostrant en tot moment el valor actual publicat al tòpic MQTT corresponent (útil per representar els comptadors, sabent el seu valor en temps real \cite{RapidScadaVideos}).  Però, sense cap tipus de dubte el component més rellevant és el \textit{Dynamic Image}, el qual provoca que la imatge canviï segons unes condicions definides per l'usuari:
 
 \begin{itemize}
     \item Sensors binaris: dues imatges (0 = apagat, 1 = activat) (figura \ref{fig:sensor_estat})
@@ -2996,10 +2797,6 @@ Els \textit{Dynamic Text} s'associen a un canal d'entrada (\textit{input channel
     \item Rodets: tres estats (stop, forward, reverse) (figura \ref{fig:motor_estat2})
     \item Sensor òptic: imatge segons el tipus de peça detectada, treta de la simulació realitzada en Unity. 
 \end{itemize}
-
-\subsubsection{Representació gràfica dels elements}
-
-A continuació es mostren exemples representatius dels diferents tipus d'elements visuals utilitzats i una imatge de la vista general de la pantalla:
 
 \begin{figure}[H]
     \centering
@@ -3024,7 +2821,7 @@ A continuació es mostren exemples representatius dels diferents tipus d'element
 
 \subsection{Pantalla de control del procés}
 
-La segona pantalla està orientada al control del sistema i permet enviar comandes als actuadors (figura \ref{fig:main_screen}).
+La segona pantalla està orientada al control del sistema i té la funció principal de controlar els diferents estats dels sistema a partir de botons i selectors. (figura \ref{fig:main_screen}).
 
 \begin{figure}[H]
     \centering
@@ -3033,11 +2830,7 @@ La segona pantalla està orientada al control del sistema i permet enviar comand
     \label{fig:main_screen}
 \end{figure}
 
-
-Per a la seva implementació s'ha utilitzat el tipus \textit{Mimic Diagram}, que requereix la instal·lació d'un plugin específic de Rapid SCADA.
-
-
-A diferència del format \texttt{.sch}, el Mimic Diagram \cite{RapidScadaMimicVideo} permet enviar comandes directament als canals mitjançant la funcionalitat \textit{Send Command}, facilitant la interacció amb el sistema.Aquesta pantalla inclou:
+Per a la seva implementació s'ha utilitzat el tipus \textit{Mimic Diagram} \cite{RapidScadaMimicVideo}, el qual a diferència del format \texttt{.sch}, aquest permet enviar comandes directament als canals mitjançant la funcionalitat \textit{Send Command} amb un valor concret, facilitant la interacció amb el sistema. Aquesta pantalla inclou:
 
 \begin{itemize}
     \item Botons de \textbf{Start} i \textbf{Stop}
@@ -3056,7 +2849,7 @@ El selector de mode s'ha implementat mitjançant:
     \item Tres zones invisibles superposades que envien comandes segons la posició seleccionada
 \end{itemize}
 
-Aquest mètode permet simular un selector físic dins de l'entorn HMI (figura \ref{fig:selector_mode}). La imatge del selector està vinculada a un \textit{input channel}, de manera que mostra en tot moment l'últim valor assignat a aquest element.
+Aquest mètode permet simular un selector físic dins de l'entorn HMI (figura \ref{fig:selector_mode}). La imatge del selector està vinculada a un \textit{input channel}, de manera que mostra en tot moment l'últim valor assignat a aquest element, i en cas de pulsar qualsevol de les tres zones, el valor del selector canviarà a la vegada que s'envia per MQTT. 
 
 \begin{figure}[H]
 \centering
@@ -3081,16 +2874,15 @@ Aquest mètode permet simular un selector físic dins de l'entorn HMI (figura \r
 
 \subsubsection*{Botons de control}
 
-Durant la implementació de la pantalla de control, es va observar que alguns botons (com Start, Stop o Emergència) presentaven un comportament unidireccional, és a dir, permetien enviar un valor però no gestionar correctament el canvi d'estat.
+Durant la implementació de la pantalla de control, es va observar que alguns botons (com Start, Stop o Emergència) presentaven un comportament unidireccional, és a dir, únicament es podia enviar un valor però no hi havia forma de tornar a l'estat anterior de polsar el botó.
 
-Per solucionar aquesta limitació \cite{RapidScadaVideos}, es va implementar una tècnica basada en l'ús de \textbf{toggles invisibles} superposats als elements de control. Cada botó es va associar a un canal configurat com a \textit{input} i \textit{output}, permetent conèixer en tot moment el seu estat.
+Per solucionar aquesta limitació  trobada en el element \textit{Button} de RapidSCADA \cite{RapidScadaVideos}, es va implementar una tècnica basada en l'ús de \textbf{toggles invisibles} superposats als elements de control. Cada botó tenia per sobre un toggle que es va associar a un canal configurat com a \textit{input} i \textit{output}, fet que permetia saber l'estat actual del botó en tot moment.
 
-El funcionament consisteix en un botó visual amb una imatge dinàmica vinculada al canal, sobre el qual es col·loca un toggle invisible que, en ser activat, envia el valor contrari a l'estat actual. D'aquesta manera, s'aconsegueix un comportament bidireccional coherent amb la representació gràfica del botó.
+El funcionament consisteix en un botó visual amb una imatge dinàmica vinculada al canal del botó, sobre el qual es col·loca un toggle invisible que, en ser activat, envia el valor contrari a l'estat actual. D'aquesta manera, s'aconsegueix un comportament bidireccional coherent amb la representació gràfica del botó.
 
-Tot i això, aquesta solució presenta una limitació respecte als sistemes industrials reals. Habitualment, botons com \textbf{Start} i \textbf{Stop} són de tipus momentani,és a dir, només estan actius mentre es mantenen premuts, retornant automàticament al seu estat inicial, mentre que altres com el d'\textbf{Emergència} són biestables. En el Mimic Diagram no s'ha pogut reproduir aquest comportament de forma directa, de manera que tots els botons s'han implementat com a biestables.
+Tot i això, aquesta solució presenta una limitació respecte als sistemes industrials reals. Habitualment, botons com \textbf{Start} i \textbf{Stop} són de tipus momentani, és a dir, només estan actius mentre es mantenen premuts, retornant automàticament al seu estat inicial, mentre que altres com el d'\textbf{Emergència} són biestables. En el \text{Mimic Diagram} no s'ha pogut reproduir aquest comportament de forma directa, de manera que tots els botons s'han implementat com a biestables.
 
 Aquesta simplificació pot generar situacions no desitjades, com l'activació simultània de \textbf{Start} i \textbf{Stop}, fet que s'ha resolt a nivell de control mitjançant la lògica definida en el GRAFCET (Figura \ref{fig:botons_control}).
-
 
 \begin{figure}[H]
 \centering
@@ -3108,7 +2900,6 @@ Aquesta simplificació pot generar situacions no desitjades, com l'activació si
 \caption{Comparativa dels estats dels botons de control}
 \label{fig:botons_control}
 \end{figure}
-
 
 \subsubsection*{Indicadors visuals}
 
@@ -3135,12 +2926,9 @@ La pantalla també incorpora indicadors lluminosos que mostren el mode específi
 \label{fig:indicadors_mode}
 \end{figure}
 
-
-
 \subsection{Pantalla de mode manual}
 
 La tercera pantalla està destinada al control manual dels actuadors del sistema (Figura \ref{fig:manual_screen}). També s'ha implementat mitjançant \textit{Mimic Diagram}, degut a la necessitat d'enviar comandes directes. A diferència de les altres pantalles, aquesta no utilitza canals d'entrada, ja que el seu objectiu és únicament enviar comandes al sistema.
-
 
 \begin{figure}[H]
     \centering
@@ -3152,7 +2940,7 @@ La tercera pantalla està destinada al control manual dels actuadors del sistema
 Els elements disponibles són:
 
 \begin{itemize}
-    \item Cintes transportadores: botons de start/stop que activen o aturen el moviment de la cinta. Quan es prem un dels botons, s'envia un valor binari (0 o 1) al canal corresponent, que Unity interpreta per iniciar o detenir el desplaçament de les peces.
+    \item Cintes transportadores: botons de start/stop que activen o aturen el moviment de la cinta. Quan es prem un dels botons, s'envia un valor binari (0 o 1) al canal corresponent, que Unity interpreta per iniciar o aturar el desplaçament de les peces.
 
     \item Rodets de plataformes: tres botons associats a cada sistema de rodets:
     \begin{itemize}
@@ -3162,14 +2950,11 @@ Els elements disponibles són:
     \end{itemize}
     \item Transelevadors: el seu control es basa en l'enviament de \textbf{posicions discretes} en lloc de moviments continus.   
     Cada transelevador disposa de dos graus de llibertat:
-    
     \begin{itemize}
         \item \textbf{Moviment horitzontal:} cada botó envia un valor enter que representa la posició objectiu al llarg dels carrils (per exemple, entre 1 i 4 segons el nombre de posicions disponibles).
         \item \textbf{Moviment vertical:} de manera anàloga, s'envien valors discrets que indiquen el nivell d'alçada desitjat.
     \end{itemize}
-
 Aquests valors són interpretats a Unity com a consignes de posició, encarregant-se el sistema de moure el transelevador fins a la ubicació indicada.
-
     \item Comptadors de producció i evacuació: botons que incrementen manualment el valor dels comptadors o els reinicialitzen a zero.
 \end{itemize}
 
@@ -3179,7 +2964,7 @@ Amb l'objectiu de millorar la visualització i anàlisi de les dades del sistema
 
 \subsubsection{Taula general de dades}
 
-La taula general s'ha implementat mitjançant una vista de tipus \texttt{.tbl}, que permet visualitzar tots els canals configurats dins del sistema. Aquesta vista presenta les següents característiques:
+La taula general (la qual és la mateixa que s'havia utilitzat inicialment )s'ha implementat mitjançant una vista de tipus \texttt{.tbl}, que serveix per visualitzar tots els canals configurats dins del sistema. Aquesta vista presenta les següents característiques:
 \begin{itemize}
     \item Visualització en temps real dels canals d'entrada (\textit{input channels})
     \item Possibilitat d'enviar comandes als canals de sortida (\textit{output channels})
@@ -3188,15 +2973,7 @@ La taula general s'ha implementat mitjançant una vista de tipus \texttt{.tbl}, 
 
 \subsubsection{Visualització de gràfics amb Chart Pro}
 
-Per a la representació gràfica de dades, s'ha utilitzat el plugin \textbf{Chart Pro} \cite{rapidscada_chart_pro}, que amplia les funcionalitats del sistema base (Figura \ref{fig:tabla_grafico}). Les millores principals que aporta són:
-\begin{itemize}
-    \item Visualització de múltiples canals en un mateix gràfic
-    \item Comparació simultània de variables
-    \item Exportació de gràfics i dades en formats com PDF o PNG
-\end{itemize}
-
-A diferència del sistema base, que només permet visualitzar un canal per gràfic, aquest plugin facilita una anàlisi més completa del comportament del sistema.
-
+Per a la representació gràfica de dades, s'ha utilitzat el plugin \textbf{Chart Pro} \cite{rapidscada_chart_pro}, que amplia les funcionalitats del sistema base (Figura \ref{fig:tabla_grafico}), com pot ser visualitzar dades de múltiples canals en un mateix gràfic i exportar aquests gràfics en formats com PDF o PNG.  A diferència del sistema base, que només permet visualitzar un canal per gràfic, aquest plugin facilita una anàlisi més completa del comportament del sistema.
 
 \begin{figure}[H]
 \centering
@@ -3215,24 +2992,17 @@ A diferència del sistema base, que només permet visualitzar un canal per gràf
 \label{fig:tabla_grafico}
 \end{figure}
 
-
 La vista en format taula permet accedir directament als valors de les variables, mentre que la selecció d'un canal concret facilita la generació de gràfics per a l'anàlisi de la seva evolució temporal.
 
 \subsubsection{Integració de gràfics en esquemes}
 
 Addicionalment, s'ha creat una pantalla de tipus \texttt{.sch} utilitzant el plugin \textit{Extra Scheme Editor}, que permet integrar gràfics directament dins dels esquemes visuals. En aquest cas, s'ha implementat un gràfic (Figura \ref{fig:grafico_esquema}) que mostra les variables de comptador d'evacuació (EvacA, EvacB i EvacC), amb l'objectiu de comparar el rendiment del sistema.
 
-Cal destacar que els gràfics integrats en fitxers \texttt{.sch} presenten certes limitacions en comparació amb els gràfics generats des de les vistes de tipus \texttt{.tbl} els quals, en seleccionar una variable, ofereixen funcionalitats més avançades, com:
-\begin{itemize}
-    \item Selecció d'intervals de temps
-    \item Visualització detallada de l'evolució de la variable
-    \item Major capacitat d'anàlisi de dades
-\end{itemize}
+Cal destacar que els gràfics integrats en fitxers \texttt{.sch} presenten certes limitacions en comparació amb els gràfics generats des de les vistes de tipus \texttt{.tbl} els quals, en seleccionar una variable, ofereixen funcionalitats més avançades, com seleccionar intervals de temps específics o visualitzar detalladament l'evolució d'una variable
 
 Per tant, els gràfics en esquemes són útils per a una visualització integrada i immediata, mentre que les vistes \texttt{.tbl} resulten més adequades per a l'anàlisi detallada del sistema.
 
-Cal destacar també que la correcta configuració de Chart Pro és necessària per visualitzar múltiples canals. En cas contrari, només es mostrarà un únic canal. A més, aquest plugin requereix una llicència (trial o permanent). De la mateixa manera passa amb el \textit{ExtraSchemeEditor}, que és necessari per veure el gràfic en aquesta mateixa pantalla, sinó l'única manera de visualitzar els gràfics és a través de la taula.
-
+Cal destacar també que la correcta configuració de \textit{Chart Pro} és necessària per visualitzar múltiples canals. En cas contrari, només es mostrarà un únic canal. De la mateixa manera passa amb el \textit{ExtraSchemeEditor}, que és necessari per veure el gràfic en aquesta mateixa pantalla, sinó la única manera de visualitzar els gràfics és a través de la taula.
 
 \begin{figure}[H]
     \centering
@@ -3243,7 +3013,7 @@ Cal destacar també que la correcta configuració de Chart Pro és necessària p
 
 \subsection{Configuració d'usuaris i control d'accés}
 
-Per tal de gestionar correctament l'accés a les diferents funcionalitats del sistema, s'ha implementat un sistema de control basat en rols i permisos (Figura \ref{fig:objects_scada}). Primer de tot, s'han creat tres rols principals \cite{rapidscada_user_management}:  
+En el moment d'obtenit una gestió correcte respecte a l'accés a les diferents funcionalitats del sistema, s'ha implementat un sistema de control basat en rols i permisos (Figura \ref{fig:objects_scada}) dintre del sistema SCADA. Inicialment, s'han creat tres rols principals \cite{rapidscada_user_management}:  
 \begin{itemize}
     \item \textbf{Supervisor}: accés complet al sistema
     \item \textbf{Operator}: accés parcial amb capacitat de control limitada
@@ -3265,7 +3035,6 @@ Seguidament, les pantalles del sistema s'han organitzat en diferents categories 
     \item \textbf{Gràfics}: visualització de dades històriques (Grafics.sch)
     \item \textbf{Visualització}: pantalla de visualització de sensors, motors i comptadors (Visualization.sch)
 \end{itemize}
-
 
 Aquests grups permeten assignar permisos de forma estructurada mitjançant la configuració de \textit{Object rights}. Com a detall, indicar que els canals també tenen la opció de ser assignats a diferents categories, i si volem que poguin ser accesibles per un rols concrets, és necessari també assignar la categoria correctament.
 
@@ -3290,9 +3059,7 @@ Aquests grups permeten assignar permisos de forma estructurada mitjançant la co
 Els permisos s'han distribuït de la següent manera (Figura \ref{fig:objectsrights_scada}):
 \begin{itemize}
     \item \textbf{Supervisor}: accés complet a totes les pantalles i funcionalitats, amb permisos de \textit{View} i \textit{Control} en tots els casos.
-
-    \item \textbf{Operator}: accés a la majoria de pantalles amb permisos de visualització en tots els modes, però amb capacitat de control restringida únicament a la pantalla de mode manual. Per aconsegui això, és necessari que tots els canals associats a la pantala de control manual, tinguin assignats la categoria \textbf{Manual}, així tant el supervisor com l'operador tenen accés a aquestes funcionalitats.
-
+    \item \textbf{Operator}: accés a la majoria de pantalles amb permisos de visualització en tots els modes, però amb capacitat de control restringida únicament a la pantalla de mode manual. Per aconseguir aquest fet, és necessari que tots els canals associats a la pantala de control manual tinguin assignats la categoria \textbf{Manual}, així tant el supervisor com l'operador tenen accés a aquestes funcionalitats.
     \item \textbf{User}: accés limitat exclusivament a la visualització de dades, sense capacitat d'interacció amb el sistema.
 \end{itemize}
 \begin{figure}[H]
@@ -3304,13 +3071,9 @@ Els permisos s'han distribuït de la següent manera (Figura \ref{fig:objectsrig
 
 \subsubsection{Creació d'usuaris}
 
-S'han creat diferents usuaris associats als rols definits, cadascun amb les seves credencials d'accés. Per tal de simplificar la gestió, els noms dels usuaris coincideixen amb els rols corresponents.
-
-La configuració de les credencials es realitza des de l'eina d'administració de Rapid SCADA, on es poden definir les contrasenyes i assignar els rols de manera individual.
+S'han creat diferents usuaris associats als rols definits, cadascun amb les seves credencials d'accés. Per tal de simplificar la gestió, els noms dels usuaris coincideixen amb els rols corresponents. La configuració de les credencials es realitza des de l'eina d'administració de Rapid SCADA, on es poden definir les contrasenyes i assignar els rols de manera individual.
 
 Cal destacar que Rapid SCADA inclou usuaris i rols predefinits (com l'usuari \textit{Admin}), que també poden ser utilitzats dins del sistema. En aquells casos en què no es defineixen explícitament permisos de \textit{View} o \textit{Control}, el comportament per defecte vindrà determinat per la configuració interna del sistema \ref{sec:scada_users}.
-
-
 
 \newpage
 \section{Possibles millores i línies futures}
@@ -3319,20 +3082,20 @@ Tot i que el sistema desenvolupat compleix els objectius plantejats, existeixen 
 
 En primer lloc, una millora significativa seria la substitució del protocol MQTT per una arquitectura basada en \textbf{OPC UA}, on Unity actuaria com a servidor i Rapid SCADA com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
 
-En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent visualitzar la Webstation de Rapid SCADA des de fora de la màquina local. Aquesta millora facilitaria l'accés remot, la demostració del sistema i la seva escalabilitat en entorns distribuïts. Aquest fet també ajudaria a que el broker MQTT que s'ha fet servir sigués també públic pero conrolat personalment, provocant que no fes falta al usuari configurar el broker MQTT en el seu dispositiu, ja que el sistema estaria configurat per connectar-se automàticament al broker públic. En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (TLS) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
+En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent visualitzar la Webstation de Rapid SCADA des de fora de la màquina local. Aquesta millora facilitaria l'accés remot, la demostració del sistema i la seva escalabilitat en entorns distribuïts. Aquest fet també ajudaria a que el broker MQTT que s'ha fet servir sigués també públic pero controlat personalment, provocant que no fes falta al usuari configurar el broker MQTT en el seu dispositiu, ja que el sistema estaria configurat per connectar-se automàticament al broker públic. En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (TLS) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
 
 A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant la incorporació de nous \textbf{modes de funcionament} i una gestió més avançada de situacions d'\textbf{emergència i avaria}. Això inclouria la simulació de fallades addicionals i la implementació de mecanismes de protecció dins de Unity, millorant el realisme del model.
 
 També es planteja com a possible millora l'augment del realisme visual i funcional de l'entorn desenvolupat en Unity. Això inclouria la incorporació de \textbf{sons ambientals industrials}, efectes d'àudio associats al funcionament de cintes transportadores, motors o alarmes, així com millores gràfiques relacionades amb il·luminació, materials i animacions. De la mateixa manera, seria interessant implementar un \textbf{operari virtual} o personatge interactiu capaç de desplaçar-se per la planta industrial i interactuar amb determinats elements del sistema.
 
-Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de \textbf{plugins i mòduls de Rapid SCADA}, així com integrar \textbf{bases de dades externes} (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de Rapid SCADA es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. La qüestió important dels plugins que l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \textit{Trial Key} cada dia.
+Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de \textbf{plugins i mòduls de RapidSCADA}, així com integrar \textbf{bases de dades externes} (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de Rapid SCADA es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. Respecte a la part dels plguins de RapidSCADA, l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \textit{Trial Key} cada dia \cite{store_scada}.
 
 Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporació de tecnologies de \textbf{realitat virtual (VR)} dins de Unity, permetent una visualització immersiva de la planta industrial i millorant tant la interacció com el realisme del sistema.
 \newpage
 
 \section{Conclusió}
 
-Com a conclusió d'aquest Treball de Fi de Grau, es pot afirmar que els objectius plantejats inicialment s'han assolit de manera satisfactòria. S'ha aconseguit dissenyar i implementar un sistema capaç d'integrar una plataforma SCADA de codi obert amb un entorn de visualització 3D en temps real aplicat a una planta industrial simulada, permetent així supervisar i controlar diferents processos industrials dins d'un entorn virtual interactiu.
+Com a conclusió d'aquest Treball de Fi de Grau, es pot afirmar que els objectius plantejats inicialment s'han assolit de manera satisfactòria. S'ha aconseguit dissenyar i implementar un sistema capaç d'integrar una plataforma SCADA de codi obert amb un entorn de visualització 3D en temps real aplicat a una planta industrial simulada, permetent així la supervisó i i el control de diferents processos industrials dins d'un entorn virtual interactiu.
 
 Pel que fa a Rapid SCADA, el treball ha permès analitzar el funcionament i les possibilitats d'un sistema SCADA basat en programari lliure. Durant el desenvolupament s'ha comprovat que Rapid SCADA ofereix funcionalitats molt adequades per a tasques de supervisió i control industrial bàsic, permetent monitoritzar variables, visualitzar dades en temps real i establir comunicacions amb dispositius externs mitjançant protocols industrials habituals com MQTT, Modbus o OPC UA. A més, el fet de tractar-se d'un programari gratuït i relativament senzill de configurar el converteix en una eina molt interessant per a entorns educatius o petits projectes d'automatització.
 
@@ -3347,9 +3110,9 @@ Finalment, en relació amb les possibilitats educatives i tècniques del project
 Tot i això, en entorns industrials reals o en aplicacions de major complexitat, probablement seria convenient valorar l'ús de plataformes SCADA més avançades i orientades a entorns professionals, com Ignition, Wonderware, Zenon o Atvise SCADA, que ofereixen una major capacitat de personalització, eines més potents i una experiència d'usuari més completa.
 
 \newpage
-\addcontentsline{toc}{section}{13 Referències}
 
 \printbibliography
+\addcontentsline{toc}{section}{12 Referències}
 
 \newpage
 \section*{ANNEX}
@@ -3366,7 +3129,6 @@ Pel que fa a Unity, es proporcionen dues opcions diferents d'utilització:
 
 \begin{itemize}
     \item \textbf{Projecte complet de Unity:} es proporciona el projecte complet desenvolupat amb Unity. Si es descarrega de \texttt{PROJECTE\_FINAL/UNITY} i s'obre mitjançant Unity Hub, és possible accedir a tots els fitxers, scripts, escenes i configuracions del projecte, permetent així estudiar-ne el funcionament i modificar qualsevol element segons les necessitats de l'usuari.
-
     \item \textbf{Aplicació executable (.exe):} també es proporciona una versió compilada dins de la carpeta \texttt{PROJECTE\_FINAL/UNITY/BuildApp}. Aquesta carpeta conté l'arxiu executable principal i les dependències necessàries, com ara \texttt{UnityPlayer.dll}. Aquesta opció permet executar directament l'aplicació i interactuar amb el sistema de manera similar a un videojoc o simulador industrial. No obstant això, aquesta versió no permet modificar el sistema intern ni accedir als scripts o configuracions del projecte.
 \end{itemize}
 
@@ -3605,16 +3367,12 @@ En aquest apartat trobareu un exemple de cada tipus de GRAFECT que s'ha implemen
 \caption{GRAFCET del selector de mode de funcionament}
 \label{fig:annex_g500}
 \end{figure}
-
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{PDF_GRAFCET/G600.pdf}
 \caption{GRAFCET del sistema d'emergència}
 \label{fig:annex_g600}
 \end{figure}
-
-
 
 \begin{figure}[H]
 \centering
