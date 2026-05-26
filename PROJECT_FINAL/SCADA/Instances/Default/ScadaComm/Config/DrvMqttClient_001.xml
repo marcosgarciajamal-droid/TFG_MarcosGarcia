@@ -77,5 +77,11 @@
     <Command topic="cmd/manual/M9_A" displayName="Manual M9_A" qosLevel="0" retain="false" cmdCode="16" />
     <Command topic="cmd/manual/M9_B" displayName="Manual M9_B" qosLevel="0" retain="false" cmdCode="17" />
     <Command topic="cmd/manual/M9_C" displayName="Manual M9_C" qosLevel="0" retain="false" cmdCode="18" />
+    <Command topic="cmd/manual/countA" displayName="CountA" qosLevel="0" retain="false" cmdCode="19" />
+    <Command topic="cmd/manual/countB" displayName="CountB" qosLevel="0" retain="false" cmdCode="20" />
+    <Command topic="cmd/manual/countC" displayName="CountC" qosLevel="0" retain="false" cmdCode="21" />
+    <Command topic="cmd/manual/CEvacA" displayName="CEvacA" qosLevel="0" retain="false" cmdCode="22" />
+    <Command topic="cmd/manual/CEvacB" displayName="CEvacB" qosLevel="0" retain="false" cmdCode="23" />
+    <Command topic="cmd/manual/CEvacC" displayName="CEvacC" qosLevel="0" retain="false" cmdCode="24" />
   </Commands>
 </MqttClientDeviceConfig>

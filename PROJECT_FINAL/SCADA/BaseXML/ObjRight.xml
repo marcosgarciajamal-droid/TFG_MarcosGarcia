@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfObjRight xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ObjRight>
-    <ObjRightID>13</ObjRightID>
-    <ObjNum>2</ObjNum>
-    <RoleID>101</RoleID>
-    <View>true</View>
-    <Control>true</Control>
-  </ObjRight>
-  <ObjRight>
-    <ObjRightID>14</ObjRightID>
-    <ObjNum>2</ObjNum>
-    <RoleID>103</RoleID>
-    <View>false</View>
-    <Control>false</Control>
-  </ObjRight>
-  <ObjRight>
-    <ObjRightID>15</ObjRightID>
-    <ObjNum>2</ObjNum>
-    <RoleID>102</RoleID>
-    <View>true</View>
-    <Control>true</Control>
-  </ObjRight>
-  <ObjRight>
     <ObjRightID>16</ObjRightID>
     <ObjNum>1</ObjNum>
     <RoleID>101</RoleID>
@@ -83,5 +62,26 @@
     <RoleID>103</RoleID>
     <View>false</View>
     <Control>false</Control>
+  </ObjRight>
+  <ObjRight>
+    <ObjRightID>26</ObjRightID>
+    <ObjNum>6</ObjNum>
+    <RoleID>103</RoleID>
+    <View>false</View>
+    <Control>false</Control>
+  </ObjRight>
+  <ObjRight>
+    <ObjRightID>27</ObjRightID>
+    <ObjNum>6</ObjNum>
+    <RoleID>101</RoleID>
+    <View>true</View>
+    <Control>true</Control>
+  </ObjRight>
+  <ObjRight>
+    <ObjRightID>28</ObjRightID>
+    <ObjNum>6</ObjNum>
+    <RoleID>102</RoleID>
+    <View>true</View>
+    <Control>true</Control>
   </ObjRight>
 </ArrayOfObjRight>

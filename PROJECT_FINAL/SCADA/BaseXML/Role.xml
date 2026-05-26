@@ -33,16 +33,13 @@
   <Role>
     <RoleID>101</RoleID>
     <Name>Supervisor</Name>
-    <Code>ScadaAdmin</Code>
   </Role>
   <Role>
     <RoleID>102</RoleID>
     <Name>Operator</Name>
-    <Code>ScadaDispatcher</Code>
   </Role>
   <Role>
     <RoleID>103</RoleID>
     <Name>User</Name>
-    <Code>ScadaGuest</Code>
   </Role>
 </ArrayOfRole>

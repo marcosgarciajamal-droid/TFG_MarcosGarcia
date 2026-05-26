@@ -7,18 +7,21 @@
     <ParentObjNum xsi:nil="true" />
   </Obj>
   <Obj>
-    <ObjNum>2</ObjNum>
-    <Name>Manual</Name>
-    <ParentObjNum xsi:nil="true" />
-  </Obj>
-  <Obj>
     <ObjNum>3</ObjNum>
     <Name>Visualization</Name>
+    <Code>Vis</Code>
     <ParentObjNum xsi:nil="true" />
   </Obj>
   <Obj>
     <ObjNum>4</ObjNum>
     <Name>Grafics</Name>
+    <Code>Gra</Code>
+    <ParentObjNum xsi:nil="true" />
+  </Obj>
+  <Obj>
+    <ObjNum>6</ObjNum>
+    <Name>Manual_v2</Name>
+    <Code>MAN</Code>
     <ParentObjNum xsi:nil="true" />
   </Obj>
 </ArrayOfObj>

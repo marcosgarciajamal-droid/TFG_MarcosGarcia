@@ -61,19 +61,5 @@
         <Device active="true" isBound="true" number="1" name="Unity_Plant" driver="DrvMqttClient" numAddress="0" strAddress="" pollOnCmd="false" timeout="0" delay="200" time="00:00:00" period="00:00:00" cmdLine="" />
       </DevicePolling>
     </Line>
-    <Line active="true" isBound="true" number="3" name="OPC UA">
-      <LineOptions>
-        <ReqRetries>3</ReqRetries>
-        <CycleDelay>0</CycleDelay>
-        <CmdEnabled>true</CmdEnabled>
-        <PollAfterCmd>true</PollAfterCmd>
-        <DetailedLog>true</DetailedLog>
-      </LineOptions>
-      <Channel type="" driver="" />
-      <CustomOptions />
-      <DevicePolling>
-        <Device active="true" isBound="true" number="2" name="Opc clinet" driver="DrvOpcUa" numAddress="0" strAddress="" pollOnCmd="false" timeout="0" delay="200" time="00:00:00" period="00:00:00" cmdLine="" />
-      </DevicePolling>
-    </Line>
   </Lines>
 </ScadaCommConfig>

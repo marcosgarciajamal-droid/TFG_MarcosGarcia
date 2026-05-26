@@ -85,10 +85,15 @@ public class PlantController: MonoBehaviour {
   public int CMD_M5 = -1; // nivel destino
   public int CMD_M6 = -1; // posición destino
   public bool CI => !S1.isActivated && !S2.detected && !S3.isActivated && !S13.isActivated && !S14.isActivated && !S12.isActivated && S4 && S8 && SV1 && SH1; // Condición de Inicio
-  bool COND_EMERG_OK => ETAPA_600 == 600;
-  bool COND_AUTO => (ETAPA_500 == 501 || ETAPA_500 ==502) && COND_EMERG_OK && !B_Pause;
-  bool COND_MANUAL => ETAPA_500 == 503 || ETAPA_500 == 504;
+  public bool COND_EMERG_OK => ETAPA_600 == 600;
+  public bool COND_AUTO => (ETAPA_500 == 501 || ETAPA_500 ==502) && COND_EMERG_OK && !B_Pause;
+  public bool COND_MANUAL => ETAPA_500 == 503 || ETAPA_500 == 504;
   public bool CI_Actuators => ETAPA_100 == 100 && ETAPA_120 == 120 && ETAPA_140 == 140 && ETAPA_160 == 160 && ETAPA_180 == 180 && ETAPA_200 == 200 && ETAPA_220 == 220 && ETAPA_240 == 240 && ETAPA_260 == 260 && ETAPA_280 == 280 && ETAPA_300 == 300;
+
+  bool M2_IsMoving => ETAPA_140 == 141 || ETAPA_140 == 143 || ETAPA_140 == 145 || ETAPA_140 == 147;
+  bool M3_IsMoving => ETAPA_160 == 161 || ETAPA_160 == 163 || ETAPA_160 == 165 || ETAPA_160 == 167;
+  bool M5_IsMoving => ETAPA_260 == 261 || ETAPA_260 == 262;
+  bool M6_IsMoving => ETAPA_280 == 281 || ETAPA_280 == 283 || ETAPA_280 == 285 || ETAPA_280 == 287;
 
   Dictionary<string,bool> prevStates = new Dictionary<string, bool>();
   bool RisingEdge(string key, bool current)
@@ -544,10 +549,10 @@ public class PlantController: MonoBehaviour {
   void GRAFCET_M2() {
     switch (ETAPA_140) {
     case 140:
-      if (ETAPA_0 == 18 || (COND_MANUAL && CMD_M2 == 0 && !M3.IsMoving)) ETAPA_140 = 141;
-      else if (ETAPA_20 == 21 || (COND_MANUAL && CMD_M2 == 1 && !M3.IsMoving)) ETAPA_140 = 143;
-      else if (ETAPA_40 == 41 || (COND_MANUAL && CMD_M2 == 2 && !M3.IsMoving)) ETAPA_140 = 145;
-      else if (ETAPA_60 == 61 || (COND_MANUAL && CMD_M2 == 3 && !M3.IsMoving)) ETAPA_140 = 147;
+      if (ETAPA_0 == 18 || (COND_MANUAL && CMD_M2 == 0 && !M3_IsMoving)) ETAPA_140 = 141;
+      else if (ETAPA_20 == 21 || (COND_MANUAL && CMD_M2 == 1 && !M3_IsMoving)) ETAPA_140 = 143;
+      else if (ETAPA_40 == 41 || (COND_MANUAL && CMD_M2 == 2 && !M3_IsMoving)) ETAPA_140 = 145;
+      else if (ETAPA_60 == 61 || (COND_MANUAL && CMD_M2 == 3 && !M3_IsMoving)) ETAPA_140 = 147;
       break;
     case 141:
         CMD_M2 = -1;
@@ -584,10 +589,10 @@ public class PlantController: MonoBehaviour {
   void GRAFCET_M3() {
     switch (ETAPA_160) {
     case 160:
-      if (ETAPA_0 == 19 || (COND_MANUAL && CMD_M3 == 0 && !M2.IsMoving)) ETAPA_160 = 161;
-      else if (ETAPA_20 == 23 || ETAPA_40 == 43 || ETAPA_60 == 63 || (COND_MANUAL && CMD_M3 == 1 && !M2.IsMoving)) ETAPA_160 = 163;
-      else if (ETAPA_20 == 24 || ETAPA_40 == 44 || ETAPA_60 == 64 || (COND_MANUAL && CMD_M3 == 2 && !M2.IsMoving)) ETAPA_160 = 165;
-      else if (ETAPA_20 == 25 || ETAPA_40 == 45 || ETAPA_60 == 65 || (COND_MANUAL && CMD_M3 == 3 && !M2.IsMoving)) ETAPA_160 = 167;
+      if (ETAPA_0 == 19 || (COND_MANUAL && CMD_M3 == 0 && !M2_IsMoving)) ETAPA_160 = 161;
+      else if (ETAPA_20 == 23 || ETAPA_40 == 43 || ETAPA_60 == 63 || (COND_MANUAL && CMD_M3 == 1 && !M2_IsMoving)) ETAPA_160 = 163;
+      else if (ETAPA_20 == 24 || ETAPA_40 == 44 || ETAPA_60 == 64 || (COND_MANUAL && CMD_M3 == 2 && !M2_IsMoving)) ETAPA_160 = 165;
+      else if (ETAPA_20 == 25 || ETAPA_40 == 45 || ETAPA_60 == 65 || (COND_MANUAL && CMD_M3 == 3 && !M2_IsMoving)) ETAPA_160 = 167;
       break;
     case 161:
         CMD_M3 = -1;
@@ -624,8 +629,8 @@ public class PlantController: MonoBehaviour {
 void GRAFCET_M5() {
     switch (ETAPA_260) {
     case 260:
-        if (ETAPA_80 == 91 || (COND_MANUAL && CMD_M5 == 0 && !M6.IsMoving)) ETAPA_260 = 261;   // Ir a posición 1
-        else if (ETAPA_80 == 88 || (COND_MANUAL && CMD_M5 == 1 && !M6.IsMoving)) ETAPA_260 = 262; // Ir a posición 2
+        if (ETAPA_80 == 91 || (COND_MANUAL && CMD_M5 == 0 && !M6_IsMoving)) ETAPA_260 = 261;   // Ir a posición 1
+        else if (ETAPA_80 == 88 || (COND_MANUAL && CMD_M5 == 1 && !M6_IsMoving)) ETAPA_260 = 262; // Ir a posición 2
         break;
     case 261:
         CMD_M5 = -1;
@@ -645,10 +650,10 @@ void GRAFCET_M6() {
     switch (ETAPA_280) {
 
     case 280:
-        if ( ETAPA_80 == 89 || (COND_MANUAL && CMD_M6 == 0 && !M5.IsMoving)) ETAPA_280 = 281; // Nivel 0 (salida)
-        else if ( ETAPA_80 == 81 || (COND_MANUAL && CMD_M6 == 1 && !M5.IsMoving)) ETAPA_280 = 283;
-        else if (ETAPA_80 == 82 || (COND_MANUAL && CMD_M6 == 2 && !M5.IsMoving)) ETAPA_280 = 285;
-        else if (ETAPA_80 == 83 || (COND_MANUAL && CMD_M6 == 3 && !M5.IsMoving)) ETAPA_280 = 287;
+        if ( ETAPA_80 == 89 || (COND_MANUAL && CMD_M6 == 0 && !M5_IsMoving)) ETAPA_280 = 281; // Nivel 0 (salida)
+        else if ( ETAPA_80 == 81 || (COND_MANUAL && CMD_M6 == 1 && !M5_IsMoving)) ETAPA_280 = 283;
+        else if (ETAPA_80 == 82 || (COND_MANUAL && CMD_M6 == 2 && !M5_IsMoving)) ETAPA_280 = 285;
+        else if (ETAPA_80 == 83 || (COND_MANUAL && CMD_M6 == 3 && !M5_IsMoving)) ETAPA_280 = 287;
         break;
     case 281:
         M6.MoveToLevel(0);

@@ -10,14 +10,4 @@
     <CommLineNum>1</CommLineNum>
     <Descr />
   </Device>
-  <Device>
-    <DeviceNum>2</DeviceNum>
-    <Name>Opc clinet</Name>
-    <Code />
-    <DevTypeID>232</DevTypeID>
-    <NumAddress xsi:nil="true" />
-    <StrAddress />
-    <CommLineNum>3</CommLineNum>
-    <Descr />
-  </Device>
 </ArrayOfDevice>

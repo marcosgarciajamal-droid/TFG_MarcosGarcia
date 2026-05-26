@@ -161,5 +161,25 @@ void OnMessageReceived(object sender, MqttMsgPublishEventArgs e)
     if (topic == "plant/cmd/manual/M9_C") plant.CMD_M9_C = value;
     // CINTA EVAC
     if (topic == "plant/cmd/manual/M8")  plant.CMD_M8 = value;
+
+    // COUNTERS
+    if (plant.COND_MANUAL)
+    {
+        if (topic == "plant/cmd/manual/countA" && value == 1) plant.CountA++;
+        if (topic == "plant/cmd/manual/countA" && value == 0) plant.CountA = 0;
+
+        if (topic == "plant/cmd/manual/countB" && value == 1) plant.CountB++;
+        if (topic == "plant/cmd/manual/countB" && value == 0) plant.CountB = 0;
+
+        if (topic == "plant/cmd/manual/countC" && value == 1) plant.CountC++;
+        if (topic == "plant/cmd/manual/countC" && value == 0) plant.CountC = 0;
+
+        if (topic == "plant/cmd/manual/CEvacA" && value == 1) plant.CEvacA++; 
+        if (topic == "plant/cmd/manual/CEvacA" && value == 0) plant.CEvacA = 0;  
+        if (topic == "plant/cmd/manual/CEvacB" && value == 1) plant.CEvacB++;
+        if (topic == "plant/cmd/manual/CEvacB" && value == 0) plant.CEvacB = 0;
+        if (topic == "plant/cmd/manual/CEvacC" && value == 1) plant.CEvacC++;
+        if (topic == "plant/cmd/manual/CEvacC" && value == 0) plant.CEvacC = 0;
+    }
     }
 }

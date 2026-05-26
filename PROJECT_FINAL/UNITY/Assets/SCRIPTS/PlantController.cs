@@ -85,9 +85,9 @@ public class PlantController: MonoBehaviour {
   public int CMD_M5 = -1; // nivel destino
   public int CMD_M6 = -1; // posición destino
   public bool CI => !S1.isActivated && !S2.detected && !S3.isActivated && !S13.isActivated && !S14.isActivated && !S12.isActivated && S4 && S8 && SV1 && SH1; // Condición de Inicio
-  bool COND_EMERG_OK => ETAPA_600 == 600;
-  bool COND_AUTO => (ETAPA_500 == 501 || ETAPA_500 ==502) && COND_EMERG_OK && !B_Pause;
-  bool COND_MANUAL => ETAPA_500 == 503 || ETAPA_500 == 504;
+  public bool COND_EMERG_OK => ETAPA_600 == 600;
+  public bool COND_AUTO => (ETAPA_500 == 501 || ETAPA_500 ==502) && COND_EMERG_OK && !B_Pause;
+  public bool COND_MANUAL => ETAPA_500 == 503 || ETAPA_500 == 504;
   public bool CI_Actuators => ETAPA_100 == 100 && ETAPA_120 == 120 && ETAPA_140 == 140 && ETAPA_160 == 160 && ETAPA_180 == 180 && ETAPA_200 == 200 && ETAPA_220 == 220 && ETAPA_240 == 240 && ETAPA_260 == 260 && ETAPA_280 == 280 && ETAPA_300 == 300;
 
   Dictionary<string,bool> prevStates = new Dictionary<string, bool>();

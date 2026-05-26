@@ -4,9 +4,14 @@ using TMPro;
 public class DisplayCounter: MonoBehaviour
 {
 public TMP_Text counterText;
-public Counter shelfCounter;
+public PlantController plant;
+
+public bool ShelfA, ShelfB, ShelfC;
 void Update()
 {
-    counterText.text = shelfCounter.pieceCount.ToString();
+    if (ShelfA) counterText.text = plant.CountA.ToString();
+    if (ShelfB) counterText.text = plant.CountB.ToString();
+    if (ShelfC) counterText.text = plant.CountC.ToString();
 }
+
 }
