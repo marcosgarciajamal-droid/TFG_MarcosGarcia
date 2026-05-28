@@ -25,7 +25,7 @@ void Update()
     PublishCounters();
     PublishStatus();
 }
-    void PublishIfChanged(string topic, int value)
+ void PublishIfChanged(string topic, int value)
 {
     if (!lastValues.ContainsKey(topic) || lastValues[topic] != value)
     {
