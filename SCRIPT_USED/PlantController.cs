@@ -100,7 +100,6 @@ public class PlantController: MonoBehaviour {
   {
     bool prev = false;
     if (prevStates.ContainsKey(key)) prev = prevStates[key];
-
     prevStates[key] = current;
     return current && !prev;
   }
@@ -629,8 +628,8 @@ public class PlantController: MonoBehaviour {
 void GRAFCET_M5() {
     switch (ETAPA_260) {
     case 260:
-        if (ETAPA_80 == 91 || (COND_MANUAL && CMD_M5 == 0 && !M6_IsMoving)) ETAPA_260 = 261;   // Ir a posición 1
-        else if (ETAPA_80 == 88 || (COND_MANUAL && CMD_M5 == 1 && !M6_IsMoving)) ETAPA_260 = 262; // Ir a posición 2
+        if (ETAPA_80 == 91 || (COND_MANUAL && CMD_M5 == 0 && !M6_IsMoving)) ETAPA_260 = 261;   
+        else if (ETAPA_80 == 88 || (COND_MANUAL && CMD_M5 == 1 && !M6_IsMoving)) ETAPA_260 = 262; 
         break;
     case 261:
         CMD_M5 = -1;
@@ -650,7 +649,7 @@ void GRAFCET_M6() {
     switch (ETAPA_280) {
 
     case 280:
-        if ( ETAPA_80 == 89 || (COND_MANUAL && CMD_M6 == 0 && !M5_IsMoving)) ETAPA_280 = 281; // Nivel 0 (salida)
+        if ( ETAPA_80 == 89 || (COND_MANUAL && CMD_M6 == 0 && !M5_IsMoving)) ETAPA_280 = 281; 
         else if ( ETAPA_80 == 81 || (COND_MANUAL && CMD_M6 == 1 && !M5_IsMoving)) ETAPA_280 = 283;
         else if (ETAPA_80 == 82 || (COND_MANUAL && CMD_M6 == 2 && !M5_IsMoving)) ETAPA_280 = 285;
         else if (ETAPA_80 == 83 || (COND_MANUAL && CMD_M6 == 3 && !M5_IsMoving)) ETAPA_280 = 287;
@@ -766,7 +765,7 @@ void GRAFCET_MODO() {
       break;
     case 501: 
       LS.isOk = true;
-      if ((Selector != 0 && !B_Stop) || !B_Stop) ETAPA_500 = 502;
+      if (!B_Stop) ETAPA_500 = 502;
       break;
     case 502:
       if (ETAPA_0 == 0) ETAPA_500 = 500;

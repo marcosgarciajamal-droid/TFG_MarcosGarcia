@@ -10948,7 +10948,7 @@ MonoBehaviour:
   detectedShape: 0
   detected: 0
   led: {fileID: 1828092248}
-  failProbability: 0
+  failProbability: 0.05
   faultActive: 0
 --- !u!65 &1390678238
 BoxCollider:
@@ -11678,8 +11678,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.89662606, y: 0.9999997, z: 0.4619298}
-  m_Center: {x: 0.08144185, y: 0, z: -0.19795935}
+  m_Size: {x: 0.6869572, y: 0.9999997, z: 0.4619298}
+  m_Center: {x: -0.023393199, y: 0, z: -0.19795935}
 --- !u!114 &1480115762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13629,8 +13629,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.58416295, y: 0.9999997, z: 1.0358927}
-  m_Center: {x: -0.18790144, y: 0, z: -0.017944505}
+  m_Size: {x: 0.58416295, y: 0.9999997, z: 0.8138757}
+  m_Center: {x: -0.18790145, y: 0, z: 0.093064986}
 --- !u!114 &1692619881
 MonoBehaviour:
   m_ObjectHideFlags: 0
