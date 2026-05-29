@@ -47,7 +47,8 @@ sorting=none]{biblatex}
 \definecolor{codepurple}{rgb}{0.5,0.0,0.5}
 \definecolor{codered}{rgb}{0.7,0.1,0.1}
 \definecolor{codegray}{rgb}{0.35,0.35,0.35}
-
+\definecolor{upcblue}{rgb}{0.0,0.45,0.85}
+\definecolor{upcblue2}{RGB}{0,114,206}
 
 \lstdefinelanguage{CSharp}{ language=[Sharp]C, morekeywords={var,async,await,yield,get,set} }
 
@@ -121,27 +122,76 @@ sorting=none]{biblatex}
 
 \begin{document}
 \begin{titlepage}
-    \centering
-    {\Large Universitat Politècnica de Catalunya\par}
-    \vspace{1cm}
-    {\large Escola Politècnica Superior d'Enginyeria de Manresa  \par}
-    \vspace{2.5cm}
-    {\huge\bfseries Integració d'un sistema SCADA amb un entorn de visualització 3D en temps real mitjançant Unity\par}
-    \vspace{2cm}
-    {\Large Treball de Fi de Grau\par}
-    \vspace{1.5cm}
-    {\large Titulació: Grau en Enginyeria de Sistemes TIC\par}
-    \vspace{1cm}
-    {\large Autor: Marcos García Jamal\par}
-    \vspace{0.5cm}
-    {\large Directora: Teresa Escobet Canal\par}
-   \vspace{0.5cm}
+\centering
 
-    \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
+\vspace*{1cm}
 
-    \vfill
+\includegraphics[width=0.28\textwidth]{images/logo_epsem.png}
 
-    {\large Curs acadèmic 2025--2026\par}
+\vspace{0.1cm}
+
+{\Large\color{upcblue2}
+Escola Politècnica Superior d'Enginyeria de Manresa
+\par}
+
+\vspace{1.75cm}
+
+\hrule
+\vspace{0.3cm}
+
+{\Huge\bfseries
+Integració d'un sistema SCADA amb un entorn de visualització 3D en temps real mitjançant Unity
+\par}
+
+\vspace{0.5cm}
+
+{\large
+Manresa, XX de juny de 2026
+\par}
+
+\vspace{0.3cm}
+
+\hrule
+
+\vspace{2cm}
+
+{\large
+Treball Final de Grau (24 ECTS) que presenta
+\par}
+
+\vspace{0.1cm}
+
+{\LARGE
+Marcos García Jamal
+\par}
+
+\vspace{0.1cm}
+
+{\large
+en compliment dels requisits per assolir el
+\par}
+
+\vspace{0.1cm}
+
+{\Large
+Grau d'Enginyeria de Sistemes TIC
+\par}
+
+\vspace{0.75cm}
+
+{\Large
+Directora: Teresa Escobet Canal
+\par}
+
+\vspace{2.5cm}
+
+\href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia}
+{github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia}
+
+{\large
+Curs acadèmic 2025--2026
+\par}
+
 \end{titlepage}
 
 \newpage
@@ -634,7 +684,7 @@ Per defecte, el sistema utilitza un mecanisme d'emmagatzematge intern basat en f
 
 Les dades històriques poden ser consultades des de la mateixa \textit{Webstation} mitjançant taules, gràfiques i tendències, sense necessitat d'accedir directament als fitxers interns del sistema. Aquest enfocament prioritza el rendiment i la fiabilitat del sistema per sobre de l'accés extern directe a les dades.
 
-A més de l'emmagatzematge intern, Rapid SCADA permet integrar bases de dades externes com \textbf{PostgreSQL} o \textbf{InfluxDB} mitjançant mòduls i plugins específics \cite{rapidscada_db_export}. Aquesta funcionalitat facilita:
+A part de l'emmagatzematge intern, Rapid SCADA permet integrar bases de dades externes com \textbf{PostgreSQL} o \textbf{InfluxDB} mitjançant mòduls i plugins específics \cite{rapidscada_db_export}. Aquesta funcionalitat facilita:
 
 \begin{itemize}
     \item L'emmagatzematge de dades en formats consultables externament
@@ -1836,7 +1886,7 @@ Models utilitzats per representar les llums de sistema correcta i d'emergència 
 
 \end{itemize}
 
-A més dels elements anteriors, s'han implementat també sensors virtuals que permeten detectar la presència de peces o la posició dels transelevadors en diferents punts del sistema.
+Paral·lelament dels elements anteriors, s'han implementat també sensors virtuals que permeten detectar la presència de peces o la posició dels transelevadors en diferents punts del sistema.
 
 \subsection{Sistema de control de càmera}
 
@@ -1900,7 +1950,7 @@ Addicionalment, s'ha implementat un sistema de rodets que permet reorganitzar le
 
 \subsection{Implementació del transelevador (AS/RS Crane)}
 
-El model original del sistema AS/RS es trobava en format \textit{.stp}, per la qual cosa es va convertir a un format compatible amb Unity (\textit{.fbx}) \cite{stp_to_fbx}. A més a més, el model inicial presentava una estructura excessivament complexa per a la simulació, fet que va requerir la seva edició prèvia amb \textbf{Blender}. El programa Blender permet manipular models 3D de forma més precisa que Unity quan es tracta de separar malles, dividir objectes o reorganitzar l'estructura d'un model.
+El model original del sistema AS/RS es trobava en format \textit{.stp}, per la qual cosa es va convertir a un format compatible amb Unity (\textit{.fbx}) \cite{stp_to_fbx}. Tanmateix, el model inicial presentava una estructura excessivament complexa per a la simulació, fet que va requerir la seva edició prèvia amb \textbf{Blender}. El programa Blender permet manipular models 3D de forma més precisa que Unity quan es tracta de separar malles, dividir objectes o reorganitzar l'estructura d'un model.
 
  Mitjançant aquest procés es van separar els diferents components del model, especialment els rodets de la plataforma, per tal de poder controlar-los de forma independent mitjançant \textit{scripts}. També es va afegir un \textit{Collider} a la plataforma per garantir el correcte suport de les peces durant el moviment.
 
@@ -2006,7 +2056,7 @@ El funcionament d'aquest temporitzador (secció \ref{sec:scripts_unity}) es basa
 
 \subsection{Interfície de visualització de dades (Canvas)}
 
-A més dels indicadors LED, s'ha implementat una interfície gràfica en Unity per mostrar dades en temps real mitjançant el sistema \textit{Canvas} \cite{UnityCanvas}.
+A sobre dels indicadors LED, s'ha implementat una interfície gràfica en Unity per mostrar dades en temps real mitjançant el sistema \textit{Canvas} \cite{UnityCanvas}.
 
 L'estructura es basa en un objecte pare amb vuit elements fills, on trobem quatre panells visuals i quatre elements de text. Tres d'aquests elements de text mostren el nombre de peces emmagatzemades gràcies al script \textit{DisplayCounter} (secció \ref{sec:scripts_unity}), que actualitza aquest valor en cada fotograma accedint al comptador de caixes que es realitza en el procès automàtic i convertint-lo a text amb la funció \texttt{ToString()} \cite{dotnet_collections}. En canvi,el quart text mostra el tipus de peça detectada pel sensor òptic (secció \ref{sec:scripts_unity}), el qual quan no hi ha detecció es mostra \textit{"No piece"}, i en cas contrari es mostra el valor de l'enumeració \textit{PieceShape}.
 
@@ -2995,7 +3045,7 @@ Tot i que el sistema desenvolupat compleix els objectius plantejats, existeixen 
 
 En primer lloc, una millora significativa seria la substitució del protocol MQTT per una arquitectura basada en \textbf{OPC UA}, on Unity actuaria com a servidor i Rapid SCADA com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
 
-En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent visualitzar la Webstation de Rapid SCADA des de fora de la màquina local. Aquesta millora facilitaria l'accés remot, la demostració del sistema i la seva escalabilitat en entorns distribuïts. Aquest fet també ajudaria a que el broker MQTT que s'ha fet servir sigués també públic pero controlat personalment, provocant que no fes falta al usuari configurar el broker MQTT en el seu dispositiu, ja que el sistema estaria configurat per connectar-se automàticament al broker públic. En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (TLS) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
+En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent l'accés remot a la Webstation de Rapid SCADA. Aquest fet facilitaria les demostracions i l'escalabilitat del sistema desenvolupat en entorns distribuïts.   A més, permetría utilitzar un broker MQTT públic i controlat personalment, possibilitant la connexió automàtica al sistema sense requerir cap configuració en el dispositiu de l'usuari.  En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (TLS) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
 
 A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant la incorporació de nous \textbf{modes de funcionament} i una gestió més avançada de situacions d'\textbf{emergència i avaria}. Això inclouria la simulació de fallades addicionals i la implementació de mecanismes de protecció dins de Unity, millorant el realisme del model.
 
