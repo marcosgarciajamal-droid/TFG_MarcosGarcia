@@ -326,7 +326,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>120</InCnlNum>
+      <InCnlNum>122</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -412,7 +412,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>122</InCnlNum>
+      <InCnlNum>120</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -455,7 +455,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>117</InCnlNum>
+      <InCnlNum>119</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -541,7 +541,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>119</InCnlNum>
+      <InCnlNum>117</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -584,7 +584,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>114</InCnlNum>
+      <InCnlNum>116</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -670,7 +670,7 @@
           <ImageName>sensor_on.png</ImageName>
         </Condition>
       </Conditions>
-      <InCnlNum>116</InCnlNum>
+      <InCnlNum>114</InCnlNum>
       <CtrlCnlNum>0</CtrlCnlNum>
     </DynamicPicture>
     <DynamicPicture>
@@ -1941,8 +1941,8 @@
       <ID>50</ID>
       <Name />
       <Location>
-        <X>867</X>
-        <Y>363</Y>
+        <X>877</X>
+        <Y>362</Y>
       </Location>
       <Size>
         <Width>100</Width>
@@ -1979,8 +1979,8 @@
       <ID>51</ID>
       <Name />
       <Location>
-        <X>872</X>
-        <Y>262</Y>
+        <X>877</X>
+        <Y>264</Y>
       </Location>
       <Size>
         <Width>100</Width>
@@ -2017,8 +2017,8 @@
       <ID>52</ID>
       <Name />
       <Location>
-        <X>869</X>
-        <Y>170</Y>
+        <X>877</X>
+        <Y>167</Y>
       </Location>
       <Size>
         <Width>100</Width>
@@ -2679,7 +2679,7 @@
       <ID>80</ID>
       <Name />
       <Location>
-        <X>756</X>
+        <X>749</X>
         <Y>362</Y>
       </Location>
       <Size>
@@ -2695,7 +2695,7 @@
         <Italic>false</Italic>
         <Underline>false</Underline>
       </Font>
-      <Text>COUNT_A: </Text>
+      <Text>COUNTER A: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
@@ -2725,7 +2725,7 @@
         <Italic>false</Italic>
         <Underline>false</Underline>
       </Font>
-      <Text>COUNT_B: </Text>
+      <Text>COUNTER B: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
@@ -2739,7 +2739,7 @@
       <ID>83</ID>
       <Name />
       <Location>
-        <X>746</X>
+        <X>749</X>
         <Y>167</Y>
       </Location>
       <Size>
@@ -2755,7 +2755,7 @@
         <Italic>false</Italic>
         <Underline>false</Underline>
       </Font>
-      <Text>COUNT_C: </Text>
+      <Text>COUNTER C: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
@@ -3205,7 +3205,7 @@
         <Italic>false</Italic>
         <Underline>true</Underline>
       </Font>
-      <Text>COUNT_EvacA: </Text>
+      <Text>COUNT EvacA: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
@@ -3235,7 +3235,7 @@
         <Italic>false</Italic>
         <Underline>true</Underline>
       </Font>
-      <Text>COUNT_EvacB: </Text>
+      <Text>COUNT EvacB: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
@@ -3265,7 +3265,7 @@
         <Italic>false</Italic>
         <Underline>true</Underline>
       </Font>
-      <Text>COUNT_EvacC: </Text>
+      <Text>COUNT EvacC: </Text>
       <HAlign>Center</HAlign>
       <VAlign>Top</VAlign>
       <WordWrap>false</WordWrap>
