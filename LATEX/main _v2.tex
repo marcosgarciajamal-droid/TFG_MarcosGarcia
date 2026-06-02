@@ -37,15 +37,19 @@
 \usepackage{array}
 \usepackage{pdflscape}
 \usepackage{url}
-\usepackage[backend=biber,style=numeric, %style=alphabetic
+\usepackage[backend=biber,style=numeric, 
 datezeros=false,  giveninits=true,
 sorting=none]{biblatex}
+\DefineBibliographyStrings{catalan}{
+  urlseen = {Consultat el},
+}
 \addbibresource{referencies.bib}
 
 \setcounter{biburlnumpenalty}{9000}
 \setcounter{biburlucpenalty}{9000}
 \setcounter{biburllcpenalty}{9000}
 
+\let\fitx\nolinkurl
 
 % --- Colors ---
 \definecolor{codebg}{rgb}{0.95,0.95,0.95}
@@ -250,13 +254,13 @@ Finalment, vull expressar el meu agraïment a la meva família, que m'ha donat s
 
 Aquest Treball de Fi de Grau presenta el disseny i implementació d'un sistema integrat capaç de combinar una plataforma \acro{SCADA} de codi obert amb un entorn de visualització 3D en temps real desenvolupat amb \acro{Unity}. 
 
-Per assolir aquest objectiu, s'ha utilitzat Rapid \acro{SCADA} com a sistema de supervisió i control industrial, mentre que \acro{Unity} s'ha emprat per al desenvolupament de la simulació tridimensional de la planta. La comunicació entre ambdues plataformes s'ha implementat mitjançant el protocol \acro\acro{mqtt}  permetent un intercanvi de dades flexible, modular i escalable en temps real.
+Per assolir aquest objectiu, s'ha utilitzat \emph{Rapid SCADA} com a sistema de supervisió i control industrial, mentre que \acro{Unity} s'ha emprat per al desenvolupament de la simulació tridimensional de la planta. La comunicació entre ambdues plataformes s'ha implementat mitjançant el protocol \acro{mqtt}  permetent un intercanvi de dades flexible, modular i escalable en temps real.
 
 El sistema desenvolupat incorpora diferents components habituals en entorns industrials automatitzats, com cintes transportadores, sensors virtuals, transelevadors automàtics (\acro{AS/RS}), sistemes d'i\l.luminació d'estat i mecanismes de detecció i classificació de peces. També s'han implementat funcionalitats de simulació de fallades, temporitzadors industrials i una lògica de control basada en \acro{grafcet}.
 
 \bigskip
 
-\textbf{Paraules clau:} Rapid \acro{SCADA}, \acro{Unity}, \acro\acro{mqtt} , automatització industrial, simulació 3D, planta virtual, supervisió industrial, \acro{grafcet}, \acro{AS/RS}, sensors virtuals.
+\textbf{Paraules clau:} \emph{Rapid SCADA}, \acro{Unity}, \acro{mqtt} , automatització industrial, simulació 3D, planta virtual, supervisió industrial, \acro{grafcet}, \acro{AS/RS}, sensors virtuals.
 
 
 %\newpage
@@ -265,13 +269,13 @@ El sistema desenvolupat incorpora diferents components habituals en entorns indu
 
 Este Trabajo de Fin de Grado presenta el diseño e implementación de un sistema integrado capaz de combinar una plataforma \acro{SCADA} de código abierto con un entorno de visualización 3D en tiempo real desarrollado con \acro{Unity}.
 
-Para alcanzar este objetivo, se ha utilizado Rapid \acro{SCADA} como sistema de supervisión y control industrial, mientras que \acro{Unity} se ha empleado para el desarrollo de la simulación tridimensional de la planta. La comunicación entre ambas plataformas se ha implementado mediante el protocolo \acro\acro{mqtt} , permitiendo un intercambio de datos flexible, modular y escalable en tiempo real.
+Para alcanzar este objetivo, se ha utilizado \emph{Rapid SCADA} como sistema de supervisión y control industrial, mientras que \acro{Unity} se ha empleado para el desarrollo de la simulación tridimensional de la planta. La comunicación entre ambas plataformas se ha implementado mediante el protocolo \acro{mqtt} , permitiendo un intercambio de datos flexible, modular y escalable en tiempo real.
 
 El sistema desarrollado incorpora diferentes componentes habituales en entornos industriales automatizados, como cintas transportadoras, sensores virtuales, transelevadores automáticos (\acro{AS/RS}), sistemas de iluminación de estado y mecanismos de detección y clasificación de piezas. También se han implementado funcionalidades de simulación de fallos, temporizadores industriales y una lógica de control basada en \acro{grafcet}.
 
 \bigskip
 
-\textbf{Palabras clave:} Rapid \acro{SCADA}, \acro{Unity}, \acro\acro{mqtt} , automatización industrial, simulación 3D, planta virtual, supervisión industrial, \acro{grafcet}, \acro{AS/RS}, sensores virtuales.
+\textbf{Palabras clave:} \emph{Rapid SCADA}, \acro{Unity}, \acro{mqtt} , automatización industrial, simulación 3D, planta virtual, supervisión industrial, \acro{grafcet}, \acro{AS/RS}, sensores virtuales.
 
 %\newpage
 
@@ -279,12 +283,12 @@ El sistema desarrollado incorpora diferentes componentes habituales en entornos 
 
 This Final Degree Project presents the design and implementation of an integrated system capable of combining an open-source \acro{SCADA} platform with a real-time 3D visualization environment developed using \acro{Unity}.
 
-To achieve this objective, Rapid \acro{SCADA} has been used as the industrial supervision and control system, while \acro{Unity} has been employed for the development of the plant's three-dimensional simulation. Communication between both platforms has been implemented through the \acro\acro{mqtt}  protocol, enabling flexible, modular, and scalable real-time data exchange.
+To achieve this objective, \emph{Rapid SCADA} has been used as the industrial supervision and control system, while \acro{Unity} has been employed for the development of the plant's three-dimensional simulation. Communication between both platforms has been implemented through the \acro{mqtt}  protocol, enabling flexible, modular, and scalable real-time data exchange.
 
 The developed system incorporates several common components found in automated industrial environments, such as conveyor belts, virtual sensors, automated storage and retrieval systems (\acro{AS/RS}), status lighting systems, and piece detection and classification mechanisms. Additionally, fault simulation functionalities, industrial timers, and a \acro{grafcet}-based control logic have been implemented.
 
 \bigskip
-\textbf{Keywords:} Rapid \acro{SCADA}, \acro{Unity}, \acro\acro{mqtt} , industrial automation, 3D simulation, virtual plant, industrial supervision, \acro{grafcet}, \acro{AS/RS}, virtual sensors.
+\textbf{Keywords:} \emph{Rapid SCADA}, \acro{Unity}, \acro{mqtt} , industrial automation, 3D simulation, virtual plant, industrial supervision, \acro{grafcet}, \acro{AS/RS}, virtual sensors.
 \newpage
 
 
@@ -308,33 +312,33 @@ Para\l.lelament, l'evolució dels motors gràfics 3D en temps real, com \acro{Un
 
 \subsection{Motivació i enfocament del projecte}
 
-Al llarg del grau d'Enginyeria de Sistemes \acro{TIC},un dels aspectes que més interès m'ha despertat ha estat la programació aplicada a sistemes reals. Més enllà del desenvolupament de solucions purament abstractes o teòriques, la meva motivació principal ha estat sempre observar com el codi desenvolupat té un impacte directe sobre dispositius i processos físics reals, com ara microcontroladors (\acro{Arduino}, \acro{esp32}), \acro{PLCs} o sistemes d'automatització industrial.
+Al llarg del grau d'Enginyeria de Sistemes \acro{TIC}, un dels aspectes que més interès m'ha despertat ha estat la programació aplicada a sistemes reals. Més enllà del desenvolupament de solucions purament abstractes o teòriques, la meva motivació principal ha estat sempre observar com el codi desenvolupat té un impacte directe sobre dispositius i processos físics reals, com ara microcontroladors (\acro{Arduino}, \acro{esp32}), \acro{PLCs} o sistemes d'automatització industrial.
 
 Aquesta inclinació s'ha vist reforçada especialment durant la realització de l'assignatura \emph{Sistemes automàtics i robotitzats}, cursada en el darrer quadrimestre del grau, en la qual s'ha aprofundit de manera rigorosa en els principis de l'automatització industrial, el control de processos i la seva supervisió. En aquest context, i davant la manca d'una idea inicial clarament definida per al Treball Final de Grau, es va so\l.licitar orientació a la tutora d'aquesta assignatura, la professora Teresa Escobet.
 
-Fruit d'aquestes converses va sorgir la proposta de treballar amb el programari de codi obert Rapid \acro{SCADA} \cite{RapidScada}, una plataforma orientada a la supervisió i control de processos industrials. Tot i l'interès tècnic del sistema, aviat es va detectar una limitació important: el projecte podia quedar excessivament abstracte, ja que no es disposava d'una planta industrial real sobre la qual validar de manera directa el correcte funcionament del sistema \acro{SCADA} desenvolupat.
+Fruit d'aquestes converses va sorgir la proposta de treballar amb el programari de codi obert \emph{Rapid SCADA} \cite{RapidScada}, una plataforma orientada a la supervisió i control de processos industrials. Tot i l'interès tècnic del sistema, aviat es va detectar una limitació important: el projecte podia quedar excessivament abstracte, ja que no es disposava d'una planta industrial real sobre la qual validar de manera directa el correcte funcionament del sistema \acro{SCADA} desenvolupat.
 
-Per tal de superar aquesta limitació, es va plantejar la necessitat de disposar d'un entorn que permetés simular un procés industrial realista. En aquest punt, va sorgir la idea de dissenyar una planta industrial virtual mitjançant el motor gràfic \acro{Unity} \cite{Unity}, que actuaria com a substitut funcional d'una insta\l.lació física real. D'aquesta manera, seria possible verificar de forma visual i funcional el comportament del sistema Rapid \acro{SCADA}, comprovant com les ordres de control i les variables de procés afecten directament als elements simulats.
+Per tal de superar aquesta limitació, es va plantejar la necessitat de disposar d'un entorn que permetés simular un procés industrial realista. En aquest punt, va sorgir la idea de dissenyar una planta industrial virtual mitjançant el motor gràfic \acro{Unity} \cite{Unity}, que actuaria com a substitut funcional d'una insta\l.lació física real. D'aquesta manera, seria possible verificar de forma visual i funcional el comportament del sistema \emph{Rapid SCADA}, comprovant com les ordres de control i les variables de procés afecten directament als elements simulats.
 
-A partir d'aquesta combinació de tecnologies -Rapid \acro{SCADA} com a sistema de supervisió i control, i \acro{Unity} com a entorn de simulació del procés físic- es defineix l'enfocament principal d'aquest projecte, que té com a objectiu crear un sistema integrat, funcional i verificable, apropant al màxim possible l'experiència a la d'una planta industrial real.
+A partir d'aquesta combinació de tecnologies -\emph{Rapid SCADA} com a sistema de supervisió i control, i \acro{Unity} com a entorn de simulació del procés físic- es defineix l'enfocament principal d'aquest projecte, que té com a objectiu crear un sistema integrat, funcional i verificable, apropant al màxim possible l'experiència a la d'una planta industrial real.
 
 \subsection{Treball de recerca i anàlisi prèvia}
 
-Una part central del desenvolupament d'aquest Treball de Fi de Grau ha estat la realització d'un treball exhaustiu de recerca, anàlisi i experimentació al voltant de la plataforma Rapid \acro{SCADA}. Aquest procés no s'ha limitat a una revisió superficial de la documentació, sinó que ha implicat una exploració detallada del funcionament intern del sistema, dels seus components principals i de les possibilitats reals que ofereix en entorns d'automatització i supervisió.
+Una part central del desenvolupament d'aquest Treball de Fi de Grau ha estat la realització d'un treball exhaustiu de recerca, anàlisi i experimentació al voltant de la plataforma \emph{Rapid SCADA}. Aquest procés no s'ha limitat a una revisió superficial de la documentació, sinó que ha implicat una exploració detallada del funcionament intern del sistema, dels seus components principals i de les possibilitats reals que ofereix en entorns d'automatització i supervisió.
 
-La recerca s'ha basat principalment en la documentació oficial de Rapid \acro{SCADA}, complementada amb recursos audiovisuals formatius (tutorials i guies pas a pas) i amb proves pràctiques realitzades sobre el propi sistema. %%Aquest enfocament ha permès validar de manera empírica els conceptes estudiats i entendre el comportament real del programari més enllà de la teoria.
+La recerca s'ha basat principalment en la documentació oficial de \emph{Rapid SCADA}, complementada amb recursos audiovisuals formatius (tutorials i guies pas a pas) i amb proves pràctiques realitzades sobre el propi sistema. %%Aquest enfocament ha permès validar de manera empírica els conceptes estudiats i entendre el comportament real del programari més enllà de la teoria.
 
-\subsubsection{Aprenentatge de Rapid \acro{SCADA}}
+\subsubsection{Aprenentatge de \emph{Rapid SCADA}}
 \label{sec:rapidscada_research}
 
-Durant les primeres fases del projecte es va realitzar un procés d'aprenentatge i experimentació amb Rapid \acro{SCADA}, amb l'objectiu de comprendre el seu funcionament general i les seves possibilitats dins d'entorns d'automatització industrial \cite{RapidScada,rapidscada_intro}.
+Durant les primeres fases del projecte es va realitzar un procés d'aprenentatge i experimentació amb \emph{Rapid SCADA}, amb l'objectiu de comprendre el seu funcionament general i les seves possibilitats dins d'entorns d'automatització industrial \cite{RapidScada,rapidscada_intro}.
 
 Aquest procés va incloure l'estudi de la seva arquitectura modular, la configuració de canals i dispositius, la gestió de comunicacions i la creació de vistes de supervisió.
 
-Una part important d'aquest aprenentatge es va basar en el material formatiu oficial i en la reproducció de diversos exemples pràctics proposats als vídeos de Rapid \acro{SCADA} \cite{RapidScadaVideos}. Aquestes proves van permetre familiaritzar-se amb la configuració de dispositius, la creació de canals, la gestió d'alarmes i la representació gràfica de processos mitjançant esquemes de supervisió.
+Una part important d'aquest aprenentatge es va basar en el material formatiu oficial i en la reproducció de diversos exemples pràctics proposats als vídeos de \emph{Rapid SCADA} \cite{RapidScadaVideos}. Aquestes proves van permetre familiaritzar-se amb la configuració de dispositius, la creació de canals, la gestió d'alarmes i la representació gràfica de processos mitjançant esquemes de supervisió.
 
 
-També es van realitzar proves tant en entorns Windows com Linux \cite{rapidscada_windows_install,rapidscada_linux_install}, concloent finalment que \acro{Windows} oferia un entorn més adequat per al desenvolupament del projecte gràcies a la disponibilitat d'eines gràfiques de configuració com pot ser \emph{ScadaAdmin}, que permet gestionar el sistema de manera més intuïtiva i estructurada. En canvi, en entorns \acro{Linux} la configuració es basa principalment en la modificació manual d'arxius de configuració i en la gestió directa dels serveis. Tot i que aquesta opció pot resultar adequada per a entorns productius avançats, en el context d'aquest projecte s'ha considerat que l'entorn \textbf{Windows} ofereix una millor experiència per al desenvolupament i l'aprenentatge.
+També es van realitzar proves tant en entorns \acro{Windows} com \acro{Linux} \cite{rapidscada_windows_install,rapidscada_linux_install}, concloent finalment que \acro{Windows} oferia un entorn més adequat per al desenvolupament del projecte gràcies a la disponibilitat d'eines gràfiques de configuració com pot ser \emph{ScadaAdmin}, que permet gestionar el sistema de manera més intuïtiva i estructurada. En canvi, en entorns \acro{Linux} la configuració es basa principalment en la modificació manual d'arxius de configuració i en la gestió directa dels serveis. Tot i que aquesta opció pot resultar adequada per a entorns productius avançats, en el context d'aquest projecte s'ha considerat que l'entorn \textbf{Windows} ofereix una millor experiència per al desenvolupament i l'aprenentatge.
 
 \subsubsection{\acro{Unity} com a entorn de simulació}
 \label{sec:unity_research}
@@ -355,15 +359,15 @@ Un altre pilar fonamental del treball ha estat l'estudi i la posada en pràctica
 
 El protocol Modbus és un dels protocols de comunicació industrial més utilitzats gràcies a la seva simplicitat i compatibilitat amb dispositius industrials. En aquest projecte es va treballar inicialment amb la variant \textbf{Modbus TCP/IP}, basada en comunicació Ethernet.
 
-Mitjançant Rapid \acro{SCADA} s'han configurat dispositius i plantilles Modbus per realitzar lectures i escriptures de dades, treballant especialment amb \emph{Holding Registers} i \emph{Coils}. Aquestes proves han permès comprendre conceptes com l'adreçament de registres, els tipus de dades i la configuració de comunicacions industrials.
+Mitjançant \emph{Rapid SCADA} s'han configurat dispositius i plantilles Modbus per realitzar lectures i escriptures de dades, treballant especialment amb \emph{Holding Registers} i \emph{Coils}. Aquestes proves han permès comprendre conceptes com l'adreçament de registres, els tipus de dades i la configuració de comunicacions industrials.
 
-A més, es van realitzar les primeres proves d'integració entre Rapid \acro{SCADA} i \acro{Unity}, utilitzant comunicació Modbus per controlar diferents elements simulats dins de l'entorn 3D. Aquestes proves van permetre validar la viabilitat de la comunicació entre el sistema \acro{SCADA} i la planta virtual.
+A més, es van realitzar les primeres proves d'integració entre \emph{Rapid SCADA} i \acro{Unity}, utilitzant comunicació Modbus per controlar diferents elements simulats dins de l'entorn 3D. Aquestes proves van permetre validar la viabilitat de la comunicació entre el sistema \acro{SCADA} i la planta virtual.
 
 \subsubsection*{b) Protocol MQTT}
 
 De manera complementària, també s'ha estudiat el protocol \acro{mqtt}  \cite{Team2015MQTT,mqtt_unity_guide} (Message Queuing Telemetry Transport), un protocol lleuger basat en el model \emph{publish/subscribe}, àmpliament utilitzat en entorns IoT i sistemes distribuïts.
 
-Durant les proves inicials es van utilitzar brokers \acro{mqtt} públics i clients externs per verificar l'intercanvi de dades entre aplicacions. Aquest enfocament permet una comunicació asíncrona i flexible mitjançant \emph{topics}, facilitant la integració entre Rapid \acro{SCADA} i \acro{Unity}.
+Durant les proves inicials es van utilitzar brokers \acro{mqtt} públics i clients externs per verificar l'intercanvi de dades entre aplicacions. Aquest enfocament permet una comunicació asíncrona i flexible mitjançant \emph{topics}, facilitant la integració entre \emph{Rapid SCADA} i \acro{Unity}.
 
 Després de les diferents proves realitzades, es va decidir utilitzar \acro{mqtt} com a principal mecanisme de comunicació del projecte, degut a la seva flexibilitat, escalabilitat i facilitat d'integració amb entorns moderns.
 
@@ -372,15 +376,15 @@ Després de les diferents proves realitzades, es va decidir utilitzar \acro{mqtt
 
 Per a la realització d'aquest treball s'han utilitzat diferents eines software orientades al desenvolupament, la configuració i la documentació del projecte.
 
-Com a base principal del projecte s'han emprat les plataformes \acro{Unity} i Rapid \acro{SCADA} tal i com s'ha explicat en les seccions  \ref{sec:rapidscada_research} i \ref{sec:unity_research}.
+Com a base principal del projecte s'han emprat les plataformes \acro{Unity} i \emph{Rapid SCADA} tal i com s'ha explicat en les seccions  \ref{sec:rapidscada_research} i \ref{sec:unity_research}.
 
-Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha fet servir el protocol \acro{mqtt}  mitjançant un broker local Mosquitto, insta\l.lat sobre el sistema operatiu Windows \cite{mosquitto_download}. Aquest broker actua com a intermediari en l'intercanvi de dades entre el \acro{SCADA} i l'entorn virtual desenvolupat amb \acro{Unity}.
+Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha fet servir el protocol \acro{mqtt}  mitjançant un broker local Mosquitto, insta\l.lat sobre el sistema operatiu \acro{Windows} \cite{mosquitto_download}. Aquest broker actua com a intermediari en l'intercanvi de dades entre el \acro{SCADA} i l'entorn virtual desenvolupat amb \acro{Unity}.
 
-Tot el desenvolupament del projecte s'ha dut a terme sobre entorn Windows. Per a la redacció de la memòria s'ha utilitzat \LaTeX{}, motiu pel qual va ser necessària la insta\l.lació de la distribució MiKTeX \cite{Latex}, que proporciona les eines necessàries per a la compilació i gestió de documents en aquest sistema operatiu.
+Tot el desenvolupament del projecte s'ha dut a terme sobre entorn \acro{Windows}. Per a la redacció de la memòria s'ha utilitzat \LaTeX{}, motiu pel qual va ser necessària la insta\l.lació de la distribució \acro{MiKTeX} \cite{Latex}, que proporciona les eines necessàries per a la compilació i gestió de documents en aquest sistema operatiu.
 
-Addicionalment, per tal de portar un control de versions i mantenir una còpia segura i organitzada dels avenços realitzats durant el desenvolupament del treball, es va utilitzar \emph{Apache Subversion}, sistema que ajuda a sincronitzar els fitxers del projecte amb el servidor \emph{escriny.epsem.upc.edu} de la universitat \cite{Apache}. Després es va pujar tot el treball a \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia} {un repositori públic de GitHub} perquè fos accessible a totes les persones interessades en el projecte.
+Addicionalment, per tal de portar un control de versions i mantenir una còpia segura i organitzada dels avenços realitzats durant el desenvolupament del treball, es va utilitzar \emph{Apache Subversion}, sistema que ajuda a sincronitzar els fitxers del projecte amb el servidor \emph{escriny.epsem.upc.edu} de la universitat \cite{Apache}. Després es va pujar tot el treball a \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia} {un repositori públic de \acro{GitHub}} perquè fos accessible a totes les persones interessades en el projecte.
 
-Com a software complementari, es va utilitzar el mòdul \emph{Graphviz} de \texttt{Python3} per a la generació automàtica dels diagrames GRAFCET presents al llarg del document. Aquesta eina va permetre simplificar la creació i modificació dels esquemes de funcionament del sistema reutilitzant codis que s'havien fet servir durant diferents etapes del grau.
+Com a software complementari, es va utilitzar el mòdul \emph{Graphviz} de \texttt{Python3} per a la generació automàtica dels diagrames \acro{\acro{GRAFCET}} presents al llarg del document. Aquesta eina va permetre simplificar la creació i modificació dels esquemes de funcionament del sistema reutilitzant codis que s'havien fet servir durant diferents etapes del grau.
 
 Finalment, es va utilitzar Blender per realitzar modificacions sobre alguns models 3D descarregats d'Internet i integrats posteriorment a \acro{Unity}. Gràcies a aquesta eina va ser possible adaptar determinats elements gràfics a les necessitats específiques del projecte \cite{blender_download}.
 
@@ -408,42 +412,42 @@ De manera més específica, es plantegen els objectius següents:
 Per la realització d'aquests objectius, s'ha separat el projecte en dos marcs ben diferenciats, on trobem el \textbf{marc tèoric} format per les seccions \ref{sec:rs}, \ref{sec:unity_theory} i \ref{sec:asrs}, i el \textbf{marc pràctic} format per les seccions \ref{sec:disseny_proces}, \ref{sec:disseny_unity}, \ref{sec:disseny_grafcet}, \ref{sec:mqtt_unity_scada} i \ref{sec:hmi}. 
 \newpage
 
-\section{Fonaments de Rapid \acro{SCADA}}
+\section{Fonaments de \emph{Rapid SCADA}}
 \label{sec:rs}
 
-\subsection{Introducció a Rapid \acro{SCADA}}
+\subsection{Introducció a \emph{Rapid SCADA}}
 
 %%\subsubsection{Què és Rapid\acro{SCADA}}
 
-Rapid \acro{SCADA} (Figura \ref{fig:rapidscada_logo}) és una plataforma de codi obert orientada a la supervisió, monitoratge i control de sistemes industrials. Es tracta d'una solució \acro{SCADA} (Supervisory Control And Data Acquisition) que permet desenvolupar sistemes d'automatització de manera ràpida i flexible, tant en entorns petits com en sistemes distribuïts de gran escala.
+\emph{Rapid SCADA} (Figura \ref{fig:rapidscada_logo}) és una plataforma de codi obert orientada a la supervisió, monitoratge i control de sistemes industrials. Es tracta d'una solució \acro{SCADA} (Supervisory Control And Data Acquisition) que permet desenvolupar sistemes d'automatització de manera ràpida i flexible, tant en entorns petits com en sistemes distribuïts de gran escala.
 
-El fet de ser un programari \emph{open source} garanteix transparència i seguretat, ja que el codi font està disponible públicament. A més, es distribueix sota la llicència Apache 2.0, la qual permet la modificació i creació de solucions derivades adaptades a necessitats específiques. Rapid \acro{SCADA} s'utilitza habitualment en àmbits com:
+El fet de ser un programari \emph{open source} garanteix transparència i seguretat, ja que el codi font està disponible públicament, i com a característica extra, es distribueix sota la llicència Apache 2.0, la qual permet la modificació i creació de solucions derivades adaptades a necessitats específiques. \emph{Rapid SCADA} s'utilitza habitualment en àmbits com:
 \begin{itemize}
     \item Sistemes d'automatització industrial i IIoT
     \item Sistemes de control de processos
     \item Sistemes de monitoratge i gestió energètica
 \end{itemize}
 
-A més, pot funcionar en servidors, sistemes encastats o entorns cloud, permetent la comunicació en temps real entre diferents nodes del sistema.
+Tanmateix, pot funcionar en servidors, sistemes encastats o entorns cloud, permetent la comunicació en temps real entre diferents nodes del sistema.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{images/logo_rapidscada.png}
-    \caption{Logo de Rapid \acro{SCADA} \cite{RapidScada}}
+    \caption{Logo de \emph{Rapid SCADA} \cite{RapidScada}}
     \label{fig:rapidscada_logo}
 \end{figure}
 
 \subsubsection{Funcionalitats principals}
 
-Rapid \acro{SCADA} incorpora un conjunt ampli de funcionalitats que el fan adequat per a entorns industrials exigents \cite{rapidscada_intro}. Entre les més destacades es troben:
+\emph{Rapid SCADA} incorpora un conjunt ampli de funcionalitats que el fan adequat per a entorns industrials exigents \cite{rapidscada_intro}, on entre les més destacades es troben:
 
 \begin{itemize}
     \item Monitoratge en temps real de variables de procés
     \item Suport per a un nombre i\l.limitat de canals, dispositius i etiquetes
-    \item Integració amb múltiples protocols industrials (OPC UA, Modbus, MQTT, etc.)
+    \item Integració amb múltiples protocols industrials (\acro{OPC UA}, \acro{Modbus}, \acro{MQTT}, etc.)
     \item Generació de gràfiques, informes i visualitzacions web
-    \item Emmagatzematge de dades en fitxers o bases de dades (PostgreSQL, InfluxDB, etc.)
+    \item Emmagatzematge de dades en fitxers o bases de dades (\acro{PostgreSQL}, \acro{InfluxDB}, etc.)
     \item Accés remot i configuració distribuïda
     \item Sistema de seguretat amb autenticació, xifrat i registre d'activitat
     \item Suport per redundància i sincronització entre servidors
@@ -451,17 +455,17 @@ Rapid \acro{SCADA} incorpora un conjunt ampli de funcionalitats que el fan adequ
 
 Aquest conjunt de funcionalitats possibilita la realització de sistemes robustos, escalables i adaptables a diferents entorns industrials.
 
-En referència a l'arquitectura de Rapid \acro{SCADA}, aquesta aplicació està basada en una arquitectura multicapa, on diferents serveis treballen de manera coordinada per gestionar la informació del sistema. La comunicació entre aquests serveis es realitza mitjançant protocols de xarxa (TCP -  Transmission Control Protocol).
+En referència a l'arquitectura de \emph{Rapid SCADA}, aquesta aplicació està basada en una arquitectura multicapa, on diferents serveis treballen de manera coordinada per gestionar la informació del sistema. La comunicació entre aquests serveis es realitza mitjançant protocols de xarxa (\acro{TCP} -  Transmission Control Protocol).
 
 Els principals components del sistema són \emph{Webstation}, \emph{Server}, \emph{Communicator} i \emph{Agent} (tots explicats més endavant). Aquesta arquitectura pot implementar tant sistemes simples com arquitectures distribuïdes, on diferents serveis poden executar-se en màquines separades per millorar el rendiment i la redundància.
 
 \subsubsection{Estructura de carpetes del sistema}
 
-Després de la insta\l.lació de Rapid \acro{SCADA}, es genera una estructura de directoris organitzada que separa clarament les diferents funcionalitats del sistema, com ara la gestió de dades, la comunicació, la configuració i la visualització. Les carpetes principals són:
+Després de la insta\l.lació de \emph{Rapid SCADA}, es genera una estructura de directoris organitzada que separa clarament les diferents funcionalitats del sistema, com ara la gestió de dades, la comunicació, la configuració i la visualització. Les carpetes principals són:
 
 \begin{itemize}
     \item \textbf{Archive}: conté les dades històriques i registres d'esdeveniments del sistema.     
-    \item \textbf{Config i BaseDAT}: inclouen la configuració global del sistema i la base de dades interna utilitzada per Rapid \acro{SCADA}.
+    \item \textbf{Config i BaseDAT}: inclouen la configuració global del sistema i la base de dades interna utilitzada per \emph{Rapid SCADA}.
     \item \textbf{ScadaAdmin}: eina d'administració i configuració del sistema on consta de plantilles de projecte i fitxers d'idioma entre altres arxius.
     \item \textbf{ScadaServer}: gestiona l'emmagatzematge i processament de dades.
     \item \textbf{ScadaComm}: s'encarrega de la comunicació amb dispositius industrials mitjançant diferents protocols.
@@ -473,18 +477,18 @@ Aquesta estructura modular facilita l'organització del sistema, separant bé le
 
 \subsection{Arquitectura del sistema}
 
-Rapid \acro{SCADA} està format per un conjunt d'aplicacions que treballen conjuntament per garantir la supervisió, control i gestió de dades en temps real, les quals es comuniquen entre elles mitjançant protocols de xarxa (TCP), constituint una arquitectura distribuïda i escalable \cite{rapidscada_architecture}.
+\emph{Rapid SCADA} està format per un conjunt d'aplicacions que treballen conjuntament per garantir la supervisió, control i gestió de dades en temps real, les quals es comuniquen entre elles mitjançant protocols de xarxa (\acro{TCP}), constituint una arquitectura distribuïda i escalable \cite{rapidscada_architecture}.
 
 Com s'indica a la figura \ref{fig:scada_architecture}, els principals components del sistema són: \textbf{Server}, \textbf{Communicator}, \textbf{Webstation} i \textbf{Agent}, juntament amb l'eina \textbf{Administrator} per a la configuració \cite{rapidscada_apps}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/scada_architecture.png}
-    \caption{Arquitectura general de Rapid \acro{SCADA} \cite{rapidscada_architecture}}
+    \caption{Arquitectura general de \emph{Rapid SCADA} \cite{rapidscada_architecture}}
     \label{fig:scada_architecture}
 \end{figure}
 
-Els components principals de Rapid \acro{SCADA} funcionen com a serveis del sistema operatiu, iniciant-se automàticament per garantir la disponibilitat contínua del sistema. En entorns Linux, aquests serveis es gestionen mitjançant eines com \texttt{systemctl}, mentre que en Windows es poden administrar des de les eines pròpies del sistema o des de l'Administrator \cite{rapidscada_services}.
+Els components principals de \emph{Rapid SCADA} funcionen com a serveis del sistema operatiu, iniciant-se automàticament per garantir la disponibilitat contínua del sistema. En entorns Linux, aquests serveis es gestionen mitjançant eines com \texttt{systemctl}, mentre que en \acro{Windows} es poden administrar des de les eines pròpies del sistema o des de l'\textit{Administrator} \cite{rapidscada_services}.
 
 %\subsection{Descripció dels components}
 
@@ -497,32 +501,32 @@ Ajuda a representar tota la informació guardada en forma de taules o gràfics, 
 
 \subsubsection*{Communicator}
 
-És el component responsable de la comunicació amb els dispositius de camp, com PLCs (Programmable Logic Controller), sensors i controladors industrials.
+És el component responsable de la comunicació amb els dispositius de camp, com \acro{PLCs} (Programmable Logic Controller), sensors i controladors industrials.
 
 La seva funció principal és adquirir dades en temps real i enviar comandes, gestionant múltiples línies de comunicació i diferents protocols industrials. Funciona en segon pla i registra l'activitat en fitxers de log per facilitar el diagnòstic d'errors \cite{rapidscada_apps}.
 
 \subsubsection*{Server}
 
-Aquest component és el nucli del sistema Rapid \acro{SCADA}. S'encarrega de gestionar l'emmagatzematge de dades, el processament i la distribució de la informació a la resta d'aplicacions.
+Aquest component és el nucli del sistema \emph{Rapid SCADA}. S'encarrega de gestionar l'emmagatzematge de dades, el processament i la distribució de la informació a la resta d'aplicacions.
 
-Gestiona tant les dades en temps real com les històriques, controla l'accés dels usuaris i proporciona la informació a la resta de components. Funciona com un servei en execució contínua, sense interfície d'usuari i la seva configuració es realitza des de l'aplicació Administrator. La seva funcionalitat es pot ampliar mitjançant mòduls addicionals \cite{rapidscada_apps}.
+Gestiona tant les dades en temps real com les històriques, controla l'accés dels usuaris i proporciona la informació a la resta de components. Funciona com un servei en execució contínua, sense interfície d'usuari i la seva configuració es realitza des de l'aplicació \emph{Administrator}. La seva funcionalitat es pot ampliar mitjançant mòduls addicionals \cite{rapidscada_apps}.
 
 
 \subsubsection*{Agent}
 
-L'\emph{Agent} és un servei encarregat de la gestió remota i la comunicació entre una instància de Rapid \acro{SCADA} i l'aplicació Administrator.
+L'\emph{Agent} és un servei encarregat de la gestió remota i la comunicació entre una instància de \emph{Rapid SCADA} i l'aplicació \emph{Administrator}.
 
-Facilita la transferència de configuracions i l'accés als registres del sistema, permetent treballar tant en local com de forma remota mitjançant connexió amb el protocol de xarxa TCP (port 10002 per defecte) \cite{rapidscada_apps}. Aquest component no disposa d'interfície gràfica i el seu funcionament es verifica mitjançant els registres o els logs del sistema.
+Facilita la transferència de configuracions i l'accés als registres del sistema, permetent treballar tant en local com de forma remota mitjançant connexió amb el protocol de xarxa \acro{TCP} (port 10002 per defecte) \cite{rapidscada_apps}. Aquest component no disposa d'interfície gràfica i el seu funcionament es verifica mitjançant els registres o els logs del sistema.
 
 \subsubsection*{Administrator}
 
-Per últim, \emph{Administrator} és l'eina principal de desenvolupament i configuració de Rapid \acro{SCADA}. Actua com un entorn integrat que permet definir tota l'estructura del sistema.
+Per últim, \emph{Administrator} és l'eina principal de desenvolupament i configuració de \emph{Rapid SCADA}. 
 
 Actua com un entorn integrat que permet editar la base de dades de configuració, configurar les aplicacions principals del sistema i gestionar mòduls i controladors de comunicació \cite{rapidscada_apps}. Bàsicament, és el servei que permet a l'usuari modificar el sistema \acro{SCADA} de manera general. També incorpora eines que faciliten el desenvolupament com poden ser assistents (\emph{wizards}) per crear dispositius i canals, la importació i la exportació de configuracions de sistemes \acro{SCADA}, la clonació de canals i diverses funcions de cerca, filtratge i ordenació dintre de les diferents taules del sistema. 
 
 \subsection{Configuració amb ScadaAdmin}
 
-La configuració del sistema \acro{SCADA} s'ha realitzat mitjançant l'eina \emph{ScadaAdmin}, que actua com a entorn principal de desenvolupament \cite{rapidscada_config_basics}, gràcies a que permet crear i desplegar projectes que defineixen completament el sistema a través fitxers (principalment en format XML), on es veu que cada projecte de Rapid \acro{SCADA} es divideix en diferents blocs principals:
+La configuració del sistema \acro{SCADA} s'ha realitzat mitjançant l'eina \emph{ScadaAdmin}, que actua com a entorn principal de desenvolupament \cite{rapidscada_config_basics}, gràcies a que permet crear i desplegar projectes que defineixen completament el sistema a través fitxers (principalment en format XML), on es veu que cada projecte de \emph{Rapid SCADA} es divideix en diferents blocs principals:
 
 \begin{itemize}
     \item \textbf{Configuration Database}: defineix l'estructura del sistema (objectes, dispositius, canals, usuaris)
@@ -532,11 +536,11 @@ La configuració del sistema \acro{SCADA} s'ha realitzat mitjançant l'eina \emp
 
 \subsubsection{Mòdul Database}
 
-La base de dades de configuració és el nucli del sistema. Durant el desenvolupament es treballa amb arxius de tipus XML, però en el desplegament es transforma aquest arxius a a format binari \texttt{.dat} optimitzat \cite{rapidscada_database}.
+La base de dades de configuració és el nucli del sistema. Durant el desenvolupament es treballa amb arxius de tipus XML, però en el desplegament es transforma aquest arxius a a format binari \acro{.dat} optimitzat per treballar de manera eficient i comprimida \cite{rapidscada_database}.
 
 \subsubsection*{Primary Tables}
 
-Les \textbf{taules primàries} defineixen el funcionament principal del sistema. Són les més importants i s'han de configurar amb molta precaució per tal de tindre la configuració correcte dintre del teu sistema. Aquestes taules són:
+Aquests tipus de taules defineixen el funcionament principal del sistema, és a dir, són les més importants i s'han de configurar amb molta precaució i precisió per obtenir la configuració correcte dintre del teu sistema. Aquestes taules són:
 
 \begin{itemize}
     \item \textbf{Objects}: estructura jeràrquica del sistema (planta, línies, màquines)
@@ -548,12 +552,12 @@ Les \textbf{taules primàries} defineixen el funcionament principal del sistema.
     \item \textbf{Roles i Users}: gestió d'usuaris i permisos
 \end{itemize}
 
-Aquestes taules es troben interrelacionades entre elles, ja que per exemple, un dispositiu es troba associat a una línia de comunicació, i un canal està associat a un dispositiu.
+Com a fet a tindre en compte, les taules es troben interrelacionades entre elles, ja que per exemple, un dispositiu es troba associat a una línia de comunicació, i un canal està associat a un dispositiu.
 
 \subsubsection*{Secondary Tables}
 
 
-Les \textbf{taules secundàries} complementen la configuració principal del sistema amb informació auxiliar i paràmetres predefinits, ja que serveixen per definir diversos aspectes principals com els tipus de dades disponibles, formats de visualització, unitats de mesura, tipus de dispositius, sistemes d'arxiu històric o scripts de càlcul. Encara que hi existieix l'opció d'ampliar aquestes taules de forma manual, generalment ja es troben suficientment definides previàment per estalviar aquest procès, almenys de que sigui estrictament necessari modificar-les per obtenir una configuració pròpia. 
+En canvi, les \textbf{taules secundàries} complementen la configuració principal del sistema amb informació auxiliar i paràmetres predefinits, ja que serveixen per definir diversos aspectes principals com els tipus de dades disponibles, formats de visualització, unitats de mesura, tipus de dispositius, sistemes d'arxiu històric o scripts de càlcul. Encara que hi existieix l'opció d'ampliar aquestes taules de forma manual, generalment ja es troben suficientment definides previàment per estalviar aquest procès, almenys de que sigui estrictament necessari modificar-les per obtenir una configuració pròpia. 
 
 \subsubsection{Procés de configuració}
 
@@ -568,27 +572,26 @@ Les \textbf{taules secundàries} complementen la configuració principal del sis
     \item Desplegar el projecte al servidor
 \end{enumerate}
 
-Aquest procés s'ha seguit en el desenvolupament del present TFG, adaptant-lo a la simulació de la planta industrial implementada en \acro{Unity}.
+Aquest procés s'ha seguit en el desenvolupament del present \acro{TFG}, adaptant-lo a la simulació de la planta industrial implementada en \acro{Unity}.
 
 \subsection{Visualització i interfícies}
-La visualització es basa en el concepte de \textbf{Views} \cite{rapidscada_views}, que permeten representar i interactuar amb les dades del sistema a través de la Webstation.
+La visualització es basa en el concepte de \emph{Views} \cite{rapidscada_views}, que permeten representar i interactuar amb les dades del sistema a través de la \emph{Webstation}.
 
-%\subsubsection*{Tipus de vistes (\emph{Views})}
 
-Rapid \acro{SCADA} inclou per defecte diversos tipus de vistes, tot i que el sistema és extensible mitjançant plugins. Cada vista es correspon amb un fitxer dins del directori \emph{Views} del projecte. Els tipus principals de vistes són:
+\emph{Rapid SCADA} inclou per defecte diversos tipus de vistes, tot i que el sistema és extensible mitjançant plugins. Cada vista es correspon amb un fitxer dins del directori \emph{Views} del projecte. Els tipus principals de vistes són:
 
 \begin{itemize}
     \item \textbf{Table View} → fitxers de visualització tabular
     \item \textbf{Mimic Diagram} → esquemes gràfics del procés 
-    \item \textbf{SchemClassic} → esquemes clàssics 
+    \item \textbf{SchemeClassic} → esquemes clàssics 
     \item \textbf{Faceplate} → components reutilitzables 
     \item \textbf{XML File} → configuracions personalitzades
     \item \textbf{Text File} → suport per definicions manuals
 \end{itemize}
 
-Les vistes es mostren a través de la \textbf{Webstation}, on s'observa que el procés per visualitzar-les correctament es basa en configurar adequadament l'arxiu de la vista dintre de la interfície de \emph{ScadaAdmin}, registrar el nom de la vista a la taula de \textbf{Primary Tables} de \emph{Views}, carregar la nova configuració del projecte i accedir a la vista des del navegador web segon els permisos que hi hagi configurats. A més a més, en aquesta taula es poden configurar alguns paràmetres com objecte associat, ordre o configuració específica (Figura \ref{fig:rapidscada_views}).
+Les vistes es mostren a través de la \emph{Webstation}, on s'observa que el procés per visualitzar-les correctament es basa en configurar adequadament l'arxiu de la vista dintre de la interfície de \emph{ScadaAdmin}, registrar el nom de la vista a la taula de \textbf{Primary Tables} de \emph{Views}, carregar la nova configuració del projecte i accedir a la vista des del navegador web segon els permisos que hi hagi configurats. A més a més, en aquesta taula es poden configurar alguns paràmetres com objecte associat, ordre o configuració específica (Figura \ref{fig:rapidscada_views}).
 
-En el cas de les \textbf{Table Views} (\texttt{.tbl}), aquestes permeten visualitzar dades històriques i en temps real. A més a més, es poden generar gràfiques clicant sobre els valors, permeten enviar comandes als dispositius i  utilitzen arxius històrics (Min, Hour, etc.) com a font de dades
+En el cas de les \textbf{Table Views} (\acro{.tbl}), aquestes permeten visualitzar dades històriques i en temps real. A més a més, es poden generar gràfiques clicant sobre els valors, permeten enviar comandes als dispositius i  utilitzen arxius històrics com a font de dades.
 
 La funcionalitat de les vistes es pot ampliar mitjançant plugins, que permeten crear interfícies més avançades i adaptades a les necessitats del sistema, com es detallarà en apartats posteriors.
 
@@ -619,11 +622,11 @@ Entre els principals tipus de línies suportades es troben: \emph{Port sèrie}, 
 
 \subsubsection*{Devices i polling}
 
-Els \textbf{dispositius} representen els dispositius físics o fonts de dades del sistema (PLC, sensors, actuadors o simuladors) \cite{rapidscada_device_polling}. Cada dispositiu s'assigna a una \emph{Communication Line}, que defineix el canal de comunicació general, però la configuració específica del protocol es realitza principalment en el dispositiu mitjançant el \textbf{driver} seleccionat.
+Els \textbf{dispositius} representen els dispositius físics o fonts de dades del sistema (\acro{PLC}, sensors, actuadors o simuladors) \cite{rapidscada_device_polling}. Cada dispositiu s'assigna a una \emph{Communication Line}, que defineix el canal de comunicació general, però la configuració específica del protocol es realitza principalment en el dispositiu mitjançant el \textbf{driver} seleccionat.
 
-És a dir, la \emph{Communication Line} estableix el tipus de connexió (TCP, sèrie, MQTT, etc.), mentre que el \emph{Device} defineix com es comunica realment amb aquell equip. Relacionat amb aquesta última part, en alguns casos, com amb el protocol \emph{OPC UA Server} (Open Platform Communnication Unified Architecture), la configuració pot dependre exclusivament del dispositiu.
+És a dir, la \emph{Communication Line} estableix el tipus de connexió (\acro{TCP}, sèrie, \acro{mqtt}, etc.), mentre que el \emph{Device} defineix com es comunica realment amb aquell equip. Relacionat amb aquesta última part, en alguns casos, com amb el protocol \emph{OPC UA Server} (\textit{Open Platform Communnication Unified Architecture}), la configuració pot dependre exclusivament del dispositiu.
 
-En crear un dispositiu, es defineix el seu \textbf{device type} (driver), i posteriorment es poden ajustar els paràmetres principals dins de les opcions del dispositiu:
+En crear un dispositiu, es defineix el seu \emph{device type} (driver), i posteriorment es poden ajustar els paràmetres principals dins de les opcions del dispositiu:
 
 
 \begin{itemize}
@@ -651,7 +654,7 @@ Els canals \cite{rapidscada_channels} són les unitats bàsiques de dades dins d
 
 %%\subsubsection{Model de control d'accés}
 
-Rapid \acro{SCADA} utilitza un model de control d'accés basat en tres elements principals: \textbf{objectes}, \textbf{rols} i \textbf{usuaris} \cite{rapidscada_user_management}.
+\emph{Rapid SCADA} utilitza un model de control d'accés basat en tres elements principals: \textbf{objectes}, \textbf{rols} i \textbf{usuaris} \cite{rapidscada_user_management}.
 
 En primer lloc, es defineixen els \textbf{objectes}, que representen les diferents parts del sistema (planta, dispositius, zones o funcionalitats) i els quals es poden organitzar de forma jeràrquica, afavorint així el fet d'estructurar el sistema de manera lògica i entendible.
 
@@ -672,29 +675,29 @@ Independentment d'això, la part rellevant és que existeix la possibilitat de c
 
 \subsubsection*{Permisos i control d'accés}
 
-Els permisos es defineixen a la taula \emph{Object rights}, indicant què pot fer cada rol sobre cada objecte, sistema que permet assignar exactament quin tipus d'accions poden realitzar exactament cada rol, com ara visualitzar dades, tindre accés a unes pantalles en concret o tindre la capacitat d'enviar comandes a través d'uns objectes/canals específics. 
+Els permisos es defineixen a la taula \emph{Object rights}, indicant què pot fer cada rol sobre cada objecte per així assignar directament exactament quin tipus d'accions poden realitzar exactament cada rol, com ara visualitzar dades, tindre accés a unes pantalles en concret o tindre la capacitat d'enviar comandes a través d'uns objectes/canals específics. 
 
-Només els rols personalitzats poden tenir permisos configurables, ja que els rols predefinits ja tenen els seus drets definits internament. La informacó respecte els permisos que té cada rol es pot trobar a la \emph{Rights Matrix} (Figura \ref{fig:rights_matrix}), on la lletra \emph{V} significa \emph{View} (visualització de la pantalla) i la lletra \emph{C} significa \emph{Control} (interactuar amb la pantalla). 
+Només els rols personalitzats poden tenir permisos configurables, ja que els rols predefinits ja tenen els seus drets definits internament. La informació respecte els permisos que té cada rol es pot trobar a la \emph{Rights Matrix} (Figura \ref{fig:rights_matrix}), on la lletra \emph{V} significa \emph{View} (visualització de la pantalla) i la lletra \emph{C} significa \emph{Control} (interactuar amb la pantalla). 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/right_matrix.png}
-    \caption{Exemple de Rights Matrix a Rapid \acro{SCADA}}
+    \caption{Exemple de Rights Matrix a \emph{Rapid SCADA}}
     \label{fig:rights_matrix}
 
 \end{figure}
 
-A més a més, Rapid \acro{SCADA} permet definir \textbf{herència de rols}, de manera que un rol pot heretar els permisos d'altres rols. Això permet reutilitzar configuracions i reduir la complexitat. A part, com que els objectes poden estar organitzats jeràrquicament, els permisos assignats a un objecte superior es propaguen als seus subobjectes, facilitant la gestió en sistemes grans.
+A més a més, \emph{Rapid SCADA} permet definir \textbf{herència de rols}, de manera que un rol pot heretar els permisos d'altres rols. Això permet reutilitzar configuracions i reduir la complexitat. A part, com que els objectes poden estar organitzats jeràrquicament, els permisos assignats a un objecte superior es propaguen als seus subobjectes, facilitant la gestió en sistemes grans.
 
 \subsection{Gestió de dades i emmagatzematge}
 
-Rapid \acro{SCADA} incorpora diferents mecanismes per gestionar i emmagatzemar la informació generada pel sistema. Les dades provinents dels dispositius i canals són processades pel mòdul \emph{Server}, que s'encarrega tant de la gestió en temps real com de l'emmagatzematge històric \cite{rapidscada_apps}.
+\emph{Rapid SCADA} incorpora diferents mecanismes per gestionar i emmagatzemar la informació generada pel sistema. Les dades provinents dels dispositius i canals són processades pel mòdul \emph{Server}, que s'encarrega tant de la gestió en temps real com de l'emmagatzematge històric \cite{rapidscada_apps}.
 
-Per defecte, el sistema utilitza un mecanisme d'emmagatzematge intern basat en fitxers binaris amb extensió \texttt{.dat}, ubicats principalment a la carpeta \emph{Archive}. Aquest format està optimitzat per al registre continu de dades industrials i permet un accés eficient a grans volums d'informació temporal.
+Per defecte, el sistema utilitza un mecanisme d'emmagatzematge intern basat en fitxers binaris amb extensió \acro{.dat}, ubicats principalment a la carpeta \emph{Archive}. Aquest format està optimitzat per al registre continu de dades industrials i permet un accés eficient a grans volums d'informació temporal.
 
 Les dades històriques poden ser consultades des de la mateixa \emph{Webstation} mitjançant taules, gràfiques i tendències, sense necessitat d'accedir directament als fitxers interns del sistema, enfocament que prioritza el rendiment i la fiabilitat del sistema per sobre de l'accés extern directe a les dades.
 
-A part de l'emmagatzematge intern, Rapid \acro{SCADA} permet integrar bases de dades externes com \textbf{PostgreSQL} o \textbf{InfluxDB} mitjançant mòduls i plugins específics \cite{rapidscada_db_export}. Aquesta funcionalitat facilita:
+A part de l'emmagatzematge intern, \emph{Rapid SCADA} permet integrar bases de dades externes com \textbf{PostgreSQL} o \textbf{InfluxDB} mitjançant mòduls i plugins específics \cite{rapidscada_db_export}. Aquesta funcionalitat facilita:
 
 \begin{itemize}
     \item L'emmagatzematge de dades en formats consultables externament
@@ -704,18 +707,18 @@ A part de l'emmagatzematge intern, Rapid \acro{SCADA} permet integrar bases de d
 
 En aquests casos, les dades generades pel sistema \acro{SCADA} es transfereixen des del sistema intern cap a la base de dades externa, permetent l'execució de consultes SQL o l'anàlisi de sèries temporals segons la tecnologia utilitzada.
 
-\subsection{Plugins de Rapid \acro{SCADA}}
+\subsection{Plugins de \emph{Rapid SCADA}}
 
 %%\subsubsection{Consideracions generals sobre plugins}
 
-Rapid \acro{SCADA} permet ampliar les seves funcionalitats mitjançant \textbf{plugins} i mòduls addicionals. En el cas de la Webstation, aquests mòduls s'anomenen plugins i permeten estendre la interfície d'usuari i les capacitats de visualització. Mitjançant plugins es poden implementar:
+\emph{Rapid SCADA} permet ampliar les seves funcionalitats mitjançant \textbf{plugins} i mòduls addicionals. En el cas de la \emph{Webstation}, aquests mòduls s'anomenen plugins i permeten estendre la interfície d'usuari i les capacitats de visualització. Mitjançant plugins es poden implementar:
 \begin{itemize}
     \item Nous tipus de vistes
     \item Components gràfics per a esquemes
     \item Gràfiques i informes avançats
 \end{itemize}
 
-Es desenvolupen en \emph{.NET} \cite{rapidscada_dev_basics} i s'integren com a llibreries \texttt{.dll}. També es poden obtenir des del repositori oficial o des de la botiga de mòduls de Rapid \acro{SCADA}.
+Es desenvolupen en \emph{.NET} \cite{rapidscada_dev_basics} i s'integren com a llibreries \texttt{.dll}. També es poden obtenir des del repositori oficial o des de la botiga de mòduls de \emph{Rapid SCADA}.
 
 \subsubsection{Sistema de llicències i insta\l.lació}
 
@@ -742,7 +745,7 @@ Aquest plugin \cite{rapidscada_chart_pro} amplia les capacitats de visualitzaci�
 \begin{itemize}
     \item Visualització de múltiples canals en un mateix gràfic
     \item Modes de visualització (fix o dinàmic)
-    \item Exportació a formats com PNG o PDF
+    \item Exportació a formats com \acro{png} o \acro{pdf}
     \item Configuració mitjançant perfils
 \end{itemize}
 
@@ -755,13 +758,13 @@ Aquest plugin \cite{rapidscada_chart_pro} amplia les capacitats de visualitzaci�
 
 \subsubsection*{Extra Scheme Editor}
 
-El sistema base de Rapid \acro{SCADA} permet la creació d'esquemes mitjançant fitxers \texttt{.sch}, amb elements bàsics com textos, imatges, botons, indicadors (LED) i enllaços (aplicació d'aquesta part en l'apartat \ref{sec:hmi}). El \textbf{Extra Scheme Editor} amplia aquestes funcionalitats afegint nous components gràfics com \textbf{Chart} (gràfiques de dades), \textbf{Trend}, \textbf{Gauge} (indicadors analògics) o \textbf{Frame}. Si el component gràfic \textbf{Chart} es combina amb el \textbf{Chart Pro Plugin}, es pot arribar a aconseguir una visualització de múltiples canals en temps real dintre del mateix gràfic.
+El sistema base de \emph{Rapid SCADA} permet la creació d'esquemes mitjançant fitxers \acro{.sch}, amb elements bàsics com textos, imatges, botons, indicadors (LED) i enllaços (aplicació d'aquesta part en l'apartat \ref{sec:hmi}). El \textbf{Extra Scheme Editor} amplia aquestes funcionalitats afegint nous components gràfics com \emph{Chart} (gràfiques de dades), \emph{Trend}, \emph{Gauge} (indicadors analògics) o \emph{Frame}. Si el component gràfic \emph{Chart} es combina amb el \textbf{Chart Pro Plugin}, es pot arribar a aconseguir una visualització de múltiples canals en temps real dintre del mateix gràfic.
 
-Tot i això, cal destacar que les gràfiques integrades en fitxers \texttt{.sch} tenen funcionalitats més limitades en comparació amb les visualitzacions generades des de les vistes de tipus taula (\texttt{.tbl}). En aquestes últimes, en seleccionar una variable amb dades històriques, es poden generar gràfiques més completes, amb opcions avançades com la selecció de períodes de temps o la visualització detallada de l'evolució de les dades.
+Tot i això, cal destacar que les gràfiques integrades en fitxers \acro{.sch} tenen funcionalitats més limitades en comparació amb les visualitzacions generades des de les vistes de tipus taula (\acro{.tbl}). En aquestes últimes, en seleccionar una variable amb dades històriques, es poden generar gràfiques més completes, amb opcions avançades com la selecció de períodes de temps o la visualització detallada de l'evolució de les dades.
 
 \subsubsection*{Mimic Editor}
 
-Aquest plugin permet crear interfícies gràfiques més avançades i flexibles que els fitxers \texttt{.sch} bàsics de Rapid \acro{SCADA}, on les principals diferències dels esquemes tradicionals són:
+Aquest plugin permet crear interfícies gràfiques més avançades i flexibles que els fitxers \acro{.sch} bàsics de \emph{Rapid SCADA}, on les principals diferències dels esquemes tradicionals són:
 \begin{itemize}
     \item Associar comportaments dinàmics als elements gràfics 
     \item Definir accions en interaccions (no solament als botons o al \emph{toggle}).
@@ -778,7 +781,7 @@ Aquest plugin ha estat clau en el desenvolupament del projecte, ja que permet un
 
 %%\subsubsection{Què és \acro{Unity} i per a què serveix}
 
-La plataforma \acro{Unity} (també coneguda com \emph{\acro{Unity}3D}, figura \ref{fig:logo_unity}) és un motor de desenvolupament en temps real utilitzat principalment per a la creació d'aplicacions interactives en 2D i 3D, especialment en l'àmbit dels videojocs. Aquest motor permet als desenvolupadors dissenyar, simular i executar entorns virtuals mitjançant una combinació d'un editor visual i un sistema de programació basat en \emph{scripts} \cite{Unity}.
+La plataforma \acro{Unity} (també coneguda com \emph{Unity3D}, figura \ref{fig:logo_unity}) és un motor de desenvolupament en temps real utilitzat principalment per a la creació d'aplicacions interactives en 2D i 3D, especialment en l'àmbit dels videojocs. Aquest motor permet als desenvolupadors dissenyar, simular i executar entorns virtuals mitjançant una combinació d'un editor visual i un sistema de programació basat en \emph{scripts} \cite{Unity}.
 
 A diferència d'altres eines més específiques, \acro{Unity} es caracteritza per ser una plataforma multiplataforma, la qual ajuda a desenvolupar una aplicació una sola vegada i exportar-la a diferents sistemes com ordinadors, dispositius mòbils, consoles o entorns web.
 
@@ -813,7 +816,7 @@ Tot i que \acro{Unity} va ser concebut inicialment com un motor per al desenvolu
 Per l'altre costat, en entorns 3D incorpora un sistema complet de representació espacial amb càmeres en perspectiva, i\l.luminació avançada i simulació física tridimensional, permetent desenvolupar entorns immersius com el sistema virtual d'aquest projecte \cite{Unity2Dor3D}.
 
 \subsubsection{Capacitats de renderització}
-Com a factor interessant, consta d'un sistema de renderització en temps real basat en la GPU (Graphic Processing Unit), on es poden visualitzar escenes de forma eficient ja que aquesta és unitat és l'encarregada de generar imatges i animacios a la pantalla. Ofereix diferents tipus de \emph{Render Pipelines} \cite{UnityRenderPipelines}, entre els quals destaquen:
+Com a factor interessant, consta d'un sistema de renderització en temps real basat en la \acro{GPU} (\emph{Graphic Processing Unit}), on es poden visualitzar escenes de forma eficient ja que aquesta és unitat és l'encarregada de generar imatges i animacios a la pantalla. Ofereix diferents tipus de \emph{Render Pipelines} \cite{UnityRenderPipelines}, entre els quals destaquen:
 \begin{itemize}
     \item \textbf{Built-in Render Pipeline}: sistema clàssic amb configuració senzilla però menys flexible.
     \item \textbf{Universal Render Pipeline (URP)}: utilitzat en aquest projecte per oferir un bon equilibri entre rendiment i qualitat.
@@ -824,7 +827,7 @@ Aquesta flexibilitat permet adaptar el motor a diferents necessitats, des de sim
 
 \subsubsection{Tipus de projectes que es poden desenvolupar}
 
-\acro{Unity} permet crear diferents tipus de projectes segons la configuració inicial seleccionada dins del \emph{\acro{Unity} Hub} (figura \ref{fig:menu_unity}). Entre els principals tipus destaquen \cite{UnityProjectTemplates}:
+\acro{Unity} permet crear diferents tipus de projectes segons la configuració inicial seleccionada dins del \emph{Unity Hub} (que és el menu previ abans d'entrar en l'editor de \acro{Unity} per treballar en un projecte específic, figura \ref{fig:menu_unity}), on entre els principals tipus més destacats trobem \cite{UnityProjectTemplates}:
 
 \begin{itemize}
     \item \textbf{Projectes 2D}: orientats a videojocs o aplicacions amb gràfics plans.
@@ -838,7 +841,7 @@ Aquesta flexibilitat permet adaptar el motor a diferents necessitats, des de sim
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\linewidth]{images/menu_unity_1.png}
+    \includegraphics[width=0.5\linewidth]{images/menu_unity_1.png}
     \caption{Menu de projectes}
     \label{fig:menu_unity}
 \end{figure}
@@ -881,24 +884,25 @@ A les finestres centrals del menu del editor es poden observar les vistes princi
     \label{fig:menu_editor_inspector}
 \end{wrapfigure}
 
-A la vista \emph{Scene} \cite{UnityScenes, \acro{Unity}EditorInterface} s'observa l'espai on es construeix el món virtual, on es pot visualitzar i manipular els objectes en un entorn 2D/3D, modificar la seva posició, rotació i escala, així com organitzar-los dins de l'escena. Aquesta vista és \textbf{interactiva} i no representa el resultat final del joc, sinó una eina de disseny.
+A la vista \emph{Scene} \cite{UnityScenes, UnityEditorInterface} s'observa l'espai on es construeix el món virtual, on es pot visualitzar i manipular els objectes en un entorn 2D/3D, modificar la seva posició, rotació i escala, així com organitzar-los dins de l'escena. Aquesta vista és interactiva i no representa el resultat final del joc, sinó una eina de disseny.
 
 A la vista \emph{Game} \cite{UnityEditorInterface} es mostra la representació final del joc tal com la veuria l'usuari. Aquesta vista depèn de les càmeres de l'escena i permet executar el projecte en temps real mitjançant el botó de \emph{Play}.
 
 En l'\emph{Inspector} \cite{UnityEditorInterface} es pot visualitzar i modificar totes les propietats dels objectes seleccionats. Quan es selecciona un objecte, en aquesta part es mostren tots els seus components (transformacions, materials, scripts, etc.) (figura \ref{fig:menu_editor_inspector}).
 
-A la finestra \emph{Hierarchy} \cite{UnityEditorInterface} s'observen tots els objectes (\emph{GameObjects}) presents en l'escena actual, organitzats en forma d'arbre jeràrquic (establiment de relacions pare-fill).
+A la finestra \emph{Hierarchy} \cite{UnityEditorInterface} s'observen tots els objectes (\emph{GameObjects}) presents en l'escena actual, organitzats en forma d'arbre jeràrquic i establint relacions de pare-fill (figura \ref{fig:menu_editor_hierarchy}).
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{images/menu_editor_hier.png}
     \caption{Finestra Hierarchy que mostra l'estructura jeràrquica dels GameObjects}
+    \label{fig:menu_editor_hierarchy}
 \end{figure}
 
 \subsubsection*{Gestió de components}
 
-Cada objecte a \acro{Unity} està format per components \cite{UnityComponents}, els quals serveixen per definir el comportament i les característiques b'asiques d'aquests objectes (per exemple, \emph{Transform}, \emph{Renderer}, \emph{Collider} o scripts personalitzats). Des de l'Inspector es poden afegir nous components mitjançant el botó \emph{Add Component}, així com modificar les seves propietats.
+Cada objecte a \acro{Unity} està format per components \cite{UnityComponents}, els quals serveixen per definir el comportament i les característiques b'asiques d'aquests objectes (per exemple, \emph{Transform}, \emph{Renderer}, \emph{Collider} o scripts personalitzats). Des de l'\emph{Inspector} es poden afegir nous components mitjançant el botó \emph{Add Component}, així com modificar les seves propietats.
 
 \subsubsection*{Tags i Layers}
 
@@ -914,7 +918,7 @@ Cada objecte a \acro{Unity} està format per components \cite{UnityComponents}, 
 El \emph{Package Manager} \cite{UnityPackageManager} és una eina integrada en \acro{Unity} que afegeix i gestiona funcionalitats addicionals mitjançant paquets, els quals inclouen recursos, scripts i eines que amplien les capacitats del motor. Aquesta eina facilita la insta\l.lació i actualització de components dins del projecte des d'una única interfície (figura \ref{fig:package_manager}), i en aquest projecte s'han utilitzat alguns paquets rellevants \cite{UnityPackagesDocs}:
 
 \begin{itemize}
-    \item \textbf{Cinemachine}: Gestió avançada del sistema decàmeres de forma avançada. Tot i que inicialment es va considerar per al control de càmera, finalment es va rebutjar l'ús d'aquest paquet, encara que s'han reutilitzat alguns recursos visuals \cite{UnityCinemachine}.
+    \item \textbf{Cinemachine}: Gestió avançada del sistema de càmeres de forma avançada. Tot i que inicialment es va considerar per al control de càmera, finalment es va rebutjar l'ús d'aquest paquet, encara que s'han reutilitzat alguns recursos visuals \cite{UnityCinemachine}.
     \item \textbf{FBX Exporter}: Utilitzat per exportar models en format \emph{.fbx} i editar-los en eines externes (\emph{Blender}).
     \item \textbf{Input System}: Sistema d'entrada de dades més flexible que permet gestionar diferents dispositius.
     \item \textbf{ProBuilder}: Eina de modelatge integrada utilitzada per crear geometria directament dins de \acro{Unity}.
@@ -929,7 +933,7 @@ El \emph{Package Manager} \cite{UnityPackageManager} és una eina integrada en \
 
 \subsubsection{Eines i gestió de projectes}
 
-Com a eina que pot ajudar a tindre un control del projecte, tenim la consola (\emph{Console}),  que és l'eina que mostra els diferents missatges del sistema referents a errors o advertències generades durant l'execució del programa. És essencial per detectar errors en scripts i depurar el funcionament del sistema.
+Com a eina que pot ajudar a tindre un control del projecte, tenim la consola (\emph{Console}),  que és l'eina que mostra els diferents missatges del sistema referents a errors o advertències generades durant l'execució del programa, essencial per detectar errors en scripts i depurar el funcionament del sistema.
 
 Addicionalment a aquesta eina, existeix la barra superior de \acro{Unity}, que conté els principals menús de gestió del projecte i accés a funcionalitats avançades del motor (figura \ref{fig:barra_superior}):
 
@@ -955,9 +959,9 @@ Addicionalment a aquesta eina, existeix la barra superior de \acro{Unity}, que c
 
 \subsection{Gestió de materials i textures} 
 
-En \acro{Unity}, els \emph{materials} defineixen l'aspecte visual dels objectes de l'escena, incloent propietats com el color, la brillantor o la interacció amb la llum \cite{UnityMaterialsIntro}. Cada material està associat a un \textbf{Shader}, responsable de determinar com es representa visualment la superfície \cite{UnityShaders} i els materials s'assignen als objectes mitjançant el component \emph{Mesh Renderer} que serveix per visualitzar el \emph{GameObject}, i poden ser compartits entre diversos elements de l'escena.%\cite{UnityMaterialsReference}. 
+En \acro{Unity}, els \emph{materials} defineixen l'aspecte visual dels objectes de l'escena, incloent propietats com el color, la brillantor o la interacció amb la llum \cite{UnityMaterialsIntro}. Cada material està associat a un \emph{Shader}, responsable de determinar com es representa visualment la superfície segons la i\l.luminacio i les característiques del material \cite{UnityShaders}. Els materials s'assignen als objectes mitjançant el component \emph{Mesh Renderer} que serveix per visualitzar el \emph{GameObject}, i poden ser compartits entre diversos elements de l'escena, és a dir, un material pot ser utilitzat per múltiples objectes.%\cite{UnityMaterialsReference}. 
 
-En aquest projecte s'han utilitzat principalment textures PBR (\emph{Physically Based Rendering}, interpreten els colors i les textures tal qual ho farien en la realitat), importades des de repositoris externs per aconseguir una representació més realista dels diferents components industrials. Les textures s'importen directament a la carpeta \emph{Assets} i posteriorment s'assignen als canals corresponents del material \cite{UnityImportTextures} al crear un de nou. Entre els mapes utilitzats per crear un nou material destaquen: 
+En aquest projecte s'han utilitzat principalment textures \acro{PBR} (\emph{Physically Based Rendering}, interpreten els colors i les textures tal qual ho farien en la realitat), importades des de repositoris externs per aconseguir una representació més realista dels diferents components industrials. Les textures s'importen directament a la carpeta \emph{Assets} i posteriorment s'assignen als canals corresponents del material \cite{UnityImportTextures} al crear un de nou. Entre els mapes utilitzats per crear un nou material destaquen: 
 \begin{itemize} 
     \item \textbf{Albedo}: defineix el color base del material. 
     \item \textbf{Normal Map}: simula relleu i detall superficial. 
@@ -966,7 +970,7 @@ En aquest projecte s'han utilitzat principalment textures PBR (\emph{Physically 
     \item \textbf{Ambient Occlusion}: genera ombrejats suaus en zones menys i\l.luminades. 
 \end{itemize} 
 
-Com a factor addicional, existeix la possibilitat  permet modificar propietats addicionals dels materials, com el color, l'\emph{offset}, el \emph{tiling} o diferents paràmetres d'i\l.luminació, facilitant així la reutilització i personalització visual dels objectes dins de la simulació \cite{UnityTextureProperties}. Finalment, l'ús del model PBR permet mantenir una aparença coherent sota diferents condicions d'i\l.luminació de l'escena \cite{UnityMaterialsIntro}. 
+Com a factor addicional, existeix la possibilitat  permet modificar propietats addicionals dels materials, com el color, l'\emph{offset}, el \emph{tiling} o diferents paràmetres d'i\l.luminació, facilitant així la reutilització i personalització visual dels objectes dins de la simulació \cite{UnityTextureProperties}. Finalment, l'ús del model \acro{PBR} permet mantenir una aparença coherent sota diferents condicions d'i\l.luminació de l'escena \cite{UnityMaterialsIntro}. 
 
 \subsection{Sistema de components en \acro{Unity}}
 
@@ -1002,11 +1006,12 @@ El \emph{Rigidbody} \cite{UnityRigidbody} permet aplicar física als objectes, c
 \item \textbf{Angular Drag}: resistència a la rotació.
 \end{itemize}
 
-\textbf{Diferència entre \emph{isKinematic} i \emph{useGravity}}: Dins del component \emph{Rigidbody}, dues propietats especialment rellevants són \emph{isKinematic} i \emph{useGravity}, ja que determinen com l'objecte interactua amb el sistema de física de \acro{Unity}.
+%\textbf{Diferència entre \emph{isKinematic} i \emph{useGravity}}: 
+Dins del component \emph{Rigidbody}, dues propietats especialment rellevants són \emph{isKinematic} i \emph{useGravity}, ja que determinen com l'objecte interactua amb el sistema de física de \acro{Unity}:
 
 \begin{itemize}
     \item \textbf{useGravity}:  Quan aquesta propietat està activada, l'objecte es veu afectat per la gravetat global definida al motor físic. Això implica que l'objecte caurà si no hi ha cap suport que el mantingui en posició.
-    \item \textbf{isKinematic}:  Quan està activada, el \emph{Rigidbody} deixa de ser controlat pel motor físic. Això significa que no respon a forces ni a co\l.lisions físiques i que el moviment s'ha de controlar manualment mitjançant scripts \cite{UnityRigidbody,\acro{Unity}Colliders}.
+    \item \textbf{isKinematic}:  Quan està activada, el \emph{Rigidbody} deixa de ser controlat pel motor físic. Això significa que no respon a forces ni a co\l.lisions físiques i que el moviment s'ha de controlar manualment mitjançant scripts \cite{UnityRigidbody,UnityColliders}.
 \end{itemize}
 
 En el context d'aquest projecte, aquesta separació és especialment important ja que, per exemple, els objectes poden tenir la gravetat activada per comportar-se de manera realista sobre les cintes transportadores, mentre que altres elements com actuadors o parts del sistema es controlen manualment mitjançant scripts, utilitzant \emph{isKinematic}.
@@ -1015,7 +1020,7 @@ En el context d'aquest projecte, aquesta separació és especialment important j
 
 \acro{Unity} utilitza el motor físic NVIDIA PhysX \cite{UnityPhysics} per gestionar les simulacions físiques, permetent calcular co\l.lisions, forces i moviments de manera eficient. Els càlculs físics es realitzen principalment dins del mètode \texttt{FixedUpdate()}, que s'executa a intervals regulars, garantint estabilitat en la simulació \cite{UnityUpdate}.
 
-El \emph{Rigidbody} també permet \textbf{restringir moviments en determinats eixos} mitjançant les opcions de \emph{Constraints}, ajudant a que els moviments poguin ser controlats i previsibles. Per exemple, podem bloquejar la rotació en els eixos X i Z per evitar que les peces es tombin o inestabilitzin, o limitar el moviment en un eix concret per simular guies o carrils.
+El \emph{Rigidbody} també permet restringir moviments en determinats eixos mitjançant les opcions de \emph{Constraints}, ajudant a que els moviments poguin ser controlats i previsibles. Per exemple, podem bloquejar la rotació en els eixos X i Z per evitar que les peces es tombin o inestabilitzin, o limitar el moviment en un eix concret per simular guies o carrils.
 
 \subsubsection{Component Collider}
 
@@ -1043,7 +1048,7 @@ El component \emph{Renderer} \cite{UnityRenderer} és responsable de la represen
 \subsubsection{Component Light}
 \label{sec:lights}
 
-El component \emph{Light} \cite{UnityLighting} és l'encarregat de simular les fonts de llum dins de l'escena de \acro{Unity} i determina com els objectes són i\l.luminats i com es perceben materials, textures i volums. Les llums influeixen directament en el procés de renderització, afectant el color, la intensitat i les ombres dels objectes dins de l'entorn virtual. \acro{Unity} ofereix diferents tipus de llums segons el seu comportament:
+El component \emph{Light} \cite{UnityLighting} és l'encarregat de simular les fonts de llum dins de l'escena de \acro{Unity} i determina com els objectes són i\l.luminats i com es perceben materials, textures i volums. Les llums influeixen directament en el procés de renderització, afectant el color, la intensitat i les ombres dels objectes dins de l'entorn virtual i \acro{Unity} ofereix diferents tipus de llums segons el seu comportament:
 
 \begin{itemize}
     \item \textbf{Directional Light}: I\l.lumina tots els objectes en una mateixa direcció sense importar la seva posició (sol).
@@ -1064,7 +1069,7 @@ En el context d'aquest projecte, la i\l.luminació no només té una funció est
 
 \subsubsection{Llenguatge utilitzat i llibreries principals}
 
-El llenguatge principal utilitzat en \acro{Unity} és \textbf{C\#} \cite{UnityProgrammingGuide}, integrat amb la plataforma \emph{.NET}. Aquest llenguatge permet una programació orientada a objectes robusta i flexible. Els scripts en \acro{Unity} són heretats habitualment de la classe \emph{MonoBehaviour}, que proporciona accés a les funcionalitats del motor com el sistema de física, el temps o la gestió d'objectes. Tanmateix, s'utilitzen llibreries com:
+El llenguatge principal utilitzat en \acro{Unity} és \emph{C\#} \cite{UnityProgrammingGuide}, integrat amb la plataforma \emph{.NET}. Aquest llenguatge permet una programació orientada a objectes robusta i flexible. Els scripts en \acro{Unity} són heretats habitualment de la classe \emph{MonoBehaviour}, que proporciona accés a les funcionalitats del motor com el sistema de física, el temps o la gestió d'objectes. Tanmateix, s'utilitzen llibreries com:
 
 \begin{itemize}
     \item \texttt{\acro{Unity}Engine}: proporciona accés a tots els components del motor (Transform, Rigidbody, etc.)
@@ -1107,7 +1112,7 @@ La funció \texttt{Vector3.MoveTowards()} \cite{UnityMoveTowards} és un exemple
 
 \subsubsection{Creació d'objectes en temps d'execució}
 
-\acro{Unity} dona la opció de generar objectes en temps d'execució mitjançant la funció \texttt{Instantiate()} \cite{UnityInstantiate}.  Aquesta funció crea una còpia d'un objecte \emph{prefab} dins de l'escena, mecanisme el qual és bastant utilitzat en diferents situacions per generar peces de manera automàtica mitjançant el sistema de \emph{spawner}, tal i com succeeix en el el sistema dissenyat d'aquest projecte.
+\acro{Unity} dona la opció de generar objectes en temps d'execució mitjançant la funció \texttt{Instantiate()} \cite{UnityInstantiate}, funció que crea una còpia d'un objecte \emph{prefab} dins de l'escena. Aquest tipus de mecanisme és bastant utilitzat en diferents situacions per generar peces de manera automàtica mitjançant el sistema de \emph{spawner}, tal i com succeeix en el sistema dissenyat d'aquest projecte.
 
 \subsubsection{Transformacions i sistemes de coordenades}
 
@@ -1120,21 +1125,20 @@ Trobem dos sistemes de coordenades principals en \acro{Unity} \cite{UnityTransfo
 En estructures complexes com el transelevador d'aquest projecte, és habitual treballar en coordenades locals i posteriorment transformar-les a globals. Aquest procés permet mantenir el moviment relatiu dins de l'estructura, evitar desalineacions amb el sistema pare i integrar correctament el moviment amb la física de \acro{Unity}.
 
 \subsubsection{Sistema de rotacions}
-\subsubsection*{Quaternions}
+\subsubsection*{Quaternions i Gimbal Lock}
 
-El terme \emph{Quaternion} prové de les matemàtiques i fa referència a una extensió dels nombres complexos a quatre dimensions. Un quaternion està format per quatre components (x, y, z, w), però aquests no representen angles directes, sinó una representació matemàtica de la rotació \cite{UnityQuaternionEuler2019}.
+En sistemes 3D és habitual representar les rotacions mitjançant angles d'Euler, és a dir, definint una rotació independent sobre els eixos X, Y i Z. Aquesta representació és fàcil d'entendre per a les persones, però presenta una limitació important coneguda com a \emph{Gimbal Lock}. Aquest fenomen es produeix quan dos dels eixos de rotació queden alineats entre si, provocant la pèrdua d'un grau de llibertat i impedint realitzar determinades orientacions de forma correcta. Com a conseqüència, poden aparèixer moviments inesperats o comportaments anòmals durant les animacions i simulacions \cite{UnityQuaternionEuler2019}.
 
-\subsubsection*{Problema del Gimbal Lock} 
+Per evitar aquest problema, \acro{Unity} no emmagatzema internament les rotacions utilitzant angles d'Euler, sinó mitjançant \emph{quaternions}. Un \emph{quaternion} és una estructura matemàtica formada per quatre components (\acro{x}, \acro{y}, \acro{z} i \acro{w}) que permet representar orientacions i rotacions tridimensionals d'una manera més robusta i estable. A diferència dels angles d'Euler, els quaternions no pateixen el problema del \emph{Gimbal Lock} i permeten realitzar interpolacions suaus entre orientacions, aspecte especialment important en animacions i sistemes de moviment continu \cite{UnityQuaternion}.
 
-Quan es treballa amb angles d'Euler (rotacions en X, Y, Z), es pot produir un problema conegut com \textbf{Gimbal Lock}. Aquest fenomen ocorre quan dos eixos de rotació s'alineen, provocant la pèrdua d'un grau de llibertat en el moviment, fet que pot causar comportaments inesperats o limitacions en la rotació. 
+Tot i que \acro{Unity} utilitza quaternions de forma interna, l'editor mostra habitualment les rotacions en forma d'angles d'Euler perquè resulten més intuïtius per a l'usuari. Quan es modifica una rotació des de l'\emph{Inspector} o mitjançant propietats com \texttt{transform.eulerAngles}, \acro{Unity} realitza automàticament la conversió entre ambdues representacions, mantenint els avantatges dels quaternions sense complicar la seva utilització.
 
-Per aquest motiu, \acro{Unity} utilitza internament quaternions, ja que no pateixen el problema de \emph{Gimbal Lock} (permeten interpolacions suaus i són més estables numèricament).
-
-\acro{Unity} emmagatzema totes les rotacions com a quaternions precisament per evitar aquests problemes. Tot i això, per facilitar la comprensió i manipulació, \acro{Unity} permet treballar amb angles d'Euler a través de propietats com \texttt{transform.eulerAngles}, que converteixen internament els quaternions a angles legibles. 
 
 \subsubsection{Control de moviment mitjançant Rigidbody}
 
-Els objectes amb component \emph{Rigidbody} \cite{UnityRigidbody} poden ser controlats mitjançant velocitats enlloc de posicions. En aquesta context, la propietat \texttt{linearVelocity} defineix la velocitat lineal de l'objecte en l'espai i si s'aplica a la situació del sistema desenvolupat en aquest projecte, es calcula una velocitat en una direcció concreta, modificant únicament els eixos horitzontals i es manté la component vertical prèvia per no interferir amb la gravetat. Amb aquest procediment, s'aconsegueix que el \emph{GameObject} es mogui de forma realista sobre els diferent components, mantenint la interacció física amb el sistema.
+\acro{Unity} permet controlar el moviment dels objectes físics a través del component \emph{Rigidbody} \cite{UnityRigidbody}, on enlloc de modificar directament la seva posició, és possible actuar sobre la seva velocitat, fet que proporciona una integració més natural amb el motor físic i permet mantenir correctament les co\l.lisions, les forces i la gravetat. 
+
+En el context d'aquest projecte, el desplaçament de determinats elemnts es realitxa modificant la propietat \texttt{linearVelocity}, quue defineix la velocitat lineal de l'objecte en l'espai tridimensional. Per dirigir el moviment cap a una direcció concreta, es calculen les components horitzontals de la velocitat segons les necessitats del sistema, mentre que la component vertical es manté per no interferir amb la gravetat.  Aquest enfocament permet obtenir moviments fluids i realistes sobre les cintes transportadores, els rodets i altres elements de la planta, mantenint al mateix temps una interacció coherent amb la resta d'objectes físics presents a l'escena.
 
 \subsubsection{Variables i encapsulació}
 
@@ -1166,16 +1170,16 @@ Aquest tipus de sintaxi s'anomena \emph{expression-bodied member} \cite{Microsof
 
 En \acro{Unity}, el \emph{Canvas} és l'element fonamental per a la creació d'interfícies d'usuari (UI). Es tracta d'un \emph{GameObject} especial que actua com a contenidor de tots els elements visuals interactius, com ara textos, botons, imatges o indicadors d'estat.
 
-Per tal de que tot funcioni correctament, tots els elements d'interfície ha de ser fills d'un \emph{Canvas}, ja que aquest defineix l'espai on es representen i es renderitzen dins de l'aplicació \cite{UnityCanvas}. El \emph{Canvas} es pot entendre com una 'pantalla virtual' sobre la qual es dibuixen tots els elements UI.
+Per tal de que tot funcioni correctament, tots els elements d'interfície ha de ser fills d'un \emph{Canvas}, ja que aquest defineix l'espai on es representen i es renderitzen dins de l'aplicació \cite{UnityCanvas}. El \emph{Canvas} es pot entendre com una 'pantalla virtual' sobre la qual es dibuixen tots els elements \acro{UI} (\emph{User Interface}).
 
 \subsubsection{Modes de renderització del Canvas}
 
 Dintre de \acro{Unity}, es troben diferents formes de mostrar la interfície segons el tipus d'aplicació:
 
 \begin{itemize}
-    \item \textbf{Screen Space - Overlay}: La interfície es dibuixa directament sobre la pantalla, independentment de la càmera. És el mode més utilitzat per HUDs o interfícies fixes.
-    \item \textbf{Screen Space - Camera}: La UI es renderitza en funció d'una càmera concreta, permetent integrar-la millor amb l'escena.
-    \item \textbf{World Space}: El Canvas es comporta com un objecte 3D dins de l'escena, permetent crear interfícies integrades en el món (pantalles, panells industrials, etc.).
+    \item \textbf{Screen Space - Overlay}: La interfície es dibuixa directament sobre la pantalla, independentment de la càmera. És el mode més utilitzat per \acro{HUDs} (\emph{Heads-Up Display}) o interfícies fixes.
+    \item \textbf{Screen Space - Camera}: La \acro{UI} es renderitza en funció d'una càmera concreta, permetent integrar-la millor amb l'escena.
+    \item \textbf{World Space}: El \emph{Canvas} es comporta com un objecte 3D dins de l'escena, permetent crear interfícies integrades en el món (pantalles, panells industrials, etc.).
 \end{itemize}
 
 \subsubsection{Elements bàsics de la UI}
@@ -1196,7 +1200,7 @@ Aquests elements utilitzen un component especial anomenat \emph{Rect Transform},
 \label{sec:asrs}
 %%\subsection{Què és un transelevador}
 
-Un transelevador \cite{transelevador_info} és un equip automàtic de manipulació de materials utilitzat en sistemes d'emmagatzematge automatitzat (AS/RS), dissenyat per transportar, emmagatzemar i recuperar unitats de càrrega dins d'estanteries industrials.
+Un transelevador \cite{transelevador_info} és un equip automàtic de manipulació de materials utilitzat en sistemes d'emmagatzematge automatitzat (\acro{AS/RS}), dissenyat per transportar, emmagatzemar i recuperar unitats de càrrega dins d'estanteries industrials.
 
 Aquest sistema es desplaça habitualment per un passadís mitjançant rails, permetent el moviment en diferents direccions per accedir a qualsevol ubicació del magatzem. La seva funció principal és automatitzar les operacions logístiques, reduint la intervenció humana i augmentant l'eficiència del sistema.
 
@@ -1211,7 +1215,7 @@ Els transelevadors (figura \ref{fig:transelevador1}) poden treballar de forma co
 
 \subsection{Contextos d'aplicació dels sistemes AS/RS}
 
-Els sistemes AS/RS (\emph{Automated Storage and Retrieval Systems}) són sistemes d'emmagatzematge automatitzat controlats per ordinador, utilitzats en entorns industrials i logístics per gestionar el flux de materials de manera eficient. Aquests sistemes s'apliquen principalment en dos grans àmbits \cite{asrs_daifuku}:
+Els sistemes \acro{AS/RS} (\emph{Automated Storage and Retrieval Systems}) són sistemes d'emmagatzematge automatitzat controlats per ordinador, utilitzats en entorns industrials i logístics per gestionar el flux de materials de manera eficient. Aquests sistemes s'apliquen principalment en dos grans àmbits \cite{asrs_daifuku}:
 
 \begin{itemize}
     \item \textbf{Indústria de fabricació}:
@@ -1230,7 +1234,7 @@ Els sistemes AS/RS (\emph{Automated Storage and Retrieval Systems}) són sisteme
     \end{itemize}
 \end{itemize}
 
-Els AS/RS ajuden a fer un ús eficient de l'espai vertical del magatzem, incrementant la densitat d'emmagatzematge i millorant la gestió de l'inventari. A més a més, contribueixen a la reducció de costos laborals, a la millora de la seguretat i a una major precisió en les operacions logístiques.
+Els \acro{AS/RS} ajuden a fer un ús eficient de l'espai vertical del magatzem, incrementant la densitat d'emmagatzematge i millorant la gestió de l'inventari. A més a més, contribueixen a la reducció de costos laborals, a la millora de la seguretat i a una major precisió en les operacions logístiques.
 
 \subsection{Funcionament del transelevador}
 
@@ -1351,11 +1355,11 @@ Finalment, és obligatori disposar de procediments d'emergència i realitzar sim
 
 \subsection{Relació del sistema desenvolupat amb els sistemes AS/RS i transelevadors}
 
-El sistema desenvolupat en aquest treball es pot classificar conceptualment com un sistema AS/RS de tipus minicàrrega \cite{asrs_daifuku}, ja que implementa una gestió automatitzada del flux de materials, incloent transport, emmagatzematge i evacuació de peces.
+El sistema desenvolupat en aquest treball es pot classificar conceptualment com un sistema \acro{AS/RS} de tipus minicàrrega \cite{asrs_daifuku}, ja que implementa una gestió automatitzada del flux de materials, incloent transport, emmagatzematge i evacuació de peces.
 
 Un dels elements clau és la utilització de transelevadors, que reprodueixen el comportament típic d'aquests equips industrials mitjançant moviments coordinats en eixos vertical i horitzontal per posicionar càrregues en diferents nivells d'estanteria.
 
-A més, el sistema integra característiques pròpies dels AS/RS reals, com ara l'automatització del procés, el control de posició mitjançant sensors i la gestió estructurada de l'emmagatzematge.
+A més, el sistema integra característiques pròpies dels \acro{AS/RS} reals, com ara l'automatització del procés, el control de posició mitjançant sensors i la gestió estructurada de l'emmagatzematge.
 
 Tot i això, cal destacar que es tracta d'un model simplificat respecte a insta\l.lacions industrials reals (Figura \ref{fig:comparacion_asrs}). Per exemple, no s'inclouen aspectes com la gestió multi-passadís, sistemes redundants, optimització avançada de rutes o integració amb sistemes ERP. Una descripció detallada del funcionament i de la implementació del sistema es presenta a la secció \ref{sec:disseny_proces}.
 
@@ -1382,19 +1386,19 @@ Tot i això, cal destacar que es tracta d'un model simplificat respecte a insta\
 \label{sec:disseny_proces}
 %%\subsection{Concepció general del sistema}
 
-La simulació d'una planta industrial dintre de \acro{Unity} realitzada e aquest projecte representa un sistema automatitzat de classificació i emmagatzematge de peces. La lògica del procés s'executa íntegrament en \acro{Unity}, mentre que Rapid \acro{SCADA} actua com a sistema de supervisió, monitoratge i enviament de comandes d'operació. Aquesta separació és intencionada i respon a criteris d'arquitectura industrial moderna:
+La simulació d'una planta industrial dintre de \acro{Unity} realitzada e aquest projecte representa un sistema automatitzat de classificació i emmagatzematge de peces. La lògica del procés s'executa íntegrament en \acro{Unity}, mentre que \emph{Rapid SCADA} actua com a sistema de supervisió, monitoratge i enviament de comandes d'operació. Aquesta separació és intencionada i respon a criteris d'arquitectura industrial moderna:
 
 \begin{itemize}
 \item \acro{Unity} = sistema físic simulat + lògica de control.
-\item Rapid \acro{SCADA} = capa de supervisió i operació.
+\item \emph{Rapid SCADA} = capa de supervisió i operació.
 \item \acro{mqtt} = canal de comunicació desacoblat.
 \end{itemize}
 
-Aquest enfocament permet reproduir una arquitectura equivalent a la d'un sistema industrial real on el PLC executaria la lògica i el \acro{SCADA} supervisaria el procés.
+Aquest enfocament permet reproduir una arquitectura equivalent a la d'un sistema industrial real on el \acro{PLC} executaria la lògica i el \acro{SCADA} supervisaria el procés.
 
 \subsection{Disseny detallat del procés industrial}
 
-El sistema industrial virtual que finalment s'ha decidit realitzar en l'entorn virtual ha anat evolucionant cap a una arquitectura més complexa basada en sistemes d'emmagatzematge automatitzat similars als utilitzats en magatzems industrials tipus AS/RS. El procés consta de tres subsistemes principals:
+El sistema industrial virtual que finalment s'ha decidit realitzar en l'entorn virtual ha anat evolucionant cap a una arquitectura més complexa basada en sistemes d'emmagatzematge automatitzat similars als utilitzats en magatzems industrials tipus \acro{AS/RS}. El procés consta de tres subsistemes principals:
 
 \begin{itemize}
 \item Sistema d'entrada i classificació inicial.
@@ -1424,7 +1428,7 @@ Aquesta informació s'utilitza per definir la seva destinació dins del sistema.
 
 \subsubsection*{3. Transferència i elevació}
 
-La peça és transferida al primer transelevador, que la posiciona segons el tipus detectat al lloc predeterminat. Consta d'un sensor de presència per detectar si la peça ha arribat correctament a la plataforma d'elevació. Aquest transelevador consta de 4 nivell verticals i 4 nivells horitzontals, i en cada posició trobem un sensor que ens ajuda a conèixer en tot moment la ubicació del transelevador en els dos eixos.
+La peça és transferida al primer transelevador, que la posiciona segons el tipus detectat al lloc predeterminat. Consta d'un sensor de presència per detectar si la peça ha arribat correctament a la plataforma d'elevació del transelevador, el qual disposa de 4 nivell verticals i 4 nivells horitzontals, i en cada posició trobem un sensor que ens ajuda a conèixer en tot moment la ubicació del transelevador en els dos eixos.
 
 \subsubsection*{4. Dipòsit en estanteria}
 
@@ -1548,9 +1552,9 @@ SV\_4 & Transelevador 2 & Posició vertical nivell 4 (estanteria C)\\ \hline
 
 \subsection{Modelització segons filosofia GEMMA}
 
-La filosofia GEMMA (\emph{Guide d'Étude des Modes de Marches et d'Arrêts}) és una metodologia utilitzada en automatització industrial per definir de manera estructurada els diferents modes de funcionament i aturada d'un sistema automàtic. Aquesta metodologia permet establir un comportament coherent i segur del sistema davant situacions normals d'operació, parades controlades, funcionament manual o situacions d'emergència.
+La filosofia \acro{GEMMA} (\emph{Guide d'Étude des Modes de Marches et d'Arrêts}) és una metodologia utilitzada en automatització industrial per definir de manera estructurada els diferents modes de funcionament i aturada d'un sistema automàtic. Aquesta metodologia permet establir un comportament coherent i segur del sistema davant situacions normals d'operació, parades controlades, funcionament manual o situacions d'emergència.
 
-En aquest projecte, la filosofia GEMMA s'ha utilitzat com a base per definir els principals estats de funcionament de la planta industrial virtual desenvolupada a \acro{Unity} i supervisada mitjançant Rapid \acro{SCADA}. Els modes implementats dins del sistema són els següents:
+En aquest projecte, la filosofia \acro{GEMMA} s'ha utilitzat com a base per definir els principals estats de funcionament de la planta industrial virtual desenvolupada a \acro{Unity} i supervisada mitjançant \emph{Rapid SCADA}. Els modes implementats dins del sistema són els següents:
 \begin{itemize}
     \item A1 - Estat inicial segur: Tots els actuadors desactivats. Elevadors en posició segura. Sensors desactivats.
     \item F1 - Producció automàtica: Execució contínua del cicle complet de classificació sense intervenció de l'operador.
@@ -1563,7 +1567,7 @@ En aquest projecte, la filosofia GEMMA s'ha utilitzat com a base per definir els
 
 \subsection{Especificació dels topics MQTT}
 
-La comunicació entre \acro{Unity} i Rapid \acro{SCADA} es basa en una arquitectura Publish/Subscribe mitjançant \acro{mqtt} \cite{Team2015MQTT}, on cada topic representa una variable concreta del sistema i, per la facilitació de la comunicació entre els dos dispositius, totes les dades transmeses són de tipus enter (\emph{int}). La interpretació d'aquest valor de tipus enter és acordada prèviament entre ambdós sistemes i forma part del disseny del protocol intern. No s'utilitzen dades en format text per garantir compatibilitat amb entorns industrials reals i facilitar una possible integració amb PLCs.
+La comunicació entre \acro{Unity} i \emph{Rapid SCADA} es basa en una arquitectura Publish/Subscribe mitjançant \acro{mqtt} \cite{Team2015MQTT}, on cada topic representa una variable concreta del sistema i, per la facilitació de la comunicació entre els dos dispositius, totes les dades transmeses són de tipus enter (\emph{int}). La interpretació d'aquest valor de tipus enter és acordada prèviament entre ambdós sistemes i forma part del disseny del protocol intern. No s'utilitzen dades en format text per garantir compatibilitat amb entorns industrials reals i facilitar una possible integració amb \acro{PLCs}.
 \subsubsection{Estructura general dels topics}
 
 Els topics segueixen la següent estructura:
@@ -1579,7 +1583,7 @@ Els topics segueixen la següent estructura:
 
 \subsubsection{Topics de lectura i escriptura}
 
-Aquests topics representen les variables de procés que \acro{Unity} publica i Rapid \acro{SCADA} llegeix per supervisar l'estat de la planta virtual.
+Aquests topics representen les variables de procés que \acro{Unity} publica i \emph{Rapid SCADA} llegeix per supervisar l'estat de la planta virtual.
 
 \textbf{Sensors} $\rightarrow$ \textbf{plant/sensors/Si},  on \emph{i} correspon al número del sensor definit a la Taula \ref{tab:tab_sensors}.
 
@@ -1630,7 +1634,7 @@ En el cas dels sensors d'identificació de peça, el valor representa el tipus d
 \end{itemize}
 
 \subsubsection{Topics de control (\acro{SCADA} $\rightarrow$ \acro{Unity})}
-Aquests topics representen les ordres enviades des de Rapid \acro{SCADA} cap a \acro{Unity} per controlar el comportament general de la planta virtual (taula \ref{tab:mqtt_general_cmd}).
+Aquests topics representen les ordres enviades des de \emph{Rapid SCADA} cap a \acro{Unity} per controlar el comportament general de la planta virtual (taula \ref{tab:mqtt_general_cmd}).
 
 \begin{table}[H]
 \centering
@@ -1945,7 +1949,7 @@ Cada plataforma disposa d'un \textbf{Box Collider} sense \emph{Trigger}, amb la 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{images/collider_shelf.png}
+\includegraphics[width=0.4\textwidth]{images/collider_shelf.png}
 \caption{Plataformes afegides a l'estanteria amb colliders}
 \end{figure}
 
@@ -1953,7 +1957,7 @@ Addicionalment, s'ha implementat un sistema de rodets que permet reorganitzar le
 
 \subsection{Implementació del transelevador (AS/RS Crane)}
 
-El model original del sistema AS/RS es trobava en format \emph{.stp}, per la qual cosa es va convertir a un format compatible amb \acro{Unity} (\emph{.fbx}) \cite{stp_to_fbx}. Tanmateix, el model inicial presentava una estructura excessivament complexa per a la simulació, fet que va requerir la seva edició prèvia amb \textbf{Blender}. El programa Blender permet manipular models 3D de forma més precisa que \acro{Unity} quan es tracta de separar malles, dividir objectes o reorganitzar l'estructura d'un model, per la qual cosa va ser bastant útil a l'hora de separar els diferents components del model, especialment els rodets de la plataforma per poder-los controlar-los de forma independent mitjançant \emph{scripts}, i a més a més per afegir algun component extra al transelevador (com una valla de protecció). També es va afegir un \emph{Collider} a la plataforma per garantir el correcte suport de les peces durant el moviment.
+El model original del sistema \acro{AS/RS} es trobava en format \acro{.stp}, per la qual cosa es va convertir a un format compatible amb \acro{Unity} (\acro{.fbx}) \cite{stp_to_fbx}. Tanmateix, el model inicial presentava una estructura excessivament complexa per a la simulació, fet que va requerir la seva edició prèvia amb \emph{Blender}. El programa \emph{Blender} permet manipular models 3D de forma més precisa que \acro{Unity} quan es tracta de separar malles, dividir objectes o reorganitzar l'estructura d'un model, per la qual cosa va ser bastant útil a l'hora de separar els diferents components del model, especialment els rodets de la plataforma per poder-los controlar-los de forma independent mitjançant \emph{scripts}, i a més a més per afegir algun component extra al transelevador (com una valla de protecció). També es va afegir un \emph{Collider} a la plataforma per garantir el correcte suport de les peces durant el moviment.
 
 \subsection*{Sistema de posicionament del transelevador}
 
@@ -1962,7 +1966,9 @@ Cada una d'aquestes posicions correspon a una localització específica del proc
 
 \subsection*{Moviment horitzontal del transelevador}
 
-El moviment horitzontal del transelevador es controla mitjançant un script específic que desplaça l'estructura del sistema entre les diferents posicions definides. L'script defineix les posicions objectiu i utilitza \texttt{Vector3.MoveTowards()} dins de \emph{FixedUpdate()} \cite{UnityUpdate} per desplaçar progressivament el transelevador. En aquest cas, aquesta funció  no es l'encarregada de moure cap objecte, sino que és simplement una funció matemàtica que calcula un nou punt situat entre la posició actual i la nova posició objectiu. L'únic que fa es retornar un Vector3, i el moviment s'aplica mitjançant la funció \emph{Rigidbody.MovePosition()}, utilitzant aquest nou Vector3 i garantint una integració correcta amb el sistema físic (secció \ref{sec:scripts_unity}).
+El moviment horitzontal del transelevador es controla mitjançant un script específic que desplaça l'estructura del sistema entre les diferents posicions definides. L'script defineix les posicions objectiu i utilitza \texttt{Vector3.MoveTowards()} dins de \emph{FixedUpdate()} \cite{UnityUpdate} per desplaçar progressivament el transelevador. 
+
+En aquest cas, aquesta funció  no es l'encarregada de moure cap objecte, sino que és simplement una funció matemàtica que calcula un nou punt situat entre la posició actual i la nova posició objectiu. L'únic que fa es retornar un Vector3, i el moviment s'aplica mitjançant la funció \emph{Rigidbody.MovePosition()}, utilitzant aquest nou Vector3 i garantint una integració correcta amb el sistema físic (secció \ref{sec:scripts_unity}).
 
 \subsection*{Moviment vertical de la plataforma}
 
@@ -1970,7 +1976,7 @@ La plataforma del transelevador disposa d'un moviment vertical \cite{UnityElevat
 
 La nova posició es calcula amb \texttt{Vector3.MoveTowards()} i posteriorment es transforma a coordenades globals mitjançant \texttt{TransformPoint}, permetent l'ús de \texttt{Rigidbody.MovePosition()}.
 
-El moviment s'executa dins de \texttt{FixedUpdate()}, garantint estabilitat en la simulació física. Degut a això, i al fet que el desplaçament es calcula de forma incremental, s'ha utilitzat una velocitat superior respecte al moviment horitzontal per mantenir una resposta visual coherent.
+El moviment s'executa dins de \texttt{FixedUpdate()}, garantint estabilitat en la simulació física. A causa d'aquest fet i a que el desplaçament es calcula de forma incremental, s'ha utilitzat una velocitat superior respecte al moviment horitzontal per mantenir una resposta visual coherent entre el moviment horitzontal i vertical.
 
 \subsection*{Sistema de rodets de la plataforma}
 \label{sec:rollers}
@@ -1993,13 +1999,13 @@ El comportament es gestiona mitjançant l'script \emph{LEDIndicator}, que canvia
 
 \subsubsection{Sensors de presència}
 
-Els sensors de presència s'utilitzen per detectar la presència de peces en punts concrets del sistema, com cintes o la plataforma del transelevador (secció \ref{sec:scripts_unity}).  Es basen en un \emph{Collider} en mode \emph{Trigger}, utilitzant els esdeveniments \texttt{OnTriggerEnter} i \texttt{OnTriggerExit} per detectar l'entrada i sortida d'objectes amb etiqueta \emph{Box} \cite{UnityColliders, \acro{Unity}Components}.
+Els sensors de presència s'utilitzen per detectar la presència de peces en punts concrets del sistema, com cintes o la plataforma del transelevador (secció \ref{sec:scripts_unity}).  Es basen en un \emph{Collider} en mode \emph{Trigger}, utilitzant els esdeveniments \texttt{OnTriggerEnter} i \texttt{OnTriggerExit} per detectar l'entrada i sortida d'objectes amb etiqueta \emph{Box} \cite{UnityColliders, UnityComponents}.
 
 Per evitar errors amb múltiples peces simultànies, s'utilitza un comptador intern enlloc de la funció \texttt{OnTriggerStay()}, reduint també el cost computacional. Quan una peça amb etiqueta \emph{Box} entra dins del sensor, aquest activa la variable interna del sensor i encén el LED associat, i en el moment en el que no hi ha cap peça dintre del \emph{collider} (comptador intern a 0), apaga la variable del LED associat.
 
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.2\textwidth}
+\begin{subfigure}{0.18\textwidth}
     \centering
     \includegraphics[width=\linewidth]{images/s1_off.png}
 \end{subfigure}
@@ -2013,7 +2019,7 @@ Per evitar errors amb múltiples peces simultànies, s'utilitza un comptador int
 
 \subsubsection{Sensors òptics}
 
-El sensor òptic permet identificar el tipus de peça mitjançant un script associat a cada objecte (secció \ref{sec:scripts_unity}).  Quan una peça entra dins del rang de trball sensor, es llegeix aquesta la informació corresponent a aquesta peça i, després d'un retard controlat mitjançant un temporitzador, es valida la detecció (secció \ref{sec:scripts_unity}).  Aquest retard simula el temps de resposta d'un sensor real i permet al sistema prendre decisions en funció del tipus de peça (a l'apartat \ref{sec:timers} s'explica com s'ha implementat aquest retard). 
+El sensor òptic permet identificar el tipus de peça mitjançant un script associat a cada objecte.  Quan una peça entra dins del rang de trball sensor, es llegeix aquesta la informació corresponent a aquesta peça i, després d'un retard controlat mitjançant un temporitzador, es valida la detecció (secció \ref{sec:scripts_unity}).  Aquest retard simula el temps de resposta d'un sensor real i permet al sistema prendre decisions en funció del tipus de peça (a l'apartat \ref{sec:timers} s'explica com s'ha implementat aquest retard). 
 
 Com a implementació separada de la detecció bàsica, el sistema incorpora una simulació de fallades del sensor per tal d'aproximar el comportament del model a una situació industrial real. Per aconseguir-ho, s'ha implementat una probabilitat de fallada configurable mitjançant el paràmetre \texttt{failProbability}. Cada vegada que una peça és detectada correctament i finalitza el temporitzador del sensor, es genera un valor aleatori utilitzant \texttt{Random.value}. Si aquest valor és inferior a la probabilitat configurada, el sensor no detectarà la peça, provocant que el sistema entri en estat d'avaria.
 
@@ -2028,11 +2034,11 @@ Els sensors de posició determinen la ubicació del transelevador mitjançant la
 public bool Pos1 => Vector3.Distance(rb.position, position1.position) <0.01f;
 \end{lstlisting}
 
-Quan la distància és inferior a un llindar, es considera que s'ha assolit la posició, activant també els indicadors LED associats a la vegada que s'activa la variable del sensor. Aquest lògica de procès simula el comportament de sensors tipus finals de carrera o de posició utilitzats habitualment en sistemes AS/RS industrials, molt necessaris per assegurar un ús correcta d'aquest sistema.
+Quan la distància és inferior a un llindar, es considera que s'ha assolit la posició, activant també els indicadors LED associats a la vegada que s'activa la variable del sensor. Aquest lògica de procès simula el comportament de sensors tipus finals de carrera o de posició utilitzats habitualment en sistemes \acro{AS/RS} industrials, molt necessaris per assegurar un ús correcta d'aquest sistema.
 
 \subsection{Sistema de llums d'estat}
 
-S'ha implementat un sistema de llums \cite{UnityLighting}, basats en objectes \textbf{Point Light} de \acro{Unity} (secció \ref{sec:lights}) per indicar l'estat global del sistema:
+S'ha implementat un sistema de llums \cite{UnityLighting}, basats en objectes \emph{Point Light} de \acro{Unity} (secció \ref{sec:lights}) per indicar l'estat global del sistema:
 
 \begin{itemize}
 \item Verd: funcionament automàtic
@@ -2048,14 +2054,14 @@ El control es realitza mitjançant variables com \emph{isOk}, \emph{emergency} i
 
 Per tal d'aproximar encara més el comportament del sistema a un entorn industrial real, s'ha dissenyat un mecanisme de temporització que permet introduir retards controlats en determinades accions del sistema. Aquest tipus de funcionalitat és especialment important en sistemes automatitzats, ja que molts processos industrials no es realitzen de manera instantània, sinó que requereixen un temps determinat per completar-se. 
 
-Per implementar aquesta funcionalitat s'ha desenvolupat una classe anomenada \emph{Timer}, el funcionament de la qual és equivalent a un temporitzador de tipus \textbf{TON (Timer On Delay)} utilitzat habitualment en PLCs.
+Per implementar aquesta funcionalitat s'ha desenvolupat una classe anomenada \emph{Timer}, el funcionament de la qual és equivalent a un temporitzador de tipus \textbf{TON (Timer On Delay)} utilitzat habitualment en \acro{PLCs}.
 
 El funcionament d'aquest temporitzador (secció \ref{sec:scripts_unity}) es basa en una entrada booleana que activa el comptatge del temps mitjançant \texttt{Time.deltaTime} \cite{UnityTime} i, una vegada el temps acumulat supera el valor \texttt{preset} (valor predifinit del timer), la sortida \texttt{done} esdevé \texttt{true}. Si l'entrada es desactiva en qualsevol moment mentre el temporitzador estigui actiu, aquest es reinicia automàticament. Aquesta classe permet controlar de forma precisa els retards en la detecció de les peces del \textbf{sensor òptic}, així com en altres processos que requereixin una temporització específica dins del procès \textbf{d'automatització del sistema}.
 
 
 \subsection{Interfície de visualització de dades (Canvas)}
 
-A sobre dels indicadors LED, s'ha implementat una interfície gràfica en \acro{Unity} per mostrar dades en temps real mitjançant el sistema \emph{Canvas} \cite{UnityCanvas}.
+A part dels indicadors LED, s'ha implementat una interfície gràfica en \acro{Unity} per mostrar dades en temps real mitjançant el sistema \emph{Canvas} \cite{UnityCanvas}.
 
 L'estructura es basa en un objecte pare amb vuit elements fills, on trobem quatre panells visuals i quatre elements de text. Tres d'aquests elements de text mostren el nombre de peces emmagatzemades gràcies al script \emph{DisplayCounter} (secció \ref{sec:scripts_unity}), que actualitza aquest valor en cada fotograma accedint al comptador de caixes que es realitza en el procès automàtic i convertint-lo a text amb la funció \texttt{ToString()} \cite{dotnet_collections}. En canvi, el quart text mostra el tipus de peça detectada pel sensor òptic (secció \ref{sec:scripts_unity}), el qual quan no hi ha detecció es mostra \emph{"No piece"}, i en cas contrari es mostra el valor de l'enumeració \emph{PieceShape}.
 
@@ -2100,14 +2106,14 @@ Per tal de controlar el flux de peces dins de la planta i evitar l'acumulació i
 
 \subsection{Automatització del procés}
 
-L'automatització de la planta es realitza utilitzant el mètode gràfic GRAFCET (\emph{Graphe Fonctionnel de Commande Étape Transition}), que permet definir el comportament seqüencial del sistema a partir d'etapes i transicions. A nivell de disseny, el sistema s'ha dividit en diferents GRAFCETs amb l'objectiu de separar la lògica de procés del control d'actuadors i facilitar tant la implementació com el manteniment.
+L'automatització de la planta es realitza utilitzant el mètode gràfic \acro{GRAFCET} (\emph{Graphe Fonctionnel de Commande Étape Transition}), que permet definir el comportament seqüencial del sistema a partir d'etapes i transicions. A nivell de disseny, el sistema s'ha dividit en diferents \acro{GRAFCET}s amb l'objectiu de separar la lògica de procés del control d'actuadors i facilitar tant la implementació com el manteniment.
 
 \begin{itemize}
-\item GRAFCET general
-\item GRAFCETs de classificació (A, B i C)
-\item GRAFCET d'evacuació
-\item GRAFCETs d'actuadors
-\item GRAFCETs de control (selector, emergència i avaria)
+\item \acro{GRAFCET} general
+\item \acro{GRAFCET}s de classificació (A, B i C)
+\item \acro{GRAFCET} d'evacuació
+\item \acro{GRAFCET}s d'actuadors
+\item \acro{GRAFCET}s de control (selector, emergència i avaria)
 \end{itemize}
 
 \subsubsection{Condicions globals del sistema}
@@ -2150,9 +2156,9 @@ Comprova que tots els actuadors es troben en el seu estat inicial segur abans de
 \end{table}
 
 
-\subsubsection{GRAFCET general}
+\subsubsection{\acro{GRAFCET} general}
 
-El GRAFCET general (G0) coordina el flux principal del procés automàtic i actua com a element central de sincronització entre els diferents subprocessos del sistema. La seva funció principal és gestionar el recorregut de les peces des de la seva entrada fins a la seva classificació i posterior retorn del sistema a l'estat inicial. El funcionament general del procés és el següent:
+El \acro{GRAFCET} general (G0) coordina el flux principal del procés automàtic i actua com a element central de sincronització entre els diferents subprocessos del sistema. La seva funció principal és gestionar el recorregut de les peces des de la seva entrada fins a la seva classificació i posterior retorn del sistema a l'estat inicial. El funcionament general del procés és el següent:
 
 \begin{enumerate}
 
@@ -2172,22 +2178,22 @@ El GRAFCET general (G0) coordina el flux principal del procés automàtic i actu
 
 \end{enumerate}
 
-El GRAFCET general no controla directament actuadors, sinó que coordina l'activació dels diferents programes associats al procés automàtic. La representació completa del GRAFCET G0 es mostra a l'apèndix \ref{sec:grafcets_g0}.
+El \acro{GRAFCET} general no controla directament actuadors, sinó que coordina l'activació dels diferents programes associats al procés automàtic. La representació completa del \acro{GRAFCET} G0 es mostra a l'apèndix \ref{sec:grafcets_g0}.
 
-\subsubsection{GRAFCETs de classificació}
+\subsubsection{\acro{GRAFCET}s de classificació}
 
-El sistema disposa de tres GRAFCETs de classificació independents (G20, G40 i G60), responsables de gestionar l'emmagatzematge automàtic de les peces de tipus A, B i C respectivament.
+El sistema disposa de tres \acro{GRAFCET}s de classificació independents (G20, G40 i G60), responsables de gestionar l'emmagatzematge automàtic de les peces de tipus A, B i C respectivament.
 
 Cada programa controla el posicionament vertical i horitzontal del transelevador amb l'objectiu de dipositar les peces en la posició corresponent de l'estanteria.  La selecció de la posició d'emmagatzematge es realitza mitjançant comptadors interns que ajuden a organitzar les peces de manera ordenada dins de cada prestatgeria, on cada vegada que entra una peça d'un tipus determinat, el comptador associat a aquest tipus s'incrementa una sola vegada (al ser una \emph{acció impulsional}), i el sistema calcula la posició d'emmagatzematge corresponent en funció del valor del comptador.
 
 En concret, el sistema utilitza una operació de tipus mòdul (per exemple, $C\_A\ mod\ 3 ==0$) per determinar la ubicació final de cada peça dins del cicle de classificació, de manera que les peces es van assignant seqüencialment a les diferents posicions disponibles de forma controlada i segura. 
 
-Quan una estanteria arriba a la seva capacitat màxima, el sistema activa automàticament el procés d'evacuació corresponent. Els GRAFCETs complets de classificació es poden consultar a l'apèndix \ref{sec:grafcets_g20}.
+Quan una estanteria arriba a la seva capacitat màxima, el sistema activa automàticament el procés d'evacuació corresponent. Els \acro{GRAFCET}s complets de classificació es poden consultar a l'apèndix \ref{sec:grafcets_g20}.
 
 
-\subsubsection{GRAFCET d'evacuació}
+\subsubsection{\acro{GRAFCET} d'evacuació}
 
-El GRAFCET d'evacuació (G80) gestiona el buidatge automàtic de les estanteries quan aquestes arriben a la seva capacitat màxima i és el responsable de coordinar els moviments del segon transelevador i dels sistemes de rodets per transferir les peces des de les estanteries fins a la cinta d'evacuació. El procés inclou:
+El \acro{GRAFCET} d'evacuació (G80) gestiona el buidatge automàtic de les estanteries quan aquestes arriben a la seva capacitat màxima i és el responsable de coordinar els moviments del segon transelevador i dels sistemes de rodets per transferir les peces des de les estanteries fins a la cinta d'evacuació. El procés inclou:
 
 \begin{itemize}
 \item Identificació de l'estanteria plena
@@ -2197,32 +2203,32 @@ El GRAFCET d'evacuació (G80) gestiona el buidatge automàtic de les estanteries
 \item Retorn del sistema a la posició inicial
 \end{itemize}
 
-La representació completa del GRAFCET G80 es pot consultar a l'apèndix \ref{sec:grafcets_g80}.
+La representació completa del \acro{GRAFCET} G80 es pot consultar a l'apèndix \ref{sec:grafcets_g80}.
 
-\subsubsection{GRAFCET Actuadors}
+\subsubsection{\acro{GRAFCET} Actuadors}
 
-El control dels actuadors s'ha implementat mitjançant GRAFCETs independents encarregats de gestionar el comportament de cintes transportadores, rodets i transelevadors ja que aquesta separació ajuda a desacoblar la lògica de moviment del procés principal i facilita la reutilització dels programes. Els principals actuadors controlats són: \textbf{cintes transportadores}, \textbf{rodets d'estanteria}, \textbf{rodets de plataforma} i \textbf{transelevadors}.
+El control dels actuadors s'ha implementat mitjançant \acro{GRAFCET}s independents encarregats de gestionar el comportament de cintes transportadores, rodets i transelevadors ja que aquesta separació ajuda a desacoblar la lògica de moviment del procés principal i facilita la reutilització dels programes. Els principals actuadors controlats són: \textbf{cintes transportadores}, \textbf{rodets d'estanteria}, \textbf{rodets de plataforma} i \textbf{transelevadors}.
 
 En el cas dels rodets bidireccionals, s'ha implementat un estat intermedi d'aturada obligatori abans d'invertir el sentit de gir, evitant canvis bruscos de direcció. És a dir, si el sistema es troba anant a una direcció, i el operador vol canviar el sentit del moviment, previàment haurà d'aturar els rodets abans de canviar de sentit. 
 
 Pel que fa als transelevadors, aquests disposen d'estats específics de confirmació de posició mitjançant sensors, garantint la correcta finalització dels moviments abans de continuar el procés. Aquesta fase de confirmació és clau per assegurar la coherència del sistema, ja que evita que es produeixin nous moviments fins que la posició objectiu ha estat verificada físicament.
 
-Alguns exemples de GRAFCETs complets d'actuadors es poden consultar a l'apèndix \ref{sec:grafcets_g100}.
+Alguns exemples de \acro{GRAFCET}s complets d'actuadors es poden consultar a l'apèndix \ref{sec:grafcets_g100}.
 
 
-\subsubsection{GRAFCET Selector}
+\subsubsection{\acro{GRAFCET} Selector}
 \label{sec:section_selector}
 
-El GRAFCET selector (G500) gestiona el mode de funcionament del sistema, permetent alternar entre funcionament automàtic i manual. La seva funció principal és supervisar la posició del selector de mode, els botons d'arrencada i aturada, les condicions de seguretat i l'estat del sistema d'emergència, i segons totes aquestes variables, decidir quin mode de funcionament s'estableix en el sistema.
+El \acro{GRAFCET} selector (G500) gestiona el mode de funcionament del sistema, permetent alternar entre funcionament automàtic i manual. La seva funció principal és supervisar la posició del selector de mode, els botons d'arrencada i aturada, les condicions de seguretat i l'estat del sistema d'emergència, i segons totes aquestes variables, decidir quin mode de funcionament s'estableix en el sistema.
 
 En el mode automàtic, el sistema executa el procés complet de forma autònoma, mentre que en el mode manual l'usuari pot controlar directament els actuadors.
 
-Abans de permetre qualsevol transició entre aquests modes, el sistema verifica que els actuadors es troben en una posició segura i que es compleixen les condicions inicials de funcionament. A més a més, per sortir d'un mode com per entrar a l'altre, és necessari que l'operador polsi el botó de \emph{Start} o el botó de \emph{Stop} respectivament per verificar el canvi de mode, i aquesta transició no es realitzarà fins que el sistema es trobi en condicions segures per realitzar el canvi de mode. La representació completa del GRAFCET G500 es pot consultar a l'apèndix \ref{sec:grafcets_g500}.
+Abans de permetre qualsevol transició entre aquests modes, el sistema verifica que els actuadors es troben en una posició segura i que es compleixen les condicions inicials de funcionament. A més a més, per sortir d'un mode com per entrar a l'altre, és necessari que l'operador polsi el botó de \emph{Start} o el botó de \emph{Stop} respectivament per verificar el canvi de mode, i aquesta transició no es realitzarà fins que el sistema es trobi en condicions segures per realitzar el canvi de mode. La representació completa del \acro{GRAFCET} G500 es pot consultar a l'apèndix \ref{sec:grafcets_g500}.
 
-\subsubsection{GRAFCET d'emergència}
+\subsubsection{\acro{GRAFCET} d'emergència}
 \label{sec:grafc_emerg}
 
-El GRAFCET d'emergència (G600) garanteix una aturada segura de la planta davant situacions d'emergència o fallades del sistema. L'activació es pot produir mitjançant:
+El \acro{GRAFCET} d'emergència (G600) garanteix una aturada segura de la planta davant situacions d'emergència o fallades del sistema. L'activació es pot produir mitjançant:
 \begin{itemize}
 \item El botó d'emergència
 \item Una condició d'avaria detectada pel sistema de supervisió
@@ -2230,7 +2236,7 @@ El GRAFCET d'emergència (G600) garanteix una aturada segura de la planta davant
 
 Quan s'activa l'emergència:
 \begin{itemize}
-\item Es congelen tots els GRAFCETs
+\item Es congelen tots els \acro{GRAFCET}s
 \item S'aturen els actuadors
 \item El sistema passa automàticament a mode manual
 \item Es reinicien diversos programes a posicions segures
@@ -2238,7 +2244,7 @@ Quan s'activa l'emergència:
 
 Per realitzar la recuperació del sistema, es requereix \emph{restablir} el botó d'emergència, \emph{prémer} el botó de reset i \emph{verificar} les condicions inicials del sistema
 
-La representació completa del GRAFCET G600 es mostra a l'apèndix \ref{sec:grafcets_g500}, figura \ref{fig:annex_g600}.
+La representació completa del \acro{GRAFCET} G600 es mostra a l'apèndix \ref{sec:grafcets_g500}, figura \ref{fig:annex_g600}.
 
 \subsubsection{Detecció d'avaries}
 
@@ -2246,19 +2252,19 @@ La detecció d'avaries s'ha implementat mitjançant un sistema de supervisió te
 
 La fallada supervisada correspon al procés d'identificació de peces: si una peça és detectada pel sensor d'entrada però el sensor òptic no identifica el seu tipus dins d'un temps màxim de 10 segons, el sistema considera que existeix una avaria \footnote{Aquesta fallada està forçada dintre de \acro{Unity} per tal d'observar com actua el sistema en aquests tipus de situacions.}. En aquesta situació:
 \begin{itemize}
-\item S'activa automàticament el GRAFCET d'emergència
+\item S'activa automàticament el \acro{GRAFCET} d'emergència
 \item El sistema entra en estat segur
 \item Es requereix intervenció de l'operari
 \end{itemize}
 
-Aquest comportament permet simular i validar la resposta del sistema davant condicions anòmales de funcionament. El GRAFCET complet de detecció d'avaries es pot consultar a l'apèndix \ref{sec:grafcets_g500}, figura \ref{fig:annex_gdt0}.
+Aquest comportament permet simular i validar la resposta del sistema davant condicions anòmales de funcionament. El \acro{GRAFCET} complet de detecció d'avaries es pot consultar a l'apèndix \ref{sec:grafcets_g500}, figura \ref{fig:annex_gdt0}.
 
 \subsection{Implementació del control en \acro{Unity}}
 Per a la simulació del sistema industrial s'ha desenvolupat un script principal anomenat \emph{PlantController}, el qual actua com a nucli de control de tota la planta dins de \acro{Unity} ja que conté totes les variables públiques associades als elements del sistema, incloent sensors, actuadors, comptadors i sistemes auxiliars (creant variables de les classes dintre del script i en el editor de \acro{Unity} arrosegant els objectes a la seva referència interna).
 
 \subsubsection{Estructura general del controlador}
 
-El controlador es basa en una arquitectura centralitzada on tots els GRAFCETs s'executen de manera seqüencial dins del mètode \texttt{Update()}. A nivell estructural, cada GRAFCET està implementat com una funció independent i tots els GRAFCETs són cridats seqüencialment a cada iteració del cicle. 
+El controlador es basa en una arquitectura centralitzada on tots els \acro{GRAFCET}s s'executen de manera seqüencial dins del mètode \texttt{Update()}. A nivell estructural, cada \acro{GRAFCET} està implementat com una funció independent i tots els \acro{GRAFCET}s són cridats seqüencialment a cada iteració del cicle. 
 
 
 \begin{lstlisting}[style=simple]
@@ -2278,7 +2284,7 @@ void Update() {
 
 \subsubsection{Gestió d'estats mitjançant variables ETAPA}
 
-Cada GRAFCET es representa mitjançant una variable de tipus enter (\texttt{int}), la qual indica l'etapa activa en aquell moment.
+Cada \acro{GRAFCET} es representa mitjançant una variable de tipus enter (\acro{int}), la qual indica l'etapa activa en aquell moment.
 
 \begin{lstlisting}[style=simple]
 public int ETAPA_0 = 0; //PROCES GENERAL
@@ -2291,7 +2297,7 @@ public int ETAPA_500 = 500; // SELECTOR
 public int ETAPA_600 = 600; // EMERGENCIA
 \end{lstlisting}
 
-Cada valor representa una etapa concreta del GRAFCET, i els canvis d'estat es realitzen mitjançant estructures \texttt{switch-case}, on depenent de si es compleixen o no unes condicions concretes, el valor de la etapa s'actualitzarà. Un exemple d'implementació: 
+Cada valor representa una etapa concreta del \acro{GRAFCET}, i els canvis d'estat es realitzen mitjançant estructures \texttt{switch-case}, on depenent de si es compleixen o no unes condicions concretes, el valor de la etapa s'actualitzarà. Un exemple d'implementació: 
 
 \begin{lstlisting}[style=simple]
   void GRAFCET_M1() {
@@ -2318,7 +2324,7 @@ public PrescenceSensor S1, S3, S12;
 public OpticalSensor S2;
 
 public MotorBelt M1, M8;
-public AS/RSVertical M2;
+public ASRSVertical M2;
 \end{lstlisting}
 
 Per enllaçar aquests objectes públics amb les variables de la resta de scripts, des de l'editor de \acro{Unity} es poden arrossegar els objectes corresponents als camps públics del controlador, establint així la connexió entre el model digital i la lògica de control.
@@ -2349,7 +2355,7 @@ void Start() {
 }
 \end{lstlisting}
 
-Especialment, el temporitzador \texttt{TDT0} s'utilitza per detectar errors en la classificació, activant el GRAFCET d'emergència si una peça no és identificada en el temps explicat en l'anterior secció: 
+Especialment, el temporitzador \texttt{TDT0} s'utilitza per detectar errors en la classificació, activant el \acro{GRAFCET} d'emergència si una peça no és identificada en el temps explicat en l'anterior secció: 
 
 \begin{lstlisting}[style=simple]
 case 11:
@@ -2363,15 +2369,15 @@ case 11:
 
 \subsubsection{Control global del sistema}
 
-El control global es basa en dos GRAFCETs principals: el \textbf{selector de mode} (G500) i el \textbf{GRAFCET d'emergència} (G600), executats en cada iteració del mètode \texttt{Update()}.
+El control global es basa en dos \acro{GRAFCET}s principals: el selector de mode (G500) i el \acro{GRAFCET} d'emergència (G600), executats en cada iteració del mètode \texttt{Update()}.
 
-\subsubsection*{GRAFCET de selector de mode (ETAPA\_500)}
+\subsubsection*{\acro{GRAFCET} de selector de mode (ETAPA\_500)}
 
-Aquest GRAFCET centralitza tant la selecció del mode de funcionament com l'activació general del sistema. Els elements de control associats són \texttt{B\_Start}, \texttt{B\_Stop}  i el \texttt{Selector} de mode (\texttt{0} automàtic, \texttt{1} manual, \texttt{$-1$} neutre). Per passar d'un estat a un altre és la mateixa explicació que s'ha comentat en la secció \ref{sec:section_selector}
+Aquest \acro{GRAFCET} centralitza tant la selecció del mode de funcionament com l'activació general del sistema. Els elements de control associats són \texttt{B\_Start}, \texttt{B\_Stop}  i el \texttt{Selector} de mode (\texttt{0} automàtic, \texttt{1} manual, \texttt{$-1$} neutre). Per passar d'un estat a un altre és la mateixa explicació que s'ha comentat en la secció \ref{sec:section_selector}
 
-\subsubsection*{GRAFCET d'emergència (G600)}
+\subsubsection*{\acro{GRAFCET} d'emergència (G600)}
 
-El GRAFCET d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succet,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els GRAFCETS de procès a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
+El \acro{GRAFCET} d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succet,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els \acro{GRAFCET}S de procès a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
 
 La recuperació del sistema requereix una acció conscient per part de l'operador, tal com s'ha explicat en la secció \ref{sec:grafc_emerg}, i implica que el botó d'emergència torni a la seva posició normal i que es premi el botó de reset per restablir les condicions de funcionament. En concret, el sistema només permet sortir de l'estat d'emergència quan el selector de mode també ha tornat a una situació vàlida (ETAPA\_500 = 500)
 
@@ -2384,7 +2390,7 @@ public int CMD_M2 = -1;
 public int CMD_M3 = -1;
 \end{lstlisting}
 
-Aquestes variables permeten controlar manualment els actuadors en mode manual. Els valors s'actualitzaren a través dels tòpics MQTT, provenent del Rapid \acro{SCADA}. Generalment, en el GRAFCETs dels actuadors és completament necessari que la condició de COND\_MANUAL estigui activa perquè es pogui modificar aquestes variables de CMD.
+Aquestes variables permeten controlar manualment els actuadors en mode manual. Els valors s'actualitzaren a través dels tòpics \acro{mqtt}, provenent del \emph{Rapid SCADA}. Generalment, en el \acro{GRAFCET}s dels actuadors és completament necessari que la condició de \emph{COND\_MANUAL} estigui activa perquè es pogui modificar aquestes variables.
 
 Pel que fa als transelevadors, quan s'arriba a la posició inicial, la comanda s'ha de forçar a un valor neutre (\texttt{$-1$}), evitant així que el sistema torni a executar automàticament el mateix moviment.
 
@@ -2392,7 +2398,7 @@ D'altra banda, en els estats de confirmació, la condició de sortida inclou exp
 
 \subsubsection{Gestió avançada de senyals i control intern}
 
-Per tal de garantir un comportament robust i fiable del sistema, s'han implementat diversos mecanismes interns de control que complementen la lògica GRAFCET. Aquests inclouen la detecció de flancs, la gestió de comptadors, els resets controlats i la integració amb el sistema d'avaries.
+Per tal de garantir un comportament robust i fiable del sistema, s'han implementat diversos mecanismes interns de control que complementen la lògica \acro{GRAFCET}. Aquests inclouen la detecció de flancs, la gestió de comptadors, els resets controlats i la integració amb el sistema d'avaries.
 
 \subsubsection*{Detecció de flanc de pujada amb diccionari (Rising Edge)}
 
@@ -2408,7 +2414,7 @@ bool RisingEdge(string key, bool current){
 \end{lstlisting}
 
 \begin{itemize}
-\item \textbf{key}: identifica la senyal (per exemple, una etapa concreta d'un GRAFCET)
+\item \textbf{key}: identifica la senyal (per exemple, una etapa concreta d'un \acro{GRAFCET})
 \item \textbf{current}: valor actual de la condició
 \item \textbf{prev}: valor anterior emmagatzemat al diccionari
 \end{itemize}
@@ -2422,15 +2428,11 @@ El procés és el següent:
 \item Es retorna \texttt{true} només si la senyal ha passat de 0 a 1
 \end{enumerate}
 
-\textbf{Ús dins dels GRAFCETs}: Cada flanc de pujada es defineix amb una clau única associada a una etapa concreta. Per exemple:
+Cada flanc de pujada es defineix amb una clau única associada a una etapa concreta. Per exemple: \texttt{if (RisingEdge("ETAPA\_0\_10", ETAPA\_0 == 10)) Spawner.SpawnPiece();}
 
-\begin{lstlisting}[style=simple]
-if (RisingEdge("ETAPA_0_10", ETAPA_0 == 10)) Spawner.SpawnPiece();
-\end{lstlisting}
+Aquesta funció s'ha aplicat tant per introduir una peça en l'etapa adient (generació de peces) com per modificar el valors dels 6 comptadors que hi ha dintre del sistema en les etapes corresponent. Com únicament és necessari fer-ho quan s'activa l'etapa (\emph{acció impulsional}), aquesta funció és perfecta per aquestes situacions.
 
-Com podreu observar, aquesta funció implementada per mi de \texttt{Rising\_Edge} s'ha aplicat tant per introduir una peça en l'etapa que toca com modificar el valors dels 6 comptadors que hi ha dintre del sistema en les etapes corresponent. Com únicament és necessari fer-ho quan s'activa l'etapa (\emph{acció impulsional}), aquesta funció és perfecta per aquestes situacions.
-
-És fonamental reiniciar l'estat del diccionari per cada clau quan es torna a l'etapa inicial del GRAFCET, en cas contrari, el sistema podria no detectar correctament futurs flancs.
+Respecte al funcionament d'aqesta funció, és fonamental reiniciar l'estat del diccionari per cada clau quan es torna a l'etapa inicial del \acro{GRAFCET}, en cas contrari, el sistema podria no detectar correctament futurs flancs.
 
 \begin{lstlisting}[style=simple ]
 case 0:
@@ -2444,20 +2446,20 @@ case 0:
 \section{Comunicació MQTT entre \acro{Unity} i el sistema \acro{SCADA}}
 \label{sec:mqtt_unity_scada}
 
-Un dels aspectes fonamentals del projecte és la comunicació entre el procés industrial desenvolupat en \acro{Unity} i el sistema Rapid \acro{SCADA}, la qual es realitza mitjançant el protocol \acro{mqtt}  àmpliament utilitzat en entorns industrials i aplicacions IoT per la seva simplicitat i eficiència.
+Un dels aspectes fonamentals del projecte és la comunicació entre el procés industrial desenvolupat en \acro{Unity} i el sistema \emph{Rapid SCADA}, la qual es realitza mitjançant el protocol \acro{mqtt}  àmpliament utilitzat en entorns industrials i aplicacions IoT per la seva simplicitat i eficiència.
 
 Per a la gestió del sistema de missatgeria s'ha utilitzat un \emph{broker \acro{mqtt} Mosquitto} \cite{mosquitto_download}, insta\l.lat localment a l'entorn de desenvolupament, que actua com a intermediari en l'intercanvi de dades entre \acro{Unity} i \acro{SCADA} i així permet la comunicació en temps real. El sistema s'ha configurat en mode local (\emph{localhost}) per simplificar el desplegament i facilitar el desenvolupament.
 
-\subsection{Implementació de \acro{mqtt} a \acro{Unity}}
+\subsection{Implementació de \acro{MQTT} a \acro{Unity}}
 
 La integració del protocol \acro{mqtt} a \acro{Unity} s'ha realitzat mitjançant la llibreria \emph{M2Mqtt\acro{Unity}}, la qual serveix per establir connexions amb un broker \acro{mqtt} i gestionar tant la publicació com la subscripció a diferents \emph{topics} \cite{mqtt_unity_guide}. A partir d'aquesta estructura base proporcionada per la llibreria, s'ha desenvolupat la lògica específica del projecte, incloent la gestió dels missatges rebuts i enviats, així com la sincronització amb l'estat intern del sistema industrial virtual. Tant la configuració del broker com la implementació general de la comunicació \acro{mqtt} s'han basat en la documentació oficial de Mosquitto \cite{mosquitto_download}.
 
 
 \subsubsection*{Estructura dins de \acro{Unity}}
 
-La gestió de la comunicació \acro{mqtt} s'ha implementat mitjançant un script anomenat \emph{MQTTManager}, que està associat a un \textbf{GameObject buit} \cite{UnityGameObjects} dins de l'escena i que actua de manera independent de la resta de components del sistema, centralitzant tota la comunicació amb el broker MQTT.
+La gestió de la comunicació \acro{mqtt} s'ha implementat mitjançant un script anomenat \emph{MQTTManager}, que està associat a un \textbf{GameObject buit} \cite{UnityGameObjects} dins de l'escena i que actua de manera independent de la resta de components del sistema, centralitzant tota la comunicació amb el broker \acro{mqtt}.
 
-Aquest script disposa d'una referència a un objecte anomenat \emph{PlantController}, que conté tota la lògica de control de la planta (GRAFCET, sensors, actuadors, etc.). D'aquesta manera, el \emph{MQTTManager} no implementa la lògica del sistema, sinó que simplement actua com a pont de comunicació entre \acro{Unity} i l'exterior.
+Aquest script disposa d'una referència a un objecte anomenat \emph{PlantController}, que conté tota la lògica de control de la planta (\acro{GRAFCET}, sensors, actuadors, etc.). D'aquesta manera, el \emph{MQTTManager} no implementa la lògica del sistema, sinó que simplement actua com a pont de comunicació entre \acro{Unity} i l'exterior.
 
 \subsubsection*{Inicialització i connexió amb el broker}
 
@@ -2609,19 +2611,19 @@ if (plant.COND_MANUAL)
 }
 \end{lstlisting}
 
-Aquesta mateixa lògica s'aplica a la resta de comptadors de producció i evacuació, permetent incrementar-ne el valor o reinicialitzar-los manualment des de Rapid \acro{SCADA}. 
+Aquesta mateixa lògica s'aplica a la resta de comptadors de producció i evacuació, permetent incrementar-ne el valor o reinicialitzar-los manualment des de \emph{Rapid SCADA}. 
 
-\subsection{Implementació de MQTT a Rapid \acro{SCADA}}
+\subsection{Implementació de MQTT a \emph{Rapid SCADA}}
 
-De manera para\l.lela a \acro{Unity}, el sistema Rapid \acro{SCADA} també s'ha configurat per utilitzar el protocol \acro{mqtt} com a mecanisme de comunicació \cite{RapidScadaVideos}. En aquest cas, Rapid \acro{SCADA} actua com a client MQTT, subscrivint-se als \emph{topics} publicats per \acro{Unity} i publicant les seves pròpies ordres de control. Així doncs, es defineix una arquitectura complementària a la descrita anteriorment:
+De manera para\l.lela a \acro{Unity}, el sistema \emph{Rapid SCADA} també s'ha configurat per utilitzar el protocol \acro{mqtt} com a mecanisme de comunicació \cite{RapidScadaVideos}. En aquest cas, \emph{Rapid SCADA} actua com a client \acro{mqtt}, subscrivint-se als \emph{topics} publicats per \acro{Unity} i publicant les seves pròpies ordres de control. Així doncs, es defineix una arquitectura complementària a la descrita anteriorment:
 \begin{itemize}
-    \item Rapid \acro{SCADA} es subscriu als \emph{topics} de dades (sensors, actuadors i comptadors)
-    \item Rapid \acro{SCADA} publica als \emph{topics} de comandes (\texttt{plant/cmd})
+    \item \emph{Rapid SCADA} es subscriu als \emph{topics} de dades (sensors, actuadors i comptadors)
+    \item \emph{Rapid SCADA} publica als \emph{topics} de comandes (\texttt{plant/cmd})
 \end{itemize}
 
 \subsubsection*{Configuració de la comunicació MQTT}
 
-Un dels avantatges de Rapid \acro{SCADA} és que ja incorpora suport natiu per \acro{mqtt}  per la qual cosa no és necessari insta\l.lar cap plugin extern addicional. La configuració es realitza des del mòdul \emph{Communicator} \cite{rapidscada_device_polling}, seguint els passos següents:
+Un dels avantatges de \emph{Rapid SCADA} és que ja incorpora suport natiu per \acro{mqtt}  per la qual cosa no és necessari insta\l.lar cap plugin extern addicional. La configuració es realitza des del mòdul \emph{Communicator} \cite{rapidscada_device_polling}, seguint els passos següents:
 
 \begin{enumerate}
     \item Crear una nova línia de comunicació dins de l'apartat \emph{Communication Lines}.
@@ -2642,7 +2644,7 @@ Aquesta configuració permet establir la connexió amb el mateix broker local ut
 \end{figure}
 \subsubsection*{Configuració del dispositiu MQTT}
 
-Un cop definida la línia de comunicació, el següent pas és crear un dispositiu associat a aquesta línia. Dins d'aquest dispositiu, cal configurar el \textbf{Driver}: \texttt{DrvMqttClient}, el qual és l'encarregat de gestionar la comunicació \acro{mqtt} dins de Rapid \acro{SCADA}.
+Un cop definida la línia de comunicació, el següent pas és crear un dispositiu associat a aquesta línia. Dins d'aquest dispositiu, cal configurar el \textbf{Driver}: \texttt{DrvMqttClient}, el qual és l'encarregat de gestionar la comunicació \acro{mqtt} dins de \emph{Rapid SCADA}.
 
 \begin{figure}[H]
     \centering
@@ -2652,19 +2654,19 @@ Un cop definida la línia de comunicació, el següent pas és crear un disposit
 
 En aquesta etapa es defineixen dos elements fonamentals:
 
-\textbf{Subscripcions (\emph{Subscriptions})}:  Especifiquen els \emph{topics} als quals Rapid \acro{SCADA} es subscriurà per rebre dades des de \acro{Unity}. Per a cada subscripció es defineix:
+\textbf{Subscripcions (\emph{Subscriptions})}:  Especifiquen els \emph{topics} als quals \emph{Rapid SCADA} es subscriurà per rebre dades des de \acro{Unity}. Per a cada subscripció es defineix:
 \begin{itemize}
     \item El \textbf{topic \acro{mqtt} }
     \item Un \textbf{identificador o tag}
     \item El tipus d'accés (normalment només lectura)
-    \item Opcionalment, un codi en \acro{JavaSript} per processar les dades rebudes (no s'ha utilitzat processament addicional, ja que cada variable es publica en un \emph{topic} independent)
+    \item Opcionalment, un codi en \acro{JavaScript} per processar les dades rebudes (no s'ha utilitzat processament addicional, ja que cada variable es publica en un \emph{topic} independent)
 \end{itemize}
 
-És important destacar que, tot i que una subscripció està pensada principalment per a la lectura de dades, en el context de Rapid \acro{SCADA} el canal associat pot utilitzar-se tant com a \emph{input channel} com a \emph{output channel}. Això permet que un mateix \emph{topic} pugui servir tant per rebre com per enviar valors, depenent de la configuració del canal.
+És important destacar que, tot i que una subscripció està pensada principalment per a la lectura de dades, en el context de \emph{Rapid SCADA} el canal associat pot utilitzar-se tant com a \emph{input channel} com a \emph{output channel}. Això permet que un mateix \emph{topic} pugui servir tant per rebre com per enviar valors, depenent de la configuració del canal.
 
-\textbf{Comandes (\emph{Commands})}: Defineixen els \emph{topics} als quals Rapid \acro{SCADA} enviarà informació. Aquests \emph{topics} corresponen a les ordres que controlen el comportament de la planta en \acro{Unity}, com per exemple ordres manuals o canvis de mode de funcionament.
+\textbf{Comandes (\emph{Commands})}: Defineixen els \emph{topics} als quals \emph{Rapid SCADA} enviarà informació. Aquests \emph{topics} corresponen a les ordres que controlen el comportament de la planta en \acro{Unity}, com per exemple ordres manuals o canvis de mode de funcionament.
 
-A diferència de les subscripcions, els \emph{topics} definits com a comandes tenen un comportament exclusivament d'escriptura, ja que només s'utilitzen per enviar dades des de Rapid \acro{SCADA} cap a \acro{Unity}. Aquest funcionament segueix la lògica pròpia del protocol \acro{mqtt}  per rebre dades és necessari estar subscrit a un \emph{topic}, mentre que per enviar informació només cal publicar-hi missatges, sense necessitat de cap subscripció prèvia.
+A diferència de les subscripcions, els \emph{topics} definits com a comandes tenen un comportament exclusivament d'escriptura, ja que només s'utilitzen per enviar dades des de \emph{Rapid SCADA} cap a \acro{Unity}. Aquest funcionament segueix la lògica pròpia del protocol \acro{mqtt}  per rebre dades és necessari estar subscrit a un \emph{topic}, mentre que per enviar informació només cal publicar-hi missatges, sense necessitat de cap subscripció prèvia.
 
 \begin{figure}[H]
 \centering
@@ -2688,27 +2690,27 @@ Una vegada configurat el dispositiu, és necessari crear els canals (\emph{chann
 
 Finalment, tots els canals creats es poden visualitzar i configurar des de la base de dades de configuració, concretament a la taula \emph{Channels} dins de \emph{Primary Table}, on es poden ajustar diversos paràmetres com poden ser el tipus d'accés (lectura o escriptura), el tipus de dada (per exemple: \emph{On-Off}, \emph{Yes-No}) o el nombre de decimals. 
 
-Cal destacar que, en alguns casos, hauria estat útil treballar amb variables de tipus \emph{string}. No obstant això, no s'ha aconseguit visualitzar correctament aquest tipus de dades dins de Rapid \acro{SCADA} en el context del projecte.
+Cal destacar que, en alguns casos, hauria estat útil treballar amb variables de tipus \emph{string}. No obstant això, no s'ha aconseguit visualitzar correctament aquest tipus de dades dins de \emph{Rapid SCADA} en el context del projecte.
 
 \newpage
-\section{Pantalles HMI amb Rapid \acro{SCADA}}
+\section{Pantalles HMI amb \emph{Rapid SCADA}}
 \label{sec:hmi}
-Continuant amb els conceptes de comunicació mitjançant \acro{mqtt}  i la integració amb Rapid \acro{SCADA} descrits en l'apartat anterior, en aquesta secció es detalla com es dissenyen les pantalles \acro{hmi} \emph{Human-Machine Interface}) que tenen la funció visualitzar i interactuar amb les variables del sistema.
+Continuant amb els conceptes de comunicació mitjançant \acro{mqtt}  i la integració amb \emph{Rapid SCADA} descrits en l'apartat anterior, en aquesta secció es detalla com es dissenyen les pantalles \acro{hmi} \emph{Human-Machine Interface}) que tenen la funció visualitzar i interactuar amb les variables del sistema.
 
 L'objectiu principal d'aquestes pantalles és oferir una interfície clara i intuïtiva que permeti \textbf{visualitzar} l'estat del sistema en temps real, \textbf{interpretar} el comportament dels sensors i actuadors i \textbf{interactuar} amb el procés industrial simulat
 
-\subsection{Estructura de les vistes en Rapid \acro{SCADA}}
+\subsection{Estructura de les vistes en \emph{Rapid SCADA}}
 
-Per a la creació de pantalles, Rapid \acro{SCADA} utilitza el mòdul \emph{Views} \cite{rapidscada_views}, des del qual es poden generar diferents tipus d'arxius visuals accessibles per l'usuari.
+Per a la creació de pantalles, \emph{Rapid SCADA} utilitza el mòdul \emph{Views} \cite{rapidscada_views}, des del qual es poden generar diferents tipus d'arxius visuals accessibles per l'usuari.
 
-Inicialment, es va crear una vista de tipus \emph{.tbl} anomenada \emph{System Overview}, amb l'objectiu de visualitzar totes les variables del sistema a través dels canals configurats. Aquesta vista permetia observar en temps real els valors dels tòpics \acro{mqtt}  però presentava una limitació important: la manca d'una representació visual intuïtiva. Per aquest motiu, es van desenvolupar \emph{tres pantalles \acro{hmi}}orientades a millorar la visualització de cada variable i el control del sistema.
+Inicialment, es va crear una vista de tipus \emph{.tbl} anomenada \emph{System Overview}, amb l'objectiu de visualitzar totes les variables del sistema a través dels canals configurats. Aquesta vista permetia observar en temps real els valors dels tòpics \acro{mqtt}  però presentava una limitació important: la manca d'una representació visual intuïtiva. Per aquest motiu, es van desenvolupar \emph{tres pantalles \acro{hmi}} orientades a millorar la visualització de cada variable i el control del sistema.
 
-Pel que fa a la navegació entre pantalles, aquesta es realitza exclusivament mitjançant el menú predefinit de Rapid \acro{SCADA} (figura \ref{fig:menu_hmi}), ja que l'eina no permet implementar una estructura de navegació interna personalitzada dins de les pròpies vistes, limitant així la interfícide de l'usuari.
+Pel que fa a la navegació entre pantalles, aquesta es realitza exclusivament mitjançant el menú predefinit de \emph{Rapid SCADA} (figura \ref{fig:menu_hmi}), ja que l'eina no permet implementar una estructura de navegació interna personalitzada dins de les pròpies vistes, limitant així la interfícide de l'usuari.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.32\linewidth]{images/menu_hmi.png}
-    \caption{Menú de navegació entre pantalles en Rapid \acro{SCADA}}
+    \caption{Menú de navegació entre pantalles en \emph{Rapid SCADA}}
     \label{fig:menu_hmi}
 \end{figure}
 
@@ -2725,7 +2727,7 @@ Aquesta pantalla (figura \ref{fig:pantalla_sensors}) està orientada exclusivame
 
 %%\subsubsection{Funcionament general}
 
-Les dades generades a \acro{Unity} (com sensors de presència, posició o comptadors) són publicades mitjançant \acro{mqtt}  i rebudes a Rapid \acro{SCADA} a través dels canals d'entrada. Aleshores, aquesta pantalla visualitza en temps real l'estat d'aquestes variables, facilitant la comprensió del comportament del sistema.
+Les dades generades a \acro{Unity} (com sensors de presència, posició o comptadors) són publicades mitjançant \acro{mqtt}  i rebudes a \emph{Rapid SCADA} a través dels canals d'entrada. Aleshores, aquesta pantalla visualitza en temps real l'estat d'aquestes variables, facilitant la comprensió del comportament del sistema.
 
 Aquí trobem els elements utilitzats en les diferents pantalles: 
 
@@ -2822,13 +2824,13 @@ El selector de mode s'ha implementat mitjançant:
 
 Durant la implementació de la pantalla de control, es va observar que alguns botons (com Start, Stop o Emergència) presentaven un comportament unidireccional, és a dir, únicament es podia enviar un valor però no hi havia forma de tornar a l'estat anterior de polsar el botó.
 
-Per solucionar aquesta limitació  trobada en el element \emph{Button} de Rapid \acro{SCADA} \cite{RapidScadaVideos}, es va implementar una tècnica basada en l'ús de \emph{toggles invisibles} superposats als elements de control. Cada botó tenia per sobre un toggle que es va associar a un canal configurat com a \emph{input} i \emph{output}, fet que permetia saber l'estat actual del botó en tot moment.
+Per solucionar aquesta limitació  trobada en el element \emph{Button} de \emph{Rapid SCADA} \cite{RapidScadaVideos}, es va implementar una tècnica basada en l'ús de \emph{toggles invisibles} superposats als elements de control. Cada botó tenia per sobre un toggle que es va associar a un canal configurat com a \emph{input} i \emph{output}, fet que permetia saber l'estat actual del botó en tot moment.
 
 El funcionament consisteix en un botó visual amb una imatge dinàmica vinculada al canal del botó, sobre el qual es co\l.loca un toggle invisible que, en ser activat, envia el valor contrari a l'estat actual. D'aquesta manera, s'aconsegueix un comportament bidireccional coherent amb la representació gràfica del botó.
 
 Tot i això, aquesta solució presenta una limitació respecte als sistemes industrials reals ja que habitualment, botons com \textbf{Start} i \textbf{Stop} són de tipus momentani, és a dir, només estan actius mentre es mantenen premuts, retornant automàticament al seu estat inicial en cas de deixar de polsar-lo, mentre que altres com el d'\textbf{Emergència} són biestables. En el \emph{Mimic Diagram} no s'ha pogut reproduir botons momentanis, de manera que tots els botons s'han implementat com a biestables.
 
-Aquesta simplificació pot generar situacions no desitjades, com l'activació simultània de \textbf{Start} i \textbf{Stop}, fet que s'ha resolt a nivell de control mitjançant la lògica definida en el GRAFCET (Figura \ref{fig:botons_control}).
+Aquesta simplificació pot generar situacions no desitjades, com l'activació simultània de \textbf{Start} i \textbf{Stop}, fet que s'ha resolt a nivell de control mitjançant la lògica definida en el \acro{GRAFCET} (Figura \ref{fig:botons_control}).
 
 \begin{figure}[H]
 \centering
@@ -2973,7 +2975,7 @@ En el moment d'obtenit una gestió correcte respecte a l'accés a les diferents 
     \label{fig:rols_scada}
 \end{figure}
 
-Seguidament, les pantalles del sistema s'han organitzat en diferents categories amb l'objectiu de facilitar la gestió dels permisos d'accés mitjançant els \emph{Object rights} de Rapid \acro{SCADA} (Figura \ref{fig:objects_scada}):
+Seguidament, les pantalles del sistema s'han organitzat en diferents categories amb l'objectiu de facilitar la gestió dels permisos d'accés mitjançant els \emph{Object rights} de \emph{Rapid SCADA} (Figura \ref{fig:objects_scada}):
 
 \begin{itemize}
     \item \textbf{Mode}: inclou les vistes generals del sistema (\emph{Vista\_Planta.tbl} i \emph{MainScreen.mim})
@@ -3017,9 +3019,9 @@ Els permisos s'han distribuït de la següent manera (Figura \ref{fig:objectsrig
 
 \subsubsection{Creació d'usuaris}
 
-S'han creat diferents usuaris associats als rols definits, cadascun amb les seves credencials d'accés. Per tal de simplificar la gestió, els noms dels usuaris coincideixen amb els rols corresponents. La configuració de les credencials es realitza des de l'eina d'administració de Rapid \acro{SCADA}, on es poden definir les contrasenyes i assignar els rols de manera individual. S'han creat els usuaris \emph{User}, \emph{Supervisor} i \emph{Operator} (amb el seu mateix rol) i en cas de que ara mateix es volgui accedir des de qualsevol usuari, la contrassenya és \emph{1234}. \footnote{També existeix per defecte l'usuari \emph{admin} amb contrassenya \emph{scada}, que serveix per revisar amb tots els permisos disponibles qualsevol pantalla.}
+S'han creat diferents usuaris associats als rols definits, cadascun amb les seves credencials d'accés. Per tal de simplificar la gestió, els noms dels usuaris coincideixen amb els rols corresponents. La configuració de les credencials es realitza des de l'eina d'administració de \emph{Rapid SCADA}, on es poden definir les contrasenyes i assignar els rols de manera individual. S'han creat els usuaris \emph{User}, \emph{Supervisor} i \emph{Operator} (amb el seu mateix rol) i en cas de que ara mateix es volgui accedir des de qualsevol usuari, la contrassenya és \emph{1234}. \footnote{També existeix per defecte l'usuari \emph{admin} amb contrassenya \emph{scada}, que serveix per revisar amb tots els permisos disponibles qualsevol pantalla.}
 
-Cal destacar que Rapid \acro{SCADA} inclou usuaris i rols predefinits (com l'usuari \emph{Admin}), que també poden ser utilitzats dins del sistema. En aquells casos en què no es defineixen explícitament permisos de \emph{View} o \emph{Control}, el comportament per defecte vindrà determinat per la configuració interna del sistema (comentat a la secció \ref{sec:scada_users}).
+Cal destacar que \emph{Rapid SCADA} inclou usuaris i rols predefinits (com l'usuari \emph{Admin}), que també poden ser utilitzats dins del sistema. En aquells casos en què no es defineixen explícitament permisos de \emph{View} o \emph{Control}, el comportament per defecte vindrà determinat per la configuració interna del sistema (comentat a la secció \ref{sec:scada_users}).
 
 
 \newpage
@@ -3028,58 +3030,58 @@ Cal destacar que Rapid \acro{SCADA} inclou usuaris i rols predefinits (com l'usu
 
 Com a conclusió d'aquest Treball de Fi de Grau, es pot afirmar que els objectius plantejats inicialment s'han assolit de manera satisfactòria. S'ha aconseguit dissenyar i implementar un sistema capaç d'integrar una plataforma \acro{SCADA} de codi obert amb un entorn de visualització 3D en temps real aplicat a una planta industrial simulada, permetent així la supervisó i i el control de diferents processos industrials dins d'un entorn virtual interactiu.
 
-Pel que fa a Rapid \acro{SCADA}, el treball ha permès analitzar el funcionament i les possibilitats d'un sistema \acro{SCADA} basat en programari lliure. Durant el desenvolupament s'ha comprovat que Rapid \acro{SCADA} ofereix funcionalitats molt adequades per a tasques de supervisió i control industrial bàsic, permetent monitoritzar variables, visualitzar dades en temps real i establir comunicacions amb dispositius externs mitjançant protocols industrials habituals com \acro{mqtt}  Modbus o OPC UA. A més, el fet de tractar-se d'un programari gratuït i relativament senzill de configurar el converteix en una eina molt interessant per a entorns educatius o petits projectes d'automatització.
+Pel que fa a \emph{Rapid SCADA}, durant el desenvolupament s'ha comprovat que aquesta plataforma ofereix funcionalitats molt adequades per a tasques de supervisió i control industrial bàsic, permetent monitoritzar variables, visualitzar dades en temps real i establir comunicacions amb dispositius externs mitjançant protocols industrials habituals com \acro{mqtt}, \acro{Modbus} o \acro{OPC UA}.
 
-No obstant això, també s'han identificat algunes limitacions. La interfície gràfica proporcionada per defecte és bastant simple i ofereix poques opcions de personalització i de navegació entre les diferents pantalles en comparació amb altres plataformes \acro{SCADA} comercials. Per aconseguir interfícies més modernes o funcionals és necessari utilitzar plugins externs, molts dels quals són de pagament o disposen de versions de prova limitades. 
+No obstant això, també s'han identificat algunes limitacions, com per exemple la interfície gràfica proporcionada per defecte, que és bastant simple i ofereix poques opcions de personalització i de navegació entre les diferents pantalles en comparació amb altres plataformes \acro{SCADA} comercials. Per aconseguir interfícies més modernes o funcionals és necessari utilitzar plugins externs, molts dels quals són de pagament o disposen de versions de prova limitades, fent que sigui més complicat tindre un sistema estable si has d'estar renovant la versió limitada constantment. 
 
 Respecte a \acro{Unity}, el desenvolupament del projecte ha permès comprovar el gran potencial que ofereix aquest motor gràfic més enllà de l'àmbit dels videojocs. Tot i no haver treballat prèviament amb aquesta eina, la seva flexibilitat ha facilitat la creació d'una planta industrial virtual amb sensors, actuadors, sistemes de transport, transelevadors i diferents modes de funcionament. 
 
-Pel que fa a la comunicació entre plataformes, la implementació mitjançant \acro{mqtt} ha resultat especialment adequada gràcies a la seva simplicitat, flexibilitat i facilitat d'integració tant amb Rapid \acro{SCADA} com amb \acro{Unity}. Aquesta arquitectura ha permès establir una comunicació bidireccional en temps real entre el sistema \acro{SCADA} i la simulació tridimensional de manera estable i escalable.
+Pel que fa a la comunicació entre plataformes, la implementació mitjançant \acro{mqtt} ha resultat especialment adequada gràcies a la seva simplicitat, flexibilitat i facilitat d'integració tant amb \emph{Rapid SCADA} com amb \acro{Unity}, establint una comunicació bidireccional en temps real entre el sistema \acro{SCADA} i la simulació tridimensional de manera estable i escalable.
 
-Finalment, en relació amb les possibilitats educatives i tècniques del projecte, es considera que la integració desenvolupada té un gran potencial com a eina d'aprenentatge dins de l'àmbit de l'automatització industrial i la indústria 4.0. La combinació d'un sistema \acro{SCADA} amb un entorn virtual interactiu permet entendre de manera més visual i pràctica conceptes relacionats amb sensors, actuadors, comunicacions industrials i lògica de control.
+Finalment, en relació amb les possibilitats educatives i tècniques del projecte, es considera que la integració desenvolupada té un gran potencial com a eina d'aprenentatge dins de l'àmbit de l'automatització industrial i la indústria 4.0. La combinació d'un sistema \acro{SCADA} amb un entorn virtual interactiu permet entendre de manera més visual i pràctica conceptes relacionats amb sensors, actuadors, comunicacions industrials i lògica de control. A més a més, el fet de que totes les plataformes siguin gratuïtes i de codi obert facilita l'accés a aquesta tecnologia per a estudiants, professionals i entusiastes de l'automatització.
 
-Tot i això, en entorns industrials reals o en aplicacions de major complexitat, probablement seria convenient valorar l'ús de plataformes \acro{SCADA} més avançades i orientades a entorns professionals, com Ignition, Wonderware, Zenon o Atvise \acro{SCADA}, que ofereixen una major capacitat de personalització, eines més potents i una experiència d'usuari més completa.
+Tot i això, en entorns industrials reals o en aplicacions de major complexitat, probablement seria convenient valorar l'ús de plataformes \acro{SCADA} més avançades i orientades a entorns professionals, com Ignition, Zenon o Atvise SCADA. Encara que es tracta de solucions de pagament, ofereixen una major capacitat de personalització, eines més potents i una experiència d'usuari més completa. En aquest sentit, si s'ha d'assumir el cost d'una llicència comercial, aquestes alternatives poden resultar una opció més atractiva que Rapid SCADA per a projectes professionals de gran escala.
+
 \newpage
 \section{Possibles millores i línies futures}
 
 Tot i que el sistema desenvolupat compleix els objectius plantejats, existeixen diverses línies de millora que permetrien augmentar el seu realisme, escalabilitat i aproximació a entorns industrials reals.
 
-En primer lloc, una millora significativa seria la substitució del protocol \acro{mqtt} per una arquitectura basada en \acro{opc ua}, on \acro{\acro{Unity}} actuaria com a servidor i Rapid \acro{SCADA} com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
+En primer lloc, una millora significativa seria la substitució del protocol \acro{mqtt} per una arquitectura basada en \acro{opc ua}, on \acro{\acro{Unity}} actuaria com a servidor i \emph{Rapid SCADA} com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
 
-En segon lloc, es planteja la migració del sistema a un entorn amb \textbf{accés remot mitjançant IP pública}, permetent l'accés remot a la \emph{Webstation} de Rapid \acro{SCADA}. Aquest fet facilitaria les demostracions i l'escalabilitat del sistema desenvolupat en entorns distribuïts.   A més, permetría utilitzar un broker \acro{mqtt} públic i controlat personalment, possibilitant la connexió automàtica al sistema sense requerir cap configuració en el dispositiu de l'usuari.  En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (\acro{tls}) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
+En segon lloc, es planteja la migració del sistema a un entorn amb accés remot mitjançant IP pública, permetent l'accés remot a la Webstation de \emph{Rapid SCADA}. Aquest fet facilitaria les demostracions i l'escalabilitat del sistema desenvolupat en entorns distribuïts.   A més, permetría utilitzar un broker \acro{mqtt} públic i controlat personalment, possibilitant la connexió automàtica al sistema sense requerir cap configuració en el dispositiu de l'usuari.  En cas d'aplicar aquesta millora, seria necessari implementar mesures de seguretat adequades, com ara l'ús de connexions segures (\acro{TLS} - Transport Layer Security) i autenticació per garantir la protecció de les dades i el control d'accés al sistema.
 
-A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant la incorporació de nous \textbf{modes de funcionament} i una gestió més avançada de situacions d'\textbf{emergència i avaria}. Això inclouria la simulació de fallades addicionals i la implementació de mecanismes de protecció dins de \acro{Unity}, millorant el realisme del model.
+A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant la incorporació de nous modes de funcionament i una gestió més avançada de situacions d'emergència i avaria. Això inclouria la simulació de fallades addicionals i la implementació de mecanismes de protecció dins de \acro{Unity}, millorant el realisme del model.
 
-També es planteja com a possible millora l'augment del realisme visual i funcional de l'entorn desenvolupat en \acro{Unity}. Això inclouria la incorporació de \textbf{sons ambientals industrials}, efectes d'àudio associats al funcionament de cintes transportadores, motors o alarmes, així com millores gràfiques relacionades amb i\l.luminació, materials i animacions. De la mateixa manera, seria interessant implementar un \textbf{operari virtual} o personatge interactiu capaç de desplaçar-se per la planta industrial i interactuar amb determinats elements del sistema.
+També es planteja com a possible millora l'augment del realisme visual i funcional de l'entorn desenvolupat en \acro{Unity}. Això inclouria la incorporació de sons ambientals industrials, efectes d'àudio associats al funcionament de cintes transportadores, motors o alarmes, així com millores gràfiques relacionades amb i\l.luminació, materials i animacions. De la mateixa manera, seria interessant implementar un operari virtual o personatge interactiu capaç de desplaçar-se per la planta industrial i interactuar amb determinats elements del sistema.
 
-Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de \textbf{plugins i mòduls de Rapid \acro{SCADA}}, així com integrar \textbf{bases de dades externes} (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de Rapid \acro{SCADA} es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. Respecte a la part dels plguins de Rapid \acro{SCADA}, l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \emph{Trial Key} cada dia \cite{store_scada}.
+Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de plugins i mòduls de \emph{Rapid SCADA}, així com integrar bases de dades externes (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de \emph{Rapid SCADA} es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. Respecte a la part dels plguins de \emph{Rapid SCADA}, l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \emph{Trial Key} cada dia \cite{store_scada}.
 
-Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporació de tecnologies de \textbf{realitat virtual (VR)} dins de \acro{Unity}, permetent una visualització immersiva de la planta industrial i millorant tant la interacció com el realisme del sistema.
+Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporació de tecnologies de realitat virtual (VR) dins de \acro{Unity}, permetent una visualització immersiva de la planta industrial i millorant tant la interacció com el realisme del sistema.
 \newpage
 
 \printbibliography[heading=bibintoc]
-%\addcontentsline{toc}{section}{Referències}
 
 \newpage
-\part{ANNEX}
+\part{Apèndixs}
 \appendix
 
 \section{Condicions d'execució}
 
 Per tal de poder executar correctament el sistema desenvolupat en aquest treball, és necessari disposar prèviament de determinats components insta\l.lats i configurats en el mateix equip. Al repositori públic del projecte es proporcionen tots els fitxers necessaris tant per a l'execució del sistema com per a la seva modificació i estudi.
 
-En tots els casos, és imprescindible tenir insta\l.lat Rapid \acro{SCADA} \cite{rapidscada_windows_install}. Un cop insta\l.lat, cal descarregar el projecte disponible dins de la carpeta \texttt{PROJECTE\_FINAL/\acro{SCADA}} del repositori i carregar-lo des de l'aplicació \emph{Administrator} de Rapid \acro{SCADA}. Després d'importar el projecte, aquest s'haurà de publicar a la Webstation per tal de poder visualitzar correctament la interfície \acro{SCADA} i el funcionament del sistema.
+En tots els casos, és imprescindible tenir insta\l.lat \emph{Rapid SCADA} \cite{rapidscada_windows_install}. Un cop insta\l.lat, cal descarregar el projecte disponible dins de la carpeta \fitx{PROJECTE_FINAL/SCADA} del repositori i carregar-lo des de l'aplicació \emph{Administrator} de \emph{Rapid SCADA}. Després d'importar el projecte, aquest s'haurà de publicar a la Webstation per tal de poder visualitzar correctament la interfície \acro{SCADA} i el funcionament del sistema.
 
 Pel que fa a \acro{Unity}, es proporcionen dues opcions diferents d'utilització:
 
 \begin{itemize}
-    \item \textbf{Projecte complet de \acro{Unity}:} es proporciona el projecte complet desenvolupat amb \acro{Unity}. Si es descarrega de \texttt{PROJECTE\_FINAL/UNITY} i s'obre mitjançant \acro{Unity} Hub, és possible accedir a tots els fitxers, scripts, escenes i configuracions del projecte, permetent així estudiar-ne el funcionament i modificar qualsevol element segons les necessitats de l'usuari.
-    \item \textbf{Aplicació executable (.exe):} també es proporciona una versió compilada dins de la carpeta \texttt{PROJECTE\_FINAL/BUILD\_APP}. Aquesta carpeta conté l'arxiu executable principal i les dependències necessàries, com ara \texttt{\acro{Unity}Player.dll}. Aquesta opció permet executar directament l'aplicació i interactuar amb el sistema de manera similar a un videojoc o simulador industrial. No obstant això, aquesta versió no permet modificar el sistema intern ni accedir als scripts o configuracions del projecte.
+    \item \textbf{Projecte complet de \acro{Unity}:} es proporciona el projecte complet desenvolupat amb \acro{Unity}. Si es descarrega de \fitx{PROJECTE_FINAL/UNITY} i s'obre mitjançant \acro{Unity} Hub, és possible accedir a tots els fitxers, scripts, escenes i configuracions del projecte, permetent així estudiar-ne el funcionament i modificar qualsevol element segons les necessitats de l'usuari.
+    \item \textbf{Aplicació executable (.exe):} també es proporciona una versió compilada dins de la carpeta \fitx{PROJECTE_FINAL/BUILD_APP}. Aquesta carpeta conté l'arxiu executable principal i les dependències necessàries, com ara \fitx{UnityPlayer.dll}. Aquesta opció permet executar directament l'aplicació i interactuar amb el sistema de manera similar a un videojoc o simulador industrial. No obstant això, aquesta versió no permet modificar el sistema intern ni accedir als scripts o configuracions del projecte.
 \end{itemize}
 
-És important destacar que tant l'executable com el projecte de \acro{Unity} només funcionaran correctament si Rapid \acro{SCADA} i el broker Mosquitto es troben insta\l.lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre \acro{Unity} i Rapid \acro{SCADA} es realitza mitjançant \acro{mqtt} sobre una configuració local.
+És important destacar que tant l'executable com el projecte de \acro{Unity} només funcionaran correctament si \emph{Rapid SCADA} i el broker Mosquitto es troben insta\l.lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre \acro{Unity} i \emph{Rapid SCADA} es realitza mitjançant \acro{mqtt} sobre una configuració local.
 
-Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi. Aquesta millora permetria allotjar Rapid \acro{SCADA} en un servidor remot i utilitzar un broker \acro{mqtt} públic, possibilitant l'accés al sistema des de qualsevol dispositiu connectat a Internet. En aquest escenari, únicament seria necessari disposar de l'executable de \acro{Unity} per interactuar amb el sistema, facilitant considerablement la seva distribució i accessibilitat.
+Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi. Aquesta millora permetria allotjar \emph{Rapid SCADA} en un servidor remot i utilitzar un broker \acro{mqtt} públic, possibilitant l'accés al sistema des de qualsevol dispositiu connectat a Internet. En aquest escenari, únicament seria necessari disposar de l'executable de \acro{Unity} per interactuar amb el sistema, facilitant considerablement la seva distribució i accessibilitat.
 
 \section{Scripts del sistema}
 \label{sec:scripts_unity}
@@ -3122,12 +3124,12 @@ Aqui trobareu una descripció detallada de les principals classes i scripts dese
 
 
 \emph{PlantController} & Sensors, botons, selectors, ordres manuals
-& Comandes als actuadors i gestió d'estats GRAFCET
+& Comandes als actuadors i gestió d'estats \acro{GRAFCET}
 & Classe principal de control de la planta. \\ \hline
 
 \emph{MQTTManager} & Sensors, actuadors i ordres MQTT
 & Publicació \acro{mqtt} i actualització de variables de control
-& Gestiona la comunicació entre \acro{Unity} i Rapid \acro{SCADA}.  \\ \hline
+& Gestiona la comunicació entre \acro{Unity} i \emph{Rapid SCADA}.  \\ \hline
 
 \multicolumn{4}{|c|}{\textbf{Scripts relacionats amb actuadors}} \\
 \hline
@@ -3217,9 +3219,9 @@ Aqui trobareu una descripció detallada de les principals classes i scripts dese
 \hline
 
 Scripts Python Graphviz
-& Definició d'etapes i transicions GRAFCET
+& Definició d'etapes i transicions \acro{GRAFCET}
 & Generació automàtica de diagrames
-& Scripts desenvolupats en Python per generar diagrames GRAFCET de forma automàtica mitjançant Graphviz. \\
+& Scripts desenvolupats en Python per generar diagrames \acro{GRAFCET} de forma automàtica mitjançant Graphviz. \\
 \hline
 
 \end{tabularx}
@@ -3227,21 +3229,21 @@ Scripts Python Graphviz
 
 \section{Programes d'automatització}
 
-En aquest apartat trobareu un exemple de cada tipus de GRAFECT que s'ha implementat per al control de la planta industrial. Aquests diagrames han estat generats mitjançant scripts en Python que utilitzen la llibreria Graphviz, permetent així una creació automàtica i estructurada dels GRAFCETs a partir de definicions textuals de les seves etapes i transicions. La resta de grafcets es poden trobar al repositori públic del projecte, juntament amb dos grafcets generals amb la seva llegenda explicant diferents paràmetres dels grafcets i els scripts utilitzats per a la seva generació.
+En aquest apartat trobareu un exemple de cada tipus de \acro{GRAFCET} que s'ha implementat per al control de la planta industrial. Aquests diagrames han estat generats mitjançant scripts en Python que utilitzen la llibreria Graphviz, permetent així una creació automàtica i estructurada dels \acro{GRAFCET}s a partir de definicions textuals de les seves etapes i transicions. La resta de grafcets es poden trobar al repositori públic del projecte, juntament amb dos grafcets generals amb la seva llegenda explicant diferents paràmetres dels grafcets i els scripts utilitzats per a la seva generació.
 
 \begin{center}
 \href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia/tree/main/GRAFCETs}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia/tree/main/GRAFCETs}
 \end{center}
 
 
-\subsection{Llegenda i GRAFCET general del sistema}
+\subsection{Llegenda i \acro{GRAFCET} general del sistema}
 \label{sec:grafcets_g0}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{PDF_GRAFCET/Industrial_Plant-Legend.pdf}
     \captionsetup{font=footnotesize}
-\caption{Llegenda general dels GRAFCETs}
+\caption{Llegenda general dels \acro{GRAFCET}s}
 \label{fig:llegenda_general}
 \end{figure}
 
@@ -3249,91 +3251,91 @@ En aquest apartat trobareu un exemple de cada tipus de GRAFECT que s'ha implemen
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{PDF_GRAFCET/G0.pdf}
-\caption{GRAFCET general del sisteGma}
+\caption{\acro{GRAFCET} general del sisteGma}
 \label{fig:annex_g0}
 \end{figure}
 
 
 
-\subsection{GRAFCET de classificació - Estanteria A}
+\subsection{\acro{GRAFCET} de classificació - Estanteria A}
 \label{sec:grafcets_g20}
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{PDF_GRAFCET/G20.pdf}
-\caption{GRAFCET de classificació - Estanteria A}
+\caption{\acro{GRAFCET} de classificació - Estanteria A}
 \label{fig:annex_g20}
 \end{figure}
 
-En el repositori públic podreu observar els GRAFCETs de classificació G40 (classificació - Estanteria B) i G60 (classificació - Estanteria C) 
+En el repositori públic podreu observar els \acro{GRAFCET}s de classificació G40 (classificació - Estanteria B) i G60 (classificació - Estanteria C) 
 
-\subsection{GRAFCET d'evacuació}
+\subsection{\acro{GRAFCET} d'evacuació}
 \label{sec:grafcets_g80}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{PDF_GRAFCET/G80.pdf}
-\caption{GRAFCET d'evacuació del sistema}
+\caption{\acro{GRAFCET} d'evacuació del sistema}
 \label{fig:annex_g80}
 \end{figure}
 
-\subsection{GRAFCETs de cintes transportadores i rodets de plataforma}
+\subsection{\acro{GRAFCET}s de cintes transportadores i rodets de plataforma}
 \label{sec:grafcets_g100}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{PDF_GRAFCET/G100.pdf}
-\caption{GRAFCET de control de la cinta transportadora, semblant al G180 al G200, al G220 i al G300}
+\caption{\acro{GRAFCET} de control de la cinta transportadora, semblant al G180 al G200, al G220 i al G300}
 \label{fig:annex_g100}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{PDF_GRAFCET/G240.pdf}
-\caption{GRAFCET de control dels rodets de plataforma, semblant al G120}
+\caption{\acro{GRAFCET} de control dels rodets de plataforma, semblant al G120}
 \label{fig:annex_g240}
 \end{figure}
 
-\subsection{GRAFCET dels transelevadors}
+\subsection{\acro{GRAFCET} dels transelevadors}
 \label{sec:grafcets_g140}
 
 \begin{figure}[H]
 \centering
 \includegraphics[angle=90,width=0.3\textheight]{PDF_GRAFCET/G140.pdf}
-\caption{GRAFCET moviment vertical del transelevador 1, semblant al G280}
+\caption{\acro{GRAFCET} moviment vertical del transelevador 1, semblant al G280}
 \label{fig:annex_g140}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[angle=90,width=0.3\textheight]{PDF_GRAFCET/G160.pdf}
-\caption{GRAFCET moviment horitzontal del transelevador 1, semblant al G260}
+\caption{\acro{GRAFCET} moviment horitzontal del transelevador 1, semblant al G260}
 \label{fig:annex_g160}
 \end{figure}
 
 
 
-\subsection{GRAFCET de control i seguretat}
+\subsection{\acro{GRAFCET} de control i seguretat}
 \label{sec:grafcets_g500}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{PDF_GRAFCET/G500.pdf}
-\caption{GRAFCET del selector de mode de funcionament}
+\caption{\acro{GRAFCET} del selector de mode de funcionament}
 \label{fig:annex_g500}
 \end{figure}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{PDF_GRAFCET/G600.pdf}
-\caption{GRAFCET del sistema d'emergència}
+\caption{\acro{GRAFCET} del sistema d'emergència}
 \label{fig:annex_g600}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{PDF_GRAFCET/GDT0.pdf}
-\caption{GRAFCET de detecció d'avaries (Dual Twin)}
+\caption{\acro{GRAFCET} de detecció d'avaries (Dual Twin)}
 \label{fig:annex_gdt0}
 \end{figure}
 
