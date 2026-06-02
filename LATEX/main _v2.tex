@@ -3044,7 +3044,7 @@ Tot i això, en entorns industrials reals o en aplicacions de major complexitat,
 
 \newpage
 \section{Possibles millores i línies futures}
-
+\label{sec:future_work}
 Tot i que el sistema desenvolupat compleix els objectius plantejats, existeixen diverses línies de millora que permetrien augmentar el seu realisme, escalabilitat i aproximació a entorns industrials reals.
 
 En primer lloc, una millora significativa seria la substitució del protocol \acro{mqtt} per una arquitectura basada en \acro{opc ua}, on \acro{\acro{Unity}} actuaria com a servidor i \emph{Rapid SCADA} com a client. Aquesta aproximació permetria una comunicació més estandarditzada i pròpia de la indústria, així com una millor gestió de les dades i menor càrrega en determinats escenaris.
@@ -3070,6 +3070,11 @@ Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporaci
 
 Per tal de poder executar correctament el sistema desenvolupat en aquest treball, és necessari disposar prèviament de determinats components insta\l.lats i configurats en el mateix equip. Al repositori públic del projecte es proporcionen tots els fitxers necessaris tant per a l'execució del sistema com per a la seva modificació i estudi.
 
+\begin{center}
+\footnotesize
+\href{https://github.com/marcosgarciajamal-droid/TFG_MarcosGarcia/tree/main/PROJECT_FINAL}{https://github.com/marcosgarciajamal-droid/TFG\_MarcosGarcia/tree/main/PROJECT\_FINAL}
+\end{center}
+
 En tots els casos, és imprescindible tenir insta\l.lat \emph{Rapid SCADA} \cite{rapidscada_windows_install}. Un cop insta\l.lat, cal descarregar el projecte disponible dins de la carpeta \fitx{PROJECTE_FINAL/SCADA} del repositori i carregar-lo des de l'aplicació \emph{Administrator} de \emph{Rapid SCADA}. Després d'importar el projecte, aquest s'haurà de publicar a la Webstation per tal de poder visualitzar correctament la interfície \acro{SCADA} i el funcionament del sistema.
 
 Pel que fa a \acro{Unity}, es proporcionen dues opcions diferents d'utilització:
@@ -3081,7 +3086,7 @@ Pel que fa a \acro{Unity}, es proporcionen dues opcions diferents d'utilització
 
 És important destacar que tant l'executable com el projecte de \acro{Unity} només funcionaran correctament si \emph{Rapid SCADA} i el broker Mosquitto es troben insta\l.lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre \acro{Unity} i \emph{Rapid SCADA} es realitza mitjançant \acro{mqtt} sobre una configuració local.
 
-Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi. Aquesta millora permetria allotjar \emph{Rapid SCADA} en un servidor remot i utilitzar un broker \acro{mqtt} públic, possibilitant l'accés al sistema des de qualsevol dispositiu connectat a Internet. En aquest escenari, únicament seria necessari disposar de l'executable de \acro{Unity} per interactuar amb el sistema, facilitant considerablement la seva distribució i accessibilitat.
+Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi, tal i com s'ha explicat a la secció \ref{sec:future_work}.
 
 \section{Scripts del sistema}
 \label{sec:scripts_unity}
