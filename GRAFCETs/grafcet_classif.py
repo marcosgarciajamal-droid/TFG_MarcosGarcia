@@ -23,7 +23,7 @@ def crear_grafcet_simple(file):
     # Etapes i les seves accions
     etapas_acciones = {
 
-        'E20': '', 'E21': 'T=1s', 'E22': '', 'E23': '', 'E24': '', 'E25': '', 'E26': 'T=2s',
+        'E20': '', 'E21': 'T=1s', 'E22': '', 'E23': '', 'E24': '', 'E25': '', 'E26': 'T=1s',
         'E27': 'P | C_A=C_A+1', 'E28': '', 'E29': '', 'E30': '', 'E31': '', 'E32': '', 'E33': '', 'E34': 'P | C_A=0 | CEvacA++',
 
     }
@@ -40,7 +40,7 @@ def crear_grafcet_simple(file):
         ('E23','COND_AUTO * x164' ,'E26'),
         ('E24','COND_AUTO * x166' ,'E26'),
         ('E25','COND_AUTO * x168' ,'E26'),
-        ('E26','COND_AUTO * \\not(S3) * t/T1/2s' ,'E27'),
+        ('E26','COND_AUTO * \\not(S3) * t/T1/1s' ,'E27'),
         ('E27','COND_AUTO * C_A mod 3!= 0' ,'E28'),
         ('E28','COND_AUTO * x0' ,('final','E20')),
         ('E27','COND_AUTO * C_A==3' ,'E29'),

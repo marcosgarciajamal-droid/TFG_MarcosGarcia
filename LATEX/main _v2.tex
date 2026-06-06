@@ -1035,7 +1035,7 @@ Els \emph{Colliders} \cite{UnityColliders} defineixen la forma física d'un obje
 
 \subsubsection*{Mode Trigger}
 
-Poden funcionar en mode \emph{Trigger}, permetent detectar objectes sense co\l.lisió física (útil per simular sensors industrials). Aquest mode s'utilitza mitjançant esdeveniments com \texttt{OnTriggerEnter()}, \texttt{OnTriggerExit()} o \texttt{OnTriggerStay()}. Aquest tipus de detecció és molt comú a la part de útil en sistemes industrials per simular sensors de presència, dit això, obviament en aquest sistema s'jan utilitzat \emph{colliders} amb aquest mode per simular aquests tipus de sensors.
+Poden funcionar en mode \emph{Trigger}, permetent detectar objectes sense co\l.lisió física (útil per simular sensors industrials). Aquest mode s'utilitza mitjançant esdeveniments com \texttt{OnTriggerEnter()}, \texttt{OnTriggerExit()} o \texttt{OnTriggerStay()}, els quals són funcions que serveixen per aconseguir un tipus de detecció que és molt comú a la part de útil en sistemes industrials per simular sensors de presència. Dit això, obviament en aquest projecte s'han utilitzat \emph{colliders} amb aquest mode per simular aquests tipus de sensors.
 
 \subsubsection*{Detecció de co\l.lisions}
 
@@ -1127,7 +1127,7 @@ En estructures complexes com el transelevador d'aquest projecte, és habitual tr
 \subsubsection{Sistema de rotacions}
 \subsubsection*{Quaternions i Gimbal Lock}
 
-En sistemes 3D és habitual representar les rotacions mitjançant angles d'Euler, és a dir, definint una rotació independent sobre els eixos X, Y i Z. Aquesta representació és fàcil d'entendre per a les persones, però presenta una limitació important coneguda com a \emph{Gimbal Lock}. Aquest fenomen es produeix quan dos dels eixos de rotació queden alineats entre si, provocant la pèrdua d'un grau de llibertat i impedint realitzar determinades orientacions de forma correcta. Com a conseqüència, poden aparèixer moviments inesperats o comportaments anòmals durant les animacions i simulacions \cite{UnityQuaternionEuler2019}.
+En sistemes 3D és habitual representar les rotacions mitjançant angles d'Euler, és a dir, definint una rotació independent sobre els eixos X, Y i Z. Aquesta representació és fàcil d'entendre per a les persones, però presenta una limitació important coneguda com a \emph{Gimbal Lock}. Aquest fenomen es produeix quan dos dels eixos de rotació queden alineats entre si, provocant la pèrdua d'un grau de llibertat i impedint realitzar determinades orientacions de forma correcta, tenint com a conseqüència que poden aparèixer moviments inesperats o comportaments anòmals durant les animacions i simulacions \cite{UnityQuaternionEuler2019}.
 
 Per evitar aquest problema, \acro{Unity} no emmagatzema internament les rotacions utilitzant angles d'Euler, sinó mitjançant \emph{quaternions}. Un \emph{quaternion} és una estructura matemàtica formada per quatre components (\acro{x}, \acro{y}, \acro{z} i \acro{w}) que permet representar orientacions i rotacions tridimensionals d'una manera més robusta i estable. A diferència dels angles d'Euler, els quaternions no pateixen el problema del \emph{Gimbal Lock} i permeten realitzar interpolacions suaus entre orientacions, aspecte especialment important en animacions i sistemes de moviment continu \cite{UnityQuaternion}.
 
@@ -1138,7 +1138,7 @@ Tot i que \acro{Unity} utilitza quaternions de forma interna, l'editor mostra ha
 
 \acro{Unity} permet controlar el moviment dels objectes físics a través del component \emph{Rigidbody} \cite{UnityRigidbody}, on enlloc de modificar directament la seva posició, és possible actuar sobre la seva velocitat, fet que proporciona una integració més natural amb el motor físic i permet mantenir correctament les co\l.lisions, les forces i la gravetat. 
 
-En el context d'aquest projecte, el desplaçament de determinats elemnts es realitxa modificant la propietat \texttt{linearVelocity}, quue defineix la velocitat lineal de l'objecte en l'espai tridimensional. Per dirigir el moviment cap a una direcció concreta, es calculen les components horitzontals de la velocitat segons les necessitats del sistema, mentre que la component vertical es manté per no interferir amb la gravetat.  Aquest enfocament permet obtenir moviments fluids i realistes sobre les cintes transportadores, els rodets i altres elements de la planta, mantenint al mateix temps una interacció coherent amb la resta d'objectes físics presents a l'escena.
+En el context d'aquest projecte, el desplaçament de determinats elements es realitza modificant la propietat \texttt{linearVelocity}, que defineix la velocitat lineal de l'objecte en l'espai tridimensional. Per dirigir el moviment cap a una direcció concreta, es calculen les components horitzontals de la velocitat segons les necessitats del sistema, mentre que la component vertical es manté per no interferir amb la gravetat.  Aquest enfocament permet obtenir moviments fluids i realistes sobre les cintes transportadores, els rodets i altres elements de la planta, mantenint al mateix temps una interacció coherent amb la resta d'objectes físics presents a l'escena.
 
 \subsubsection{Variables i encapsulació}
 
@@ -1170,7 +1170,7 @@ Aquest tipus de sintaxi s'anomena \emph{expression-bodied member} \cite{Microsof
 
 En \acro{Unity}, el \emph{Canvas} és l'element fonamental per a la creació d'interfícies d'usuari (UI). Es tracta d'un \emph{GameObject} especial que actua com a contenidor de tots els elements visuals interactius, com ara textos, botons, imatges o indicadors d'estat.
 
-Per tal de que tot funcioni correctament, tots els elements d'interfície ha de ser fills d'un \emph{Canvas}, ja que aquest defineix l'espai on es representen i es renderitzen dins de l'aplicació \cite{UnityCanvas}. El \emph{Canvas} es pot entendre com una 'pantalla virtual' sobre la qual es dibuixen tots els elements \acro{UI} (\emph{User Interface}).
+Per tal de que tot funcioni correctament, tots els elements d'interfície han de ser fills d'un \emph{Canvas}, ja que aquest defineix l'espai on es representen i es renderitzen dins de l'aplicació \cite{UnityCanvas}. El \emph{Canvas} es pot entendre com una 'pantalla virtual' sobre la qual es dibuixen tots els elements \acro{UI} (\emph{User Interface}).
 
 \subsubsection{Modes de renderització del Canvas}
 
@@ -1287,7 +1287,7 @@ A més, aquests sistemes requereixen documentació tècnica obligatòria, com el
 
 \subsubsection{Norma UNE-EN 15620 i classificació d'estanteries}
 
-El disseny del sistema també depèn de les estanteries utilitzades \cite{rack_estanterias_norma} on s'aplica la norma \textbf{UNE-EN 15620}, la qual defineix toleràncies i precisió en sistemes d'emmagatzematge. Segons aquesta norma, les estanteries es poden classifacar segons diferents tipus de classes que serveixen per determinal el nivell d'automatització i precisió del sistema:
+El disseny del sistema també depèn de les estanteries utilitzades \cite{rack_estanterias_norma} on s'aplica la norma \textbf{UNE-EN 15620}, la qual defineix toleràncies i precisió en sistemes d'emmagatzematge. Segons aquesta norma, les estanteries es poden classificar segons diferents tipus de classes que serveixen per determinar el nivell d'automatització i precisió del sistema:
 
 \begin{itemize}
     \item \textbf{Classe 100}: transelevadors automàtics en insta\l.lacions estàndard (altura inferior a 18m).
@@ -1618,9 +1618,9 @@ En el cas dels sensors d'identificació de peça, el valor representa el tipus d
 \textbf{Estat del sistema} $\rightarrow$ Les variables globals d'estat informen del mode actual de funcionament del sistema. El topic \textbf{plant/status/actuation\_mode} indica el mode de control actual, seguint la convenció definida a continuació:
 
 \begin{itemize}
-\item $-1$ = Aturat
-\item 0 = Automàtic
-\item 1 = Manual
+\item 0 = Aturat
+\item 1 = Automàtic
+\item 2 = Manual
 \end{itemize}
 
 
@@ -3256,7 +3256,7 @@ En aquest apartat trobareu un exemple de cada tipus de \acro{GRAFCET} que s'ha i
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{PDF_GRAFCET/G0.pdf}
-\caption{\acro{GRAFCET} general del sisteGma}
+\caption{\acro{GRAFCET} general del sistema}
 \label{fig:annex_g0}
 \end{figure}
 
