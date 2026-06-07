@@ -2251,7 +2251,7 @@
         <Width>100</Width>
         <Height>100</Height>
       </Size>
-      <Text>EMERGÈNCIA ACTIVA</Text>
+      <Text>EMERGENCY MODE</Text>
       <TextAlign>TopLeft</TextAlign>
       <TextDirection>Horizontal</TextDirection>
       <Tooltip />
@@ -2353,7 +2353,7 @@
         <Width>100</Width>
         <Height>100</Height>
       </Size>
-      <Text>MODE AUTOMÀTIC </Text>
+      <Text>AUTOMATIC MODE</Text>
       <TextAlign>TopLeft</TextAlign>
       <TextDirection>Horizontal</TextDirection>
       <Tooltip />
@@ -2455,7 +2455,7 @@
         <Width>100</Width>
         <Height>100</Height>
       </Size>
-      <Text>MODE MANUAL</Text>
+      <Text>MANUAL MODE</Text>
       <TextAlign>TopLeft</TextAlign>
       <TextDirection>Horizontal</TextDirection>
       <Tooltip />
@@ -2798,7 +2798,7 @@
       <InCnlNum>149</InCnlNum>
       <Location>
         <X>680</X>
-        <Y>440</Y>
+        <Y>460</Y>
       </Location>
       <Name />
       <ObjNum>0</ObjNum>
