@@ -2468,7 +2468,7 @@ La connexió amb el broker \acro{mqtt} es realitza dins del mètode \texttt{Star
 \begin{lstlisting}[style=simple]
 client = new MqttClient("127.0.0.1");
 client.MqttMsgPublishReceived += OnMessageReceived;
-client.Connect("\acro{Unity}Client");
+client.Connect("UnityClient");
 
 client.Subscribe(
     new string[] { "plant/cmd/#" },
