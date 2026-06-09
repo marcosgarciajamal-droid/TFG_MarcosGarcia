@@ -239,10 +239,10 @@ def crear_grafcet_simple(file_name="Industrial_Plant"):
     <B>CONDITIONS:</B>
 
     COND_MANUAL = x503 + x504
-    M2.IsMoving = !x141 + !x143 + !145 + !147
-    M3.IsMoving = !x161 + !x163 + !165 + !167
-    M5.IsMoving = !x261 + !x263 
-    M6.IsMoving = !x281 + !x283 + !285 + !287
+    M2_IsMoving = x141 + x143 + 145 + 147
+    M3_IsMoving = x161 + x163 + 165 + 167
+    M5_IsMoving = x261 + x263 
+    M6_IsMoving = x281 + x283 + 285 + 287
 
     """
 

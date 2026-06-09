@@ -33,7 +33,7 @@ public class MotorBelt : MonoBehaviour
         speed = rb.linearVelocity.magnitude; 
     }
     public void SetState(bool state) {beltEnabled = state;}
-    public void setSpeed(float speed){beltSpeed = speed;}   
+    public void SetSpeed(float speed){beltSpeed = speed;}   
 }
 
 

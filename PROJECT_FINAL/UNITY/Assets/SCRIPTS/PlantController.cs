@@ -766,7 +766,7 @@ void GRAFCET_MODO() {
       break;
     case 501: 
       LS.isOk = true;
-      if ((Selector != 0 && !B_Stop) || !B_Stop) ETAPA_500 = 502;
+      if (!B_Stop) ETAPA_500 = 502;
       break;
     case 502:
       if (ETAPA_0 == 0) ETAPA_500 = 500;

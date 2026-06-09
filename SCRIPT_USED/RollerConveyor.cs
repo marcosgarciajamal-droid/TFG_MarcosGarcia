@@ -8,7 +8,7 @@ public class RollerConveyor : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Box")) return;
-                if (isActive)
+        if (isActive)
         {
             Rigidbody rb = other.attachedRigidbody;
             if (rb != null)
