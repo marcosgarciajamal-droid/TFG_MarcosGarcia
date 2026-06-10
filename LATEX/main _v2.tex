@@ -378,7 +378,7 @@ Per a la realització d'aquest treball s'han utilitzat diferents eines software 
 
 Com a base principal del projecte s'han emprat les plataformes \acro{Unity} i \emph{Rapid SCADA} tal i com s'ha explicat en les seccions  \ref{sec:rapidscada_research} i \ref{sec:unity_research}.
 
-Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha fet servir el protocol \acro{mqtt}  mitjançant un broker local Mosquitto, insta\l.lat sobre el sistema operatiu \acro{Windows} \cite{mosquitto_download}. Aquest broker actua com a intermediari en l'intercanvi de dades entre el \acro{SCADA} i l'entorn virtual desenvolupat amb \acro{Unity}.
+Amb l'objectiu d'establir la comunicació entre ambdues plataformes, s'ha fet servir el protocol \acro{mqtt}  mitjançant un broker local \textit{Mosquitto}, insta\l.lat sobre el sistema operatiu \acro{Windows} \cite{mosquitto_download}. Aquest broker actua com a intermediari en l'intercanvi de dades entre el \acro{SCADA} i l'entorn virtual desenvolupat amb \acro{Unity}.
 
 Tot el desenvolupament del projecte s'ha dut a terme sobre entorn \acro{Windows}. Per a la redacció de la memòria s'ha utilitzat \LaTeX{}, motiu pel qual va ser necessària la insta\l.lació de la distribució \acro{MiKTeX} \cite{Latex}, que proporciona les eines necessàries per a la compilació i gestió de documents en aquest sistema operatiu.
 
@@ -557,7 +557,7 @@ Com a fet a tindre en compte, les taules es troben interrelacionades entre elles
 \subsubsection*{Secondary Tables}
 
 
-En canvi, les \textbf{taules secundàries} complementen la configuració principal del sistema amb informació auxiliar i paràmetres predefinits, ja que serveixen per definir diversos aspectes principals com els tipus de dades disponibles, formats de visualització, unitats de mesura, tipus de dispositius, sistemes d'arxiu històric o scripts de càlcul. Encara que hi existieix l'opció d'ampliar aquestes taules de forma manual, generalment ja es troben suficientment definides previàment per estalviar aquest procès, almenys de que sigui estrictament necessari modificar-les per obtenir una configuració pròpia. 
+En canvi, les \textbf{taules secundàries} complementen la configuració principal del sistema amb informació auxiliar i paràmetres predefinits, ja que serveixen per definir diversos aspectes principals com els tipus de dades disponibles, formats de visualització, unitats de mesura, tipus de dispositius, sistemes d'arxiu històric o scripts de càlcul. Encara que hi existieix l'opció d'ampliar aquestes taules de forma manual, generalment ja es troben suficientment definides previàment per estalviar aquest procés, almenys de que sigui estrictament necessari modificar-les per obtenir una configuració pròpia. 
 
 \subsubsection{Procés de configuració}
 
@@ -1560,7 +1560,7 @@ En aquest projecte, la filosofia \acro{GEMMA} s'ha utilitzat com a base per defi
     \item F1 - Producció automàtica: Execució contínua del cicle complet de classificació sense intervenció de l'operador.
     \item F5 - Funcionament manual: L'operador pot activar individualment motors i pistons.
     \item A2 - Aturada a final de cicle: El sistema es pararà després d'haver acabat el cicle que es troba fent.
-    \item A3 - Pausa: El procès es pararà en l'estat en el que es trobi.
+    \item A3 - Pausa: El procés es pararà en l'estat en el que es trobi.
     \item D1 - Aturada d'emergència: Tall immediat de tots els actuadors. Prioritat absoluta de seguretat.
     \item D2 - Tractament d'avaria: Permet diagnòstic i rearmament controlat.
 \end{itemize}
@@ -2034,7 +2034,7 @@ Els sensors de posició determinen la ubicació del transelevador mitjançant la
 public bool Pos1 => Vector3.Distance(rb.position, position1.position) <0.01f;
 \end{lstlisting}
 
-Quan la distància és inferior a un llindar, es considera que s'ha assolit la posició, activant també els indicadors LED associats a la vegada que s'activa la variable del sensor. Aquest lògica de procès simula el comportament de sensors tipus finals de carrera o de posició utilitzats habitualment en sistemes \acro{AS/RS} industrials, molt necessaris per assegurar un ús correcta d'aquest sistema.
+Quan la distància és inferior a un llindar, es considera que s'ha assolit la posició, activant també els indicadors LED associats a la vegada que s'activa la variable del sensor. Aquest lògica de procés simula el comportament de sensors tipus finals de carrera o de posició utilitzats habitualment en sistemes \acro{AS/RS} industrials, molt necessaris per assegurar un ús correcta d'aquest sistema.
 
 \subsection{Sistema de llums d'estat}
 
@@ -2056,14 +2056,14 @@ Per tal d'aproximar encara més el comportament del sistema a un entorn industri
 
 Per implementar aquesta funcionalitat s'ha desenvolupat una classe anomenada \emph{Timer}, el funcionament de la qual és equivalent a un temporitzador de tipus \textbf{TON (Timer On Delay)} utilitzat habitualment en \acro{PLCs}.
 
-El funcionament d'aquest temporitzador (secció \ref{sec:scripts_unity}) es basa en una entrada booleana que activa el comptatge del temps mitjançant \texttt{Time.deltaTime} \cite{UnityTime} i, una vegada el temps acumulat supera el valor \texttt{preset} (valor predifinit del timer), la sortida \texttt{done} esdevé \texttt{true}. Si l'entrada es desactiva en qualsevol moment mentre el temporitzador estigui actiu, aquest es reinicia automàticament. Aquesta classe permet controlar de forma precisa els retards en la detecció de les peces del \textbf{sensor òptic}, així com en altres processos que requereixin una temporització específica dins del procès \textbf{d'automatització del sistema}.
+El funcionament d'aquest temporitzador (secció \ref{sec:scripts_unity}) es basa en una entrada booleana que activa el comptatge del temps mitjançant \texttt{Time.deltaTime} \cite{UnityTime} i, una vegada el temps acumulat supera el valor \texttt{preset} (valor predifinit del timer), la sortida \texttt{done} esdevé \texttt{true}. Si l'entrada es desactiva en qualsevol moment mentre el temporitzador estigui actiu, aquest es reinicia automàticament. Aquesta classe permet controlar de forma precisa els retards en la detecció de les peces del \textbf{sensor òptic}, així com en altres processos que requereixin una temporització específica dins del procés \textbf{d'automatització del sistema}.
 
 
 \subsection{Interfície de visualització de dades (Canvas)}
 
 A part dels indicadors LED, s'ha implementat una interfície gràfica en \acro{Unity} per mostrar dades en temps real mitjançant el sistema \emph{Canvas} \cite{UnityCanvas}.
 
-L'estructura es basa en un objecte pare amb vuit elements fills, on trobem quatre panells visuals i quatre elements de text. Tres d'aquests elements de text mostren el nombre de peces emmagatzemades gràcies al script \emph{DisplayCounter} (secció \ref{sec:scripts_unity}), que actualitza aquest valor en cada fotograma accedint al comptador de caixes que es realitza en el procès automàtic i convertint-lo a text amb la funció \texttt{ToString()} \cite{dotnet_collections}. En canvi, el quart text mostra el tipus de peça detectada pel sensor òptic (secció \ref{sec:scripts_unity}), el qual quan no hi ha detecció es mostra \emph{"No piece"}, i en cas contrari es mostra el valor de l'enumeració \emph{PieceShape}.
+L'estructura es basa en un objecte pare amb vuit elements fills, on trobem quatre panells visuals i quatre elements de text. Tres d'aquests elements de text mostren el nombre de peces emmagatzemades gràcies al script \emph{DisplayCounter} (secció \ref{sec:scripts_unity}), que actualitza aquest valor en cada fotograma accedint al comptador de caixes que es realitza en el procés automàtic i convertint-lo a text amb la funció \texttt{ToString()} \cite{dotnet_collections}. En canvi, el quart text mostra el tipus de peça detectada pel sensor òptic (secció \ref{sec:scripts_unity}), el qual quan no hi ha detecció es mostra \emph{"No piece"}, i en cas contrari es mostra el valor de l'enumeració \emph{PieceShape}.
 
 S'ha utilitzat \emph{TextMeshPro} per a la representació del text, ja que ofereix una qualitat de renderització de text superior en comparació amb el sistema de text tradicional, a part de més qualitat i de més flexibilitat. Els scripts treballen amb components \texttt{TMP\_Text} \cite{dotnet_text}, permetent actualitzar el contingut dinàmicament. 
 
@@ -2377,7 +2377,7 @@ Aquest \acro{GRAFCET} centralitza tant la selecció del mode de funcionament com
 
 \subsubsection*{\acro{GRAFCET} d'emergència (G600)}
 
-El \acro{GRAFCET} d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succet,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els \acro{GRAFCET}S de procès a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
+El \acro{GRAFCET} d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succet,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els \acro{GRAFCET}S de procés a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
 
 La recuperació del sistema requereix una acció conscient per part de l'operador, tal com s'ha explicat en la secció \ref{sec:grafc_emerg}, i implica que el botó d'emergència torni a la seva posició normal i que es premi el botó de reset per restablir les condicions de funcionament. En concret, el sistema només permet sortir de l'estat d'emergència quan el selector de mode també ha tornat a una situació vàlida (ETAPA\_500 = 500)
 
@@ -2448,11 +2448,11 @@ case 0:
 
 Un dels aspectes fonamentals del projecte és la comunicació entre el procés industrial desenvolupat en \acro{Unity} i el sistema \emph{Rapid SCADA}, la qual es realitza mitjançant el protocol \acro{mqtt}  àmpliament utilitzat en entorns industrials i aplicacions IoT per la seva simplicitat i eficiència.
 
-Per a la gestió del sistema de missatgeria s'ha utilitzat un \emph{broker \acro{mqtt} Mosquitto} \cite{mosquitto_download}, insta\l.lat localment a l'entorn de desenvolupament, que actua com a intermediari en l'intercanvi de dades entre \acro{Unity} i \acro{SCADA} i així permet la comunicació en temps real. El sistema s'ha configurat en mode local (\emph{localhost}) per simplificar el desplegament i facilitar el desenvolupament.
+Per a la gestió del sistema de missatgeria s'ha utilitzat un \emph{broker \acro{mqtt} \textit{Mosquitto}} \cite{mosquitto_download}, insta\l.lat localment a l'entorn de desenvolupament, que actua com a intermediari en l'intercanvi de dades entre \acro{Unity} i \acro{SCADA} i així permet la comunicació en temps real. El sistema s'ha configurat en mode local (\emph{localhost}) per simplificar el desplegament i facilitar el desenvolupament.
 
 \subsection{Implementació de \acro{MQTT} a \acro{Unity}}
 
-La integració del protocol \acro{mqtt} a \acro{Unity} s'ha realitzat mitjançant la llibreria \emph{M2Mqtt\acro{Unity}}, la qual serveix per establir connexions amb un broker \acro{mqtt} i gestionar tant la publicació com la subscripció a diferents \emph{topics} \cite{mqtt_unity_guide}. A partir d'aquesta estructura base proporcionada per la llibreria, s'ha desenvolupat la lògica específica del projecte, incloent la gestió dels missatges rebuts i enviats, així com la sincronització amb l'estat intern del sistema industrial virtual. Tant la configuració del broker com la implementació general de la comunicació \acro{mqtt} s'han basat en la documentació oficial de Mosquitto \cite{mosquitto_download}.
+La integració del protocol \acro{mqtt} a \acro{Unity} s'ha realitzat mitjançant la llibreria \emph{M2Mqtt\acro{Unity}}, la qual serveix per establir connexions amb un broker \acro{mqtt} i gestionar tant la publicació com la subscripció a diferents \emph{topics} \cite{mqtt_unity_guide}. A partir d'aquesta estructura base proporcionada per la llibreria, s'ha desenvolupat la lògica específica del projecte, incloent la gestió dels missatges rebuts i enviats, així com la sincronització amb l'estat intern del sistema industrial virtual. Tant la configuració del broker com la implementació general de la comunicació \acro{mqtt} s'han basat en la documentació oficial de \textit{Mosquitto} \cite{mosquitto_download}.
 
 
 \subsubsection*{Estructura dins de \acro{Unity}}
@@ -2584,7 +2584,7 @@ switch (plant.ETAPA_500){
 PublishIfChanged("plant/status/actuation_mode", status);
 \end{lstlisting}
  
-Aquesta codificacó permet representar el mode del sistema de forma simple, d'igual manera que l'estat d'emergència, facilitant la seva interpretació des del sistema \acro{SCADA} seguint les etapes que hi hagi actives en el procès d'automatització.
+Aquesta codificacó permet representar el mode del sistema de forma simple, d'igual manera que l'estat d'emergència, facilitant la seva interpretació des del sistema \acro{SCADA} seguint les etapes que hi hagi actives en el procés d'automatització.
 
 \subsubsection{Recepció de comandes}
 
@@ -3084,7 +3084,7 @@ Pel que fa a \acro{Unity}, es proporcionen dues opcions diferents d'utilització
     \item \textbf{Aplicació executable (.exe):} també es proporciona una versió compilada dins de la carpeta \fitx{PROJECTE_FINAL/BUILD_APP}. Aquesta carpeta conté l'arxiu executable principal i les dependències necessàries, com ara \fitx{UnityPlayer.dll}. Aquesta opció permet executar directament l'aplicació i interactuar amb el sistema de manera similar a un videojoc o simulador industrial. No obstant això, aquesta versió no permet modificar el sistema intern ni accedir als scripts o configuracions del projecte.
 \end{itemize}
 
-És important destacar que tant l'executable com el projecte de \acro{Unity} només funcionaran correctament si \emph{Rapid SCADA} i el broker Mosquitto es troben insta\l.lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre \acro{Unity} i \emph{Rapid SCADA} es realitza mitjançant \acro{mqtt} sobre una configuració local.
+És important destacar que tant l'executable com el projecte de \acro{Unity} només funcionaran correctament si \emph{Rapid SCADA} i el broker \textit{Mosquitto} es troben insta\l.lats i executant-se en \texttt{localhost} dins del mateix dispositiu. Això és degut al fet que la comunicació entre \acro{Unity} i \emph{Rapid SCADA} es realitza mitjançant \acro{mqtt} sobre una configuració local.
 
 Per tant, el sistema actual està pensat per funcionar íntegrament en entorn local. Tot i això, com a possible ampliació futura, seria interessant migrar la infraestructura a un entorn amb IP pública i domini propi, tal i com s'ha explicat a la secció \ref{sec:future_work}.
 
