@@ -816,7 +816,7 @@ Tot i que \acro{Unity} va ser concebut inicialment com un motor per al desenvolu
 Per l'altre costat, en entorns 3D incorpora un sistema complet de representació espacial amb càmeres en perspectiva, i\l.luminació avançada i simulació física tridimensional, permetent desenvolupar entorns immersius com el sistema virtual d'aquest projecte \cite{Unity2Dor3D}.
 
 \subsubsection{Capacitats de renderització}
-Com a factor interessant, consta d'un sistema de renderització en temps real basat en la \acro{GPU} (\emph{Graphic Processing Unit}), on es poden visualitzar escenes de forma eficient ja que aquesta és unitat és l'encarregada de generar imatges i animacios a la pantalla. Ofereix diferents tipus de \emph{Render Pipelines} \cite{UnityRenderPipelines}, entre els quals destaquen:
+Com a factor interessant, consta d'un sistema de renderització en temps real basat en la \acro{GPU} (\emph{Graphic Processing Unit}), on es poden visualitzar escenes de forma eficient ja que aquesta és unitat és l'encarregada de generar imatges i animacions a la pantalla. Ofereix diferents tipus de \emph{Render Pipelines} \cite{UnityRenderPipelines}, entre els quals destaquen:
 \begin{itemize}
     \item \textbf{Built-in Render Pipeline}: sistema clàssic amb configuració senzilla però menys flexible.
     \item \textbf{Universal Render Pipeline (URP)}: utilitzat en aquest projecte per oferir un bon equilibri entre rendiment i qualitat.
@@ -902,7 +902,7 @@ A la finestra \emph{Hierarchy} \cite{UnityEditorInterface} s'observen tots els o
 
 \subsubsection*{Gestió de components}
 
-Cada objecte a \acro{Unity} està format per components \cite{UnityComponents}, els quals serveixen per definir el comportament i les característiques b'asiques d'aquests objectes (per exemple, \emph{Transform}, \emph{Renderer}, \emph{Collider} o scripts personalitzats). Des de l'\emph{Inspector} es poden afegir nous components mitjançant el botó \emph{Add Component}, així com modificar les seves propietats.
+Cada objecte a \acro{Unity} està format per components \cite{UnityComponents}, els quals serveixen per definir el comportament i les característiques bàsiques d'aquests objectes (per exemple, \emph{Transform}, \emph{Renderer}, \emph{Collider} o scripts personalitzats). Des de l'\emph{Inspector} es poden afegir nous components mitjançant el botó \emph{Add Component}, així com modificar les seves propietats.
 
 \subsubsection*{Tags i Layers}
 
@@ -970,7 +970,7 @@ En aquest projecte s'han utilitzat principalment textures \acro{PBR} (\emph{Phys
     \item \textbf{Ambient Occlusion}: genera ombrejats suaus en zones menys i\l.luminades. 
 \end{itemize} 
 
-Com a factor addicional, existeix la possibilitat  permet modificar propietats addicionals dels materials, com el color, l'\emph{offset}, el \emph{tiling} o diferents paràmetres d'i\l.luminació, facilitant així la reutilització i personalització visual dels objectes dins de la simulació \cite{UnityTextureProperties}. Finalment, l'ús del model \acro{PBR} permet mantenir una aparença coherent sota diferents condicions d'i\l.luminació de l'escena \cite{UnityMaterialsIntro}. 
+Com a factor addicional, existeix la possibilitat  de modificar propietats addicionals dels materials, com el color, l'\emph{offset}, el \emph{tiling} o diferents paràmetres d'i\l.luminació, facilitant així la reutilització i personalització visual dels objectes dins de la simulació \cite{UnityTextureProperties}. Finalment, l'ús del model \acro{PBR} permet mantenir una aparença coherent sota diferents condicions d'i\l.luminació de l'escena \cite{UnityMaterialsIntro}. 
 
 \subsection{Sistema de components en \acro{Unity}}
 
@@ -1035,7 +1035,7 @@ Els \emph{Colliders} \cite{UnityColliders} defineixen la forma física d'un obje
 
 \subsubsection*{Mode Trigger}
 
-Poden funcionar en mode \emph{Trigger}, permetent detectar objectes sense co\l.lisió física (útil per simular sensors industrials). Aquest mode s'utilitza mitjançant esdeveniments com \texttt{OnTriggerEnter()}, \texttt{OnTriggerExit()} o \texttt{OnTriggerStay()}, els quals són funcions que serveixen per aconseguir un tipus de detecció que és molt comú a la part de útil en sistemes industrials per simular sensors de presència. Dit això, obviament en aquest projecte s'han utilitzat \emph{colliders} amb aquest mode per simular aquests tipus de sensors.
+Poden funcionar en mode \emph{Trigger}, permetent detectar objectes sense co\l.lisió física (útil per simular sensors industrials). Aquest mode s'utilitza mitjançant esdeveniments com \texttt{OnTriggerEnter()}, \texttt{OnTriggerExit()} o \texttt{OnTriggerStay()}, els quals són funcions que serveixen per aconseguir un tipus de detecció que és molt comú en sistemes industrials per simular sensors de presència. Dit això, obviament en aquest projecte s'han utilitzat \emph{colliders} amb aquest mode per simular aquests tipus de sensors.
 
 \subsubsection*{Detecció de co\l.lisions}
 
@@ -1238,7 +1238,7 @@ Els \acro{AS/RS} ajuden a fer un ús eficient de l'espai vertical del magatzem, 
 
 \subsection{Funcionament del transelevador}
 
-El funcionament d'un transelevador \cite{transelevador_info} basa en un sistema automatitzat capaç de realitzar moviments coordinats per accedir a qualsevol posició dins del magatzem, el qual té la capacitat de treballar principalment mitjançant tres tipus de moviments:
+El funcionament d'un transelevador \cite{transelevador_info} es basa en un sistema automatitzat capaç de realitzar moviments coordinats per accedir a qualsevol posició dins del magatzem, el qual té la capacitat de treballar principalment mitjançant tres tipus de moviments:
 
 \begin{itemize}
     \item \textbf{Moviment longitudinal}: desplaçament al llarg del passadís sobre rails.
@@ -1279,7 +1279,7 @@ Els transelevadors són equips industrials automatitzats que han de complir dife
 \begin{itemize}
     \item \textbf{Directiva 2006/42/CE}: estableix els requisits essencials de seguretat i protecció aplicables al disseny i fabricació de màquines industrials.
     \item \textbf{Reial Decret 1215/1997}: defineix les condicions mínimes de seguretat i salut per a la utilització d'equips de treball per part dels operaris.
-    \item \textbf{UNE-EN 528}: norma específica per a transelevadors i equips de magatzematge automatitzat, centrada en requisits de seguretat, moviment i protecció dels operadors.
+    \item \textbf{UNE-EN 528}: norma específica per a transelevadors i equips d'emmagatzematge automatitzat, centrada en requisits de seguretat, moviment i protecció dels operadors.
     \item \textbf{UNE-EN 1090-1}: regula els requisits relacionats amb el disseny i fabricació d'estructures metà\l.liques utilitzades en entorns industrials.
 \end{itemize}
 
@@ -1386,7 +1386,7 @@ Tot i això, cal destacar que es tracta d'un model simplificat respecte a insta\
 \label{sec:disseny_proces}
 %%\subsection{Concepció general del sistema}
 
-La simulació d'una planta industrial dintre de \acro{Unity} realitzada e aquest projecte representa un sistema automatitzat de classificació i emmagatzematge de peces. La lògica del procés s'executa íntegrament en \acro{Unity}, mentre que \emph{Rapid SCADA} actua com a sistema de supervisió, monitoratge i enviament de comandes d'operació. Aquesta separació és intencionada i respon a criteris d'arquitectura industrial moderna:
+La simulació d'una planta industrial dintre de \acro{Unity} realitzada en aquest projecte representa un sistema automatitzat de classificació i emmagatzematge de peces. La lògica del procés s'executa íntegrament en \acro{Unity}, mentre que \emph{Rapid SCADA} actua com a sistema de supervisió, monitoratge i enviament de comandes d'operació. Aquesta separació és intencionada i respon a criteris d'arquitectura industrial moderna:
 
 \begin{itemize}
 \item \acro{Unity} = sistema físic simulat + lògica de control.
@@ -2377,7 +2377,7 @@ Aquest \acro{GRAFCET} centralitza tant la selecció del mode de funcionament com
 
 \subsubsection*{\acro{GRAFCET} d'emergència (G600)}
 
-El \acro{GRAFCET} d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succet,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els \acro{GRAFCET}S de procés a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
+El \acro{GRAFCET} d'emergència té la màxima prioritat dins del sistema i pot interrompre qualsevol altre procés en execució. L'emergència es pot activar polsant botó \texttt{B\_Emergency} o amb la detecció d'avaria en el sistema de classificació (\texttt{ETAPA\_DT0 = 21}), i una vegada això ha succeit,  es realitzen de forma controlada tots els esdeveniments comentats en la secció \ref{sec:grafc_emerg} (desactivació funcionament automàtic, llum d'emergència encesa, reinici de tots els \acro{GRAFCET}S de procés a través de la funció \texttt{ResetGrafcetsProcess()} i es força el sistema al mode manual fent \texttt{ETAPA\_500 = 503})
 
 La recuperació del sistema requereix una acció conscient per part de l'operador, tal com s'ha explicat en la secció \ref{sec:grafc_emerg}, i implica que el botó d'emergència torni a la seva posició normal i que es premi el botó de reset per restablir les condicions de funcionament. En concret, el sistema només permet sortir de l'estat d'emergència quan el selector de mode també ha tornat a una situació vàlida (ETAPA\_500 = 500)
 
@@ -2390,7 +2390,7 @@ public int CMD_M2 = -1;
 public int CMD_M3 = -1;
 \end{lstlisting}
 
-Aquestes variables permeten controlar manualment els actuadors en mode manual. Els valors s'actualitzaren a través dels tòpics \acro{mqtt}, provenent del \emph{Rapid SCADA}. Generalment, en el \acro{GRAFCET}s dels actuadors és completament necessari que la condició de \emph{COND\_MANUAL} estigui activa perquè es pogui modificar aquestes variables.
+Aquestes variables permeten controlar manualment els actuadors en mode manual i els valors s's'actualitzen a través dels tòpics \acro{mqtt}, provenent del \emph{Rapid SCADA}. Generalment, en el \acro{GRAFCET}s dels actuadors és completament necessari que la condició de \emph{COND\_MANUAL} estigui activa perquè es pogui modificar aquestes variables.
 
 Pel que fa als transelevadors, quan s'arriba a la posició inicial, la comanda s'ha de forçar a un valor neutre (\texttt{$-1$}), evitant així que el sistema torni a executar automàticament el mateix moviment.
 
@@ -2430,7 +2430,7 @@ El procés és el següent:
 
 Cada flanc de pujada es defineix amb una clau única associada a una etapa concreta. Per exemple: \texttt{if (RisingEdge("ETAPA\_0\_10", ETAPA\_0 == 10)) Spawner.SpawnPiece();}
 
-Aquesta funció s'ha aplicat tant per introduir una peça en l'etapa adient (generació de peces) com per modificar el valors dels 6 comptadors que hi ha dintre del sistema en les etapes corresponent. Com únicament és necessari fer-ho quan s'activa l'etapa (\emph{acció impulsional}), aquesta funció és perfecta per aquestes situacions.
+Aquesta funció s'ha aplicat tant per introduir una peça en l'etapa adient (generació de peces) com per modificar el valors dels 6 comptadors que hi ha dintre del sistema en les etapes corresponents. Com únicament és necessari fer-ho quan s'activa l'etapa (\emph{acció impulsional}), aquesta funció és perfecta per aquestes situacions.
 
 Respecte al funcionament d'aqesta funció, és fonamental reiniciar l'estat del diccionari per cada clau quan es torna a l'etapa inicial del \acro{GRAFCET}, en cas contrari, el sistema podria no detectar correctament futurs flancs.
 
@@ -2666,7 +2666,7 @@ En aquesta etapa es defineixen dos elements fonamentals:
 
 \textbf{Comandes (\emph{Commands})}: Defineixen els \emph{topics} als quals \emph{Rapid SCADA} enviarà informació. Aquests \emph{topics} corresponen a les ordres que controlen el comportament de la planta en \acro{Unity}, com per exemple ordres manuals o canvis de mode de funcionament.
 
-A diferència de les subscripcions, els \emph{topics} definits com a comandes tenen un comportament exclusivament d'escriptura, ja que només s'utilitzen per enviar dades des de \emph{Rapid SCADA} cap a \acro{Unity}. Aquest funcionament segueix la lògica pròpia del protocol \acro{mqtt}  per rebre dades és necessari estar subscrit a un \emph{topic}, mentre que per enviar informació només cal publicar-hi missatges, sense necessitat de cap subscripció prèvia.
+A diferència de les subscripcions, els \emph{topics} definits com a comandes tenen un comportament exclusivament d'escriptura, ja que només s'utilitzen per enviar dades des de \emph{Rapid SCADA} cap a \acro{Unity}. Aquest funcionament segueix la lògica pròpia del protocol \acro{mqtt}: per rebre dades és necessari estar subscrit a un \emph{topic}, mentre que per enviar informació només cal publicar-hi missatges, sense necessitat de cap subscripció prèvia.
 
 \begin{figure}[H]
 \centering
@@ -2961,7 +2961,7 @@ Important comentar també que la correcta configuració de \emph{Chart Pro} és 
 
 \subsection{Configuració d'usuaris i control d'accés}
 
-En el moment d'obtenit una gestió correcte respecte a l'accés a les diferents funcionalitats del sistema, s'ha implementat un sistema de control basat en rols i permisos (Figura \ref{fig:objects_scada}) dintre del sistema \acro{SCADA}. Inicialment, s'han creat tres rols principals \cite{rapidscada_user_management}:  
+En el moment d'obtenir una gestió correcte respecte a l'accés a les diferents funcionalitats del sistema, s'ha implementat un sistema de control basat en rols i permisos (Figura \ref{fig:objects_scada}) dintre del sistema \acro{SCADA}. Inicialment, s'han creat tres rols principals \cite{rapidscada_user_management}:  
 \begin{itemize}
     \item \textbf{Supervisor}: accés complet al sistema
     \item \textbf{Operator}: accés parcial amb capacitat de control limitada
@@ -3055,7 +3055,7 @@ A nivell funcional, es proposa augmentar la complexitat del sistema mitjançant 
 
 També es planteja com a possible millora l'augment del realisme visual i funcional de l'entorn desenvolupat en \acro{Unity}. Això inclouria la incorporació de sons ambientals industrials, efectes d'àudio associats al funcionament de cintes transportadores, motors o alarmes, així com millores gràfiques relacionades amb i\l.luminació, materials i animacions. De la mateixa manera, seria interessant implementar un operari virtual o personatge interactiu capaç de desplaçar-se per la planta industrial i interactuar amb determinats elements del sistema.
 
-Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de plugins i mòduls de \emph{Rapid SCADA}, així com integrar bases de dades externes (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de \emph{Rapid SCADA} es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. Respecte a la part dels plguins de \emph{Rapid SCADA}, l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \emph{Trial Key} cada dia \cite{store_scada}.
+Pel que fa a la visualització i explotació de dades, seria convenient aprofundir en l'ús de plugins i mòduls de \emph{Rapid SCADA}, així com integrar bases de dades externes (com PostgreSQL o InfluxDB). Aquesta integració és especialment rellevant, ja que el sistema intern de \emph{Rapid SCADA} es basa en fitxers \texttt{.dat} i no permet la realització de consultes SQL directes, limitant l'anàlisi avançada de la informació. Respecte a la part dels plugins de \emph{Rapid SCADA}, l'óptim seria tindre una clau permanent d'aquests plugins que permetés utilitzar-ho amb tota la llibertat possible, sense necessitat de demanar una \emph{Trial Key} cada dia \cite{store_scada}.
 
 Finalment, com a línia de futur amb alt valor afegit, es proposa la incorporació de tecnologies de realitat virtual (VR) dins de \acro{Unity}, permetent una visualització immersiva de la planta industrial i millorant tant la interacció com el realisme del sistema.
 \newpage
